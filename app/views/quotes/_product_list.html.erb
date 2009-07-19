@@ -1,0 +1,71 @@
+<div id="producto_detalle">
+	<div id="quote_quote_details">
+		<table id="product_table">
+			<thead>
+			<tr>
+				<th>c&oacute;digo</th>
+				<th>edad</th>
+				<th>meses</th>
+				<th>sexo</th>				
+				<th>descripción</th>
+				<th>foto</th>
+				<th>cantidad</th>
+				<th>precio</th>				
+				<th>Subtotal</th>
+				<th width="10">¿Adicional?</th>
+				<th width="10">¿no disponible?</th>				
+				<th width="10">pack</th>				
+				<th></th>					
+				<th></th>									
+			</tr>						
+			</thead>
+			<tbody>
+		<% sum = 0 %>
+		<% if @quote_details.empty?  %>
+		<tr>
+			<td colspan="10">
+				<p>Agregue productos a la cotizaci&oacute;n para visualizarlos</p>
+			</td>
+		</tr>
+		<%- else -%>
+		<% i = 0 %>	
+		<% @quote_details.each do |quote| %>
+		<% fields_for :quote_detail, quote, :index=>quote.id do |qd| %>		
+		<% price = quote_detail_price(quote,@quote.price_type,quote.product) %>
+		<% price = 0.0 if price.nil? %>
+		<% subtotal = price*quote.quantity unless quote.quantity.nil? %>
+		<% subtotal = 0.0 if subtotal.nil? %>
+		<% sum +=  subtotal %>
+		<tr class="<%= cycle("even", "odd") -%>">
+			<td><div style="width:50px;"><%= quote.product.code %></div></td>
+			<td><%= qd.select :age_from, (0..18).collect {|x| [x, x] }, {},:index=>quote.id %>
+				<%= qd.select :age_to, (0..18).collect {|x| [x, x] }, {},:index=>quote.id %>
+			</td>
+			<td><%= qd.check_box :months %></td>
+			<td><%= qd.select :sex, ["h","m","hm"].collect {|x| [x.humanize, x]}, {}, :index=>quote.id, :class=>'small_fields'  %></td>
+			<td><div style="width:70px;"><%= quote.product.name unless quote.product.nil? %></div></td>
+			<td><%= link_to image_tag(quote.product.picture.thumb.url, :width=>35), quote.product.picture.url unless quote.product.picture.nil? %></td>		
+			<td><%= qd.text_field :quantity, :class=>"small_fields" %></td>				
+			<td><%= text_field_tag "quote_detail[#{quote.id}][price]", price, :class=>"small_fields" %></td>							
+			<td><%= subtotal %></td>										
+			<td><%= qd.check_box :additional %></td>
+			<td><%= qd.check_box :unavailable %></td>		
+			<td><%= qd.text_field :pack_number, :class=>"small_fields" %>	
+			<td><%= submit_to_remote "button","Actualizar", :url=>{:action=>"update_quote_details"},:method=>"post", :html=>{:class=>"form_button"} %></td>			
+    		<td><%= link_to_remote 'Eliminar',:url=>{:action=>"destroyDetail", :id=>quote.id}, :method =>'delete', :html=>{:class=>"delete_button"} %></td>			
+		</tr>
+		<% end %>
+		<% end %>
+		
+		<%- end -%>
+			</tbody>
+		</table>
+		<div class="subtotal"><p>Total: S/. <%= sum || 0.0 %></p></div>
+		<% @total_toys =  @quote_details.inject(0){|total,q| total + q.quantity } || 0  %>
+		<div class="subtotal"><p>Total de Juguetes: <%= @total_toys %></p></div>
+		<% unless @total_toys.zero? %>
+		<div class="subtotal"><p>Promedio por Juguete: S/. <%= (sum / @total_toys).round(2) || 0.0 %></p></div>				
+		<% end %>
+	</div>
+	
+</div>

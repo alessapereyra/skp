@@ -1,0 +1,50 @@
+<div id="quote_detalle">
+<h3>Rangos de Edades por Productos</h3>
+
+
+
+	<div id="range">
+		<table id="range_table">
+			<thead>
+			<tr>
+				<th>desde</th>
+				<th>hasta</th>
+				<th>masculino</th>
+				<th>femenino</th>		
+				<th>total</th>
+				<th></th>					
+			</tr>						
+			</thead>
+			<tbody>
+		
+		<% @quote.age_ranges.reverse.each do |age_range| %>
+		<% fields_for :age_range, age_range, :index=>age_range.id do |qd| %>		
+		<tr class="<%= cycle("even", "odd") -%>">
+			<td><%= qd.select :age_from, (0..18).collect {|x| [x, x] }, {},:index=>age_range.id %></td>
+			<td><%= qd.select :age_to, (0..18).collect {|x| [x, x] }, {},:index=>age_range.id %></td>
+			<td><%= qd.text_field :masculine, :class=>"small_fields" %></td>				
+			<td><%= qd.text_field :femenine, :class=>"small_fields" %></td>				
+			<td><%= age_range.masculine + age_range.femenine unless age_range.masculine.blank? or age_range.femenine.blank? %></td>
+			<td><%= link_to_remote 'Eliminar',:url=>{:action=>"destroyRange", :id=>age_range.id} %></td>			
+		</tr>
+		<% end %>
+		
+		<%- end -%>
+		</tbody>
+		<tfoot>
+		<tr>
+			<td colspan="2">Total</td>
+			<td><%= @quote.masculine_total %></td>
+			<td><%= @quote.femenine_total %></td>
+			<td><%= @quote.ranges_total %></td>
+			<td></td>
+		<tr>
+		</tfoot>
+		</table>
+		
+	</div>
+	<%= submit_to_remote "button","Grabar rangos", :url=>{:action=>"update_ranges"}, :html=>{:class=>"form_button"} %>
+	<%= submit_to_remote "button","Nuevo rango", :url=>{:action=>"new_range"}, :html=>{:class=>"form_button"} %>
+	
+	
+</div>

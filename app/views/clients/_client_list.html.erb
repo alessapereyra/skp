@@ -1,0 +1,31 @@
+<div id="detalle">
+	
+
+<table>
+	<thead>
+		<tr>
+			<th>Nombre</th>			
+			<th>Direcci&oacute;n</th>						
+			<th>Tel&eacute;fono</th>									
+			<th>DNI</th>									
+			<th>RUC</th>									
+			<th></th>
+			<th></th>						
+		</tr>
+	</thead>
+	<tbody>
+	<% for client in @clients %>
+	<tr class="<%= cycle("even","odd") %>">
+		<td><div style="width:100px;"><%= client.name %></div></td>
+		<td><div style="width:100px;"><%= client.address %></div></td>
+		<td><%= client.telephone %></td>
+		<td><%= client.dni %></td>
+		<td><%= client.ruc %></td>								
+		<td><%= link_to 'Editar', edit_client_path(client) %></td>
+		<td><%= link_to 'Eliminar', client, :confirm => 'Seguro?', :method => :delete %></td>
+	</tr>
+	<% end %>
+</tbody>
+</table>
+
+</div>

@@ -1,0 +1,31 @@
+<div id="detalle">
+	
+<div style="clear:both"></div>
+<h3>Lista de Productos</h3>
+
+<span id="messages"><%= flash[:error] %></span>
+<span id="product_error"></span>
+
+
+<table id="edit_input_order">
+	<thead>
+	<tr>
+		<th>item</th>
+		<th>Cantidad</th>		
+		<th>Precio</th>		
+		<th>Descuento</th>		
+		<th>C&oacute;digo</th>		
+		<th>Nombre</th>
+		<th>Descripci&oacute;n</th>		
+		<th></th>
+		<th></th>		
+	</tr>
+	</thead>
+	<tbody>			
+		<%= render :partial =>"admin_exit_orders/detail", :collection=>@exit_order.exit_order_details %>
+	</tbody>
+</table>
+
+<h3 id="subtotal">Total: S/.<%= @exit_order.price %></h3>
+
+</div>

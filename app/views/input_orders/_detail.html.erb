@@ -1,0 +1,20 @@
+<%- remote_form_for :input_order_detail, detail, :url=>{:controller=>"input_order_details", :action=>"update", :id=>detail.id},:method=>"put",:index=>detail.id do |t| -%>
+
+<tr id="row_<%= detail.id %>" class="<%= cycle("even", "odd") -%>">		
+	<td><%= detail_counter %></td>	
+	<td><%= detail.product.code %></td>	
+	<td><%= t.text_field :quantity %></td>
+	<td><%= t.text_field :additional_code %></td>		
+	<td><%= t.text_field :cost %></td>
+	<% fields_for :price, :index=>detail.id do |p| %>
+	<td><%= text_field_tag 'price[amount]',price(detail,0), :id=>"base_price",:class=>'small_fields' %></td>
+	<td><%= text_field_tag 'price[boxed_price]', price(detail,1), :class=>'small_fields input_order_boxed_price' %></td>
+	<td><%= text_field_tag 'price[wholesale_price]', price(detail,2), :class=>'small_fields input_order_wholesale_price' %></td>
+	<td><%= text_field_tag 'price[final_price]', price(detail,3), :class=>'small_fields input_order_final_price' %></td>
+	<td><%= text_field_tag 'price[final_price_polo]', price(detail,4), :class=>'small_fields input_order_final_price_polo' %></td>					
+	<% end %>
+
+	<td><%= t.submit "actualizar", :class=>"form_button" %></td>
+	<td><%= link_to_remote 'eliminar', :url=>{:controller=>'input_order_details',:action=>"destroy", :id=>detail.id}, :method=>"delete", :confirm=>"¿Desea eliminar el producto de la orden?	" %></td>	
+</tr>
+<%- end -%>

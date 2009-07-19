@@ -1,0 +1,60 @@
+<%= content_tag(:h2, "Impresión etiquetas de #{@product.name} ")%>
+
+<% form_tag(:action => "print_tag", :id=>@product.id) do %>
+<fieldset>
+	<legend>Opciones de impresi&oacute;n</legend>
+	<dl>
+<div class="single_column_left">
+	<dt>Número de copias</dt>
+	<dd><%= select_tag :copies, options_for_select((1..100).collect {|x| [x, x] }, :copies) %></dd>
+
+</div>
+
+<div class="single_column_left">
+	<dt>De tienda</dt>
+	<dd><%= select_tag :store, options_for_select(Store.all.collect {|x| [x.name, x.id] }, :store) %></dd>
+
+</div> 
+ 	<%= submit_tag "imprimir", :class=>"form_button"  %>
+ 	<%= link_to "crear c&oacute;digo de barra", recreate_barcode_path(@product.id)  %>
+	</dl>
+</fieldset>
+<% end -%>
+
+<div style="clear:both;"></div>
+
+
+<div class="ticket">
+	
+	<% unless @product.is_book? %>
+
+  	<div id="logo">
+  		<p> <%= image_tag ('http://www.skykidsperu.com/images/nextgen/logo-ticket.png') %></p>
+  	</div>
+
+  <% end %>
+
+	<div id="ticket-content">
+		<p><%= @product.name.upcase %></p>
+     </div>
+
+	<div id="ticket-code">
+		<p> <%= image_tag (@product.barcode_filename.nil? ? "" : 'http://www.skykidsperu.com/'+@product.barcode_filename), :class => "barcode" %></p>
+		<p class="product_code"> <%= @product.code %></p>
+		
+	</div>
+
+
+	<div id="bottom">
+
+	  		<% unless @product.is_stationary? or @product.is_book? %>
+		      <p id="codify"><%= codify(@product.current_prices(true,current_store)[1].amount.round(2)) unless @product.current_prices(true,current_store)[1].amount.blank?  %></p>
+		
+		      <p id="price"> S/. <%= @product.store_price(current_store).round(2) unless @product.store_price(current_store).blank? %></p>
+          <% else %>
+      	  <p id="codify"><%= @product.brand.name unless @product.brand.blank? %></p>
+	        <p id="price"><%= @product.category.name unless @product.category.blank? %></p>
+		    <% end %>
+	</div>
+
+</div>

@@ -1,0 +1,40 @@
+<% unless @pending_send_orders.nil? or @pending_send_orders.size.zero? %>
+
+<div id="recover">
+	<div class="opener">
+		<p class="message">Tiene <%= @pending_send_orders.size %> órden(es) de traslado abiertas adicionales</p>
+		<p class="action"><a href="#" id="down">revisar</a></p>
+	</div>
+	<div class="recover_results">
+
+		<table>
+			<thead>
+			<tr>
+				<th>Documento</th>		
+				<th>Origen</th>
+				<th>Fecha de Salida</th>
+				<th>Destino</th>
+				<th></th>
+				<th></th>		
+			</tr>				
+			</thead>
+			<tbody>		
+			<% @pending_send_orders.each do |send_order| %>
+			<tr class="<%= cycle("even", "odd") -%>">
+				<td><%= send_order.document %></td>		
+				<td><%= send_order.owner.name %></td>				
+				<td><%= send_order.send_date.strftime("%d/%m/%y") %></td>
+				<td><%= send_order.store.name %></td>
+				<td><%= link_to "recuperar", url_for(:action=>'recover',:id=>send_order.id), :method=>:post %></td>
+		 		<td><%= link_to "eliminar", url_for(:action=>'destroy',:id=>send_order.id), :method=>:delete %></td>		
+			</tr>
+			<% end %>
+			</tbody>
+
+		</table>
+
+
+	</div>
+</div>
+
+<% end %>

@@ -1,0 +1,191 @@
+<div id="quote_partial">
+	
+	<div id="message">
+		<%= flash[:message] || flash[:error] %>
+	</div>
+
+	<dl id="general_data">
+		<dt>Realizada para: <strong><%= @quote.client.name unless @quote.client.nil? %></strong></dt>
+
+		<dt>RUC: <strong><%= @quote.client.ruc unless @quote.client.nil? %></strong></dt>
+		<dd></dd>
+
+		<dt>Teléfono: <strong><%= @quote.client.telephone unless @quote.client.nil? %></strong></dt>
+		
+		<dt>Contacto: <strong><%= @quote.contact_name %> (<%= @quote.sending_details %>) </strong></dt>
+	
+		<% unless @quote.status == "requested" %>
+		<dt>Duración: <strong><%= @quote.duration.blank? ? "5": @quote.duration %> d&iacute;as </strong></dt>
+		<% end %>
+		
+		<dt>Anotaciones: <strong><%= @quote.quote_comments %></strong></dt>
+		
+	</dl>
+	
+
+	
+	
+	<% form_for :quote, :url=>{:controller=>"quotes",:action=>"modify_quote",:id=>@quote.id} do |f| %>	
+		
+		<!-- 	<table id="range_table">
+			<caption>Cantidades por edad</caption>
+			<thead>
+			<tr>
+				<th>desde</th>
+				<th>hasta</th>
+				<th>masculino</th>
+				<th>femenino</th>		
+				<th>total</th>
+				<th></th>					
+			</tr>						
+			</thead>
+			<tbody>
+		
+		<% @quote.age_ranges.reverse.each do |age_range| %>
+		<% fields_for :age_range, age_range, :index=>age_range.id do |qd| %>		
+		<tr class="<%= cycle("even", "odd") -%>">
+			<td><%= qd.select :age_from, (0..18).collect {|x| [x, x] }, {},:index=>age_range.id %></td>
+			<td><%= qd.select :age_to, (0..18).collect {|x| [x, x] }, {},:index=>age_range.id %></td>
+			<td><%= qd.text_field :masculine, :class=>"small_fields" %></td>				
+			<td><%= qd.text_field :femenine, :class=>"small_fields" %></td>				
+			<td><%= age_range.masculine + age_range.femenine unless age_range.masculine.blank? or age_range.femenine.blank? %></td>
+		</tr>
+		<% end %>
+		
+		<%- end -%>
+		</tbody>
+		<tfoot>
+		<tr>
+			<td colspan="2">Total</td>
+			<td><%= @quote.masculine_total %></td>
+			<td><%= @quote.femenine_total %></td>
+			<td><%= @quote.ranges_total %></td>
+			<td></td>
+		<tr>
+		</tfoot>
+		</table>
+		-->
+
+		<% unless @quote.status == 'requested' %>
+		<p style="clear:both">La presente cotizaci&oacute;n tiene una duraci&oacute;n v&aacute;lida de <%= @quote.duration.blank? ? "5" : @quote.duration.to_s %> d&iacute;as y est&aacute; sujeta a disponibilidad de stock</p>
+		<p>Los precios incluyen IGV</p>
+		<% end %>
+	<table id="product_table">
+		<thead>
+		<tr>
+			<th>item</th>
+			<th width="100">edad</th>
+			<th>sexo</th>
+			<th>codigo</th>
+			<th>descripci&oacute;n</th> 
+			<th>Foto</th>
+			<th>Precio (sin IGV)</th>
+			<th>Precio</th>
+			<th>Cantidad</th>				
+			<th>Subtotal</th>		
+			<th></th>	
+		</tr>						
+		</thead>
+		<tbody>
+			<% if @quote.quote_details.final.empty?  %>
+			<tr>
+				<td colspan="9">
+					<p></p>
+				</td>
+			</tr>
+				<%- else -%>
+				<% i=0 %>
+	
+				<% @final_quote_details.each do |qd| %>
+					<% fields_for :quote_detail, qd, :index=>qd.id do |fd| %>
+					<tr id="row_<%= qd.id.to_s %>" class="<%= cycle("even", "odd") -%>">
+						<td><%= i+=1 %></td>
+						<td>
+						<%= fd.select :age_from, (0..18).collect {|x| [x, x] }, {},:index=>qd.id %>
+						-
+						<%= fd.select :age_to, (0..18).collect {|x| [x, x] }, {},:index=>qd.id %></td>
+						<td><%= qd.sex.blank? ? change_sex(qd.product.sex) : qd.sex %></td>
+						<td><%= qd.product.code %></td>						
+						<td><%= link_to qd.product.name.humanize, product_catalogue_path(qd.product.id), :rel=>'facebox' %> </td>
+						<td>
+							<%= link_to "<img class='product_image' src='#{qd.product.picture.thumb.url}' alt='#{h qd.product.name.gsub!("'","")} title='click en la imagen para cerrar'/>",qd.product.picture.large.url unless qd.product.picture.nil? -%> 
+							<br />
+							<%= link_to( "click para agrandar", qd.product.picture.large.url, :title=>'click en la imagen para cerrar') unless qd.product.picture.nil? -%>
+						</td>
+						<td>S/. <%= unless qd.price.blank? then (qd.price/1.19).round(2) else 0.00 end  %></td>
+						<td>S/. <%= unless qd.price.blank? then qd.price else 0.00 end  %></td>
+						<td><%= fd.text_field :quantity %></td>
+						<td>S/. <%= unless qd.subtotal.blank? then qd.subtotal else 0.00 end %></td>
+						<td><%= link_to_remote 'Eliminar',:url=>{:action=>"destroyDetail", :id=>qd.id} %></td>													
+						</tr>
+					<% end %>
+				<% end %>
+
+				<%- end -%>
+			
+		</tbody>
+	</table>
+		<div id="total">
+			Total: S/. <%= @quote.price %>
+		</div>
+		
+		<% unless @quote.quote_details.additional.empty? %>
+		<h2>Alternativas de Productos para Cotizar</h2>
+		<table id="additional_product_table">			
+			<thead>
+			<tr>
+				<th>item</th>
+				<th width="100">edad</th>
+				<th>sexo</th>
+				<th>codigo</th>
+				<th>descripci&oacute;n</th> 
+				<th>Foto</th>
+				<th>Precio (sin IGV)</th>
+				<th>Precio</th>
+				<th>Cantidad</th>				
+				<th>Subtotal</th>		
+				<th></th>	
+			</tr>						
+			</thead>
+			<tbody>
+				<% if @quote.quote_details.additional.empty?  %>
+				<tr>
+					<td colspan="9">
+						<p></p>
+					</td>
+				</tr>
+					<%- else -%>
+					<% i=0 %>
+
+
+					<% @alternative_quote_details.each do |qd| %>
+						<% fields_for :quote_detail, qd, :index=>qd.id do |fd| %>
+						<tr id="row_<%= qd.id.to_s %>" class="<%= cycle("even", "odd") -%>">
+							<td><%= i+=1 %></td>
+							<td><%= fd.select :age_from, (0..18).collect {|x| [x, x] }, {},:index=>qd.id %>
+								-<%= fd.select :age_to, (0..18).collect {|x| [x, x] }, {},:index=>qd.id %></td>
+							<td><%= change_sex(qd.product.sex) %></td>
+							<td><%= qd.product.code %></td>						
+							<td><%= link_to qd.product.name.humanize, product_catalogue_path(qd.product.id), :rel=>'facebox' %> </td>
+							<td><%= link_to "<img class='product_image' src='#{qd.product.picture.thumb.url}' alt='#{qd.product.name}'/>",qd.product.picture.large.url unless qd.product.picture.nil? %> </td>
+							<td>S/. <%= unless qd.price.blank? then (qd.price/1.19).round(2) else 0.00 end  %></td>
+							<td>S/. <%= unless qd.price.blank? then qd.price else 0.00 end  %></td>
+							<td><%= fd.text_field :quantity %></td>
+							<td>S/. <%= unless qd.subtotal.blank? then qd.subtotal else 0.00 end %></td>
+							<td><%= link_to_remote 'Seleccionar',:url=>{:action=>"selectDetail", :id=>qd.id} %></td>													
+							</tr>
+						<% end %>
+					<% end %>
+
+					<%- end -%>
+
+			</tbody>
+		</table>
+		<% end %>
+		
+		
+		<%= f.submit "Actualizar consulta" %>
+		
+	<% end %>
+	
+	</div> <!-- quote_partial -->

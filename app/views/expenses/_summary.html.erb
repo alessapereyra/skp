@@ -1,0 +1,38 @@
+<div id="results">
+
+	<div class="result">
+	Ingresos de tarjetas VISA del d&iacute;a: S/.<%= @visa_total %>
+	</div>
+
+	<div class="result">
+	Ingresos de tarjetas Mastercard del d&iacute;a: S/.<%= @mastercard_total %>
+	</div>
+
+	<div class="result">
+	Total de tarjetas: S/.<%= @mastercard_total + @visa_total %>
+	</div>
+
+
+	<div class="result">
+	  
+	  <%= render :partial=>'set_yesterdays_fund' %>
+
+	</div>
+
+	<div class="result">
+	Ingresos en efectivo del d&iacute;a: S/.<%= @totals %>
+	</div>
+	<div class="result">
+	Gastos del d&iacute;a : S/.<%= @total_expenses %>
+	</div>
+	
+	<div class="result">
+	Utilidad del d&iacute;a : S/.<%= yesterdays_fund + @totals - @total_expenses %>
+	</div>
+  
+		  <%= render :partial=>'set_widthdrawal' %>
+	
+	<div class="result">
+	Saldo para el d&iacute;a siguiente: S/. <%= todays_fund  %>
+	</div>	
+</div>

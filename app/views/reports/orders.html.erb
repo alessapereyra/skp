@@ -1,0 +1,50 @@
+<h2>Reporte de Ventas</h2>
+<% form_tag(:action=>:orders) do %>
+  <fieldset>
+	<legend>Viendo ventas del periodo</legend>
+	<dl>
+	<div class="single_column_left">
+	<dt>Desde:</dt>
+	<dd>
+	<div class="small_fields">
+	<%= select_date @time_from,:order => [:day, :month, :year],:prefix=> 'from',:html_options=>{:class=>"small_fields" }%>
+	</div>
+	</dd>
+</div>
+
+<div class="small_fields">
+	<dt>Hasta:</dt>
+	<dd>
+	<div class="small_fields">
+	<%= select_date @time_to,:order => [:day, :month, :year],:prefix=>'to',:html_options=>{:class=>"small_fields" } %>	
+	</div>
+	</dd>
+
+</div>	
+
+<div class="small_fields">
+
+  <dt>Categoria:</dt>
+  <dd>
+  	<%= select_tag :category_id, "<option value='0'></option>" + options_for_select(Category.all(:conditions=>"(name not like '' or name not like ' ') and category_id is NULL ").collect {|x| [x.name, x.id] }, @category_id.to_i) %>
+  </dd>
+
+</div>
+
+<div>
+
+  <dt>Proveedor:</dt>
+  <dd>
+	
+  	<%= select_tag :provider_id, "<option value='0'></option>" + options_for_select(Provider.all.collect {|x| [x.name, x.id] }, @provider_id.to_i) %>
+  </dd>
+</div>
+
+<%= submit_tag "Filtrar", :class=>"form_button" %>
+
+</dl>
+
+
+  </fieldset>
+<% end -%>
+<%= render :partial => 'orders' %>

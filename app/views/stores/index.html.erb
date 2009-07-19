@@ -1,0 +1,30 @@
+<%= content_tag(:h2, "Catálogo de Tiendas/Almacenes ")%>
+
+<table>
+	<thead>
+	<tr>
+		<th>Nombre</th>
+		<th>Direcci&oacute;n</th>
+		<th>Tel&eacute;fono</th>
+		<th>Descripci&oacute;n</th>		
+		<th></th>
+		<th></th>		
+	</tr>						
+	</thead>
+	<tbody>
+<%- @stores.each do |store| -%>
+
+		<tr class="<%= cycle("even", "odd") -%>">
+			<td><%= store.name %></td>
+			<td><%= store.address %></td>
+			<td><%= store.telephone %></td>
+			<td><%= store.description %></td>
+			<td><%= link_to 'Editar', edit_store_path(store) %></td>
+			<td><%= link_to 'Eliminar', store, :confirm => 'Seguro?', :method => :delete %></td>
+<%- end -%>
+	</tbody>
+</table>
+
+<div id="endzone">
+	<%= link_to "agregar nueva tienda", new_store_path %>	
+</div>

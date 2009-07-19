@@ -1,0 +1,11 @@
+<%= content_tag(:h2, "#{ @quote.is_requested ? 'Editando Pedido' :  'Creando cotizaci&oacute;n'}")%>
+
+<%= render :partial =>'recover' %>
+
+<span id="messages"><%= flash[:error] %></span>
+
+<%= render :partial => 'general_data' %>
+
+
+
+

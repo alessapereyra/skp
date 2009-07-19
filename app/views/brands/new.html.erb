@@ -1,0 +1,21 @@
+<h2>Agregando marca</h2>
+
+<% form_for(@brand) do |f| %>
+  <%= f.error_messages %>
+<fieldset>
+  <div id="single_column_left">
+	<dl>
+    <dt><%= f.label :name, "Nombre" %></dt>
+    <dd><%= f.text_field :name %></dd>
+	</dl>
+  </div>
+</fieldset>
+
+<div id="endzone">
+  <%= f.submit "agregar marca",:confirm=>"¿Finalizaci&oacute;n creaci&oacute;n de marca?", :class=>"form_button" %> <p> o <%= link_to 'cancelar', brands_path %></p>
+</div>
+
+
+<% end %>
+
+

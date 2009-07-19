@@ -1,0 +1,24 @@
+<h3>&Uacute;ltimos env&iacute;os de productos</h3>
+<table>
+	<thead>
+	<tr>
+		<th>Documento</th>
+		<th>Origen</th>
+		<th>Fecha de Salida</th>		
+		<th>Cliente</th>		
+		<th></th>
+	</tr>
+	</thead>
+	<tbody>						
+	<% @sending_guides.each do |sending_guides| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= sending_guides.document %></td>		
+		<td><%= sending_guides.store.name %></td>		
+		<td><%= sending_guides.sending_date.strftime("%d/%m/%y") %></td>		
+		<td><div style="width:100px;"><%= sending_guides.client.name unless sending_guides.client.nil? %></div></td>		
+		<td><%= link_to "Ver orden", sending_guide_report_path(sending_guides.id) %></td>
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+<%= link_to "leer reporte completo", sending_guides_report_path,:class=>"more_link" %>

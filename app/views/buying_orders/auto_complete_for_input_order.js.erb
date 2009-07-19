@@ -1,0 +1,4 @@
+<% @products.each do |product| %>
+<%= product.id %>|<%= product.name %>|<%= strip_tags product.description.gsub(" \r","").gsub("\n","")[0..30]+"..." %>|<%= product.additional_code %>|<%= product.code %>|<%= product.store_stock(current_store) %>
+<% end %>
+0|<%= link_to "registrar nuevo producto ", inventory_path, :class=>'add_new' %>||

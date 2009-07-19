@@ -1,0 +1,101 @@
+<h2>Reporte de Ingresos de <%= @input_type %></h2>
+
+<% form_tag(:action=>@input_type_symbol) do %>
+  <fieldset>
+	<legend>Viendo ingresos del periodo</legend>
+	<dl>
+	<div class="single_column_left">
+	<dt>Desde:</dt>
+	<dd>
+	<div class="small_fields">
+	<%= select_date @time_from,:order => [:day, :month, :year],:prefix=> 'from',:html_options=>{:class=>"small_fields" }%>
+	</div>
+	</dd>
+</div>
+
+<div class="small_fields">
+	<dt>Hasta:</dt>
+	<dd>
+	<div class="small_fields">
+	<%= select_date @time_to,:order => [:day, :month, :year],:prefix=>'to',:html_options=>{:class=>"small_fields" } %>	
+	</div>
+	</dd>
+
+</div>	
+
+<div class="small_fields">
+
+  <dt>Categoria:</dt>
+  <dd>
+  	<%= select_tag :category_id, "<option value='0'></option>" + options_for_select(Category.all(:conditions=>"(name not like '' or name not like ' ') and category_id is NULL ").collect {|x| [x.name, x.id] }, @category_id.to_i) %>
+  </dd>
+
+</div>
+
+<div>
+
+  <dt>Proveedor:</dt>
+  <dd>
+	
+  	<%= select_tag :provider_id, "<option value='0'></option>" + options_for_select(Provider.all.collect {|x| [x.name, x.id] }, @provider_id.to_i) %>
+  </dd>
+</div>
+
+<%= submit_tag "Filtrar", :class=>"form_button" %>
+
+</dl>
+
+
+  </fieldset>
+<% end -%>
+
+<div id="results">
+	<div class="result">
+	Costo total del periodo de  <%= @input_type %>: S/.<%= @input_orders.inject(0){|sum,io| sum + io.cost } %>
+	</div>
+</div>
+
+
+<div id="endzone">
+   	<%= link_to "actualizar estados",massive_input_order_edit_path, :class=>"form_button_inline" %> 
+</div>
+
+
+<table>
+	<thead>
+	<tr>
+		<th>Tienda</th>
+		<th>Documento</th>		
+		<th>Fecha de Ingreso</th>
+		<th>Proveedor</th>
+		<th>Costo Total</th>
+		<th></th>
+	</tr>				
+	</thead>
+	<tbody>		
+	<% @input_orders.each do |input_order| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= input_order.store.name %></td>		
+		<td><%= input_order.document %></td>		
+		<td><%= input_order.order_date.strftime("%d/%m/%y") %></td>
+		<td><div style="width:100px;"><%= input_order.provider.name %></div></td>
+		<td><%= input_order.cost %></td>
+		<td><%= link_to "Ver orden", input_order_report_path(input_order.id) %></td>
+	</tr>
+	<% end %>
+	</tbody>
+
+</table>	 
+
+   <div id="results">
+   	<div class="result">
+   	Costo total del periodo de <%= @input_type %>: S/.<%= @input_orders.inject(0){|sum,io| sum + io.cost } %>
+   	</div>
+   </div>
+
+
+	 
+<div id="endzone">
+   	<%= link_to "actualizar estados",massive_input_order_edit_path, :class=>"form_button_inline" %> 
+</div>
+   

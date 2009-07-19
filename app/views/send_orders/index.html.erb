@@ -1,0 +1,28 @@
+<h2>Catálogo de Órdenes de Traslado</h2>
+<table>
+	<thead>
+	<tr>
+		<th>Documento</th>		
+		<th>Origen</th>
+		<th>Fecha de Salida</th>
+		<th>Destino</th>
+		<th>Fecha de Recepci&oacute;n</th>		
+		<th></th>
+		<th></th>		
+	</tr>				
+	</thead>
+	<tbody>		
+	<% @send_orders.each do |send_order| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= send_order.document %></td>		
+		<td><%= send_order.owner.name %></td>				
+		<td><%= send_order.send_date.strftime("%d/%m/%y") %></td>
+		<td><%= send_order.store.name %></td>
+		<td><%= send_order.pending? ? "En tr&aacute;nsito" : send_order.received_date.strftime("%d/%m/%y") unless send_order.received_date.nil? %>
+		<td><%= link_to "editar", edit_send_order_catalogue_path(send_order.id) %></td>
+		<td><%= link_to 'eliminar', delete_send_order_catalogue_path(send_order.id), :confirm => '¿Seguro?', :method => :delete %></td>				
+	</tr>
+	<% end %>
+	</tbody>
+
+</table>

@@ -1,0 +1,65 @@
+
+
+	<div id="fecha">
+		<h2 class="fecha fecha_emision">
+		<em><%= @send_order.send_date.strftime("%d") %></em> 
+		<em><%= @send_order.send_date.strftime("%m")%></em>
+		<em><%= @send_order.send_date.strftime("%y")%></em>
+		</h2>		
+	</div>
+
+
+<div id="datos">
+  
+	<div id="domicilio_partida">
+      <%= @send_order.owner.name %> <br /> 
+      <%= @send_order.owner.address %>
+	</div>
+			
+  <div id="domicilio_llegada">
+      <%= @send_order.store.address %>
+	</div>
+
+	<div id="destinatario">
+      <%= @send_order.store.name %>
+	</div>
+			
+</div>
+
+<div id="productos">
+  
+
+    <table>
+    	<thead>
+      	<tr>
+      		<th id="item" width="5"></th>		
+      		<th id="cantidad"></th>		
+      		<th id="codigo"></th>
+      		<th id="descripcion"></th>
+      		<th id="punit"></th>
+      		<th id="importe"></th>		
+      	</tr>
+    	</thead>
+    	<tbody>						
+      	<% i = 0 %>
+      	<% @send_order.send_order_details.each do |iod| %>
+        	<tr class="<%= cycle("even", "odd") -%>">
+
+          		<td><%= i+=1; i %></td>
+          		<td><%= iod.quantity %></td>
+          		<td><%= iod.product.code %></td>		
+          		<td><%= iod.product.name %> <br /><%= strip_tags(iod.product.description) if iod.product.print_description %></td>
+          		<% unless store? %>
+          		<td> 0.00</td>				
+          		<td>0.00</td>	
+          		<% else %>					
+          		<td><%= 0.00  %></td>				
+          		<td><%= 0.00 %></td>	
+		
+          		<% end %>
+        	</tr>
+      	<% end %>
+    	</tbody>
+    </table>
+
+</div>

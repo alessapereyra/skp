@@ -1,0 +1,94 @@
+<h2>Inventario</h2>
+
+<% form_tag(:action=>:inventary) do %>
+  <fieldset>
+	<legend>Viendo inventario del periodo</legend>
+	<dl>
+	<div class="single_column_left">
+	<dt>Desde:</dt>
+	<dd>
+	<div class="small_fields">
+	<%= select_date @time_from,:order => [:day, :month, :year],:prefix=> 'from',:html_options=>{:class=>"small_fields" }%>
+	</div>
+	</dd>
+</div>
+
+<div class="small_fields">
+	<dt>Hasta:</dt>
+	<dd>
+	<div class="small_fields">
+	<%= select_date @time_to,:order => [:day, :month, :year],:prefix=>'to',:html_options=>{:class=>"small_fields" } %>	
+	</div>
+	</dd>
+
+</div>	
+
+	<dt>Categoria:</dt>
+	<dd>
+  	<%= select_tag :category_id, "<option value='0'></option>" + options_for_select(Category.all(:conditions=>"(name not like '' or name not like ' ') and category_id is NULL ").collect {|x| [x.name, x.id] }, :categoria_id) %>
+	</dd>
+
+
+	<dt>Proveedor:</dt>
+	<dd>
+  	
+  	<%= select_tag :provider_id, "<option value='0'></option>" + options_for_select(Provider.all.collect {|x| [x.name, x.id] }, :provider_id) %>
+	</dd>
+
+
+<%= submit_tag "Filtrar", :class=>"form_button" %>
+
+</dl>
+
+
+  </fieldset>
+<% end -%>
+
+
+<div id="results">
+	<div class="result">
+	Costo Total de Inventario del <%= session[:inventory_time_from] %> al <%= session[:inventory_time_to] %> : S/.<%= @total_cost %>
+	</div>
+</div>
+
+
+
+<div id="detalle">
+
+Inventario de <%= @total %> productos
+
+<table>
+	<thead>
+	<tr>
+		<th>C&oacute;digo</th>
+		<th>Descripci&oacute;n</th>
+		<th>Stock</th>
+		<th>Precio de Costo</th>		
+		<th>Historial</th>					
+	</tr>			
+	</thead>
+	<tbody id="list">
+<%- @page_results.each do |product| -%>
+
+  <% next if product.nil? %>
+
+		<tr class="<%= cycle("even", "odd") -%>">
+			<td><%= product.code  %></td>			
+			<td><div style="width:400px;"><%= strip_tags product.name %></div></td>
+			<td><%= product.store_stock(current_store) %></td>		
+			<td><%= product.cost_price %></td>
+			<td><%= link_to "ver", product_history_path(product.id) %></td>	
+			<td><%= product.created_at %></td>	
+<%- end -%>
+
+	
+	</tbody>
+</table>
+</div>
+
+<%= will_paginate @page_results %>
+
+<div id="endzone">
+<%= link_to "imprimir",print_path(:controller=>"print",:action=>"inventary",:id=>nil), :class=>"form_button_inline" %> 
+<p>o <%= link_to "Regresar",reports_path %></p>
+</div>

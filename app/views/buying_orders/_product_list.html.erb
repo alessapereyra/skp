@@ -1,0 +1,47 @@
+<div id="detalle">
+	<div id="input_order_details">
+		<table id="product_table">
+			<thead>
+			<tr>
+				<th>item</th>
+				<th>Cantidad</th>
+				<th>Código</th>
+				<th>Código Proveedor</th>				
+				<th>descripci&oacute;n</th>
+				<th>Precio de Costo</th>
+				<th>Subtotal</th>				
+				<th>Opciones</th>			
+			</tr>						
+			</thead>
+			<tbody>
+		<% if @input_order_details.empty?  %>
+		
+		<tr>
+			<td colspan="8">
+				<p>Agregue productos a la orden de ingreso para visualizarlos</p>
+			</td>
+		</tr>
+		<%- else -%>
+		<% i=0 %>
+		<% @input_order_details.reverse.each do |input| %>
+		<tr class="<%= cycle("even", "odd") -%>">
+			<td><%= i+=1 %>
+			<td><%= input.quantity %></td>
+			<td><%= input.product.code unless input.product.nil?%></td>
+			<td><div style="width:80px;"><%= input.additional_code %></div></td>			
+			<td><div style="width:100px;"><%= input.product.name unless input.product.nil?%></div></td>
+			<td>S/. <%= input.cost %></td>
+			<td><%= input.quantity*input.cost unless input.quantity.nil? or input.cost.nil? %></td>			
+    		<td><%= link_to_remote 'Eliminar',:url=>{:action=>"destroyDetail", :id=>input.id} %></td>							
+		</tr>
+		<% end %>
+		
+		<%- end -%>
+		</tbody>
+		</table>
+		
+		<div class="subtotal">
+			<p>Total S/. <%= @input_order.cost  %></p>
+		</div>
+	</div>
+</div>

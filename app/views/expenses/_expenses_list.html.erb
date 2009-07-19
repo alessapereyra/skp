@@ -1,0 +1,23 @@
+
+<div id="detalle">
+<table id="expenses_table">
+	<thead>
+	<tr>
+		<th>Descripci&oacute;n</th>		
+		<th>Monto</th>		
+		<th></th>
+	</tr>				
+	</thead>
+	<tbody>		
+	<% @expenses.each do |expense| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= expense.description %></td>		
+		<td><%= expense.amount %></td>				
+		<td><%= link_to_remote 'eliminar', :url=>{:controller=>'expenses',:action=>"destroy", :id=>expense.id},:method=>'delete' %></td>
+	</tr>
+	<% end %>
+	</tbody>
+
+</table>
+
+</div>

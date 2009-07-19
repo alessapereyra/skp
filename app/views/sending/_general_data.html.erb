@@ -1,0 +1,96 @@
+<% form_for @send_order do |f| -%>
+
+
+<fieldset>
+	<legend>Datos de la Salida</legend> 
+	<p>Ingrese la informaci&oacute;n del destino y los productos respectivos</p>
+
+	<dl>
+
+		<div class="single_column_left">
+
+			<dt>
+				<%= f.label :document, "Documento:" %>
+			</dt>
+
+			<dd>
+				<%= f.text_field :document %>
+			</dd>
+
+		</div>
+
+
+		<div class="single_column_left">
+
+			<dt>
+				<%= f.label :sending_type, "Tipo de Salida:" %>
+			</dt>
+
+			<dd>
+				<%= f.select :sending_type, SendingGuide::SendingTypes.collect {|x| [x.humanize, x]} -%>
+			</dd>
+
+		</div>
+		
+				
+	<div class="single_column_left">
+
+
+				<dt>
+					<%= f.label :owner_id, "Origen:" %>
+				</dt>
+		
+				<dd>
+					<%= f.collection_select :owner_id, Store.find(:all),:id,:name %>
+				</dd>
+		
+
+	</div>
+	
+	<div class="single_column_left">
+		
+			<dt>			
+			<%= f.label :store_id, "Destino" %>
+			</dt>
+
+			<dd>
+			<%= f.collection_select :store_id, Store.find(:all), :id,:name %>
+			</dd>
+		
+				
+	</div>
+
+
+	<div class="single_column_left">
+		
+		
+			<dt class="odd">				
+				<%= f.label :send_date, "Fecha de Salida: " %>
+			</dt>
+
+			<dd class="odd">
+			<div class="small_fields">
+			<%= f.date_select :send_date, :class=>"small_fields"%>
+			</div>
+			</dd>
+		
+	</div>
+
+	</dl>
+
+	</fieldset>
+	
+	<%= render :partial => 'add_product' %>
+
+	<span id="product_error"></span>
+	
+	<%= render :partial => 'product_list' %>	
+	
+	<div id="endzone">
+		<%= f.submit "Finalizar Env&iacute;o", :url=>{:action=>'create'}, :confirm=>'¿Finalizar envío?',:class=>'form_button' %> <p>o <%= link_to "cancelar", catalogue_path %></p>
+	</div>
+
+
+
+
+<% end %>

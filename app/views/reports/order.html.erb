@@ -1,0 +1,92 @@
+<%- content_for :report_title do -%>-<%= @order.name -%><%-  end -%>
+<h2><%= @order.name.humanize %> <%= @order.number %></h2>
+
+<div id="general">
+	
+	<dl>
+		<dt>Se&ntilde;or(es): </dt>
+		<dd><%= @order.client.name unless @order.client.nil? %>
+			
+		<dt id="ruc">RUC: </dt>
+		<dd id="ruc"><%= @order.client.ruc unless @order.client.nil? %>
+
+		<dt>Direcci&oacute;n: </dt>
+		<dd><%= @order.address %>
+
+		<dt>Fecha de Venta: </dt>
+		<dd id="date">
+		<em><%= @order.order_date.strftime("%d") %></em>
+		<span>/</span>
+		<em><%= @order.order_date.strftime("%m")%></em>
+		<span>/</span>
+		<em><%= @order.order_date.strftime("%y")%></em>
+		</dd>
+
+		<dt class="hide">&iquest;Tarjeta de cr&eacute;dito? </dt>
+		<dd class="hide	"><%= @order.credit_card %>
+			
+		<dt class="hide">Descargar stock?: </dt>
+		<dd class="hide"><%= @order.unload_stock ? "Si" : "No" %>			
+			
+
+	</dl>
+</div>
+
+<div id="table_detalle">
+	
+
+<table id="detalle">
+	<thead>
+	<tr>
+		<th id="count">item</th>
+		<th id="cantidad">Cantidad</th>
+		<th id="unidad">Unid.</th>		
+		<th id="codigo">Código</th>
+		<th id="descripcion">Descripción</th>
+		<th id="unitario">P. Unitario</th>
+		<th id="importe">Importe</th>				
+	</tr>
+	</thead>						
+	<tbody>
+	<% i = 0 %>
+	<% @order.order_details.each do |iod| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<% discount = 0 %>
+		<% discount = iod.discount unless iod.discount.nil? %>
+		<td><%= i+=1; i %></td>		
+		<td><%= iod.quantity %></td>
+		<td><%= "" %></td>		
+		<td><%= iod.product.code %></td>		
+		<td><%= iod.product.name %></td>		
+		<td><%= fill_zero((iod.price.round(2)*(1-(discount/100.0))).round(2)) %></td>
+		<td><%= fill_zero(iod.subtotal.round(2)) %></td>						
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+</div>
+
+<p id="letters"><%= @order.price.to_letters unless @order.type == "boleta" %></p>
+
+<table id="subtotals">
+	<thead>
+		<tr>
+			<th id="subtotal">Sub-Total</th>
+			<th id="igv">IGV</th>			
+			<th id="total">TOTAL</th>			
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td id="subtotal">S/.<%= fill_zero(@order.price_without_taxes.round(2)) %></td>
+			<td id="igv">S/.<%= fill_zero(@order.taxes.round(2)) %></td>			
+			<td id="total">S/.<%= fill_zero(@order.price.round(2)) %></td>			
+		</tr>
+	</tbody>
+</table>
+	
+	<div id="endzone">
+		<%= link_to "imprimir",print_path(:action=>"order",:id=>@order.id), :class=>"form_button_inline" %> 
+		<%= link_to("editarla",url_for(:controller=>"sales", :action=>"reopen", :id=>@order.id), :class=>"form_button_inline") if admin? %> 
+		<p>o <%= link_to "regresar",sales_path %>	</p>
+	</div>

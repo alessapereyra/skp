@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<meta name="Description" content="Skykids Perú, Importador de Juguetes y Mas. Los mas variados importadores de juguetes y accesorios, con los mejores precios y brindando siempre el excelente servicio que nos caracteriza">
+	<meta name="Keywords" content="importador juguetes peru diversion disney barbies muñecas bebes accesorios toys importer fun toys accesories plushies peluches exclusivos ">
+	<title>Skykids :: Importador de Juguetes y Más </title>
+
+	<%= stylesheet_link_tag 'jquery.ui.autocomplete','nextgen/menu.css','../javascripts/mopTip', '../javascripts/facebox/facebox', :media=>"all" %>
+	<%= stylesheet_link_tag 'nextgen/print.css', :media=>"print" %>
+	
+	<!--[if !IE]><!-->
+	
+	
+	<%= stylesheet_link_tag  "nextgen/web.css", :media=>"all" %>
+		<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js",'fancyzoom/js-global/FancyZoom','fancyzoom/js-global/FancyZoomHTML',
+									"jquery-ui","mopTip", 'jquery-ui-personalized', 
+									'facebox/facebox', 'jquery.flash', "jrails",'jquery.scrollTo','skykids' %>
+	
+	<!-- <![endif]-->
+	
+
+	<!--[if IE]>      
+		
+		<%= stylesheet_link_tag "nextgen/msie.css", :media=>"all" %>
+		<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js",'fancyzoom/js-global/FancyZoom','fancyzoom/js-global/FancyZoomHTML',
+									"jquery-ui","mopTip","jquery.pngfix", 'jquery-ui-personalized', 
+									'facebox/facebox', 'jquery.flash', "jrails", 'jquery.scrollTo','skykidsie' %>
+		
+	<![endif]-->
+		
+	<!--[if lte IE 6]>
+		<%= stylesheet_link_tag "nextgen/msie6.css" %>	
+	<![endif]-->
+
+	</head>
+	<body id="<%= params["controller"] %>" onload="setupZoom()"> 
+
+		<div id="wrapper">
+
+			<div id="header">
+
+				<h1><%= link_to "Skykids", home_path %></h1>
+				<h2>los más variados importadores de juguetes, accesorios y más</h2>			
+
+			</div> <!-- div header -->
+
+
+			<div id="navigation">
+				<ul id="menu">
+					<li id="catalogo"><%= link_to "catalogo", "/web/catalogo", :class=>"active" %></li>
+					<li id="conocenos"><%= link_to "conocenos","/web/conocenos"  %></li>
+					<li id="servicios"><%= link_to "servicios", "/web/servicios" %></li>																	
+					<li id="contactanos" class="last"><%= link_to "contactanos", "/web/contactanos" %></li>	
+				</ul>
+
+			</div> <!-- div navigation -->			
+
+
+			<div class="start_content"></div>
+
+		
+
+				<%= yield %>
+
+
+			</div> <!-- inside -->					
+
+
+
+
+			<div class="end_real_content"></div>
+
+		</div>	<!-- div wrapper -->
+		<div id="footer">
+
+			<p>Skykids 2008 - versión 1.0. Un proyecto realizado con pasión por <a href="http://www.srdperu.com">{SRD}</a></p>
+
+		</div> <!-- footer -->
+
+		<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		var pageTracker = _gat._getTracker("UA-615279-4");
+		pageTracker._trackPageview();
+		</script>
+		<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-6468664-1");
+		pageTracker._trackPageview();
+		} catch(err) {}</script>
+		
+	</body>
+	</html>

@@ -1,0 +1,85 @@
+<% fields_for :order_detail, @order_detail do |od| %>
+
+<fieldset id="fieldset_sales">
+	<legend>Detalle de Venta</legend> 
+
+	<dl>	
+
+
+			<div class="single_column_left">
+
+				<dt><%= od.label :product_id, "Producto:" %></dt>
+				<dd><%= od.text_field :product_id, :autocomplete =>"off" %>
+				<%= hidden_field_tag "order_detail[hidden_product_id]","",:class=>"order_detail_hidden_product_id" %>
+				<br /><br />
+				<span style="width: 200px !important; display: block;"><strong>Producto Seleccionado:</strong>
+				<br /><span class="product_name">Ninguno</span>
+				<br />
+				<strong>Stock:</strong>
+				<br /><span class="product_stock">--</span></span>
+				</dd>
+
+			</div>
+			
+			<div class="single_column_left">
+				
+				<dt>
+						<%= od.label :quantity, "Cantidad:" %>
+				</dt>
+				
+				<dd>
+						<%= od.text_field :quantity, :class=>'small_fields' %>
+				</dd>
+
+			</div>
+			
+
+			<div class="single_column_left">
+				
+				<dt>
+						<%= od.label :price, "Precio (inc. IGV):" %>
+				</dt>
+				
+				
+				<dd>				
+						<%= select :order_detail, :price, [], {:include_blank => ""}, :class=>'price_select' %>
+				</dd>
+				
+				
+			</div>
+
+			<div class="single_column_left">
+				
+				<dt>
+						<%= od.label :discount, "Descuento (%):" %>
+				</dt>
+				
+				<dd>
+						<%= od.text_field :discount, :class=>'small_fields' %>
+				</dd>
+
+			</div>
+
+			<%= submit_to_remote "order_detail_button", "Agregar Producto", :url=>{ :controller=>'sales',:action=>'add_product' }, :html=>{:class=>'sales_submit button form_button'} %>
+
+	</dl>	
+
+</fieldset>	
+
+<span id="product_error"></span>
+
+	<%= render :partial=>"product_list" %>		
+
+
+<% end %>
+
+		<% if admin? or store_supervisor? %>
+		<script type="text/javascript">
+		//<![CDATA[
+		$(document).ready(function(){
+			$("#order_detail_price").dxCombobox();
+		});
+		//]]>	
+
+		</script>
+		<% end %>

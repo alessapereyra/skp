@@ -1,0 +1,83 @@
+
+
+	<div id="fecha">
+		<h2 class="fecha fecha_emision">
+		<em><%= @exit_order.sending_date.strftime("%d") %></em> 
+		<em><%= @exit_order.sending_date.strftime("%m")%></em>
+		<em><%= @exit_order.sending_date.strftime("%y")%></em>
+		</h2>		
+	</div>
+
+
+<div id="datos">
+  
+	<div id="domicilio_partida">
+      <%= @exit_order.store.address %>
+	</div>
+			
+  <div id="domicilio_llegada">
+      <%= @exit_order.client.name unless @exit_order.client.blank? %>
+	</div>
+
+	<div id="destinatario">
+      <%= @exit_order.driver_name %><br />
+      <%= @exit_order.driver_dni %>
+	</div>
+			
+	<div id="extra">
+      <%= @exit_order.extra_data %>
+	</div>			
+			
+</div>
+
+<div id="productos">
+  
+
+    <table>
+    	<thead>
+      	<tr>
+      		<th id="item" width="5"></th>		
+      		<th id="cantidad"></th>		
+      		<th id="codigo"></th>
+      		<th id="descripcion"></th>
+      		<th id="punit"></th>
+      		<th id="importe"></th>		
+      	</tr>
+    	</thead>
+    	<tbody>						
+      	<% i = 0 %>
+      	<% @exit_order.exit_order_details.each do |iod| %>
+        	<tr class="<%= cycle("even", "odd") -%>">
+
+          		<td><%= i+=1; i %></td>
+          		<td><%= iod.quantity %></td>
+          		<td><%= iod.product.code %></td>		
+          		<td><%= iod.product.name %> <br /><%= strip_tags(iod.product.description) if iod.product.print_description %></td>
+          		<td><%= iod.price  %></td>				
+          		<td><%= iod.subtotal %></td>	
+        	</tr>
+      	<% end %>
+    	</tbody>
+    </table>
+
+</div>
+
+<div id="totales">
+  
+
+  <table id="subtotals">
+  	<thead>
+  		<tr>
+  			<th id="total"></th>			
+  		</tr>
+  	</thead>
+  	<tbody>
+  		<tr>
+  			<td id="total">S/.<%= fill_zero(@exit_order.price.round(2)) %></td>			
+  		</tr>
+  	</tbody>
+  </table>
+
+  
+</div>
+

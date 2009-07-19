@@ -1,0 +1,30 @@
+<h2>Catálogo de Órdenes de Ingreso</h2>
+<table>
+	<thead>
+	<tr>
+		<th>C&oacute;digo</th>		
+		<th>Documento</th>				
+		<th>Fecha de Ingreso</th>
+		<th>Proveedor</th>
+		<th>Costo Total</th>
+		<th></th>
+		<th></th>		
+	</tr>				
+	</thead>
+	<tbody>		
+	<% @input_orders.each do |input_order| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= input_order.id %></td>		
+		<td><%= input_order.document %></td>				
+		<td><%= input_order.order_date.strftime("%d/%m/%y") %></td>
+		<td><div style="width:100px;"><%= input_order.provider.name %></div></td>
+		<td><%= input_order.cost %></td>
+		<td><%= link_to "editar", edit_input_order_catalogue_path(input_order.id) %></td>
+		<td><%= link_to 'eliminar', delete_input_order_catalogue_path(input_order.id), :confirm => '¿Seguro?', :method => :delete %></td>		
+	</tr>
+	<% end %>
+	</tbody>
+
+</table>
+
+	 <%= will_paginate @input_orders %>

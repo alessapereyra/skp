@@ -1,0 +1,8 @@
+	
+		<tr class="<%= cycle("even", "odd") -%>">
+			<td><%= product.code %></td>			
+			<td><%= product.name %></td>			
+			<td><%= link_to image_tag(product.picture.thumb.url, :width=>50), product.picture.url unless product.picture.nil? %></td>
+			<td><%= product.stock %></td>						
+			<td><%= link_to_remote "Seleccionar", :url=>{:action=>"add_to_quote",:id=>product.id},:method=>"post",:html=>{:class=>"form_button"} %></td>
+		</tr>

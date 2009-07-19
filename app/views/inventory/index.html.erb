@@ -1,0 +1,235 @@
+<%= content_tag(:h2, "Agregando Producto Nuevo ")%>
+
+<span id="messages"><%= flash[:notice] %></span>
+
+<%= errors_for(@product) %>
+<% form_for :product,  @product, :url=>{:action=>:create}, :html =>{:multipart => true} do |f|%>
+<fieldset id="fieldset_product">
+	<legend>Datos de Producto</legend>
+<p>Ingrese los datos del producto a insertar</p>
+	<dl>
+
+		<div class="single_column_left">
+			<dt><%= f.label :name, "Nombre" -%></dt>	
+			<dd><%= f.text_field :name -%></dd>
+		</div>
+
+		<div class="single_column_left">
+			<dt class><%= f.label :code, "C&oacute;digo" %></dt>
+			<dd class><%= f.text_field :code %></dd>
+		</div>	
+		
+
+		<div class="single_column_left">
+				<dt><%= f.label :visible, "¿Visible en la web?" %></dt>
+				<dd><%= f.check_box :visible %></dd>
+			</div>
+
+		<div style="clear:both"></div>
+		
+		<div class="single_column_left">
+		
+				<dt>
+					<%= f.label :category_id, "Categoría:" %>
+				</dt>
+
+				<dd>
+					<%= f.collection_select :category_id, Category.find(:all, :conditions=>"category_id IS NULL"),:id,:name, :prompt=>"Elegir una categoría" %>
+				</dd>
+
+		</div>
+
+		<div class="single_column_left">
+		
+				<dt>
+					<%= f.label :subcategory_id, "Subcategoría:" %>
+				</dt>
+
+				<dd>
+					<%= f.collection_select :subcategory_id, Category.find(:all, :conditions=>"category_id IS NOT null"),:id,:complete, :prompt=>"Elegir una subcategoría" %>
+				</dd>
+
+		</div>
+
+			<div class="single_column_left">
+
+					<dt>
+						<%= f.label :brand_id, "Marca:" %>
+					</dt>
+
+					<dd>
+						<%= f.collection_select :brand_id, Brand.find(:all),:id,:name, :prompt=>"Elegir una marca" %>
+					</dd>
+
+			</div>
+
+		
+		<div class="single_column_left">
+				<dt><%= f.label :description, "Descripción" -%></dt>
+				<dd><%= f.text_area :description, :rows=>3,:maxrows=>3, :style=>"height:50px;" -%></dd>
+		</div>	
+
+
+		<div style="clear:both"></div>
+
+			<div class="single_column_left">
+				<dt><%= f.label :sex, "Sexo:" %></dt>
+				<dd><%= f.select :sex, ["masculino","femenino","unisex"].collect {|x| [x.humanize, x]}, :include_blank=>true %></dd>
+			</div>
+
+
+		<div class="single_column_left">
+			<dt><%= f.label :picture, "Foto" %></dt>
+			<dd><%= upload_column_field 'product', 'picture' %></dd>
+		</div>
+		<div class="single_column_left">
+			<dt><%= f.label :warehouse_place, "Ubicaci&oacute;n en Almac&eacute;n" %></dt>
+			<dd><%= f.text_field :warehouse_place %></dd>
+		</div>
+		<div style="clear:both;"></div>
+		<div class="single_column_left">
+			<dt><%= f.label :height, "Alto:" %></dt>
+			<dd><%= f.text_field :height, :class=>'small_fields' %></dd>
+		</div>
+
+		<div class="single_column_left">
+			<dt><%= f.label :length, "Largo:" %></dt>
+			<dd><%= f.text_field :length, :class=>'small_fields' %></dd>
+		</div>
+
+		<div class="single_column_left">
+			<dt><%= f.label :width, "Ancho:" %></dt>
+			<dd><%= f.text_field :width, :class=>'small_fields' %></dd>
+		</div>
+		<div style="clear:both;"></div>
+		<div class="single_column_left">
+			<dt><%= f.label :age_from, "Desde" %></dt>
+			<dd><%= f.select :age_from, (0..18).collect {|x| [x, x]},:class=>'small_fields' %> años</dd>
+		</div>
+
+		<div class="single_column_left">
+			<dt><%= f.label :age_to, "Hasta" %></dt>
+			<dd><%= f.select :age_to, (0..18).collect {|x| [x, x]},:class=>'small_fields' %> años</dd>
+		</div>
+		
+		</dl>
+	</fieldset>
+	
+	<fieldset id="fieldset_product_input_order">
+	<legend>Datos de Ingreso</legend>
+		<div class="single_column_left">
+
+
+			<dt>
+					<%= label :input_order_detail, :additional_code, "C&oacute;digo Proveedor" %>
+			</dt>
+
+			<dd>
+					<%= text_field :input_order_detail, :additional_code,:class=>'small_fields' %>
+			</dd>
+
+
+
+		</div>
+		
+		<div class="single_column_left quantity">
+			
+			<dt>
+				<%= label :input_order_detail, :quantity, "Cantidad:" %>
+			</dt>
+								
+			<dd>
+				<%= text_field :input_order_detail, :quantity, :class=>'small_fields' %>					
+			</dd>	
+
+		</div>
+
+		<div class="single_column_left">
+			
+
+			<dt>
+					<%= label :input_order_detail, :cost, "Precio de Costo" %>
+			</dt>
+			
+			<dd>
+					<%= text_field :input_order_detail, :cost, :id=>"buying_price",:class=>'small_fields' %> 
+			</dd>
+
+			
+			
+		</div>
+
+		<div class="single_column_left first">
+
+			<dt class="odd">
+				<%= label :price, :amount, "Precio Base:" %>	
+			</dt>
+
+			<dd  class="odd">
+			<%= text_field :price, :amount, :id=>"base_price",:class=>'small_fields' %> 
+			</dd>
+		
+		</div>
+
+	
+		<div style="clear:both;"></div>
+					<% fields_for :price, @price do |p| %>
+	
+
+						<div class="single_column_left second">
+						
+						<dt class="odd">
+							<%= label_tag 'input_order[boxed_price]', 'Precio Mayorista:' %>
+						</dt class="odd">
+
+						<dd class="odd">
+						<%= text_field_tag 'input_order[boxed_price]', nil, :class=>'small_fields input_order_boxed_price' %> 
+						</dd>
+						</div>							
+
+						<div class="single_column_left third">							
+						<dt class="odd">
+							<%= label_tag 'input_order[wholesale_price]', 'Precio Corporativo:' %>								
+						</dt>						
+						<dd class="odd">
+						<%= text_field_tag 'input_order[wholesale_price]', nil, :class=>'small_fields input_order_wholesale_price' %> 
+						</dd>
+						</div>				
+						
+						<div class="single_column_left fourth">
+						<dt class="odd">
+							<%= label_tag 'input_order[final_price]', 'Precio El Trigal:' %>
+						</dt>
+
+						<dd class="odd">
+						<%= text_field_tag 'input_order[final_price]', nil, :class=>'small_fields input_order_final_price' %> 
+						</dd>
+						</div>				
+						
+						<div class="single_column_left fourth">
+						<dt class="odd">
+							<%= label_tag 'input_order[final_price_polo]', 'Precio El Polo:' %>
+						</dt>
+
+						<dd class="odd">
+						<%= text_field_tag 'input_order[final_price_polo]', nil, :class=>'small_fields input_order_final_price_polo' %>
+						</dd>
+						</div>
+										
+					<% end %>
+					
+					
+				
+	</fieldset>
+
+
+	<span id="messages"></span>
+	<span id="product_error"></span>
+	
+	<div id="endzone">
+		<%= f.submit "agregar", :url=>{:action=>"add_another"},:class=>"form_button", :confirm=>'¿Finalizar creaci&oacute;n de nuevo producto?' -%> <p>o <%= link_to "regresar a orden", input_orders_path, :class=>'button' %></p>
+	</div>
+	
+	<% end %>
+	
+	

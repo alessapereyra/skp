@@ -1,0 +1,807 @@
+/* @override http://localhost:3000/stylesheets/skykids/style.css */
+
+body {
+margin: 0px 0px;
+padding: 0px;
+background: #f3f7e8 repeat-x;
+	font: normal 62.5% "Lucida Grande", Lucida, Verdana, sans-serif;
+	
+
+}
+
+
+
+div#header {
+	min-width: 720px;
+	width: 100%;
+	margin: 0px;
+	background: black repeat-x;
+	overflow: hidden;
+}
+
+div#header h1 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 15px;
+	text-align: right;
+	color: white;
+	float: right;
+	font-weight: normal;
+	font-style: normal;
+}
+
+div#header div#navigation{
+	width: 720px;
+	margin: 0 auto;
+	height: 60px;
+	overflow: hidden;
+}
+
+div#header ul#menu {
+	background: black url(../../images/skykids/menu-background.gif) repeat-x;
+	margin: 25px 0px 0px;
+	padding: 0px;
+}
+
+#product_error em,
+#messages em
+{
+	background: #fbd2b4;
+	padding: 10px 5px;
+	clear: both;
+	display: block;
+	border: 1px solid #f24558;
+	text-align: center;
+	color: #e0002c;
+	margin: 10px 0px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1em;
+	text-transform: lowercase;
+}
+
+span#messages em {
+	
+	display: block;
+	padding: 10px 20px;
+	text-align: center;
+	text-transform: lowercase;
+	background-color: #e6ffb2;
+	border: 1px solid #ecd955;
+	margin: 20px 0;
+}
+
+
+div#header ul#menu li,
+div#header ul#submenu li {
+	float: left;
+	list-style: none;
+	margin-right: 1px;
+}
+
+div#header ul#menu li a {
+	display: block;
+	color: white;
+	text-decoration: none;
+	padding: 10px 25px;
+	background-color: #3f3f3f;
+	font: normal normal 1.2em "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+div#header ul#menu li a:hover {
+	color: white;
+	background: #a04b53;
+}
+
+div#header div#subnavigation {
+	background: url(../../images/skykids/menu-background.gif) repeat-x;
+	height: 24px;
+	padding-top: 10px;
+}
+
+div#header ul#submenu {
+	width: 720px;
+	margin: 0px auto;
+	overflow: hidden;
+	padding: 0px;
+}
+
+div#header ul#submenu div#submenu {
+	overflow: hidden;
+}
+
+div#header ul#submenu div#submenu ul li {
+	float: left;
+	overflow: hidden;
+}
+
+
+div#header ul#submenu div#submenu ul li a{
+	display: block;
+	height: 100%;
+	padding: 5px 15px;
+	margin: 0px;
+	margin-top: 1px;
+	text-transform: lowercase;
+	background-color: #c8c0c1;
+	color: #666350;
+}
+
+div#header ul#submenu div#submenu ul li a:hover{
+	background-color: #a0999b;
+	color: white;
+}
+
+div#header ul#submenu li {
+	float: right;
+}
+
+div#header ul#submenu li#opciones a {
+	background: url(../../images/skykids/preferences.png) no-repeat;
+	height: 20px;
+	padding-left: 20px;
+}
+
+div#header ul#submenu li#logout {
+	border-left: 1px solid #aeb68f;
+}
+
+div#header ul#submenu li a {
+	display: block;
+	text-decoration: none;
+	font-size: 1.1em;
+	color: #778905;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+div#header ul#submenu li a:hover {
+	color: #e9ffb1;
+}
+
+
+div#wrapper {
+	overflow: hidden;
+	width: 780px;
+	margin: 0 auto;
+
+}
+
+body#products ul#menu li#mantenimiento a,
+body#sales ul#menu li#ventas a,
+body#reports ul#menu li#reportes a,
+body#buying_orders ul#menu li#ingresos a,
+body#sending ul#menu li#envios a,
+body#providers ul#menu li#proveedores a,
+body#stores ul#menu li#tiendas a,
+body#acceptance ul#menu li#ingresos a,
+body#catalogue ul#menu li#catalogo a {
+	background: #c5d75b;
+	color: #505c41;
+}
+
+body#acceptance div#submenu ul li a.active,
+body#buying_orders div#submenu ul li a.active,
+body#sales div#submenu ul li a.active {
+	background: #f3f7e8 repeat-x !important;
+	color: #778905 !important;	
+}
+
+
+
+
+div#content {
+	overflow: hidden;
+	height: 100%;
+	min-height: 500px;
+	margin-top: 40px;
+}
+
+div#detalle {
+	overflow: auto;
+	width: 100%;
+}
+
+div#detalle table {
+	overflow: auto;
+	width: 100%;
+}
+
+form#new_input_order.new_input_order input.input_order_detail_submit {
+	margin: 0px;
+	margin-right: 10px;	
+	margin-top: 20px;
+	float: right;
+	width: 120px;
+	clear: both;
+}
+
+div#content a {
+	color: #d2992a;
+	font-size: 1.1em;
+	padding: 10px;
+	display: block;
+	width: 150px;
+	margin-bottom: 20px;
+	text-decoration: none;
+}
+
+
+div#content a.more_link {
+	text-align: right;
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	float: right;
+}
+
+div#content  a:hover {
+	text-decoration: none;
+	color: #496691;
+}
+
+div#content h2 {
+	font-weight: lighter;
+	color: #436594;
+	font-size: 2em;
+	margin-top: 0px;
+	margin-bottom: 5px;
+	clear: both;
+	padding-bottom: 20px;
+
+}
+
+div#content table {
+
+	margin: 10px 0;
+	margin-bottom: 30px;
+	width: 100%;
+}
+
+div#content div#content_sidebar div#remark table {
+	width: 100%;
+}
+
+div#content table tbody td a {
+	margin: 0px;
+	display: inline;
+	font-size: 1em;
+}
+
+div#content table tr th {
+	background: white;
+	margin: 0px;
+	padding: 5px 10px;
+	text-align: center;
+	color: white;
+} 
+
+
+div#content table tr th {
+	background: white url(../../images/skykids/menu-background.gif);
+	margin: 0px;
+	padding: 10px 20px;
+	color: #494744;
+	text-align: center;
+	font-weight: normal;
+	font-style: normal;
+} 
+
+
+div#content table tr td {
+	padding: 7px 20px;
+	color: black;
+	text-align: center;
+
+} 
+
+div#content table tbody tr.odd td {
+
+	background-color: #ddf0d8;
+}
+
+
+div#content div#content-inside div.errors {
+	color: #ce4b00;
+	margin-top: 15px;
+	font-size: 1.2em;
+}
+
+div#content div#content-inside div.errors li {
+	list-style-type: square;
+	margin-bottom: 10px;
+}
+
+div#footer {
+	clear: both;
+	width: 600px;
+	margin: 20px auto;
+margin-top: 40px;
+	color: #7b7474;
+	padding: 0px;
+	text-align: center;
+	font-size: 1.2em;
+	border-top: 2px solid #c2c2c2;
+	padding-top: 15px;
+}
+
+div#footer p {
+	margin: 0px;
+}
+
+div#footer a {
+	color: #b10000;
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+	font: bold 1.4em "Courier New", Courier, mono;
+	text-transform: lowercase;
+}
+
+
+
+/* FORM STYLING */
+
+div#content-sidebar input,
+div#content-sidebar textarea,
+div#content-sidebar select{
+	width: 220px;
+}
+
+
+fieldset {  
+margin: 0px auto;  
+margin-bottom: 35px;
+border: 1px solid #d8d3ce;
+font-size: 1.1em;
+padding: 10px 15px;
+background-color: white;
+} 
+
+
+
+fieldset p,
+p {
+	margin: 0px;
+	color: #909090;	
+	font-size: 1em;
+}
+
+ul#pending_orders {
+width: 100%;	
+padding: 0px;
+}
+
+ul#pending_orders li {
+	list-style: none;
+	display: block;
+	border-top: 1px solid #d0d0d8;
+	overflow: auto;
+	padding: 10px;
+}
+
+ul#pending_orders li p{
+	margin-top: 0px;
+	width: 50%;
+	float: left;
+	font-size: 1.2em;
+	color: #707070;
+	padding-top: 7px;
+	margin-bottom: 0px;
+}
+
+ul#pending_orders li em {
+	color: #0092aa;
+	font-weight: normal;
+	font-style: normal;
+}
+
+ul#pending_orders li a,
+a.form_button {
+	display: block;
+	font-size: 1em;
+	width: 100px;
+	text-align: center;
+	height: 10px;
+	background-color: #468ca9;
+	color: white;
+	border: 1px solid #7fa9fa;
+	float: right;
+	margin: 0px;
+}
+
+a.form_button {
+	color: white !important;
+	font-size: 1em !important;
+	clear: both !important;
+	display: block !important;
+	
+}
+
+ul#pending_orders li a:hover,
+a.form_button:hover {
+	background-color: #2e5c70;
+	color: white;
+}
+
+
+ul#pending_orders li.odd {
+		background-color: #ecedff;
+	border-top: 1px solid #85c6da;
+}
+
+fieldset div.column-left,
+fieldset div.column-right {
+	float: left;
+	width: 370px;
+	overflow: auto;
+}
+
+fieldset div.first-column {
+	float: left;
+	width: 370px;
+	height: 60px;
+	overflow: hidden;
+}
+
+fieldset div.first-column dt {
+	width: 120px;
+	overflow: hidden;
+}
+
+fieldset div.first-column dd {
+	width: 220px;
+	overflow: auto;
+	height: 70px;
+}
+
+fieldset div.first-column dd input{
+	margin-bottom: 7px !important;
+}
+
+fieldset div.first-column dd a{
+	display: block !important;
+	clear: both !important;
+	margin: 0px !important;
+
+}
+
+fieldset div.small-column {
+	float: left;
+	overflow: auto;
+	width: 170px;
+}
+
+fieldset div.small-column.first {
+	width: 200px;
+}
+
+fieldset dl fieldset div.small-column.first dd input,
+fieldset dl fieldset div.small-column.second dd input,
+fieldset dl fieldset div.small-column.third dd input,
+fieldset dl fieldset div.small-column.fourth dd input
+ {
+	width: 40px !important;
+}
+
+div.small-column.third {
+	width: 90px;
+}
+
+div.small-column.third dd {
+	width: 110px;
+}
+
+fieldset div.small-column.first dt {
+	padding-left: 70px;
+}
+fieldset div.small-column.first dd {
+	width: 70px;
+}
+
+fieldset div.small-column.second {
+	width: 163px;
+}
+
+fieldset div.small-column.second dt {
+	padding-left: 18px;
+}
+
+fieldset div.small-column.second dd {
+	width: 85px;
+}
+
+fieldset div.small-column.third {
+	width: 175px;
+}
+
+fieldset div.small-column.third dt {
+	padding-left: 5px;
+}
+
+fieldset div.small-column dt {
+	width: 50px;
+}
+
+fieldset div.small-column dd {
+	width: 110px;
+	overflow: hidden;
+	padding-left: 10px;
+}
+
+fieldset dl fieldset {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	border: none;
+	clear: both;
+	font-size: 1em;
+	background-color: white;
+}
+
+fieldset fieldset legend {
+	font-size: 1em;
+	margin-left: 20px;
+	display: block;
+}
+
+#messages em a {
+	display: inline;
+	font-size: 1em;
+	padding: 0px;
+	color: #6f748d;
+	text-decoration: underline;
+}
+
+#general dl {
+	overflow: hidden;
+	font-size: 1.1em;
+	color: #787878;
+}
+
+#general dt {
+	float: left;
+	display: block;
+	height: 25px;
+	clear: both;
+	text-align: right;
+	width: 140px;
+}
+
+#general dd {
+	float: left;
+	display: block;
+	margin-left: 12px;
+	color: #436594;
+	
+}
+
+h3#subtotal {
+	text-align:right;
+	margin: 10px 20px;
+	margin-right: 50px;
+	color: #b5161f;
+	font-weight: normal;
+	font-style: normal;
+	clear: both;
+	display: block;
+	font-size: 1.3em;
+}
+
+
+fieldset dt.first,
+fieldset dd.first {
+	border: none;
+}
+
+fieldset dl {
+	float: left;
+	margin: 15px auto;
+	width: 740px;
+	padding: 0px 0px;
+}
+
+fieldset dt {
+	padding: 0px 0px;
+/*	border-top: 1px solid #d9d8d0;*/
+	clear: both;
+	float: left;
+	text-align: right;
+	padding-top: 20px;
+	padding-bottom: 27px;
+	color: #595051;
+	background-color: white;
+}
+
+fieldset div.single_column,
+fieldset div.single_column_left {
+	width: 100%;
+	float: left;
+	overflow: auto;
+	clear: both;
+	
+}
+
+fieldset div.single_column dt {
+	width: 270px;
+}
+
+fieldset div.single_column dd {
+	width: 415px;	
+}
+
+fieldset div.single_column_left dt {
+	width: 120px;	
+}
+
+fieldset div.single_column_left dd {
+	width: 570px;	
+}
+
+fieldset div.column-left dt,
+fieldset div.column-right dt{
+	width: 120px;
+}
+
+fieldset div.column-left dd,
+fieldset div.column-right dd{
+	width: 220px;
+}
+
+div#content form fieldset dl div.column-left dd select,
+div#content form fieldset dl div.column-left dd input,
+div#content form fieldset dl div.column-right dd select,
+div#content form fieldset dl div.column-right dd input {
+	
+	width: 180px;
+}
+
+fieldset dd {
+	float: left;
+/*	border-top: 1px solid #d9d8d0;*/
+	padding-top: 5px;
+	margin: 0px;
+	padding-left: 30px;
+	background-color: white;
+	height: 54px;
+	color: #595051;	
+}
+
+
+
+
+form fieldset dl dd a {
+	display: inline !important;
+	margin: 15px 0px !important;
+	margin-right: 50px !important;
+	margin-left: 20px !important;
+	padding: 0px !important;
+	font-size: 1em !important;
+}
+
+fieldset dt.odd,
+fieldset dd.odd {
+	background-color: #ecedff;
+	border-top: 1px solid #85c6da;
+}
+
+fieldset dd.odd {
+	height: 55px;
+}
+
+legend,
+h3  {  
+color: #000;
+margin: 0px;
+padding: 0px;
+overflow: auto;
+	font: 1.5em "Lucida Grande", Lucida, Verdana, sans-serif;
+} 
+
+table td{
+	font-size: 2em !important;
+}
+
+legend em {
+	margin-right: 20px;
+	color: #cfcfcf;
+	font: normal normal 1.2em/1px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+
+fieldset.submit {  
+border-style: none; 
+}
+
+
+
+div#content form {
+	margin: 30px 0px;
+	margin-top: 0px;
+
+}
+
+div#content input,
+div#content textarea,
+div#content select{
+	margin-bottom: 20px;
+	margin-top: 10px;
+	color:  #79778a;
+	padding: 4px;
+	outline: 0px;
+	border: 1px solid #b6acac;
+	background-color: #fffefb;
+    width: 190px;
+	
+
+}
+
+
+div#content div.small_fields {
+	float: left;
+}
+
+div#content div.small_fields input  {
+	width: 30px !important;
+	margin-right: 10px !important;
+}
+
+
+div#content input.small_fields {
+	width: 50px;
+}
+
+
+div#content div.small_fields select {
+	width: 60px !important;
+	margin-right: 5 px !important;
+}
+
+div#content form select {
+	color: black;
+	height: 25px;
+	width: 310px;
+}
+
+
+div#content div#content-inside form a.button {
+	border: 1px solid #b6acac;
+	background-color: #fceef1;
+	font-size: 1em !important;
+	color:  #79778a;
+	width: 80px;
+	text-align: center;
+	padding: 5px 25px;
+}
+
+div#content form textarea {
+	width: 300px;
+	height: 100px;
+	clear: both;	
+}
+
+
+div#content form input.active,
+div#content form textarea.active,
+div#content form select.active {
+	background-color: #fcfd9e;
+}
+
+div#content input.form_button {
+	width: 120px;
+	height: 30px;
+	background-color: #468ca9;
+	padding: 5px;
+	margin: 0px;
+	color: white;
+	border: 1px solid #7fa9fa;
+	float: right;
+	cursor: pointer;
+
+}
+
+div#content input.form_button:hover {
+	background-color: #2c586b;
+}

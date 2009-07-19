@@ -1,0 +1,29 @@
+<h2>Catálogo de Órdenes de Env&iacute;o</h2>
+<table>
+	<thead>
+	<tr>
+		<th>Documento</th>		
+		<th>Origen</th>
+		<th>Fecha de Salida</th>
+		<th>Destino</th>
+		<th></th>
+		<th></th>		
+	</tr>				
+	</thead>
+	<tbody>		
+	<% @sending_guides.each do |sending_guide| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= sending_guide.document %></td>		
+		<td><%= sending_guide.store.name %></td>				
+		<td><%= sending_guide.sending_date.strftime("%d/%m/%y") %></td>
+		<td><div style="width:100px;"><%= sending_guide.client.name unless sending_guide.client.blank? %></div></td>
+		<td><%= link_to "editar", edit_admin_sending_guide_catalogue_path(sending_guide.id) %></td>
+		<td><%= link_to 'eliminar', delete_admin_sending_guide_catalogue_path(sending_guide.id), :confirm => '¿Seguro?', :method => :delete %></td>				
+	</tr>
+	<% end %>
+	</tbody>
+	
+
+
+</table>
+		 <%= will_paginate @sending_guides %>

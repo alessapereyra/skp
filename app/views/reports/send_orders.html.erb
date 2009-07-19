@@ -1,0 +1,30 @@
+<h2>Reporte de Órdenes de Salida a Tienda</h2>
+<table>
+	<thead>
+	<tr>
+		<th>Documento</th>
+		<th>Origen</th>				
+		<th>Fecha de Salida</th>
+		<th>Destino</th>				
+		<th>Fecha de Recepción</th>		
+		<th></th>
+		
+	</tr>
+	</thead>
+	<tbody>						
+	<% @send_orders.each do |order| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= order.document %></td>
+		<td><%= order.owner.name %></td>		
+		<td><%= order.send_date.strftime("%d/%m/%y") unless order.send_date.nil? %></td>
+		<td><%= order.store.name %></td>				
+		<td><%= order.received_date.strftime("%d/%m/%y") unless order.received_date.nil? %></td>		
+		<td><%= link_to "Ver orden", send_order_report_path(order.id) %></td>
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+
+<div id="endzone">
+  <%= link_to "Regresar", reports_path %>
+</div>

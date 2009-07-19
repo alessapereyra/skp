@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<title>Skykids :: Intranet </title>	
+	<%= stylesheet_link_tag 'jquery.ui.autocomplete', "nextgen/style.css" %>
+	<%= stylesheet_link_tag('print', :media => :print) %>
+	
+	<!--[if IE]>       
+			<%= stylesheet_link_tag "msie.css" %>
+		<![endif]-->
+		
+<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js", "javascripts.min","application"  %>
+  	<%= include_tiny_mce_if_needed %>
+	</head>
+	<body id="<%= params["controller"] -%><%= yield :report_title -%>">
+
+		<div id="header">
+			
+
+			<h1>Ventas Skykids</h1>
+
+			<div id="navigation">
+				
+
+				<ul id="menu">
+					
+					<% unless current_store == 4 or store? %>
+						<li id="ventas"><%= link_to "ventas", sales_path %></li>
+					<% end %>
+					
+					<li id="catalogo"><%= link_to 'catalogo', catalogue_path %></li>														
+
+					<% unless current_store == 4  %>					
+
+						<% unless store? %>
+							<li id="ingresos"><%= link_to "ingresos", input_orders_path %></li>
+
+						<% else %>
+
+							<li id="ingresos"><%= link_to "ingresos", acceptance_path %></li>										
+
+						<% end %>
+
+						<li id="envios"><%= link_to "salidas", sending_path %></li>													
+					<% end %>
+					
+					<li id="reportes"><%= link_to 'reportes', reports_path %></li>				
+					
+					<% if logged? && (admin? || store_admin? || store_supervisor?)  %>									
+						<li id="inventario"><%= link_to 'etiquetas', tags_path %></li>	
+						<li id="mantenimiento"><%= link_to 'admin', products_path %></li>
+					<% end %>
+					
+					<% if logged? && admin?  %>									
+						<li id="seguridad"><%= link_to 'seguridad', users_path %></li>					
+					<% end %>					
+				</ul>
+			
+		
+			</div> <!-- div navigation -->			
+
+
+			<div id="subnavigation">
+
+				<ul id="submenu">
+					<li><div id="divsubmenu"><%= menues_for(params[:controller]) %></div></li>									
+				</ul>
+				
+				<ul id="options">
+				
+				<% if logged? %>
+					<li id="info">
+						<%= User.find_by_username(session[:logged_user]).username %> desde <%= Store.find(session[:current_store_id]).name %>
+					</li>
+				<% end %>
+					<% if logged? && admin? %>
+					<li id="stores_select">
+						<% form_for :options, Options, :url=>{:controller=>'application',:action=>'change_store'} do |f| %>
+						<%= select_tag 'options_current_store', 
+						options_from_collection_for_select(Store.find(:all),'id','name',session[:current_store_id]) 
+						%>
+						<% end %>
+					<% end %></li>
+					<li id="logout"><%= link_to 'logout',logout_path %></li>					
+				</ul>
+				
+			</div> <!-- div subnavigation -->
+
+
+		</div> <!-- div header -->
+
+		<div id="wrapper">
+
+			<div id="content">
+
+				<%= yield -%>
+
+			</div> <!-- div content -->
+
+		</div>	<!-- div wrapper -->
+		
+		<div id="close_wrapper">SKYKIDS INTRANET VENTAS</div>
+
+		<div id="footer">
+
+			<p>Skykids Intranet - 2008 - versión 1.0. Un proyecto realizado con pasión por <a href="http://www.srdperu.com">{SRD}</a></p>
+
+		</div> <!-- footer -->
+
+	</body>
+	</html>

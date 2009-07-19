@@ -1,0 +1,11 @@
+<%= content_tag(:h2, "Reportes ")%>
+<span id="messages"><%= flash[:message] %></span>
+
+<%= render :partial =>'pending_send_orders' %>
+
+<%= render :partial =>'last_send_orders' %>
+
+<%= render :partial =>'last_sending_guides' %>
+
+<%= render :partial =>'last_input_orders' %>
+

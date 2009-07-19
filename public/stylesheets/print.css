@@ -1,0 +1,692 @@
+/* @override 
+	http://www.skykidsperu.com/stylesheets/print.css
+	http://skykidsperu.com/stylesheets/nextgen/style.css
+	http://localhost:3000/stylesheets/print.css
+	http://www.skykidsperu.com/stylesheets/nextgen/style.css
+	http://localhost:3000/stylesheets/nextgen/style.css
+	http://localhost:3000/stylesheets/nextgen/style.css?1227801157
+	http://localhost:3000/stylesheets/print.css?1229707046
+*/
+
+body {
+	margin: 0px;
+	font: bold 64% "Courier New", Courier, mono;
+	letter-spacing: 5px;
+	
+}
+
+body#inventory {
+	font: 10px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif !important;
+	letter-spacing: 0px;
+}
+
+body#reports-factura,
+body#reports-boleta,
+body#reports-nota_de_credito {
+	/*font: 12px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif !important; */
+		font: 10px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif !important;
+	letter-spacing: 0px;
+
+
+}
+
+
+h2 {
+	margin: 0px;	
+	display: none;
+}
+
+div#header,
+div#close_wrapper,
+div#footer,
+div#footnotes_debug,
+div#endzone {
+	display: none;
+}
+
+div#wrapper {
+	background-color: #fffd9e;
+	width: 22cm;
+/*	height: 16.2cm;*/
+	position: absolute;
+	padding: 0px;
+	overflow: hidden;
+
+}
+
+	body#reports-factura div#wrapper, 
+	body#reports-boleta div#wrapper{
+		width: 22cm !important;
+		/* was 36 */
+		/* width: 31cm era */
+		height: 20cm;
+		/*margin-left: 80px; was */
+/*		margin-left:95px*/
+	}
+
+body#reports-boleta div#wrapper {
+	height: 15cm !important;
+}
+
+body#inventory div#wrapper {
+	/* height: 22.9cm; */
+	position: static;
+	width: 620px;
+}
+
+
+body#reports-guia_remision div#wrapper{
+	width: 31cm;
+	margin-left: 0.8cm;	 /* era 4 */
+}
+
+body#reports-facturas div#wrapper,
+body#reports-boleta div#wrapper{
+	width: 22cm !important;	
+}
+
+body#reports-boleta div#wrapper {
+	width: 21cm !important;
+}
+
+body#reports-factura table#detalle,
+body#reports-boleta table#detalle
+ {
+	overflow: auto;
+}
+
+tbody#contenido {
+	overflow: auto;
+	height: 600px;
+}
+
+
+div#content {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+body#inventory div#content {
+	position: static;
+	width: auto;
+}
+
+div#general {
+	padding: 0px;
+	margin: 0px;
+	margin-top: 3.8cm;
+	width: 100%;
+	margin-left: 1cm;
+}
+
+body#reports-factura div#general{
+	margin-top: 200px; 
+/*margin-top: 180px !important; */
+	margin-top: 3.1cm;
+	margin-left: 110px;
+	margin-left: 2.5cm;	
+}
+
+body#reports-boleta div#general{
+	margin-top: 2cm;
+	margin-left: 110px;
+	
+}
+
+div.guia_remision div#general {
+	margin-top: 4.1cm !important;	
+}
+
+div#general dl dt {
+	display: none;
+}
+
+div#general dl dd {
+	height: 0.7cm;
+	margin: 0px;
+	font-size: 1.2em;
+	
+}
+
+body#reports-guia_remision div#general dl dd{
+	font-size: 1em !important;
+}
+
+body#reports-factura dl dd,
+body#reports-boleta dl dd {
+	height: 0.7cm;
+}
+
+body#reports-boleta dl dd#ruc {
+	display: none;
+}
+
+div#general dl dd#date {
+	position: absolute;
+	right: 0.1cm;
+	font-size: 2em;
+	top: 5.9cm;
+	width: 190px;
+}
+
+div.guia_remision div#general dl div#date { font-size: 1em;
+
+}
+
+body#reports-factura dd#date
+ {
+		right:1.3cm !important;
+	font-size: 1.8em !important;
+	top: 4.2cm !important;
+	width: 210px !important;/* era 200px */
+}
+
+
+body#reports-boleta dd#date{
+	right:1.0cm !important;
+	font-size: 1.8em !important;
+	top: 3.0cm !important;
+	width: 190px !important;
+	
+}
+
+div#general dl dd#date em {
+	width: 1.7cm;
+	font-weight: normal;
+	font-style: normal;
+	display: block;
+	text-align: right;
+	float: left;
+}
+
+body#reports-factura div#general dl dd#date em,
+body#reports-boleta div#general dl dd#date em {
+	width: 1.8cm;
+	width: 1.4cm;
+	font-weight: normal;
+	font-style: normal;
+	display: block;
+	text-align: right;
+	float: left;
+}
+
+body#reports-boleta div#general dl dd#date em {
+	width: 1.3cm;
+	font-weight: normal;
+	font-style: normal;
+	display: block;
+	text-align: right;
+	float: left;
+}
+
+body#reports-factura div#general dl dd#date em {
+	width: 1.2cm;
+	font-weight: normal;
+	font-style: normal;
+	display: block;
+	text-align: right;
+	float: left;
+}
+
+div#general dl dd#date span {
+	display: none;
+}
+
+div#content table#detalle {
+	width: 100%;
+	margin-left: 0cm;
+	text-align: left;
+	margin-top: -10px; /* was -10 */
+}
+
+div#content div#table_detalle {
+		height: 6cm;
+		
+}
+
+body#reports-factura div#content div#table_detalle{
+		height: 6.7cm; /* era 6cm */
+		height: 5.8cm; /* era 6cm */
+
+		margin-top: 30px; /* era 15*/
+		margin-top:0.3cm;
+}
+
+
+body#reports-boleta div#table_detalle table#detalle {
+	width: auto !important;
+}
+
+
+body#reports-boleta div#content div#table_detalle  
+{
+		height: 5.7cm;
+		margin-top: 40px;
+}
+
+p#letters {
+	margin: 0px;
+	margin-left: 20px;
+	text-indent: 15px;
+	word-spacing: 10px;
+	font-size: 1.2em;
+}
+
+div#content table thead {
+   
+   visibility: hidden;
+	
+} 
+
+div#content table thead tr {
+		vertical-align: top;
+	
+}
+
+div#content table thead tr th {
+		vertical-align: top;
+		font-size: 0.1em;
+}
+
+
+div#content table thead th#cantidad {
+	width: 1.4cm;
+}
+
+div#content table tbody td {
+	height: 5px !important;
+	word-spacing: 5px;
+	font-size: 1.2em;
+}
+
+
+
+div#content table thead th#count {
+	width: 10px !important;
+}
+
+body#reports-boleta div#content table thead th#count {
+	width: 1px !important;
+}
+
+
+body#reports-factura div#content table thead th#count,
+body#reports-boleta div#content table thead th#count {
+	width: 45px !important;
+}
+
+body#reports-factura  div#content table thead th#count {
+	width: 1px !important;
+}
+
+
+
+div#content table thead th#unidad {
+	width: 1cm;
+}
+
+div#content table thead th#codigo {
+	width: 2cm;
+}
+
+body#reports-factura div#content table thead th#unidad {
+	width: 0.2cm;
+}
+
+body#reports-factura div#content table thead th#cantidad,
+body#reports-boleta div#content table thead th#cantidad {
+	width: 1.5cm !important;
+}
+
+body#reports-boleta div#content table thead th#cantidad {
+	width: 0.8cm !important;
+}
+
+body#reports-factura div#content table thead th#cantidad {
+	width: 0.3cm !important;
+}
+
+
+div#content div.guia_remision table thead th#codigo {
+	width: 4cm;
+}
+
+body#reports-factura table thead th#codigo,
+body#reports-boleta table thead th#codigo{
+	width: 3cm !important;
+}
+
+body#reports-boleta table thead th#codigo{
+	width: 1cm !important;
+}
+
+body#reports-factura table thead th#codigo{
+	width: 1cm !important;
+	width: 1.5cm !important;	
+}
+
+div#content table thead th#descripcion {
+	width: 12.5cm;
+}
+
+
+
+div#content div.guia_remision table thead th#descripcion {
+	width: 22.5cm;
+}
+
+body#reports-factura div#content  table thead th#descripcion,
+body#reports-boleta div#content  table thead th#descripcion {
+	width: 13cm;
+}
+
+body#reports-boleta div#content  table thead th#descripcion {
+	width: 10cm;
+}
+
+body#reports-factura div#content  table thead th#descripcion {
+	width: 5.4cm;
+}
+
+
+div#content table thead th#unitario {
+	width: 2.0cm;
+}
+
+div#content table thead th#punit {
+	width: 3cm;
+	text-align: center;
+}
+
+body#reports-factura div#content table thead th#unitario {
+	width: 1cm !important;
+	text-align: center;
+}
+
+
+div#content table thead th#importe {
+	width: 2.3cm;
+	text-align: center;
+}
+
+div#content table thead th#cantidad {
+	width: 2.3cm !important;
+}
+
+
+
+div#content table thead th#cantidad {
+	width: 2.3cm !important;
+}
+table#subtotals {
+	position: absolute;
+	right: 0.5cm;
+	margin-top: 30px;
+}
+
+body#reports-factura table#subtotals {
+	position: absolute;
+/*	right: 0.5cm !important; */
+	right: 2.6cm !important;	
+	margin-top: 55px; /* 
+	
+	margin-top 30 */
+	margin-top: 0.7cm;  
+}
+
+body#reports-boleta table#subtotals{
+	position: absolute;
+	right: 1cm !important;
+	margin-top: 0.5cm;
+	
+}
+
+
+
+table#subtotals td {
+	width: 165px; /* era 120px */
+	font-size: 1.3em; /*era 1.5em */
+	text-align: right;
+}
+
+body#reports-factura table#subtotals td {
+	width: 2.2cm;
+	text-align: center;
+}
+
+body#reports-boleta td {
+	/*width: 1cm; */
+	
+}
+
+body#reports-boleta td#subtotal,
+body#reports-boleta td#igv {
+	display: none;
+}
+
+body#inventory div.ticket {
+
+	width: 270px;
+	margin-bottom: 30px;
+	margin-right: 70px; 
+	height: 140px;
+	display: inline-table;
+}
+
+body#inventory div.ticket.second {
+/*page-break-after:always;*/
+	margin-right: 0px;
+
+}
+
+body#inventory div.ticket p {
+	margin: 0px;
+}
+
+body#inventory div#logo {
+	width: 55px;
+	float: left;
+}
+
+body#inventory a.print.form_button {
+	display: none;
+}
+
+body#inventory div#ticket-content {
+	float: left;
+	width: 200px;
+	text-align: center;
+    font-weight:bold;
+}
+
+body#inventory div#ticket-content p {
+	font-size: 1.5em;
+    margin-left: 60px !important;
+	vertical-align: middle !important;
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+body#inventory div.ticket div#bottom p#codify {
+	font-size: 2.3em;
+	float: left;
+	clear: both;
+	margin-left: 10px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+body#inventory div#bottom {
+	clear: both;
+	overflow: auto;
+	height: 28px;
+}
+
+body#inventory div#bottom p#codify {
+	float: left;
+}
+
+body#inventory div#ticket-code p img.barcode {
+	width: 240px;
+	height: 40px;
+	background-color: black;
+	display: block;
+	overflow: auto;
+	clear: both;
+    margin: 0 auto;
+}
+
+body#inventory div#ticket-code p.product_code {
+	font-size: 1.6em;
+	margin-bottom: 0px;
+	text-align: center;
+        overflow:auto;
+        height:18px;
+     
+}
+
+body#inventory div#bottom p#price {
+	font-size: 2.3em;
+	font-style: normal;
+	margin-top: 0px;
+	float: right;
+	margin-right: 0px;
+	letter-spacing: 0;
+}
+
+body#inventory div#ticket_print {
+     width: 640px; 
+	margin-left: 40px;
+	margin-top: 15px;
+}
+
+
+div.guia_remision div#general {
+	margin-top: 3.7cm;
+	width: auto;
+	margin-left: 55px;
+}
+
+div.guia_remision div#general dl dd#date {
+	position: absolute;
+	right: 0.1cm;
+	font-size: 2em;
+	top: 4.9cm;
+	width: 190px;
+}
+
+div.guia_remision div#general dl dd#date em {
+	width: 1.6cm;
+	font-weight: normal;
+	font-style: normal;
+	display: block;
+	text-align: right;
+	float: left;
+}
+div#general dl dd#date span {
+	display: none;
+}
+
+div.guia_remision div#general h2.date {
+	display: block;
+}
+
+div.guia_remision div#general h2.date.fecha_emision {
+	float: left;
+	margin-left: 20px;
+}
+
+div.guia_remision div#general h2.date.inicio_traslado {
+float: right;
+margin-right: 440px;	
+}
+
+div.guia_remision div#general dl {
+	clear: both;
+	overflow: auto;
+	margin-top: 30px;
+}
+
+div.guia_remision div#general span {
+	display: none;
+}
+
+div.guia_remision div#general span {
+	display: none;
+}
+
+div.guia_remision div#general h2.date em {
+	margin-right: 17px;
+}
+
+div.guia_remision div#date {
+	margin-bottom: 20px;
+	overflow: auto;
+	font-size: 0.85em !important;
+}
+
+div.guia_remision div#general div#domicilio_partida {
+	width: 450px;	
+	margin-top: 10px;
+	text-align: center;
+	float: left;
+	height: 70px;
+	font-size: 1.3em;	
+	vertical-align: middle;
+	margin-left: 20px;
+}
+
+div.guia_remision div#general div#domicilio_llegada {
+	width: 500px; 	 /* era 450 */
+	margin-top: 10px; 
+	text-align: center;
+	float: right;
+	height: 70px; 
+	margin-right: 35px; /* era 75 */
+	font-size: 1.1em;	 /* era 1.3 */
+
+}
+
+div.guia_remision div#general div#destinatario {
+	width: 350px;
+	clear: both;	
+	margin-top: 10px;
+	text-align: center;
+	float: left;
+	height: 50px;
+	font-size: 1.2em;	
+
+}
+
+div.guia_remision table
+{
+	clear: both;
+	vertical-align: top;
+	font-size: 1.2em;
+	overflow: auto;
+	margin-left: 80px;
+}
+
+div.guia_remision table tbody {
+	/*height: 400px;    <---- único cambio */ 
+}
+
+div.guia_remision tbody td {
+	vertical-align: top;
+	font-size: 1em !important;
+}
+
+div#content div.guia_remision table thead {
+	height: 10px;
+}
+
+div#content div.guia_remision table thead tr {
+		height: 10px;
+	
+}
+
+.hide {
+	display: none;
+}

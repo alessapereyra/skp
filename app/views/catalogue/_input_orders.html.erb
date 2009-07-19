@@ -1,0 +1,41 @@
+<div class="section">
+
+<h3>Ingresos de Proveedor</h3>
+<table>
+	<thead>
+	<tr>
+		<th>Cantidad</th>		
+		<th>Fecha de Ingreso</th>
+		<th>Proveedor</th>		
+		<th>Documento</th>
+		<th>Precio Costo</th>
+		<th></th>
+
+	</tr>				
+	</thead>
+	<tbody>		
+		<% if @input_order_details.empty? %>	
+			<tr>
+			<td colspan="7">
+				<p>El producto nunca ha sido ingresado</p>
+			</td>
+			</tr>
+		<% else %>
+				
+	<% @input_order_details.each do |input_order_detail| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= input_order_detail.quantity %></td>		
+		<td><%= input_order_detail.input_order.order_date.strftime("%d/%m/%y") %></td>
+		<td><%= input_order_detail.input_order.provider.name %></td>
+		<td><%= input_order_detail.input_order.document %></td>		
+		<td><%= input_order_detail.cost %></td>				
+		
+		<td><%= link_to "ver orden", input_order_report_path(input_order_detail.input_order.id) %></td>
+	</tr>
+	<% end %>
+	
+	<% end %>
+	</tbody>
+
+</table>
+</div>

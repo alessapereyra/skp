@@ -1,0 +1,57 @@
+<%= content_tag(:h2, "Impresión etiquetas de Orden #{@input_order.id} ")%>
+
+
+<%= link_to "imprimir", url_for(:action=>'print_tags', :id=>@input_order.id), :class=>"form_button" %>
+
+<div style="clear:both;"></div>
+
+
+<div id="ticket_print">
+
+	
+<% @input_order.input_order_details.each do |iod| %>
+
+<% iod.quantity.to_i.times {  %>
+<div class="ticket <%= cycle("first","second")%>">
+	
+
+	<% unless iod.product.is_book? %>
+	<div id="logo">
+		<p> <%= image_tag ('http://www.skykidsperu.com/images/nextgen/logo-ticket.png') %></p>
+	</div>
+  <% end %>
+
+	<div id="ticket-content">
+		<p><%= iod.product.name.upcase %></p>
+    </div>
+
+	<div id="ticket-code">
+		<p> <%= image_tag (iod.product.barcode_filename.nil? ? "" : 'http://www.skykidsperu.com/'+iod.product.barcode_filename), :class => "barcode" %></p>
+		<p class="product_code"> <%= iod.product.code %></p>
+		
+	</div>
+
+	<div id="bottom">
+
+	  		<% unless iod.product.is_stationary? or iod.product.is_book? %>
+      		<% code = iod.product.current_prices(true,@input_order.store_id)[1] %>
+      		<p id="codify"><%= code.blank? ? "--" : codify(code.amount.round(2))  %></p>
+		
+      		<p id="price"> S/. <%= iod.product.store_price(@input_order.store_id).round(2) %></p>
+          <% else %>
+      	  <p id="codify"><%= iod.product.brand.name unless iod.product.brand.blank? %></p>
+	        <p id="price"><%= iod.product.category.name unless iod.product.category.blank? %></p>      	  
+      	
+      	<% end %>
+      	
+      	
+	</div>
+
+</div>
+
+<% } %>
+
+<% end %>
+
+</div>
+

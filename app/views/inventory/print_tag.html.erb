@@ -1,0 +1,40 @@
+<div id="ticket_print">
+	
+<% @copies.times {  %>
+<div class="ticket <%= cycle("first","second")%>">
+
+	<% unless @product.is_book? %>	
+	<div id="logo">
+		<p> <%= image_tag ('http://www.skykidsperu.com/images/nextgen/logo-ticket.png') %></p>
+	</div>
+	
+	<% end %>
+	
+	<div id="ticket-content">
+		<p><%= @product.name.upcase %></p>
+    </div>
+
+	<div id="ticket-code">
+		<p> <%= image_tag (@product.barcode_filename.nil? ? "" : 'http://www.skykidsperu.com/'+@product.barcode_filename ), :class => "barcode" %></p>
+		<p class="product_code"> <%= @product.code %></p  >
+		
+	</div>
+
+	<div id="bottom">
+	  
+		<% unless @product.is_stationary? or @product.is_book? %>
+		  <p id="codify"><%= codify(@product.current_prices(true,@store)[1].amount.round(2))  %></p>
+		
+		  <p id="price"> S/. <%= @product.store_price(current_store).round(2) unless @product.store_price(current_store).blank? %></p>
+      <% else %>
+  	  <p id="codify"><%= @product.brand.name unless @product.brand.blank? %></p>
+	    <p id="price"><%= @product.category.name unless @product.category.blank? %></p>  	  
+
+		<% end %>
+	</div>
+
+</div>
+
+<% } %>
+
+</div>

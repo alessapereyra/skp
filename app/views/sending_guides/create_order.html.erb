@@ -1,0 +1,86 @@
+<h2>Creando factura en base a Gu&iacute;a de Remisi&oacute;n <%= @sending_guide.document %></h2>
+	
+<% form_for :order,@order, :url=>{:controller=>"sending_guides", :action=>"generate_order", :id=>@sending_guide.id} do |f| -%>
+
+
+<fieldset>
+	<legend>Datos de la venta</legend> 
+	<dl>
+
+
+		<div class="single_column_left">
+					<dt>
+						<%= f.label :number, "N&uacute;mero de boleta:" %>
+					</dt>
+
+					<dd>
+						<%= f.text_field :number %>
+					</dd>
+
+		</div>
+
+
+
+	<div class="single_column_left">
+				<dt class="odd">
+					<%= f.label :client_id, "Cliente:" %>
+				</dt>
+		
+				<dd class="odd">
+					<%= @order.client.name %>
+
+				</dd>
+		
+	</div>
+
+
+	<div class="single_column_left">
+		
+		
+				<dt>				
+					<%= f.label :order_date, "Fecha de Venta: " %>
+				</dt>
+					
+				<dd>
+				<div class="small_fields">
+				<%= f.date_select :order_date %>
+				</div>
+				</dd>			
+				
+	</div>
+
+
+	<div class="single_column_left">
+		
+		
+				<dt>				
+					<%= f.label :credit_card, "&iquest;Tarjeta de Cr&eacute;dito? " %>
+				</dt>
+					
+				<dd>
+					<%= f.select :credit_card, @credit_cards, :include_blank=>"No" %>
+				</dd>			
+				
+	</div>
+
+
+
+
+
+	</dl>
+	
+	
+</fieldset>
+
+	<%= render :partial=>"temporal_product_list" %>
+
+
+
+<div id="endzone">
+<%= f.submit "Finalizar Venta", :url=>{:action=>'create'}, :confirm=>'¿Finalizar venta?', :class=>'form_button' %>	<p>o <%= link_to "revisa los reportes", reports_path %></p>
+</div>
+
+
+
+
+<% end %>

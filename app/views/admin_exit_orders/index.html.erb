@@ -1,0 +1,29 @@
+<h2>Catálogo de Órdenes de Salida</h2>
+<table>
+	<thead>
+	<tr>
+		<th>Documento</th>		
+		<th>Fecha de Salida</th>
+		<th>Cliente</th>
+		<th>Trabajador</th>
+		<th></th>
+		<th></th>		
+	</tr>				
+	</thead>
+	<tbody>		
+	<% @exit_orders.each do |exit_order| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= exit_order.document %></td>		
+		<td><%= exit_order.sending_date.strftime("%d/%m/%y") %></td>
+		<td><div style="width:100px;"><%= exit_order.client.name unless exit_order.client.blank? %></div></td>
+		<td><%= exit_order.driver_name %></td>		
+		<td><%= link_to "editar", edit_admin_exit_order_catalogue_path(exit_order.id) %></td>
+		<td><%= link_to 'eliminar', delete_admin_exit_order_catalogue_path(exit_order.id), :confirm => '¿Seguro?', :method => :delete %></td>				
+	</tr>
+	<% end %>
+	</tbody>
+	
+
+
+</table>
+		 <%= will_paginate @exit_orders %>

@@ -1,0 +1,62 @@
+<div id="detalle">
+
+	<div id="boleta">
+
+	<div id="input_order_details">
+	
+		<table id="product_table">
+		<thead>
+			<tr>
+				<th>C&oacute;digo</th>																
+				<th>Descripci&oacute;n</th>
+				<th>Cantidad</th>				
+				<th>Precio</th>								
+				<th>Descuento</th>						
+				<th>Opciones</th>								
+			</tr>						
+		</thead>
+		<tbody>	
+		<% if @order_details.empty?  %>
+		<tr>
+			<td colspan="8">
+				<p>Agregue productos a la boleta para visualizarlos</p>
+			</td>
+		</tr>
+		<%- else -%>
+		<% i = 0 %>
+		<% @order_details.each do |input| %>
+		<% fields_for "order_details[]",input do |ff| %>
+
+		<tr class="<%= cycle("even", "odd") -%>">		
+			<td><%= input.product.code unless input.product.nil?%></td>			
+			<td><%= input.product.name unless input.product.nil?%> <br /><%= strip_tags(input.product.description) unless input.product.nil?%>
+				
+			<%= hidden_field_tag "order_details[][product_id]", input.product.id %>
+			<%= hidden_field_tag "order_details[][sending_guide_detail_id]", input.sending_guide_detail_id %>			
+				 </td>
+			<td><%= ff.text_field :quantity, :class=>"small_fields" %></td>		
+			<td><%= ff.text_field :price, :class=>"small_fields" %></td>						
+			<td> <%= ff.text_field :discount, :class=>"small_fields" %></td>		
+    		<td><%= link_to_remote 'Posponer',:url=>{:action=>"destroyOrderDetail", :sending_guide=>input.sending_guide_detail.sending_guide.id, :counter=>i}, :method=>'delete' %></td>
+			<% i+= 1 %>
+		</tr>
+		<% end %>
+		<% end %>
+		<%- end -%>
+		</tbody>		
+		</table>
+		<div class="subtotal factura">
+			
+			<p>Subtotal: S/. <%= @order.price_without_taxes || 0 %></p>
+			<p>IGV: S/. <%= @order.taxes || 0 %></p>			
+		</div>		
+		<div class="subtotal"><p>Total: S/. <%= @order.price || 0 %></p></div>
+
+	</div>
+	</div>	
+
+
+
+		
+		
+</div>

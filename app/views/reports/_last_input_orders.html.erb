@@ -1,0 +1,26 @@
+<h3>&Uacute;ltimos ingresos de productos</h3>
+<table>
+	<thead>
+	<tr>
+		<th>Documento</th>		
+		<th>Tienda</th>		
+		<th>Fecha de Ingreso</th>
+		<th>Proveedor</th>
+		<th>Costo Total</th>
+		<th></th>		
+	</tr>
+	</thead>
+	<tbody>						
+	<% @input_orders.each do |input_order| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= input_order.document %></td>
+		<td><%= input_order.store.name %></td>
+		<td><%= input_order.order_date.strftime("%d/%m/%y") %></td>
+		<td><div style="width:100px;"><%= input_order.provider.name %></div></td>
+		<td><%= input_order.cost %></td>
+		<td><%= link_to "Ver orden", input_order_report_path(input_order.id) %></td>		
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+<%= link_to "leer reporte completo", input_orders_report_path,:class=>"more_link" %>

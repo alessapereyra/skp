@@ -1,0 +1,39 @@
+<div id="detalle">
+<div id="edit_zone">
+<h3>Lista de Productos Ingresados</h3>
+
+<span id="messages"><%= flash[:error] %></span>
+<span id="product_error"></span>
+
+<table id="edit_input_order">
+	<thead>
+	<tr>
+		<th rowspan="2">item</th>
+		<th width="30" rowspan="2">C&oacute;digo</th>		
+		<th width="30" rowspan="2">Cantidad</th>		
+		<th width="30" rowspan="2">C&oacute;digo de Proveedor</th>		
+		<th width="20" rowspan="2">Precio de Costo</th>
+		<th width="20" colspan="5">Precios</th>	
+		<th rowspan="2"></th>
+		<th rowspan="2"></th>		
+	</tr>						
+	<tr>
+
+		<th width="20" class="subheader">Base</th>	
+		<th width="20" class="subheader">Empresa</th>	
+		<th width="20" class="subheader">Mayorista</th>	
+		<th width="20" class="subheader">El Trigal</th>	
+		<th width="20" class="subheader">El Polo</th>									
+	</tr>
+	</thead>
+	<tbody>
+		
+	
+			<%= render :partial =>"input_orders/detail", :collection=>@input_order.input_order_details -%>
+		
+	</tbody>
+</table>
+
+<h3 id="subtotal">Total: S/.<%= @input_order.cost %></h3>
+</div>
+</div>

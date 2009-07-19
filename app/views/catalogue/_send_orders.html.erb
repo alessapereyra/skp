@@ -1,0 +1,40 @@
+<div class="section">
+
+<h3>Traslados a tienda</h3>
+<table>
+	<thead>
+	<tr>
+		<th>Cantidad</th>
+		<th>Fecha de Env&iacute;o</th>
+		<th>Destino</th>		
+		<th>Documento</th>
+		<th>Fecha Recepci&oacute;n</th>
+		<th></th>
+
+	</tr>				
+	</thead>
+	<tbody>		
+	<% if @send_order_details.empty? %>	
+		<tr>
+		<td colspan="7">
+			<p>El producto nunca ha sido trasladado</p>
+		</td>
+		</tr>
+	<% else %>
+	
+	<% @send_order_details.each do |send_order_detail| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= send_order_detail.quantity %></td>				
+		<td><%= send_order_detail.send_order.send_date.strftime("%d/%m/%y") %></td>
+		<td><%= send_order_detail.send_order.store.name %></td>
+		<td><%= send_order_detail.send_order.document %></td>		
+		<td><%= send_order_detail.send_order.pending? ? "En tr&aacute;nsito" : send_order_detail.send_order.received_date.strftime("%d/%m/%y") %>			
+		<td><%= link_to "ver orden", send_order_report_path(send_order_detail.send_order.id) %></td>
+	</tr>
+	<% end %>
+	
+	<% end %>
+	</tbody>
+
+</table>
+</div>

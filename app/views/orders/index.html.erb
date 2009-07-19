@@ -1,0 +1,65 @@
+<h2>Catálogo de Órdenes de Venta</h2>
+<h3>Boletas</h3>
+<table>
+	<thead>
+	<tr>
+		<th>N&uacute;mero</th>		
+		<th>Tienda</th>
+		<th>Tipo</th>
+		<th>Cliente</th>		
+		<th>Fecha de Venta</th>
+		<th>Monto</th>		
+		<th></th>
+		<th></th>		
+	</tr>				
+	</thead>
+	<tbody>		
+	<% @boletas.each do |order| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= order.number %></td>		
+		<td><%= order.store.name %></td>				
+		<td><%= order.name %></td>				
+		<td><div style="width:100px;"><%= order.client.name unless order.client.nil? %></div></td>				
+		<td><%= order.order_date.strftime("%d/%m/%y") %></td>
+		<td><%= order.price %></td>
+		<td><%= link_to "editar", edit_order_catalogue_path(order.id) %></td>
+		<td><%= link_to 'eliminar', delete_order_catalogue_path(order.id), :confirm => '¿Seguro?', :method => :delete %></td>		
+	</tr>
+	<% end %>
+	</tbody>
+
+</table>
+
+<h3>Facturas</h3>
+<table>
+	<thead>
+	<tr>
+		<th>N&uacute;mero</th>		
+		<th>Tienda</th>
+		<th>Tipo</th>
+		<th>Cliente</th>		
+		<th>Fecha de Venta</th>
+		<th>Monto</th>		
+		<th></th>
+		<th></th>		
+	</tr>				
+	</thead>
+	<tbody>		
+	<% @facturas.each do |order| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= order.number %></td>		
+		<td><%= order.store.name %></td>				
+		<td><%= order.name %></td>				
+		<td><div style="width:100px;"><%= order.client.name unless order.client.nil? %></div></td>				
+		<td><%= order.order_date.strftime("%d/%m/%y") %></td>
+		<td><%= order.price %></td>
+		<td><%= link_to "editar", edit_order_catalogue_path(order.id) %></td>
+		<td><%= link_to 'eliminar', delete_order_catalogue_path(order.id), :confirm => '¿Seguro?', :method => :delete %></td>		
+	</tr>
+	<% end %>
+	</tbody>
+
+</table>
+
+
+	 <%= will_paginate @boletas %>

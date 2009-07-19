@@ -1,0 +1,26 @@
+<div id="detalle">
+
+<table>
+	<thead>
+	<tr>
+		<th>C&oacute;digo</th>
+		<th>C&oacute;digo de Proveedor</th>
+		<th>Nombre</th>
+		<th></th>	
+	</tr>						
+	</thead>
+	<tbody>
+<%- @products.each do |product| -%>
+
+		<tr class="<%= cycle("even", "odd") -%>">
+			<td><div style="width:80px;"><%= product.code %></div></td>			
+			<td><div style="width:80px;"><%= display_provider_codes(product) %></div></td>
+			<td><div style="width:100px;"><%= product.name %></div></td>
+			<td><%= link_to "Imprimir etiqueta", print_tag_path(product.id) %></td>
+			
+<%- end -%>
+	</tbody>
+	
+</table>
+<%= will_paginate @products %>
+</div>

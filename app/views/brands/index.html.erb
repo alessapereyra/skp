@@ -1,0 +1,26 @@
+<h2>Cat&aacute;logo de Marcas</h2>
+
+<table>
+<thead>
+  <tr>
+    <th>Nombre</th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<% for brand in @brands %>
+  <tr>
+    <td><div style="width:100px;"><%=h brand.name %></div></td>
+    <td><%= link_to 'editar', edit_brand_path(brand) %></td>
+    <td><%= link_to 'eliminar', brand, :confirm => '¿seguro de eliminar?', :method => :delete %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<div id="endzone">
+<%= link_to 'agregar marca', new_brand_path, :class=>"form_button" %>
+</div>

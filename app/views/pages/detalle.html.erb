@@ -1,0 +1,46 @@
+	<div class="start_subcontent"></div>
+
+	<div id="full_inside">
+
+		<h2 id="detalle_product">Detalle del Producto</h2>
+
+		<div id="detalle">
+			
+			<ul id="list">
+
+					<li class="product">
+						
+						<div class="image">
+							<%= link_to ("<img class='product_image' src='#{@product.picture.thumb}'/><span class='icon'/>",@product.picture.large.url, :title=>'click en la imagen para cerrar') unless @product.picture.nil? %>  
+							<%= link_to( image_tag("web/click.png"), @product.picture.large.url, :title=>'click en la imagen para cerrar') unless @product.picture.nil? %>
+						</div>
+	
+						<div class="text">
+								<h2><%= @product.name.humanize %></h2> 							
+								<div class="description_text">
+									<%= @product.description.humanize %>
+								</div>
+								<p><em>Categor&iacute;a:</em> <%= @product.category.nil? ?  "ninguna" : @product.category.name.humanize  %></p>
+								<p><em>C&oacute;digo:</em> <%= @product.code %></p>
+								<p><em>Edad:</em> de <%= @product.age_from %> a <%= @product.age_to %> años</p>
+								<p><em>Dimensiones:</em> <%= @product.height || 0 %>cm x <%= @product.width || 0 %>cm x <%= @product.length || 0%>cm</p>								
+								
+						</div>
+
+						<div id="request_result">
+							
+						</div>
+
+						<div id="request">
+							<h3>&iquest;Desea cotizar este producto? </h3>
+							<% remote_form_for :quote_detail, :url=>{:action=>'add_to_quote', :id=>@product.id} do |f|  %>
+								<%= image_submit_tag("web/add_to_quote.png", :class=>'form_button') %>
+							<% end %>							
+						</div>
+					
+
+					</li>
+
+		 	</ul> <!-- list -->
+		</div>
+	</div>

@@ -1,0 +1,28 @@
+<div class="inner_form">
+  
+
+<% if admin? %>
+
+<% form_for(@yesterday_fund) do |f| %>
+
+
+    <div class="result">
+      <%= f.error_messages %>
+      <%= f.label :cash_amount, "Saldo del día anterior: " %><%= f.text_field :cash_amount %>
+ 
+        <%= f.submit "actualizar", :class=>"form_button" %>
+  	
+  	</div>
+
+
+<% end %>
+
+
+<% else %>
+
+	<div id="result">
+		Saldo del d&iacute;a anterior: <%= @yesterday_fund.cash_amount %>
+	</div>
+
+<% end %>
+</div>

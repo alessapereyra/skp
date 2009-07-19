@@ -1,0 +1,38 @@
+<%= content_tag(:h2, "Revisando consultas de la web")%>
+
+<% unless @web_quotes.nil? or @web_quotes.size.zero? %>
+
+<div id="recover">
+		<p class="message">Se han enviado <%= @web_quotes.size %> consultas desde la web.</p>
+</div>
+		<table>
+			<thead>
+			<tr>
+				<th>Documento</th>		
+				<th>Fecha</th>
+				<th>Cliente</th>
+				<th>Email</th>
+				<th></th>
+				<th></th>		
+			</tr>				
+			</thead>
+			<tbody>		
+			<% @web_quotes.each do |quote| %>
+			<tr class="<%= cycle("even", "odd") -%>">
+				<td><%= quote.document %></td>		
+				<td><%= quote.quote_date.strftime("%d/%m/%y") unless quote.quote_date.nil? %></td>
+				<td><%= quote.quote_comments %></td>				
+				<td><%= quote.sending_details %></td>				
+				<td><%= link_to "revisar", url_for(:action=>'review',:id=>quote.id), :method=>:post %></td>
+		 		<td><%= link_to "eliminar", url_for(:action=>'destroyWeb',:id=>quote.id), :method=>:delete %></td>		
+			</tr>
+			<% end %>
+			</tbody>
+
+		</table>
+
+
+	</div>
+</div>
+
+<% end %>

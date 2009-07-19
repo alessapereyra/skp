@@ -1,0 +1,57 @@
+<div class="section">
+<h3>Resumen</h3>
+<table>
+	<thead>
+	<tr>
+		<th rowspan="2" width="100">Imagen</th>		
+		<th rowspan="2" width="50" >C&oacute;digo de Proveedor</th>
+		<th rowspan="2" width="100">Nombre</th>
+		<th rowspan="2" width="100">Descripci&oacute;n</th>
+		<th colspan="6" width="100">Stock</th>
+		<% if storage? %>
+			<th rowspan="2" width="100">Ubicaci&oacute;n</th>									
+		<% elsif store? %>
+			<th rowspan="2" width="100">Precio Corporativo</th>					
+		<% else %>
+			<th rowspan="2" width="100">Precio de Venta</th>
+		<% end %>				
+	</tr>			
+	<tr>
+		<th class="subheader">Trigal</th>
+		<th class="subheader">Polo</th>		
+		<th class="subheader">Almacén</th>				
+		<th class="subheader">Carisa</th>		
+		<th class="subheader">Total</th>				
+		<th class="subheader">Pend.</th>
+	</tr>			
+	</thead>
+	<tbody id="list">
+<% total,pending,on_almacen, on_carisa, on_trigal, on_polo = @product.get_pending_stocks_per_store %>
+<% total_requested = on_trigal + on_polo + on_almacen + on_carisa unless pending.zero? %>
+
+		<tr class="<%= cycle("even", "odd") -%>">
+			<td><%= link_to image_tag(@product.picture.thumb.url, :width=>50), @product.picture.url unless @product.picture.nil? %></td>
+			<td><div style="width:80px;"><%= display_provider_codes(@product) %></div></td>
+			<td><div style="width:100px;"><%= @product.name %></div></td>			
+			<td><div style="width:100px;"><%= strip_tags @product.description %></div></td>
+			<td><%= @product.stock_trigal %><% unless pending.zero? or on_trigal.zero? then %><br /><span class="requested">(<%= on_trigal %>)</span><% end %></td>
+			<td><%= @product.stock_polo %><% unless pending.zero? or on_polo.zero? then %><br /><span class="requested">(<%= on_polo %>)</span><% end %></td>
+			<td><%= @product.stock_almacen %><% unless pending.zero? or on_almacen.zero? then %><br /><span class="requested">(<%= on_almacen %>)</span><% end %></td>			
+			<td><%= @product.stock_clarisa %><% unless pending.zero? or on_carisa.zero? then %><br /><span class="requested">(<%= on_carisa %>)</span><% end %></td>
+			<td><%= @product.stock %><% unless pending.zero? or total_requested.zero? then %><br /><span class="requested">(<%= @product.stock - total_requested %>)</span><% end %></td>						
+			<% unless pending.zero? %>
+			<td><span class="requested">(<%= pending - total_requested %>)</span></td>
+			<% else %>						
+			<td><span class="requested">0</span></td>
+			<% end %>
+			<% if storage? %>
+				<td><%= @product.warehouse_place %></td>										
+			<% elsif store? %>
+				<td><%= @product.corporative_price %></td>					
+			<% else %>
+				<td><%= @product.store_price(current_store) %></td>	
+			<% end %>
+	</tbody>
+</table>
+
+</div>

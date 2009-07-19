@@ -1,0 +1,34 @@
+<%= content_tag(:h2, "Agregando nueva categor&iacute;a ")%>
+
+<% form_for(@category) do |f| %>
+
+  <%= f.error_messages %>
+	<fieldset>
+		<legend>Categoría</legend>
+	<dl>
+		<div class="single_column_left">
+			
+			<dt><%= f.label :name, "Nombre" %></dt>
+			<dd><%= f.text_field :name %></dd>
+		</div>	
+		
+		<div class="single_column_left">
+			<dt><%= f.label :description, "Descripci&oacute;n" %></dt>
+			<dd><%= f.text_field :description %></dd>
+		</div>
+
+		<div class="single_column_left">
+			<dt><%= f.label :category_id, "Categor&iacute;a Superior" %></dt>
+			<dd><%= f.collection_select :category_id, Category.find(:all),:id,:name, options ={:prompt => "Elegir categoría"}  %></dd>
+		</div>
+
+	</dl>
+	</fieldset>
+	<div id="endzone">
+		    <%= f.submit "agregar categor&iacute;a",:confirm=>"¿Finalizar creaci&oacute;n de categor&iacute;a?", :class=>"form_button" %> <p>o <%= link_to 'cancelar', categories_path %></p>
+	</div>
+
+
+<% end %>
+
+

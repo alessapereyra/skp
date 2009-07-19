@@ -1,0 +1,50 @@
+<%= content_tag(:h2, "Catálogo de Clientes ")%>
+
+<span id="messages"><%= flash[:error] %><%= flash[:notice] %></span>
+
+<% remote_form_for :client do |od| %>
+
+<dl>
+	<fieldset>
+		<legend>Búsqueda de clientes</legend>
+	<div id="single_column_left">
+		<dd><%= od.text_field :name, :class=>"ac_input" %></dd>
+	</div>			
+	</fieldset>	
+</dl>
+<% end %>
+
+
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+	if (window.location.hash != ""){ 
+	$.ajax({data:'q=' + window.location.hash.substring(1) + '&authenticity_token=' + encodeURIComponent('3b8cb750e19257f451b140a143b9146a378ac9c1'), dataType:'script', url:'/catalogue/search_client'})
+	}
+});
+//]]>	
+
+</script>
+
+<%= render :partial => 'client_list' %>
+
+
+<% #= #observe_field :product_name, :url => { :action => :search_product },
+     # :frequency => 0.25,
+      #:with => 'q'
+      %>
+
+	<script type="text/javascript">
+	//<![CDATA[
+	$('#client_name').delayedObserver(0, function(element, value) {
+		
+		window.location.hash =  value;
+		
+		$.ajax({data:'q=' + value + '&authenticity_token=' + encodeURIComponent('3b8cb750e19257f451b140a143b9146a378ac9c1'), dataType:'script', url:'/catalogue/search_client'})
+		
+		})
+	//]]>	
+	</script>
+
+
+

@@ -1,0 +1,24 @@
+<div id="detalle">
+<table>
+	<thead>
+	<tr>
+		<th width="100">C&oacute;digo</th>
+		<th width="100">Nombre</th>
+		<th width="100">Imagen</th>		
+		<th width="100">Stock</th>
+		<th width="100"></th>					
+	</tr>			
+	</thead>
+	<tbody id="list">
+
+	<% unless @products.blank? %>
+		<%= render :partial =>"product", :collection=>@products %>
+	<% end %>
+	
+	</tbody>
+</table>
+
+<%= will_paginate @products	unless @products.blank? %>	
+
+
+</div>

@@ -1,0 +1,55 @@
+<h2>Revisando orden de salida con fecha <%= @send_order.send_date.strftime("%d/%m/%y") %></h2>
+
+<div id="general">
+	
+	<dl>
+		
+		<dt>C&oacute;digo: </dt>
+		<dd><%= @send_order.id %>
+
+		<dt>Origen de la orden: </dt>
+		<dd><%= @send_order.owner.name %>
+			
+		<dt>Destino de los productos: </dt>
+		<dd><%= @send_order.store.name %>
+
+		<dt>Direcci&oacute;n de destino: </dt>
+		<dd><%= @send_order.store.address %>
+
+		<dt>Fecha de recepción: </dt>
+		<dd><%= @send_order.pending? ? "Aún en evaluación" : @send_order.received_date.strftime("%d/%m/%y") %>
+		
+	</dl>
+</div>
+
+<h3>Lista de Productos Enviados</h3>
+
+<table>
+	<thead>
+	<tr>
+		<th>Código</th>
+		<th>Nombre</th>
+		<th>Cantidad</th>		
+		<th>Estado</th>				
+	</tr>						
+	</thead>
+	<tbody>
+	<% @send_order.send_order_details.each do |iod| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= iod.product.code %></td>		
+		<td><%= iod.product.name %></td>		
+		<td><%= iod.current_quantity %></td>
+		<td>
+		<li id="send_order_detail-<%= iod.id %>">
+		</li>
+			</td>		
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+
+<div id="endzone">
+	<%= link_to "Aceptar ingreso", url_for(:action=>"accept_order", :id=>@send_order.id) ,:confirm=>"¿Aceptar el ingreso?",:class=>"form_button" %> <p>o
+	<%= link_to "Regresar",acceptance_path %></p>
+	
+</div>

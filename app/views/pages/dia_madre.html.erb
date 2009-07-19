@@ -1,0 +1,87 @@
+<div id="content">
+
+		<img id="header-image" src="../images/web/catalogo-header.png" />
+
+	</div> <!-- content -->
+	
+	
+	<div id="header-strip">
+		<div class="left">
+			<a href="#">anterior</a>
+		</div>
+		
+		<div class="right">
+			<a href="#">siguiente</a>
+		</div>
+		
+		<p>revisa <em><%= link_to "nuestras ofertas", url_for(:action=>:search_product, :q=>"ofertas || remate") %></em> y nuestros <em><%= link_to "&uacute;ltimos productos",url_for(:action=>:search_product, :q=>"novedad") %></em></p>
+
+	</div> <!-- header-strip -->
+
+
+		
+<div class="end_content"></div>
+
+
+<div id="full_inside">
+  
+  <div id="christmas_price">
+<%= content_tag(:h1, "Feliz D&iacute;a Mam&aacute;")%>
+
+
+   <%= content_tag(:h2,"Campa&ntilde;a Dia De La Madre 2009") %>
+   
+   <p>Skykids Import S.A.C. cordialmente les desea un Feliz d&iacute;a de la Madre !!</p>
+   
+	 <%= image_tag "web/diamadre1.jpg", :id=>"diamadre1" %>
+	 <%= image_tag "web/diamadre2.jpg", :id=>"diamadre2" %>
+
+   <p>En esta ocasi&oacute;n, les ofrecemos el servicio de venta de peluches, relojes de pulsera,
+     set de ollas, porta fotos, set de jarras y vasos, carteras y perfumes as&iacute; como nuestros arreglos
+     de peluches y chocolates a la medida por el d&iacute;a de la madre</p>
+
+   <p>¡Env&iacute;anos tu presupuesto y nosotros te enviamos alternativas!</p>
+
+   <p>
+     <a href="mailto:asarmiento@skykidsperu.com">
+      Comun&iacute;cate con la Srta. Ana Sarmiento</a> para m&aacute;s informaci&oacute;n, quien 
+      cordialmente los atendera
+    </p>
+
+   <p>Pregunta por nuestro servicio Delivery Estuche Maja y Rosa</p>
+
+	 <%= image_tag "web/diamadre3.jpg", :id=>"diamadre3" %>	 	 
+   
+   
+      <p>Atendemos a Provincias</p>
+      
+    </div>
+
+   <div id="text_content">
+
+
+
+    <div class="store">
+
+  		<div class="details">
+  			<h4>Tienda El Trigal</h4>
+  			<p class="address">
+  				Centro Comercial &quot;La Alborada&quot;, Tienda 104 y 105 en Santiago de Surco
+  				<br />Telefax: 271-1253 / Nextel: 98-110*8168 
+  			</p>					
+  		</div>
+
+  		<div class="map">
+  			<a class="photo" href="/images/web/mapa1.png" title="Mapa Tienda El Trigal">
+  				<img src="/images/web/ministore1.png" alt="Mapa Tienda El Trigal"/>
+  			</a>
+  		</div>
+  	</div>
+
+  	  </div>
+
+
+
+
+</div>
+

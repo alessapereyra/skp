@@ -1,0 +1,107 @@
+<% form_for @exit_order, :method=>"post" do |f| -%>
+
+
+<fieldset>
+	<legend>Datos de la Salida</legend> 
+	<p>Ingrese la informaci&oacute;n del destino y los productos respectivos</p>
+
+	<dl>
+
+		<div class="single_column_left">
+
+			<dt>
+				<%= f.label :document, "Documento:" %>
+			</dt>
+
+			<dd>
+				<%= f.text_field :document %>
+			</dd>
+
+		</div>
+
+	<div class="single_column_left">
+				<dt class="odd">
+					<%= f.label :client_id, "Cliente:" %>
+				</dt>
+		
+				<dd class="odd">
+					<%= f.text_field :client_id, :autocomplete =>"off" %>
+					<%= hidden_field_tag "exit_order[hidden_client_id]", "",:class=>"exit_order_hidden_client_id" %>
+				</dd>
+		
+	</div>
+
+	<div class="single_column_left">
+		
+		
+			<dt class="odd">				
+				<%= f.label :sending_date, "Fecha de Salida: " %>
+			</dt>
+
+			<dd class="odd">
+			<div class="small_fields">
+			<%= f.date_select :sending_date, :class=>"small_fields"%>
+			</div>
+			</dd>
+		
+	</div>
+
+	<div class="single_column_left">
+		
+		
+			<dt class="odd">				
+				<%= f.label :driver_name, "Nombre Trabajador: " %>
+			</dt>
+
+			<dd class="odd">
+			<%= f.text_field :driver_name %>
+			</dd>
+		
+	</div>	
+	
+	<div class="single_column_left">
+		
+		
+			<dt class="odd">				
+				<%= f.label :driver_dni, "DNI: " %>
+			</dt>
+
+			<dd class="odd">
+			<%= f.text_field :driver_dni, :class=>"small_fields"%>
+			</dd>
+		
+	</div>	
+	
+	<div style="clear:both;"></div>
+	
+	<div class="single_column_left">
+		
+		
+			<dt class="odd">				
+				<%= f.label :extra_data, "Datos Complementarios: " %>
+			</dt>
+
+			<dd class="odd">
+			<%= f.text_area :extra_data %>
+			</dd>
+		
+	</div>	
+
+	</dl>
+
+	</fieldset>
+	
+	<%= render :partial => 'add_product' %>
+
+	<span id="product_error"></span>
+	
+	<%= render :partial => 'product_list' %>	
+	
+	<div id="endzone">
+		<%= f.submit "Finalizar Orden de Salida",:method=>"create",:class=>'form_button' %> <p>o <%= link_to "cancelar", catalogue_path %></p>
+	</div>
+
+
+
+
+<% end %>

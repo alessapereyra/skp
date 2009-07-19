@@ -1,0 +1,33 @@
+<h2>Reporte de Cotizaciones via Web</h2>
+<table>
+	<thead>
+	<tr>
+		<th>Documento</th>
+		<th>Cliente</th>		
+		<th>Total</th>				
+		<th>Fecha</th>		
+		<th>Estado</th>
+		<th></th>
+		<th></th>
+		<th></th>				
+	</tr>
+	</thead>
+	<tbody>						
+	<% @quotes.each do |quote| %>
+	<tr class="<%= cycle("even", "odd") -%> <%= "new" if quote.updated  %>">
+		<td><%= quote.document %></td>
+		<td><%= quote.quote_comments %>(<%= quote.sending_details %>)</td>				
+		<td><%= quote.price %></td>						
+		<td><%= quote.quote_date.strftime("%d/%m/%y") unless quote.quote_date.nil? %></td>
+		<td><%= quote.sent ? "enviada" : "por enviar" unless quote.sent.nil? %>
+		<td><%= link_to "Ver orden", quote_report_path(quote.id) %></td>
+		<td><%= link_to("verla via web","http://www.skykidsperu.com/web/cotizaciones/#{Base64.encode64(quote.sending_details).gsub!("\n","")}") unless quote.sending_details.blank? %></td>	
+ 		<td><%= link_to "eliminar", url_for(:action=>'destroyQuote',:id=>quote.id), :method=>:delete %></td>			
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+
+<div id="endzone">
+  <%= link_to "Regresar", reports_path %>
+</div>

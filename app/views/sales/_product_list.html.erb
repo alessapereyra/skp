@@ -1,0 +1,59 @@
+<div id="detalle">
+
+	<div id="boleta">
+
+	<div id="input_order_details">
+	
+
+		<table id="product_table">
+		<thead>
+			<tr>
+				<th>Item</th>																
+				<th>C&oacute;digo</th>																
+				<th>Descripci&oacute;n</th>
+				<th>Cantidad</th>				
+				<th>Precio</th>								
+				<th>Descuento</th>						
+				<th>Importe</th>		
+				<th>Opciones</th>								
+			</tr>						
+		</thead>
+		<tbody>	
+		<% if @order_details.empty?  %>
+		<tr>
+			<td colspan="8">
+				<p>Agregue productos a la boleta para visualizarlos</p>
+			</td>
+		</tr>
+		<%- else -%>
+		<% @order_details.reverse.each do |input| %>
+		<tr class="<%= cycle("even", "odd") -%>">		
+		  <% i = 0 %>
+		  <td><%= i+=1 %></td>		
+			<td><div style="width:80px;"><%= input.product.code unless input.product.nil?%></div></td>			
+			<td><div style="width:100px;"><%= input.product.name unless input.product.nil?%> <br /><%= strip_tags(input.product.description) unless input.product.nil?%></div> </td>
+			<td><%= input.quantity %></td>		
+			<td>S/. <%= input.price %></td>						
+			<td> <%= input.discount.nil? ? "-" : "#{input.discount}%" %></td>	
+			<td>S/. <%= input.subtotal.round(2) %></td>				
+    		<td><%= link_to_remote 'Eliminar',:url=>{:controller=>"sales", :action=>"destroyDetail", :id=>input.id} %></td>
+		</tr>
+		<% end %>
+		<%- end -%>
+		</tbody>		
+		</table>
+		<div class="subtotal factura">
+			
+			<p>Subtotal: S/. <%= @order.price_without_taxes || 0 %></p>
+			<p>IGV: S/. <%= @order.taxes || 0 %></p>			
+		</div>		
+		<div class="subtotal"><p>Total: S/. <%= @order.price.round(2) || 0 %></p></div>
+
+	</div>
+	</div>	
+
+
+
+		
+		
+</div>

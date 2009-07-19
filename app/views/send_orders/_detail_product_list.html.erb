@@ -1,0 +1,24 @@
+<div style="clear:both"></div>
+<h3>Lista de Productos</h3>
+
+<table id="edit_input_order">
+	<thead>
+	<tr>
+		<th>item</th>
+		<th>Cantidad</th>		
+		<th>C&oacute;digo</th>		
+		<th>Nombre</th>
+		<th>Descripci&oacute;n</th>		
+		<th></th>
+		<th></th>		
+	</tr>
+	</thead>
+	<tbody>
+		
+		<span id="messages"><%= flash[:error] %></span>
+		<span id="product_error"></span>
+			
+		<%= render :partial =>"detail", :collection=>@send_order.send_order_details %>
+		
+	</tbody>
+</table>

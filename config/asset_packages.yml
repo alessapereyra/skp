@@ -1,0 +1,53 @@
+--- 
+javascripts: 
+- base: 
+  - javascripts.min
+  - application
+- website
+  - jquery-ui
+      
+  - skykidsie.min
+  - skykidsie
+  - skykids.min
+  - skykids
+  - site
+  - sifr
+
+  - prototype
+  - mopTip
+  - jrails
+  - jquery.templating
+  - jquery.sifr.min
+  - jquery.scrollTo
+  - jquery.pngfix
+  - jquery.listen
+  - jquery
+  - jquery.history
+  - jquery.flash.min
+  - jquery.flash
+  - jquery.dxCombobox.min
+  - jquery.autocomplete
+
+  - jquery-ui-personalized4
+  - jquery-ui-personalized3
+  - jquery-ui-personalized
+  - jquery-1.2.6.min
+
+  - javascripts
+  - focus-next-input-field
+  - effects
+  - dragdrop
+  - ddaccordion
+  - controls
+  - application.min
+  
+stylesheets: 
+- base: 
+  - boleta
+  - factura
+  - guia_de_salida_traslado
+  - jquery.ui.autocomplete
+  - master_print
+  - print
+  - scaffold
+  - style

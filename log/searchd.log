@@ -1,0 +1,2315 @@
+[Thu Dec  4 09:09:20.105 2008] [31890] creating server socket on 127.0.0.1:3312
+[Thu Dec  4 09:09:20.105 2008] [31890] accepting connections
+[Thu Dec  4 09:17:52.875 2008] [31890] caught SIGTERM, shutting down
+[Thu Dec  4 09:17:52.876 2008] [31890] shutdown complete
+[Thu Dec  4 09:18:17.240 2008] [32069] creating server socket on 127.0.0.1:3312
+[Thu Dec  4 09:18:17.240 2008] [32069] accepting connections
+[Thu Dec  4 10:57:22.237 2008] [32069] caught SIGTERM, shutting down
+[Thu Dec  4 10:57:22.370 2008] [32069] shutdown complete
+[Thu Dec  4 10:57:37.850 2008] [32735] creating server socket on 127.0.0.1:3312
+[Thu Dec  4 10:57:37.850 2008] [32735] accepting connections
+[Thu Dec  4 11:03:04.566 2008] [32735] rotating indices (seamless=1)
+[Thu Dec  4 11:03:04.572 2008] [32735] rotating index 'client_delta': success
+[Thu Dec  4 11:03:04.572 2008] [32735] rotating finished
+[Thu Dec  4 11:03:08.443 2008] [32735] rotating indices (seamless=1)
+[Thu Dec  4 11:03:08.449 2008] [32735] rotating index 'client_delta': success
+[Thu Dec  4 11:03:08.449 2008] [32735] rotating finished
+[Thu Dec  4 11:03:11.301 2008] [32735] rotating indices (seamless=1)
+[Thu Dec  4 11:03:11.306 2008] [32735] rotating index 'client_delta': success
+[Thu Dec  4 11:03:11.306 2008] [32735] rotating finished
+[Thu Dec  4 11:03:18.425 2008] [32735] rotating indices (seamless=1)
+[Thu Dec  4 11:03:18.431 2008] [32735] rotating index 'client_delta': success
+[Thu Dec  4 11:03:18.431 2008] [32735] rotating finished
+[Thu Dec  4 11:03:29.779 2008] [32735] rotating indices (seamless=1)
+[Thu Dec  4 11:03:29.785 2008] [32735] rotating index 'client_delta': success
+[Thu Dec  4 11:03:29.785 2008] [32735] rotating finished
+[Thu Dec  4 11:03:36.627 2008] [32735] rotating indices (seamless=1)
+[Thu Dec  4 11:03:36.632 2008] [32735] rotating index 'client_delta': success
+[Thu Dec  4 11:03:36.632 2008] [32735] rotating finished
+[Thu Dec  4 11:03:43.806 2008] [32735] rotating indices (seamless=1)
+[Thu Dec  4 11:03:43.812 2008] [32735] rotating index 'client_delta': success
+[Thu Dec  4 11:03:43.812 2008] [32735] rotating finished
+[Thu Dec  4 11:03:52.421 2008] [32735] rotating indices (seamless=1)
+[Thu Dec  4 11:03:52.427 2008] [32735] rotating index 'client_delta': success
+[Thu Dec  4 11:03:52.427 2008] [32735] rotating finished
+[Thu Dec  4 11:04:25.675 2008] [32735] rotating indices (seamless=1)
+[Thu Dec  4 11:04:25.686 2008] [32735] rotating index 'client_delta': success
+[Thu Dec  4 11:04:25.687 2008] [32735] rotating finished
+[Thu Dec  4 11:04:34.222 2008] [32735] rotating indices (seamless=1)
+[Thu Dec  4 11:04:34.231 2008] [32735] rotating index 'client_delta': success
+[Thu Dec  4 11:04:34.231 2008] [32735] rotating finished
+[Thu Dec  4 11:06:21.964 2008] [32735] caught SIGTERM, shutting down
+[Thu Dec  4 11:06:21.965 2008] [32735] shutdown complete
+[Thu Dec  4 11:06:54.851 2008] [33121] creating server socket on 127.0.0.1:3312
+[Thu Dec  4 11:06:54.851 2008] [33121] accepting connections
+[Thu Dec  4 11:07:13.029 2008] [33121] rotating indices (seamless=1)
+[Thu Dec  4 11:07:13.033 2008] [33121] rotating index 'client_delta': success
+[Thu Dec  4 11:07:13.033 2008] [33121] rotating finished
+[Thu Dec  4 11:07:16.982 2008] [33121] rotating indices (seamless=1)
+[Thu Dec  4 11:07:16.986 2008] [33121] rotating index 'client_delta': success
+[Thu Dec  4 11:07:16.986 2008] [33121] rotating finished
+[Fri Dec  5 00:32:58.740 2008] [  388] creating server socket on 127.0.0.1:3312
+[Fri Dec  5 00:32:58.763 2008] [  388] accepting connections
+[Fri Dec  5 00:43:29.022 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:29.028 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:29.028 2008] [  388] rotating finished
+[Fri Dec  5 00:43:29.096 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:29.102 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:29.102 2008] [  388] rotating finished
+[Fri Dec  5 00:43:29.179 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:29.184 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:29.185 2008] [  388] rotating finished
+[Fri Dec  5 00:43:29.262 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:29.267 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:29.267 2008] [  388] rotating finished
+[Fri Dec  5 00:43:29.347 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:29.355 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:29.355 2008] [  388] rotating finished
+[Fri Dec  5 00:43:29.428 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:29.433 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:29.433 2008] [  388] rotating finished
+[Fri Dec  5 00:43:29.511 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:29.517 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:29.518 2008] [  388] rotating finished
+[Fri Dec  5 00:43:29.588 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:29.598 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:29.598 2008] [  388] rotating finished
+[Fri Dec  5 00:43:29.668 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:29.676 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:29.676 2008] [  388] rotating finished
+[Fri Dec  5 00:43:29.747 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:29.752 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:29.752 2008] [  388] rotating finished
+[Fri Dec  5 00:43:29.827 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:29.838 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:29.838 2008] [  388] rotating finished
+[Fri Dec  5 00:43:29.914 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:29.925 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:29.925 2008] [  388] rotating finished
+[Fri Dec  5 00:43:30.003 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:30.007 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:30.007 2008] [  388] rotating finished
+[Fri Dec  5 00:43:30.081 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:30.088 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:30.088 2008] [  388] rotating finished
+[Fri Dec  5 00:43:30.164 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:30.170 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:30.170 2008] [  388] rotating finished
+[Fri Dec  5 00:43:30.243 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:30.248 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:30.248 2008] [  388] rotating finished
+[Fri Dec  5 00:43:30.324 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:30.329 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:30.329 2008] [  388] rotating finished
+[Fri Dec  5 00:43:30.525 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:30.529 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:30.529 2008] [  388] rotating finished
+[Fri Dec  5 00:43:30.761 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:30.765 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:30.766 2008] [  388] rotating finished
+[Fri Dec  5 00:43:30.997 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:31.001 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:31.001 2008] [  388] rotating finished
+[Fri Dec  5 00:43:31.241 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:31.248 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:31.249 2008] [  388] rotating finished
+[Fri Dec  5 00:43:31.502 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:31.506 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:31.506 2008] [  388] rotating finished
+[Fri Dec  5 00:43:31.776 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:31.782 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:31.782 2008] [  388] rotating finished
+[Fri Dec  5 00:43:32.024 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:32.031 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:32.032 2008] [  388] rotating finished
+[Fri Dec  5 00:43:32.265 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:32.270 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:32.270 2008] [  388] rotating finished
+[Fri Dec  5 00:43:32.509 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:32.513 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:32.514 2008] [  388] rotating finished
+[Fri Dec  5 00:43:32.758 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:32.763 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:32.763 2008] [  388] rotating finished
+[Fri Dec  5 00:43:33.115 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:33.120 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:33.120 2008] [  388] rotating finished
+[Fri Dec  5 00:43:33.416 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:33.422 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:33.422 2008] [  388] rotating finished
+[Fri Dec  5 00:43:33.665 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:33.669 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:33.669 2008] [  388] rotating finished
+[Fri Dec  5 00:43:33.962 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:33.967 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:33.967 2008] [  388] rotating finished
+[Fri Dec  5 00:43:34.260 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:34.264 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:34.264 2008] [  388] rotating finished
+[Fri Dec  5 00:43:34.562 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:34.566 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:34.566 2008] [  388] rotating finished
+[Fri Dec  5 00:43:34.867 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:34.871 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:34.871 2008] [  388] rotating finished
+[Fri Dec  5 00:43:35.170 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:35.174 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:35.174 2008] [  388] rotating finished
+[Fri Dec  5 00:43:35.608 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:35.612 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:35.612 2008] [  388] rotating finished
+[Fri Dec  5 00:43:35.904 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:35.908 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:35.908 2008] [  388] rotating finished
+[Fri Dec  5 00:43:36.211 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:36.215 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:36.215 2008] [  388] rotating finished
+[Fri Dec  5 00:43:36.513 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:36.517 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:36.517 2008] [  388] rotating finished
+[Fri Dec  5 00:43:36.816 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:36.821 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:36.821 2008] [  388] rotating finished
+[Fri Dec  5 00:43:37.130 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:37.134 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:37.134 2008] [  388] rotating finished
+[Fri Dec  5 00:43:37.433 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:37.437 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:37.437 2008] [  388] rotating finished
+[Fri Dec  5 00:43:37.825 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:37.831 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:37.832 2008] [  388] rotating finished
+[Fri Dec  5 00:43:38.085 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:38.089 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:38.089 2008] [  388] rotating finished
+[Fri Dec  5 00:43:38.379 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:38.385 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:38.385 2008] [  388] rotating finished
+[Fri Dec  5 00:43:38.668 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:38.674 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:38.674 2008] [  388] rotating finished
+[Fri Dec  5 00:43:38.960 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:38.965 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:38.965 2008] [  388] rotating finished
+[Fri Dec  5 00:43:39.253 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:39.258 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:39.258 2008] [  388] rotating finished
+[Fri Dec  5 00:43:39.544 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:39.549 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:39.549 2008] [  388] rotating finished
+[Fri Dec  5 00:43:39.832 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:39.837 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:39.837 2008] [  388] rotating finished
+[Fri Dec  5 00:43:40.117 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:40.124 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:40.124 2008] [  388] rotating finished
+[Fri Dec  5 00:43:40.405 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:40.413 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:40.413 2008] [  388] rotating finished
+[Fri Dec  5 00:43:40.698 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:40.704 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:40.704 2008] [  388] rotating finished
+[Fri Dec  5 00:43:40.994 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:41.000 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:41.000 2008] [  388] rotating finished
+[Fri Dec  5 00:43:41.282 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:41.287 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:41.287 2008] [  388] rotating finished
+[Fri Dec  5 00:43:41.583 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:41.588 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:41.588 2008] [  388] rotating finished
+[Fri Dec  5 00:43:41.870 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:41.874 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:41.875 2008] [  388] rotating finished
+[Fri Dec  5 00:43:42.165 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:42.170 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:42.170 2008] [  388] rotating finished
+[Fri Dec  5 00:43:42.456 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:42.461 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:42.461 2008] [  388] rotating finished
+[Fri Dec  5 00:43:42.748 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:42.753 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:42.753 2008] [  388] rotating finished
+[Fri Dec  5 00:43:43.043 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:43.049 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:43.049 2008] [  388] rotating finished
+[Fri Dec  5 00:43:43.332 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:43.337 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:43.337 2008] [  388] rotating finished
+[Fri Dec  5 00:43:43.624 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:43.629 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:43.629 2008] [  388] rotating finished
+[Fri Dec  5 00:43:43.911 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:43.915 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:43.915 2008] [  388] rotating finished
+[Fri Dec  5 00:43:44.200 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:44.205 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:44.205 2008] [  388] rotating finished
+[Fri Dec  5 00:43:44.492 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:44.497 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:44.497 2008] [  388] rotating finished
+[Fri Dec  5 00:43:44.783 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:44.787 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:44.787 2008] [  388] rotating finished
+[Fri Dec  5 00:43:45.075 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:45.080 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:45.080 2008] [  388] rotating finished
+[Fri Dec  5 00:43:45.369 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:45.373 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:45.373 2008] [  388] rotating finished
+[Fri Dec  5 00:43:45.660 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:45.666 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:45.666 2008] [  388] rotating finished
+[Fri Dec  5 00:43:45.950 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:45.956 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:45.956 2008] [  388] rotating finished
+[Fri Dec  5 00:43:46.250 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:46.256 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:46.256 2008] [  388] rotating finished
+[Fri Dec  5 00:43:46.544 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:46.550 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:46.550 2008] [  388] rotating finished
+[Fri Dec  5 00:43:46.968 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:46.973 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:46.973 2008] [  388] rotating finished
+[Fri Dec  5 00:43:47.259 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:47.265 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:47.265 2008] [  388] rotating finished
+[Fri Dec  5 00:43:47.562 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:47.568 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:47.568 2008] [  388] rotating finished
+[Fri Dec  5 00:43:47.857 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:47.862 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:47.862 2008] [  388] rotating finished
+[Fri Dec  5 00:43:48.154 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:48.160 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:48.160 2008] [  388] rotating finished
+[Fri Dec  5 00:43:48.443 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:48.448 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:48.448 2008] [  388] rotating finished
+[Fri Dec  5 00:43:48.740 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:48.745 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:48.745 2008] [  388] rotating finished
+[Fri Dec  5 00:43:49.038 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:49.043 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:49.043 2008] [  388] rotating finished
+[Fri Dec  5 00:43:49.325 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:49.332 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:49.332 2008] [  388] rotating finished
+[Fri Dec  5 00:43:49.619 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:49.625 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:49.626 2008] [  388] rotating finished
+[Fri Dec  5 00:43:49.912 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:49.918 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:49.918 2008] [  388] rotating finished
+[Fri Dec  5 00:43:50.209 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:50.214 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:50.215 2008] [  388] rotating finished
+[Fri Dec  5 00:43:50.504 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:50.510 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:50.510 2008] [  388] rotating finished
+[Fri Dec  5 00:43:50.797 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:50.803 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:50.803 2008] [  388] rotating finished
+[Fri Dec  5 00:43:51.097 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:51.103 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:51.103 2008] [  388] rotating finished
+[Fri Dec  5 00:43:51.395 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:51.401 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:51.402 2008] [  388] rotating finished
+[Fri Dec  5 00:43:51.698 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:51.707 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:51.708 2008] [  388] rotating finished
+[Fri Dec  5 00:43:51.997 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:52.004 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:52.004 2008] [  388] rotating finished
+[Fri Dec  5 00:43:52.316 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:52.322 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:52.322 2008] [  388] rotating finished
+[Fri Dec  5 00:43:52.688 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:52.695 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:52.695 2008] [  388] rotating finished
+[Fri Dec  5 00:43:53.026 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:53.035 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:53.035 2008] [  388] rotating finished
+[Fri Dec  5 00:43:53.329 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:53.335 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:53.335 2008] [  388] rotating finished
+[Fri Dec  5 00:43:53.723 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:53.731 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:53.731 2008] [  388] rotating finished
+[Fri Dec  5 00:43:54.091 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:54.097 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:54.097 2008] [  388] rotating finished
+[Fri Dec  5 00:43:54.491 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:54.497 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:54.497 2008] [  388] rotating finished
+[Fri Dec  5 00:43:54.853 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:54.859 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:54.859 2008] [  388] rotating finished
+[Fri Dec  5 00:43:55.232 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:55.239 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:55.239 2008] [  388] rotating finished
+[Fri Dec  5 00:43:55.611 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:55.617 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:55.617 2008] [  388] rotating finished
+[Fri Dec  5 00:43:56.018 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:56.025 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:56.025 2008] [  388] rotating finished
+[Fri Dec  5 00:43:56.402 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:56.411 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:56.411 2008] [  388] rotating finished
+[Fri Dec  5 00:43:56.759 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:56.766 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:56.766 2008] [  388] rotating finished
+[Fri Dec  5 00:43:57.111 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:57.117 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:57.117 2008] [  388] rotating finished
+[Fri Dec  5 00:43:57.460 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:57.466 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:57.466 2008] [  388] rotating finished
+[Fri Dec  5 00:43:57.812 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:57.818 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:57.818 2008] [  388] rotating finished
+[Fri Dec  5 00:43:58.214 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:58.218 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:58.218 2008] [  388] rotating finished
+[Fri Dec  5 00:43:58.560 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:58.566 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:58.566 2008] [  388] rotating finished
+[Fri Dec  5 00:43:58.915 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:58.922 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:58.922 2008] [  388] rotating finished
+[Fri Dec  5 00:43:59.265 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:59.271 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:59.271 2008] [  388] rotating finished
+[Fri Dec  5 00:43:59.624 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:59.630 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:59.630 2008] [  388] rotating finished
+[Fri Dec  5 00:43:59.981 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:43:59.987 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:43:59.988 2008] [  388] rotating finished
+[Fri Dec  5 00:44:00.333 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:00.338 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:00.338 2008] [  388] rotating finished
+[Fri Dec  5 00:44:00.684 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:00.689 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:00.689 2008] [  388] rotating finished
+[Fri Dec  5 00:44:01.036 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:01.041 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:01.041 2008] [  388] rotating finished
+[Fri Dec  5 00:44:01.391 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:01.396 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:01.396 2008] [  388] rotating finished
+[Fri Dec  5 00:44:01.738 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:01.743 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:01.744 2008] [  388] rotating finished
+[Fri Dec  5 00:44:02.086 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:02.091 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:02.091 2008] [  388] rotating finished
+[Fri Dec  5 00:44:02.441 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:02.446 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:02.446 2008] [  388] rotating finished
+[Fri Dec  5 00:44:02.785 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:02.791 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:02.791 2008] [  388] rotating finished
+[Fri Dec  5 00:44:03.142 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:03.147 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:03.147 2008] [  388] rotating finished
+[Fri Dec  5 00:44:03.488 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:03.494 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:03.494 2008] [  388] rotating finished
+[Fri Dec  5 00:44:03.843 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:03.849 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:03.849 2008] [  388] rotating finished
+[Fri Dec  5 00:44:04.193 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:04.198 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:04.199 2008] [  388] rotating finished
+[Fri Dec  5 00:44:04.548 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:04.554 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:04.554 2008] [  388] rotating finished
+[Fri Dec  5 00:44:04.894 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:04.901 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:04.901 2008] [  388] rotating finished
+[Fri Dec  5 00:44:05.270 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:05.280 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:05.280 2008] [  388] rotating finished
+[Fri Dec  5 00:44:06.127 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:06.132 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:06.133 2008] [  388] rotating finished
+[Fri Dec  5 00:44:06.522 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:06.529 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:06.529 2008] [  388] rotating finished
+[Fri Dec  5 00:44:06.880 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:06.885 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:06.885 2008] [  388] rotating finished
+[Fri Dec  5 00:44:07.251 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:07.261 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:07.261 2008] [  388] rotating finished
+[Fri Dec  5 00:44:07.595 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:07.600 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:07.601 2008] [  388] rotating finished
+[Fri Dec  5 00:44:07.944 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:07.949 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:07.949 2008] [  388] rotating finished
+[Fri Dec  5 00:44:08.296 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:08.301 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:08.301 2008] [  388] rotating finished
+[Fri Dec  5 00:44:08.645 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:08.651 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:08.651 2008] [  388] rotating finished
+[Fri Dec  5 00:44:09.001 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:09.006 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:09.007 2008] [  388] rotating finished
+[Fri Dec  5 00:44:09.357 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:09.363 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:09.363 2008] [  388] rotating finished
+[Fri Dec  5 00:44:09.712 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:09.718 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:09.718 2008] [  388] rotating finished
+[Fri Dec  5 00:44:10.071 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:10.077 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:10.077 2008] [  388] rotating finished
+[Fri Dec  5 00:44:10.446 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:10.450 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:10.450 2008] [  388] rotating finished
+[Fri Dec  5 00:44:10.826 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:10.838 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:10.839 2008] [  388] rotating finished
+[Fri Dec  5 00:44:11.194 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:11.202 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:11.204 2008] [  388] rotating finished
+[Fri Dec  5 00:44:11.567 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:11.573 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:11.573 2008] [  388] rotating finished
+[Fri Dec  5 00:44:11.936 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:11.940 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:11.940 2008] [  388] rotating finished
+[Fri Dec  5 00:44:12.295 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:12.303 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:12.303 2008] [  388] rotating finished
+[Fri Dec  5 00:44:12.676 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:12.680 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:12.681 2008] [  388] rotating finished
+[Fri Dec  5 00:44:13.049 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:13.054 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:13.054 2008] [  388] rotating finished
+[Fri Dec  5 00:44:13.408 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:13.414 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:13.415 2008] [  388] rotating finished
+[Fri Dec  5 00:44:13.774 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:13.784 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:13.787 2008] [  388] rotating finished
+[Fri Dec  5 00:44:14.125 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:14.139 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:14.139 2008] [  388] rotating finished
+[Fri Dec  5 00:44:14.479 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:14.484 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:14.484 2008] [  388] rotating finished
+[Fri Dec  5 00:44:14.843 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:14.853 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:14.853 2008] [  388] rotating finished
+[Fri Dec  5 00:44:15.199 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:15.204 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:15.204 2008] [  388] rotating finished
+[Fri Dec  5 00:44:15.555 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:15.564 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:15.564 2008] [  388] rotating finished
+[Fri Dec  5 00:44:15.909 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:15.920 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:15.920 2008] [  388] rotating finished
+[Fri Dec  5 00:44:16.273 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:16.282 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:16.282 2008] [  388] rotating finished
+[Fri Dec  5 00:44:16.629 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:16.635 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:16.635 2008] [  388] rotating finished
+[Fri Dec  5 00:44:17.038 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:17.046 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:17.048 2008] [  388] rotating finished
+[Fri Dec  5 00:44:17.400 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:17.411 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:17.411 2008] [  388] rotating finished
+[Fri Dec  5 00:44:17.820 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:17.825 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:17.825 2008] [  388] rotating finished
+[Fri Dec  5 00:44:18.244 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:18.249 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:18.249 2008] [  388] rotating finished
+[Fri Dec  5 00:44:18.655 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:18.661 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:18.661 2008] [  388] rotating finished
+[Fri Dec  5 00:44:19.094 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:19.099 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:19.099 2008] [  388] rotating finished
+[Fri Dec  5 00:44:19.487 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:19.492 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:19.492 2008] [  388] rotating finished
+[Fri Dec  5 00:44:19.900 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:19.904 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:19.904 2008] [  388] rotating finished
+[Fri Dec  5 00:44:20.316 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:20.321 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:20.321 2008] [  388] rotating finished
+[Fri Dec  5 00:44:20.734 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:20.739 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:20.739 2008] [  388] rotating finished
+[Fri Dec  5 00:44:21.142 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:21.147 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:21.147 2008] [  388] rotating finished
+[Fri Dec  5 00:44:21.550 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:21.556 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:21.556 2008] [  388] rotating finished
+[Fri Dec  5 00:44:21.972 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:21.977 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:21.977 2008] [  388] rotating finished
+[Fri Dec  5 00:44:22.399 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:22.404 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:22.404 2008] [  388] rotating finished
+[Fri Dec  5 00:44:22.803 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:22.809 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:22.809 2008] [  388] rotating finished
+[Fri Dec  5 00:44:23.270 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:23.276 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:23.276 2008] [  388] rotating finished
+[Fri Dec  5 00:44:23.646 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:23.651 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:23.651 2008] [  388] rotating finished
+[Fri Dec  5 00:44:24.067 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:24.072 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:24.072 2008] [  388] rotating finished
+[Fri Dec  5 00:44:24.478 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:24.483 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:24.483 2008] [  388] rotating finished
+[Fri Dec  5 00:44:24.894 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:24.899 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:24.899 2008] [  388] rotating finished
+[Fri Dec  5 00:44:25.317 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:25.323 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:25.323 2008] [  388] rotating finished
+[Fri Dec  5 00:44:25.724 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:25.729 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:25.729 2008] [  388] rotating finished
+[Fri Dec  5 00:44:26.127 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:26.132 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:26.132 2008] [  388] rotating finished
+[Fri Dec  5 00:44:26.545 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:26.551 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:26.551 2008] [  388] rotating finished
+[Fri Dec  5 00:44:26.984 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:26.997 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:26.997 2008] [  388] rotating finished
+[Fri Dec  5 00:44:27.392 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:27.397 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:27.397 2008] [  388] rotating finished
+[Fri Dec  5 00:44:27.834 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:27.840 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:27.841 2008] [  388] rotating finished
+[Fri Dec  5 00:44:28.233 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:28.239 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:28.239 2008] [  388] rotating finished
+[Fri Dec  5 00:44:28.642 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:28.648 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:28.648 2008] [  388] rotating finished
+[Fri Dec  5 00:44:29.065 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:29.070 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:29.070 2008] [  388] rotating finished
+[Fri Dec  5 00:44:29.489 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:29.494 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:29.494 2008] [  388] rotating finished
+[Fri Dec  5 00:44:29.899 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:29.903 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:29.903 2008] [  388] rotating finished
+[Fri Dec  5 00:44:30.314 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:30.319 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:30.320 2008] [  388] rotating finished
+[Fri Dec  5 00:44:30.729 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:30.735 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:30.735 2008] [  388] rotating finished
+[Fri Dec  5 00:44:31.146 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:31.151 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:31.151 2008] [  388] rotating finished
+[Fri Dec  5 00:44:31.570 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:31.579 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:31.579 2008] [  388] rotating finished
+[Fri Dec  5 00:44:32.005 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:32.010 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:32.010 2008] [  388] rotating finished
+[Fri Dec  5 00:44:32.421 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:32.427 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:32.427 2008] [  388] rotating finished
+[Fri Dec  5 00:44:32.849 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:32.856 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:32.856 2008] [  388] rotating finished
+[Fri Dec  5 00:44:33.267 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:33.273 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:33.273 2008] [  388] rotating finished
+[Fri Dec  5 00:44:33.676 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:33.681 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:33.681 2008] [  388] rotating finished
+[Fri Dec  5 00:44:34.097 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:34.101 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:34.101 2008] [  388] rotating finished
+[Fri Dec  5 00:44:34.563 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:34.567 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:34.567 2008] [  388] rotating finished
+[Fri Dec  5 00:44:34.983 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:34.987 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:34.987 2008] [  388] rotating finished
+[Fri Dec  5 00:44:35.404 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:35.409 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:35.409 2008] [  388] rotating finished
+[Fri Dec  5 00:44:35.809 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:35.814 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:35.814 2008] [  388] rotating finished
+[Fri Dec  5 00:44:36.286 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:36.290 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:36.291 2008] [  388] rotating finished
+[Fri Dec  5 00:44:36.697 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:36.702 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:36.702 2008] [  388] rotating finished
+[Fri Dec  5 00:44:37.110 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:37.114 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:37.114 2008] [  388] rotating finished
+[Fri Dec  5 00:44:37.525 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:37.530 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:37.530 2008] [  388] rotating finished
+[Fri Dec  5 00:44:37.941 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:37.946 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:37.946 2008] [  388] rotating finished
+[Fri Dec  5 00:44:38.363 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:38.372 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:38.373 2008] [  388] rotating finished
+[Fri Dec  5 00:44:38.813 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:38.818 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:38.818 2008] [  388] rotating finished
+[Fri Dec  5 00:44:39.225 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:39.230 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:39.230 2008] [  388] rotating finished
+[Fri Dec  5 00:44:39.638 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:39.642 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:39.643 2008] [  388] rotating finished
+[Fri Dec  5 00:44:40.084 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:40.092 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:40.092 2008] [  388] rotating finished
+[Fri Dec  5 00:44:40.548 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:40.558 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:40.558 2008] [  388] rotating finished
+[Fri Dec  5 00:44:40.967 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:40.976 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:40.976 2008] [  388] rotating finished
+[Fri Dec  5 00:44:41.425 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:41.432 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:41.434 2008] [  388] rotating finished
+[Fri Dec  5 00:44:41.874 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:41.880 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:41.880 2008] [  388] rotating finished
+[Fri Dec  5 00:44:42.334 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:42.343 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:42.343 2008] [  388] rotating finished
+[Fri Dec  5 00:44:42.761 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:42.766 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:42.766 2008] [  388] rotating finished
+[Fri Dec  5 00:44:43.267 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:43.271 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:43.271 2008] [  388] rotating finished
+[Fri Dec  5 00:44:43.759 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:43.763 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:43.763 2008] [  388] rotating finished
+[Fri Dec  5 00:44:44.219 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:44.224 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:44.224 2008] [  388] rotating finished
+[Fri Dec  5 00:44:44.693 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:44.699 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:44.699 2008] [  388] rotating finished
+[Fri Dec  5 00:44:45.171 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:45.176 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:45.176 2008] [  388] rotating finished
+[Fri Dec  5 00:44:45.641 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:45.646 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:45.646 2008] [  388] rotating finished
+[Fri Dec  5 00:44:46.117 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:46.122 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:46.122 2008] [  388] rotating finished
+[Fri Dec  5 00:44:46.590 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:46.599 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:46.599 2008] [  388] rotating finished
+[Fri Dec  5 00:44:47.017 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:47.022 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:47.022 2008] [  388] rotating finished
+[Fri Dec  5 00:44:47.491 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:47.496 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:47.496 2008] [  388] rotating finished
+[Fri Dec  5 00:44:47.967 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:47.972 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:47.972 2008] [  388] rotating finished
+[Fri Dec  5 00:44:48.445 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:48.449 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:48.449 2008] [  388] rotating finished
+[Fri Dec  5 00:44:48.928 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:48.932 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:48.932 2008] [  388] rotating finished
+[Fri Dec  5 00:44:49.403 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:49.407 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:49.407 2008] [  388] rotating finished
+[Fri Dec  5 00:44:49.876 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:49.880 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:49.881 2008] [  388] rotating finished
+[Fri Dec  5 00:44:50.345 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:50.349 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:50.349 2008] [  388] rotating finished
+[Fri Dec  5 00:44:50.825 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:50.830 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:50.830 2008] [  388] rotating finished
+[Fri Dec  5 00:44:51.297 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:51.302 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:51.302 2008] [  388] rotating finished
+[Fri Dec  5 00:44:51.777 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:51.782 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:51.782 2008] [  388] rotating finished
+[Fri Dec  5 00:44:52.288 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:52.293 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:52.293 2008] [  388] rotating finished
+[Fri Dec  5 00:44:52.742 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:52.747 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:52.747 2008] [  388] rotating finished
+[Fri Dec  5 00:44:53.223 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:53.233 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:53.233 2008] [  388] rotating finished
+[Fri Dec  5 00:44:53.707 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:53.713 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:53.713 2008] [  388] rotating finished
+[Fri Dec  5 00:44:54.173 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:54.178 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:54.178 2008] [  388] rotating finished
+[Fri Dec  5 00:44:54.642 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:54.647 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:54.648 2008] [  388] rotating finished
+[Fri Dec  5 00:44:55.114 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:55.118 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:55.118 2008] [  388] rotating finished
+[Fri Dec  5 00:44:55.584 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:55.589 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:55.589 2008] [  388] rotating finished
+[Fri Dec  5 00:44:56.083 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:56.096 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:56.096 2008] [  388] rotating finished
+[Fri Dec  5 00:44:56.604 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:56.616 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:56.616 2008] [  388] rotating finished
+[Fri Dec  5 00:44:57.097 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:57.101 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:57.101 2008] [  388] rotating finished
+[Fri Dec  5 00:44:57.568 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:57.572 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:57.573 2008] [  388] rotating finished
+[Fri Dec  5 00:44:58.078 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:58.090 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:58.091 2008] [  388] rotating finished
+[Fri Dec  5 00:44:58.560 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:58.567 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:58.567 2008] [  388] rotating finished
+[Fri Dec  5 00:44:59.087 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:59.094 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:59.094 2008] [  388] rotating finished
+[Fri Dec  5 00:44:59.600 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:44:59.608 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:44:59.609 2008] [  388] rotating finished
+[Fri Dec  5 00:45:00.108 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:00.113 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:00.113 2008] [  388] rotating finished
+[Fri Dec  5 00:45:00.616 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:00.622 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:00.622 2008] [  388] rotating finished
+[Fri Dec  5 00:45:01.131 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:01.137 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:01.137 2008] [  388] rotating finished
+[Fri Dec  5 00:45:01.622 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:01.626 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:01.627 2008] [  388] rotating finished
+[Fri Dec  5 00:45:02.153 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:02.159 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:02.159 2008] [  388] rotating finished
+[Fri Dec  5 00:45:02.705 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:02.712 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:02.712 2008] [  388] rotating finished
+[Fri Dec  5 00:45:03.259 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:03.270 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:03.270 2008] [  388] rotating finished
+[Fri Dec  5 00:45:03.743 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:03.747 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:03.748 2008] [  388] rotating finished
+[Fri Dec  5 00:45:04.209 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:04.214 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:04.214 2008] [  388] rotating finished
+[Fri Dec  5 00:45:04.682 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:04.687 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:04.687 2008] [  388] rotating finished
+[Fri Dec  5 00:45:05.150 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:05.154 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:05.154 2008] [  388] rotating finished
+[Fri Dec  5 00:45:05.624 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:05.629 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:05.629 2008] [  388] rotating finished
+[Fri Dec  5 00:45:06.164 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:06.169 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:06.169 2008] [  388] rotating finished
+[Fri Dec  5 00:45:06.693 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:06.698 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:06.698 2008] [  388] rotating finished
+[Fri Dec  5 00:45:07.170 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:07.174 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:07.174 2008] [  388] rotating finished
+[Fri Dec  5 00:45:07.657 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:07.662 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:07.663 2008] [  388] rotating finished
+[Fri Dec  5 00:45:08.127 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:08.132 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:08.132 2008] [  388] rotating finished
+[Fri Dec  5 00:45:08.620 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:08.793 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:08.794 2008] [  388] rotating finished
+[Fri Dec  5 00:45:09.090 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:09.095 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:09.095 2008] [  388] rotating finished
+[Fri Dec  5 00:45:09.561 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:09.566 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:09.566 2008] [  388] rotating finished
+[Fri Dec  5 00:45:10.028 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:10.032 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:10.032 2008] [  388] rotating finished
+[Fri Dec  5 00:45:10.507 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:10.512 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:10.512 2008] [  388] rotating finished
+[Fri Dec  5 00:45:10.980 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:10.985 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:10.985 2008] [  388] rotating finished
+[Fri Dec  5 00:45:11.454 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:11.459 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:11.459 2008] [  388] rotating finished
+[Fri Dec  5 00:45:12.014 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:12.030 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:12.030 2008] [  388] rotating finished
+[Fri Dec  5 00:45:12.789 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:12.795 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:12.795 2008] [  388] rotating finished
+[Fri Dec  5 00:45:13.282 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:13.287 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:13.287 2008] [  388] rotating finished
+[Fri Dec  5 00:45:13.758 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:13.763 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:13.763 2008] [  388] rotating finished
+[Fri Dec  5 00:45:14.242 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:14.246 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:14.247 2008] [  388] rotating finished
+[Fri Dec  5 00:45:14.777 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:14.786 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:14.786 2008] [  388] rotating finished
+[Fri Dec  5 00:45:15.253 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:15.265 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:15.265 2008] [  388] rotating finished
+[Fri Dec  5 00:45:15.735 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:15.739 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:15.740 2008] [  388] rotating finished
+[Fri Dec  5 00:45:16.273 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:16.278 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:16.278 2008] [  388] rotating finished
+[Fri Dec  5 00:45:16.843 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:16.847 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:16.848 2008] [  388] rotating finished
+[Fri Dec  5 00:45:17.373 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:17.379 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:17.379 2008] [  388] rotating finished
+[Fri Dec  5 00:45:17.942 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:17.975 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:17.976 2008] [  388] rotating finished
+[Fri Dec  5 00:45:18.513 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:18.519 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:18.519 2008] [  388] rotating finished
+[Fri Dec  5 00:45:19.034 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:19.039 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:19.039 2008] [  388] rotating finished
+[Fri Dec  5 00:45:19.559 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:19.564 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:19.565 2008] [  388] rotating finished
+[Fri Dec  5 00:45:20.092 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:20.100 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:20.101 2008] [  388] rotating finished
+[Fri Dec  5 00:45:20.584 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:20.589 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:20.589 2008] [  388] rotating finished
+[Fri Dec  5 00:45:21.116 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:21.121 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:21.121 2008] [  388] rotating finished
+[Fri Dec  5 00:45:21.643 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:21.648 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:21.649 2008] [  388] rotating finished
+[Fri Dec  5 00:45:22.185 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:22.190 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:22.191 2008] [  388] rotating finished
+[Fri Dec  5 00:45:22.710 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:22.715 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:22.715 2008] [  388] rotating finished
+[Fri Dec  5 00:45:23.251 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:23.256 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:23.256 2008] [  388] rotating finished
+[Fri Dec  5 00:45:23.790 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:23.795 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:23.795 2008] [  388] rotating finished
+[Fri Dec  5 00:45:24.334 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:24.339 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:24.340 2008] [  388] rotating finished
+[Fri Dec  5 00:45:24.853 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:24.857 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:24.857 2008] [  388] rotating finished
+[Fri Dec  5 00:45:25.387 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:25.391 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:25.391 2008] [  388] rotating finished
+[Fri Dec  5 00:45:25.912 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:25.917 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:25.917 2008] [  388] rotating finished
+[Fri Dec  5 00:45:26.446 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:26.451 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:26.451 2008] [  388] rotating finished
+[Fri Dec  5 00:45:26.977 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:26.982 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:26.982 2008] [  388] rotating finished
+[Fri Dec  5 00:45:27.508 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:27.514 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:27.514 2008] [  388] rotating finished
+[Fri Dec  5 00:45:28.048 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:28.053 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:28.053 2008] [  388] rotating finished
+[Fri Dec  5 00:45:28.578 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:28.583 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:28.583 2008] [  388] rotating finished
+[Fri Dec  5 00:45:29.125 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:29.130 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:29.130 2008] [  388] rotating finished
+[Fri Dec  5 00:45:29.650 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:29.656 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:29.656 2008] [  388] rotating finished
+[Fri Dec  5 00:45:30.175 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:30.180 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:30.180 2008] [  388] rotating finished
+[Fri Dec  5 00:45:30.698 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:30.703 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:30.703 2008] [  388] rotating finished
+[Fri Dec  5 00:45:31.236 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:31.240 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:31.240 2008] [  388] rotating finished
+[Fri Dec  5 00:45:31.772 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:31.778 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:31.778 2008] [  388] rotating finished
+[Fri Dec  5 00:45:32.307 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:32.311 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:32.312 2008] [  388] rotating finished
+[Fri Dec  5 00:45:32.852 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:32.859 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:32.859 2008] [  388] rotating finished
+[Fri Dec  5 00:45:33.387 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:33.392 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:33.392 2008] [  388] rotating finished
+[Fri Dec  5 00:45:33.914 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:33.920 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:33.920 2008] [  388] rotating finished
+[Fri Dec  5 00:45:34.438 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:34.443 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:34.443 2008] [  388] rotating finished
+[Fri Dec  5 00:45:34.970 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:34.974 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:34.975 2008] [  388] rotating finished
+[Fri Dec  5 00:45:35.505 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:35.511 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:35.511 2008] [  388] rotating finished
+[Fri Dec  5 00:45:36.052 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:36.065 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:36.065 2008] [  388] rotating finished
+[Fri Dec  5 00:45:36.677 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:36.683 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:36.683 2008] [  388] rotating finished
+[Fri Dec  5 00:45:37.229 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:37.234 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:37.234 2008] [  388] rotating finished
+[Fri Dec  5 00:45:37.815 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:37.820 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:37.820 2008] [  388] rotating finished
+[Fri Dec  5 00:45:38.348 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:38.353 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:38.354 2008] [  388] rotating finished
+[Fri Dec  5 00:45:38.881 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:38.886 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:38.886 2008] [  388] rotating finished
+[Fri Dec  5 00:45:39.421 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:39.426 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:39.426 2008] [  388] rotating finished
+[Fri Dec  5 00:45:39.962 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:39.967 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:39.967 2008] [  388] rotating finished
+[Fri Dec  5 00:45:40.502 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:40.506 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:40.506 2008] [  388] rotating finished
+[Fri Dec  5 00:45:41.035 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:41.040 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:41.040 2008] [  388] rotating finished
+[Fri Dec  5 00:45:41.575 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:41.580 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:41.581 2008] [  388] rotating finished
+[Fri Dec  5 00:45:42.106 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:42.111 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:42.112 2008] [  388] rotating finished
+[Fri Dec  5 00:45:42.635 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:42.640 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:42.640 2008] [  388] rotating finished
+[Fri Dec  5 00:45:43.166 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:43.172 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:43.172 2008] [  388] rotating finished
+[Fri Dec  5 00:45:43.816 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:43.824 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:43.824 2008] [  388] rotating finished
+[Fri Dec  5 00:45:44.410 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:44.415 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:44.415 2008] [  388] rotating finished
+[Fri Dec  5 00:45:44.936 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:44.942 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:44.942 2008] [  388] rotating finished
+[Fri Dec  5 00:45:45.469 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:45.474 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:45.474 2008] [  388] rotating finished
+[Fri Dec  5 00:45:46.008 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:46.013 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:46.013 2008] [  388] rotating finished
+[Fri Dec  5 00:45:46.563 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:46.574 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:46.575 2008] [  388] rotating finished
+[Fri Dec  5 00:45:47.129 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:47.134 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:47.134 2008] [  388] rotating finished
+[Fri Dec  5 00:45:47.664 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:47.669 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:47.669 2008] [  388] rotating finished
+[Fri Dec  5 00:45:48.319 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:48.331 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:48.331 2008] [  388] rotating finished
+[Fri Dec  5 00:45:48.917 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:48.923 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:48.923 2008] [  388] rotating finished
+[Fri Dec  5 00:45:49.530 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:49.535 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:49.535 2008] [  388] rotating finished
+[Fri Dec  5 00:45:50.132 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:50.137 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:50.137 2008] [  388] rotating finished
+[Fri Dec  5 00:45:50.726 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:50.733 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:50.733 2008] [  388] rotating finished
+[Fri Dec  5 00:45:51.308 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:51.316 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:51.316 2008] [  388] rotating finished
+[Fri Dec  5 00:45:51.850 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:51.855 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:51.855 2008] [  388] rotating finished
+[Fri Dec  5 00:45:52.446 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:52.455 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:52.455 2008] [  388] rotating finished
+[Fri Dec  5 00:45:52.987 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:52.992 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:52.992 2008] [  388] rotating finished
+[Fri Dec  5 00:45:53.577 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:53.582 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:53.582 2008] [  388] rotating finished
+[Fri Dec  5 00:45:54.181 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:54.186 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:54.186 2008] [  388] rotating finished
+[Fri Dec  5 00:45:54.776 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:54.781 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:54.782 2008] [  388] rotating finished
+[Fri Dec  5 00:45:55.378 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:55.384 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:55.384 2008] [  388] rotating finished
+[Fri Dec  5 00:45:55.971 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:55.975 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:55.976 2008] [  388] rotating finished
+[Fri Dec  5 00:45:56.564 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:56.568 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:56.568 2008] [  388] rotating finished
+[Fri Dec  5 00:45:57.158 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:57.163 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:57.163 2008] [  388] rotating finished
+[Fri Dec  5 00:45:57.822 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:57.828 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:57.829 2008] [  388] rotating finished
+[Fri Dec  5 00:45:58.403 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:58.407 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:58.407 2008] [  388] rotating finished
+[Fri Dec  5 00:45:59.006 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:59.010 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:59.010 2008] [  388] rotating finished
+[Fri Dec  5 00:45:59.589 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:45:59.594 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:45:59.594 2008] [  388] rotating finished
+[Fri Dec  5 00:46:00.186 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:00.191 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:00.191 2008] [  388] rotating finished
+[Fri Dec  5 00:46:00.787 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:00.793 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:00.793 2008] [  388] rotating finished
+[Fri Dec  5 00:46:01.378 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:01.384 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:01.384 2008] [  388] rotating finished
+[Fri Dec  5 00:46:01.972 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:01.977 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:01.977 2008] [  388] rotating finished
+[Fri Dec  5 00:46:02.572 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:02.578 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:02.578 2008] [  388] rotating finished
+[Fri Dec  5 00:46:03.164 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:03.169 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:03.169 2008] [  388] rotating finished
+[Fri Dec  5 00:46:03.757 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:03.762 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:03.762 2008] [  388] rotating finished
+[Fri Dec  5 00:46:04.342 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:04.347 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:04.347 2008] [  388] rotating finished
+[Fri Dec  5 00:46:04.935 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:04.940 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:04.940 2008] [  388] rotating finished
+[Fri Dec  5 00:46:05.528 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:05.532 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:05.532 2008] [  388] rotating finished
+[Fri Dec  5 00:46:06.123 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:06.128 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:06.128 2008] [  388] rotating finished
+[Fri Dec  5 00:46:06.805 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:06.811 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:06.811 2008] [  388] rotating finished
+[Fri Dec  5 00:46:07.398 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:07.402 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:07.402 2008] [  388] rotating finished
+[Fri Dec  5 00:46:08.015 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:08.019 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:08.019 2008] [  388] rotating finished
+[Fri Dec  5 00:46:08.639 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:08.644 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:08.644 2008] [  388] rotating finished
+[Fri Dec  5 00:46:09.221 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:09.226 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:09.226 2008] [  388] rotating finished
+[Fri Dec  5 00:46:09.839 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:09.844 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:09.844 2008] [  388] rotating finished
+[Fri Dec  5 00:46:10.445 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:10.451 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:10.452 2008] [  388] rotating finished
+[Fri Dec  5 00:46:11.049 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:11.054 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:11.055 2008] [  388] rotating finished
+[Fri Dec  5 00:46:11.673 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:11.678 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:11.679 2008] [  388] rotating finished
+[Fri Dec  5 00:46:12.265 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:12.271 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:12.272 2008] [  388] rotating finished
+[Fri Dec  5 00:46:12.901 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:12.906 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:12.906 2008] [  388] rotating finished
+[Fri Dec  5 00:46:13.492 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:13.497 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:13.498 2008] [  388] rotating finished
+[Fri Dec  5 00:46:14.123 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:14.133 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:14.133 2008] [  388] rotating finished
+[Fri Dec  5 00:46:14.715 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:14.721 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:14.721 2008] [  388] rotating finished
+[Fri Dec  5 00:46:15.339 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:15.345 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:15.345 2008] [  388] rotating finished
+[Fri Dec  5 00:46:15.947 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:15.952 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:15.952 2008] [  388] rotating finished
+[Fri Dec  5 00:46:16.531 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:16.537 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:16.538 2008] [  388] rotating finished
+[Fri Dec  5 00:46:17.125 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:17.129 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:17.129 2008] [  388] rotating finished
+[Fri Dec  5 00:46:17.718 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:17.760 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:17.760 2008] [  388] rotating finished
+[Fri Dec  5 00:46:18.331 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:18.358 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:18.358 2008] [  388] rotating finished
+[Fri Dec  5 00:46:19.016 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:19.022 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:19.023 2008] [  388] rotating finished
+[Fri Dec  5 00:46:19.634 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:19.639 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:19.639 2008] [  388] rotating finished
+[Fri Dec  5 00:46:20.229 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:20.235 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:20.235 2008] [  388] rotating finished
+[Fri Dec  5 00:46:20.828 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:20.833 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:20.833 2008] [  388] rotating finished
+[Fri Dec  5 00:46:21.421 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:21.426 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:21.426 2008] [  388] rotating finished
+[Fri Dec  5 00:46:22.013 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:22.017 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:22.017 2008] [  388] rotating finished
+[Fri Dec  5 00:46:22.605 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:22.610 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:22.610 2008] [  388] rotating finished
+[Fri Dec  5 00:46:23.269 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:23.275 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:23.275 2008] [  388] rotating finished
+[Fri Dec  5 00:46:23.863 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:23.869 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:23.869 2008] [  388] rotating finished
+[Fri Dec  5 00:46:24.464 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:24.469 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:24.469 2008] [  388] rotating finished
+[Fri Dec  5 00:46:25.063 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:25.068 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:25.068 2008] [  388] rotating finished
+[Fri Dec  5 00:46:25.654 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:25.659 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:25.659 2008] [  388] rotating finished
+[Fri Dec  5 00:46:26.243 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:26.248 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:26.248 2008] [  388] rotating finished
+[Fri Dec  5 00:46:26.843 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:26.848 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:26.848 2008] [  388] rotating finished
+[Fri Dec  5 00:46:27.442 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:27.453 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:27.457 2008] [  388] rotating finished
+[Fri Dec  5 00:46:28.045 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:28.049 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:28.049 2008] [  388] rotating finished
+[Fri Dec  5 00:46:28.638 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:28.642 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:28.642 2008] [  388] rotating finished
+[Fri Dec  5 00:46:29.257 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:29.262 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:29.262 2008] [  388] rotating finished
+[Fri Dec  5 00:46:29.907 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:29.914 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:29.915 2008] [  388] rotating finished
+[Fri Dec  5 00:46:30.503 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:30.509 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:30.509 2008] [  388] rotating finished
+[Fri Dec  5 00:46:31.114 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:31.119 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:31.119 2008] [  388] rotating finished
+[Fri Dec  5 00:46:31.716 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:31.724 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:31.724 2008] [  388] rotating finished
+[Fri Dec  5 00:46:32.319 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:32.324 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:32.324 2008] [  388] rotating finished
+[Fri Dec  5 00:46:32.968 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:32.977 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:32.977 2008] [  388] rotating finished
+[Fri Dec  5 00:46:33.568 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:33.572 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:33.573 2008] [  388] rotating finished
+[Fri Dec  5 00:46:34.174 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:34.178 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:34.179 2008] [  388] rotating finished
+[Fri Dec  5 00:46:34.826 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:34.832 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:34.832 2008] [  388] rotating finished
+[Fri Dec  5 00:46:35.491 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:35.496 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:35.496 2008] [  388] rotating finished
+[Fri Dec  5 00:46:36.175 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:36.180 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:36.180 2008] [  388] rotating finished
+[Fri Dec  5 00:46:36.964 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:36.970 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:36.970 2008] [  388] rotating finished
+[Fri Dec  5 00:46:37.619 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:37.624 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:37.624 2008] [  388] rotating finished
+[Fri Dec  5 00:46:38.268 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:38.274 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:38.274 2008] [  388] rotating finished
+[Fri Dec  5 00:46:38.921 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:38.926 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:38.926 2008] [  388] rotating finished
+[Fri Dec  5 00:46:39.606 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:39.611 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:39.611 2008] [  388] rotating finished
+[Fri Dec  5 00:46:40.267 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:40.272 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:40.272 2008] [  388] rotating finished
+[Fri Dec  5 00:46:40.931 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:40.936 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:40.936 2008] [  388] rotating finished
+[Fri Dec  5 00:46:41.596 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:41.601 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:41.601 2008] [  388] rotating finished
+[Fri Dec  5 00:46:42.259 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:42.263 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:42.263 2008] [  388] rotating finished
+[Fri Dec  5 00:46:42.912 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:42.917 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:42.918 2008] [  388] rotating finished
+[Fri Dec  5 00:46:43.579 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:43.585 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:43.585 2008] [  388] rotating finished
+[Fri Dec  5 00:46:44.238 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:44.242 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:44.242 2008] [  388] rotating finished
+[Fri Dec  5 00:46:44.894 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:44.899 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:44.899 2008] [  388] rotating finished
+[Fri Dec  5 00:46:45.557 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:45.564 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:45.565 2008] [  388] rotating finished
+[Fri Dec  5 00:46:46.217 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:46.222 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:46.222 2008] [  388] rotating finished
+[Fri Dec  5 00:46:46.874 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:46.879 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:46.879 2008] [  388] rotating finished
+[Fri Dec  5 00:46:47.534 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:47.541 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:47.541 2008] [  388] rotating finished
+[Fri Dec  5 00:46:48.193 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:48.197 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:48.197 2008] [  388] rotating finished
+[Fri Dec  5 00:46:48.850 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:48.856 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:48.856 2008] [  388] rotating finished
+[Fri Dec  5 00:46:49.506 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:49.511 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:49.512 2008] [  388] rotating finished
+[Fri Dec  5 00:46:50.164 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:50.169 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:50.170 2008] [  388] rotating finished
+[Fri Dec  5 00:46:50.822 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:50.827 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:50.827 2008] [  388] rotating finished
+[Fri Dec  5 00:46:51.473 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:51.479 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:51.479 2008] [  388] rotating finished
+[Fri Dec  5 00:46:52.123 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:52.128 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:52.128 2008] [  388] rotating finished
+[Fri Dec  5 00:46:52.779 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:52.783 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:52.783 2008] [  388] rotating finished
+[Fri Dec  5 00:46:53.432 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:53.437 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:53.437 2008] [  388] rotating finished
+[Fri Dec  5 00:46:54.088 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:54.093 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:54.093 2008] [  388] rotating finished
+[Fri Dec  5 00:46:54.742 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:54.747 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:54.747 2008] [  388] rotating finished
+[Fri Dec  5 00:46:55.391 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:55.396 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:55.396 2008] [  388] rotating finished
+[Fri Dec  5 00:46:56.054 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:56.060 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:56.060 2008] [  388] rotating finished
+[Fri Dec  5 00:46:56.712 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:56.717 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:56.717 2008] [  388] rotating finished
+[Fri Dec  5 00:46:57.373 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:57.377 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:57.378 2008] [  388] rotating finished
+[Fri Dec  5 00:46:58.032 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:58.037 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:58.037 2008] [  388] rotating finished
+[Fri Dec  5 00:46:58.690 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:58.695 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:58.696 2008] [  388] rotating finished
+[Fri Dec  5 00:46:59.335 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:59.340 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:59.340 2008] [  388] rotating finished
+[Fri Dec  5 00:46:59.992 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:46:59.997 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:46:59.997 2008] [  388] rotating finished
+[Fri Dec  5 00:47:00.651 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:00.656 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:00.656 2008] [  388] rotating finished
+[Fri Dec  5 00:47:01.305 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:01.310 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:01.310 2008] [  388] rotating finished
+[Fri Dec  5 00:47:01.963 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:01.968 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:01.969 2008] [  388] rotating finished
+[Fri Dec  5 00:47:02.623 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:02.629 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:02.629 2008] [  388] rotating finished
+[Fri Dec  5 00:47:03.266 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:03.271 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:03.271 2008] [  388] rotating finished
+[Fri Dec  5 00:47:03.937 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:03.941 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:03.942 2008] [  388] rotating finished
+[Fri Dec  5 00:47:04.586 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:04.591 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:04.592 2008] [  388] rotating finished
+[Fri Dec  5 00:47:05.234 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:05.239 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:05.239 2008] [  388] rotating finished
+[Fri Dec  5 00:47:05.890 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:05.894 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:05.894 2008] [  388] rotating finished
+[Fri Dec  5 00:47:06.542 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:06.546 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:06.546 2008] [  388] rotating finished
+[Fri Dec  5 00:47:07.203 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:07.208 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:07.208 2008] [  388] rotating finished
+[Fri Dec  5 00:47:07.859 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:07.864 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:07.864 2008] [  388] rotating finished
+[Fri Dec  5 00:47:08.518 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:08.524 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:08.524 2008] [  388] rotating finished
+[Fri Dec  5 00:47:09.191 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:09.197 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:09.197 2008] [  388] rotating finished
+[Fri Dec  5 00:47:09.873 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:09.878 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:09.878 2008] [  388] rotating finished
+[Fri Dec  5 00:47:10.576 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:10.584 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:10.585 2008] [  388] rotating finished
+[Fri Dec  5 00:47:11.298 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:11.303 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:11.303 2008] [  388] rotating finished
+[Fri Dec  5 00:47:12.001 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:12.006 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:12.006 2008] [  388] rotating finished
+[Fri Dec  5 00:47:12.667 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:12.676 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:12.676 2008] [  388] rotating finished
+[Fri Dec  5 00:47:13.435 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:13.440 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:13.440 2008] [  388] rotating finished
+[Fri Dec  5 00:47:14.133 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:14.138 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:14.139 2008] [  388] rotating finished
+[Fri Dec  5 00:47:14.846 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:14.852 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:14.852 2008] [  388] rotating finished
+[Fri Dec  5 00:47:15.556 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:15.565 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:15.567 2008] [  388] rotating finished
+[Fri Dec  5 00:47:16.229 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:16.238 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:16.238 2008] [  388] rotating finished
+[Fri Dec  5 00:47:16.895 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:16.901 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:16.901 2008] [  388] rotating finished
+[Fri Dec  5 00:47:17.620 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:17.625 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:17.625 2008] [  388] rotating finished
+[Fri Dec  5 00:47:18.334 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:18.339 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:18.339 2008] [  388] rotating finished
+[Fri Dec  5 00:47:19.053 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:19.059 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:19.059 2008] [  388] rotating finished
+[Fri Dec  5 00:47:19.834 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:19.839 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:19.839 2008] [  388] rotating finished
+[Fri Dec  5 00:47:20.534 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:20.540 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:20.540 2008] [  388] rotating finished
+[Fri Dec  5 00:47:21.269 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:21.274 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:21.274 2008] [  388] rotating finished
+[Fri Dec  5 00:47:21.998 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:22.009 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:22.009 2008] [  388] rotating finished
+[Fri Dec  5 00:47:22.810 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:22.814 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:22.814 2008] [  388] rotating finished
+[Fri Dec  5 00:47:23.526 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:23.530 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:23.530 2008] [  388] rotating finished
+[Fri Dec  5 00:47:24.270 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:24.276 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:24.276 2008] [  388] rotating finished
+[Fri Dec  5 00:47:24.970 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:24.974 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:24.974 2008] [  388] rotating finished
+[Fri Dec  5 00:47:25.721 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:25.725 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:25.726 2008] [  388] rotating finished
+[Fri Dec  5 00:47:26.592 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:26.600 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:26.600 2008] [  388] rotating finished
+[Fri Dec  5 00:47:27.322 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:27.327 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:27.327 2008] [  388] rotating finished
+[Fri Dec  5 00:47:28.061 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:28.066 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:28.066 2008] [  388] rotating finished
+[Fri Dec  5 00:47:28.811 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:28.819 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:28.819 2008] [  388] rotating finished
+[Fri Dec  5 00:47:29.608 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:29.613 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:29.614 2008] [  388] rotating finished
+[Fri Dec  5 00:47:30.395 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:30.400 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:30.400 2008] [  388] rotating finished
+[Fri Dec  5 00:47:31.109 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:31.116 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:31.116 2008] [  388] rotating finished
+[Fri Dec  5 00:47:31.818 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:31.823 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:31.823 2008] [  388] rotating finished
+[Fri Dec  5 00:47:32.614 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:32.619 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:32.619 2008] [  388] rotating finished
+[Fri Dec  5 00:47:33.343 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:33.349 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:33.349 2008] [  388] rotating finished
+[Fri Dec  5 00:47:34.049 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:34.054 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:34.054 2008] [  388] rotating finished
+[Fri Dec  5 00:47:34.766 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:34.770 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:34.770 2008] [  388] rotating finished
+[Fri Dec  5 00:47:35.487 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:35.493 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:35.493 2008] [  388] rotating finished
+[Fri Dec  5 00:47:36.197 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:36.202 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:36.202 2008] [  388] rotating finished
+[Fri Dec  5 00:47:37.044 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:37.054 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:37.055 2008] [  388] rotating finished
+[Fri Dec  5 00:47:37.837 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:37.842 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:37.842 2008] [  388] rotating finished
+[Fri Dec  5 00:47:38.554 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:38.559 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:38.559 2008] [  388] rotating finished
+[Fri Dec  5 00:47:39.281 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:39.286 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:39.286 2008] [  388] rotating finished
+[Fri Dec  5 00:47:39.983 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:39.988 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:39.989 2008] [  388] rotating finished
+[Fri Dec  5 00:47:40.712 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:40.717 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:40.717 2008] [  388] rotating finished
+[Fri Dec  5 00:47:41.424 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:41.429 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:41.429 2008] [  388] rotating finished
+[Fri Dec  5 00:47:42.138 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:42.143 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:42.144 2008] [  388] rotating finished
+[Fri Dec  5 00:47:42.852 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:42.857 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:42.858 2008] [  388] rotating finished
+[Fri Dec  5 00:47:43.574 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:43.579 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:43.580 2008] [  388] rotating finished
+[Fri Dec  5 00:47:44.296 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:44.301 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:44.301 2008] [  388] rotating finished
+[Fri Dec  5 00:47:45.025 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:45.030 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:45.031 2008] [  388] rotating finished
+[Fri Dec  5 00:47:45.733 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:45.738 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:45.738 2008] [  388] rotating finished
+[Fri Dec  5 00:47:46.442 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:46.447 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:46.447 2008] [  388] rotating finished
+[Fri Dec  5 00:47:47.165 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:47.170 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:47.170 2008] [  388] rotating finished
+[Fri Dec  5 00:47:47.870 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:47.875 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:47.875 2008] [  388] rotating finished
+[Fri Dec  5 00:47:48.594 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:48.599 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:48.599 2008] [  388] rotating finished
+[Fri Dec  5 00:47:49.301 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:49.306 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:49.307 2008] [  388] rotating finished
+[Fri Dec  5 00:47:50.009 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:50.014 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:50.014 2008] [  388] rotating finished
+[Fri Dec  5 00:47:50.718 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:50.724 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:50.724 2008] [  388] rotating finished
+[Fri Dec  5 00:47:51.427 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:51.432 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:51.433 2008] [  388] rotating finished
+[Fri Dec  5 00:47:52.141 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:52.146 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:52.146 2008] [  388] rotating finished
+[Fri Dec  5 00:47:52.853 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:52.858 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:52.858 2008] [  388] rotating finished
+[Fri Dec  5 00:47:53.571 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:53.579 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:53.579 2008] [  388] rotating finished
+[Fri Dec  5 00:47:54.286 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:54.291 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:54.291 2008] [  388] rotating finished
+[Fri Dec  5 00:47:55.015 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:55.020 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:55.020 2008] [  388] rotating finished
+[Fri Dec  5 00:47:55.741 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:55.746 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:55.746 2008] [  388] rotating finished
+[Fri Dec  5 00:47:56.459 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:56.464 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:56.465 2008] [  388] rotating finished
+[Fri Dec  5 00:47:57.180 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:57.184 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:57.185 2008] [  388] rotating finished
+[Fri Dec  5 00:47:57.896 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:57.901 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:57.902 2008] [  388] rotating finished
+[Fri Dec  5 00:47:58.618 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:58.625 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:58.625 2008] [  388] rotating finished
+[Fri Dec  5 00:47:59.340 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:47:59.350 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:47:59.350 2008] [  388] rotating finished
+[Fri Dec  5 00:48:00.058 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:00.062 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:00.062 2008] [  388] rotating finished
+[Fri Dec  5 00:48:00.779 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:00.786 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:00.786 2008] [  388] rotating finished
+[Fri Dec  5 00:48:01.501 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:01.506 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:01.506 2008] [  388] rotating finished
+[Fri Dec  5 00:48:02.272 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:02.282 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:02.282 2008] [  388] rotating finished
+[Fri Dec  5 00:48:02.989 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:02.994 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:02.994 2008] [  388] rotating finished
+[Fri Dec  5 00:48:03.715 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:03.728 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:03.728 2008] [  388] rotating finished
+[Fri Dec  5 00:48:04.440 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:04.444 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:04.445 2008] [  388] rotating finished
+[Fri Dec  5 00:48:05.245 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:05.250 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:05.250 2008] [  388] rotating finished
+[Fri Dec  5 00:48:06.015 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:06.023 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:06.023 2008] [  388] rotating finished
+[Fri Dec  5 00:48:06.738 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:06.743 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:06.743 2008] [  388] rotating finished
+[Fri Dec  5 00:48:07.520 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:07.525 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:07.525 2008] [  388] rotating finished
+[Fri Dec  5 00:48:08.305 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:08.311 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:08.311 2008] [  388] rotating finished
+[Fri Dec  5 00:48:09.083 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:09.088 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:09.088 2008] [  388] rotating finished
+[Fri Dec  5 00:48:09.855 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:09.861 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:09.861 2008] [  388] rotating finished
+[Fri Dec  5 00:48:10.635 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:10.639 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:10.640 2008] [  388] rotating finished
+[Fri Dec  5 00:48:11.411 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:11.416 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:11.416 2008] [  388] rotating finished
+[Fri Dec  5 00:48:12.182 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:12.189 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:12.189 2008] [  388] rotating finished
+[Fri Dec  5 00:48:12.964 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:12.970 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:12.970 2008] [  388] rotating finished
+[Fri Dec  5 00:48:13.747 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:13.752 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:13.752 2008] [  388] rotating finished
+[Fri Dec  5 00:48:14.530 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:14.535 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:14.536 2008] [  388] rotating finished
+[Fri Dec  5 00:48:15.308 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:15.313 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:15.313 2008] [  388] rotating finished
+[Fri Dec  5 00:48:16.083 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:16.088 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:16.088 2008] [  388] rotating finished
+[Fri Dec  5 00:48:16.858 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:16.864 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:16.864 2008] [  388] rotating finished
+[Fri Dec  5 00:48:17.640 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:17.646 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:17.648 2008] [  388] rotating finished
+[Fri Dec  5 00:48:18.422 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:18.427 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:18.427 2008] [  388] rotating finished
+[Fri Dec  5 00:48:19.197 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:19.202 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:19.203 2008] [  388] rotating finished
+[Fri Dec  5 00:48:19.974 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:19.979 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:19.980 2008] [  388] rotating finished
+[Fri Dec  5 00:48:20.759 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:20.765 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:20.765 2008] [  388] rotating finished
+[Fri Dec  5 00:48:21.540 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:21.546 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:21.546 2008] [  388] rotating finished
+[Fri Dec  5 00:48:22.307 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:22.312 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:22.312 2008] [  388] rotating finished
+[Fri Dec  5 00:48:23.086 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:23.091 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:23.092 2008] [  388] rotating finished
+[Fri Dec  5 00:48:23.865 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:23.871 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:23.871 2008] [  388] rotating finished
+[Fri Dec  5 00:48:24.644 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:24.649 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:24.649 2008] [  388] rotating finished
+[Fri Dec  5 00:48:25.438 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:25.443 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:25.443 2008] [  388] rotating finished
+[Fri Dec  5 00:48:26.199 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:26.204 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:26.204 2008] [  388] rotating finished
+[Fri Dec  5 00:48:26.981 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:26.994 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:26.994 2008] [  388] rotating finished
+[Fri Dec  5 00:48:27.843 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:27.849 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:27.849 2008] [  388] rotating finished
+[Fri Dec  5 00:48:28.634 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:28.641 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:28.641 2008] [  388] rotating finished
+[Fri Dec  5 00:48:29.409 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:29.419 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:29.419 2008] [  388] rotating finished
+[Fri Dec  5 00:48:30.184 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:30.189 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:30.189 2008] [  388] rotating finished
+[Fri Dec  5 00:48:30.958 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:30.965 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:30.968 2008] [  388] rotating finished
+[Fri Dec  5 00:48:31.738 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:31.744 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:31.744 2008] [  388] rotating finished
+[Fri Dec  5 00:48:32.526 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:32.532 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:32.532 2008] [  388] rotating finished
+[Fri Dec  5 00:48:33.306 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:33.310 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:33.311 2008] [  388] rotating finished
+[Fri Dec  5 00:48:34.073 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:34.078 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:34.078 2008] [  388] rotating finished
+[Fri Dec  5 00:48:34.843 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:34.847 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:34.847 2008] [  388] rotating finished
+[Fri Dec  5 00:48:35.622 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:35.630 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:35.630 2008] [  388] rotating finished
+[Fri Dec  5 00:48:36.391 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:36.397 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:36.397 2008] [  388] rotating finished
+[Fri Dec  5 00:48:37.166 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:37.171 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:37.171 2008] [  388] rotating finished
+[Fri Dec  5 00:48:37.983 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:37.989 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:37.989 2008] [  388] rotating finished
+[Fri Dec  5 00:48:38.789 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:38.794 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:38.795 2008] [  388] rotating finished
+[Fri Dec  5 00:48:39.569 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:39.574 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:39.574 2008] [  388] rotating finished
+[Fri Dec  5 00:48:40.359 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:40.364 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:40.364 2008] [  388] rotating finished
+[Fri Dec  5 00:48:41.132 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:41.136 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:41.136 2008] [  388] rotating finished
+[Fri Dec  5 00:48:41.909 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:41.913 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:41.913 2008] [  388] rotating finished
+[Fri Dec  5 00:48:42.708 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:42.712 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:42.713 2008] [  388] rotating finished
+[Fri Dec  5 00:48:43.486 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:43.492 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:43.492 2008] [  388] rotating finished
+[Fri Dec  5 00:48:44.388 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:44.394 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:44.394 2008] [  388] rotating finished
+[Fri Dec  5 00:48:45.232 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:45.259 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:45.259 2008] [  388] rotating finished
+[Fri Dec  5 00:48:46.068 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:46.082 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:46.083 2008] [  388] rotating finished
+[Fri Dec  5 00:48:46.838 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:46.842 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:46.842 2008] [  388] rotating finished
+[Fri Dec  5 00:48:47.620 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:47.626 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:47.631 2008] [  388] rotating finished
+[Fri Dec  5 00:48:48.397 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:48.402 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:48.403 2008] [  388] rotating finished
+[Fri Dec  5 00:48:49.180 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:49.191 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:49.193 2008] [  388] rotating finished
+[Fri Dec  5 00:48:49.956 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:49.961 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:49.967 2008] [  388] rotating finished
+[Fri Dec  5 00:48:50.742 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:50.755 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:50.755 2008] [  388] rotating finished
+[Fri Dec  5 00:48:51.608 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:51.614 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:51.614 2008] [  388] rotating finished
+[Fri Dec  5 00:48:52.436 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:52.447 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:52.447 2008] [  388] rotating finished
+[Fri Dec  5 00:48:53.216 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:53.237 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:53.237 2008] [  388] rotating finished
+[Fri Dec  5 00:48:53.995 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:54.005 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:54.005 2008] [  388] rotating finished
+[Fri Dec  5 00:48:54.807 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:54.816 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:54.816 2008] [  388] rotating finished
+[Fri Dec  5 00:48:55.606 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:55.612 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:55.612 2008] [  388] rotating finished
+[Fri Dec  5 00:48:56.452 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:56.459 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:56.459 2008] [  388] rotating finished
+[Fri Dec  5 00:48:57.311 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:57.316 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:57.316 2008] [  388] rotating finished
+[Fri Dec  5 00:48:58.162 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:58.173 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:58.173 2008] [  388] rotating finished
+[Fri Dec  5 00:48:59.048 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:59.053 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:59.054 2008] [  388] rotating finished
+[Fri Dec  5 00:48:59.862 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:48:59.869 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:48:59.869 2008] [  388] rotating finished
+[Fri Dec  5 00:49:00.706 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:00.712 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:00.712 2008] [  388] rotating finished
+[Fri Dec  5 00:49:01.543 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:01.549 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:01.549 2008] [  388] rotating finished
+[Fri Dec  5 00:49:02.377 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:02.382 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:02.382 2008] [  388] rotating finished
+[Fri Dec  5 00:49:03.272 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:03.277 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:03.277 2008] [  388] rotating finished
+[Fri Dec  5 00:49:04.095 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:04.099 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:04.099 2008] [  388] rotating finished
+[Fri Dec  5 00:49:04.928 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:04.934 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:04.935 2008] [  388] rotating finished
+[Fri Dec  5 00:49:05.767 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:05.772 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:05.772 2008] [  388] rotating finished
+[Fri Dec  5 00:49:06.614 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:06.620 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:06.620 2008] [  388] rotating finished
+[Fri Dec  5 00:49:07.452 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:07.457 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:07.457 2008] [  388] rotating finished
+[Fri Dec  5 00:49:08.452 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:08.458 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:08.458 2008] [  388] rotating finished
+[Fri Dec  5 00:49:09.284 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:09.289 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:09.290 2008] [  388] rotating finished
+[Fri Dec  5 00:49:10.208 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:10.213 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:10.213 2008] [  388] rotating finished
+[Fri Dec  5 00:49:11.287 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:11.318 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:11.318 2008] [  388] rotating finished
+[Fri Dec  5 00:49:12.167 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:12.174 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:12.174 2008] [  388] rotating finished
+[Fri Dec  5 00:49:13.059 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:13.065 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:13.065 2008] [  388] rotating finished
+[Fri Dec  5 00:49:13.924 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:13.930 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:13.930 2008] [  388] rotating finished
+[Fri Dec  5 00:49:14.811 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:14.825 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:14.826 2008] [  388] rotating finished
+[Fri Dec  5 00:49:15.708 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:15.714 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:15.714 2008] [  388] rotating finished
+[Fri Dec  5 00:49:16.541 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:16.547 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:16.547 2008] [  388] rotating finished
+[Fri Dec  5 00:49:17.448 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:17.453 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:17.453 2008] [  388] rotating finished
+[Fri Dec  5 00:49:18.325 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:18.332 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:18.335 2008] [  388] rotating finished
+[Fri Dec  5 00:49:19.147 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:19.152 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:19.152 2008] [  388] rotating finished
+[Fri Dec  5 00:49:20.087 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:20.091 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:20.091 2008] [  388] rotating finished
+[Fri Dec  5 00:49:20.995 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:21.000 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:21.001 2008] [  388] rotating finished
+[Fri Dec  5 00:49:21.910 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:21.918 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:21.918 2008] [  388] rotating finished
+[Fri Dec  5 00:49:22.822 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:22.833 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:22.833 2008] [  388] rotating finished
+[Fri Dec  5 00:49:23.644 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:23.651 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:23.651 2008] [  388] rotating finished
+[Fri Dec  5 00:49:24.714 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:24.736 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:24.736 2008] [  388] rotating finished
+[Fri Dec  5 00:49:25.546 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:25.552 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:25.552 2008] [  388] rotating finished
+[Fri Dec  5 00:49:26.390 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:26.396 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:26.396 2008] [  388] rotating finished
+[Fri Dec  5 00:49:27.454 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:27.460 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:27.460 2008] [  388] rotating finished
+[Fri Dec  5 00:49:28.444 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:28.449 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:28.449 2008] [  388] rotating finished
+[Fri Dec  5 00:49:29.269 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:29.275 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:29.275 2008] [  388] rotating finished
+[Fri Dec  5 00:49:30.131 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:30.138 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:30.138 2008] [  388] rotating finished
+[Fri Dec  5 00:49:30.962 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:30.968 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:30.968 2008] [  388] rotating finished
+[Fri Dec  5 00:49:31.886 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:31.902 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:31.902 2008] [  388] rotating finished
+[Fri Dec  5 00:49:32.728 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:32.734 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:32.734 2008] [  388] rotating finished
+[Fri Dec  5 00:49:33.570 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:33.577 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:33.577 2008] [  388] rotating finished
+[Fri Dec  5 00:49:34.417 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:34.421 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:34.421 2008] [  388] rotating finished
+[Fri Dec  5 00:49:35.277 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:35.283 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:35.283 2008] [  388] rotating finished
+[Fri Dec  5 00:49:36.158 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:36.163 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:36.164 2008] [  388] rotating finished
+[Fri Dec  5 00:49:37.078 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:37.083 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:37.083 2008] [  388] rotating finished
+[Fri Dec  5 00:49:38.331 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:38.337 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:38.337 2008] [  388] rotating finished
+[Fri Dec  5 00:49:39.178 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:39.184 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:39.184 2008] [  388] rotating finished
+[Fri Dec  5 00:49:40.044 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:40.050 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:40.050 2008] [  388] rotating finished
+[Fri Dec  5 00:49:40.924 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:40.930 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:40.930 2008] [  388] rotating finished
+[Fri Dec  5 00:49:41.805 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:41.811 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:41.812 2008] [  388] rotating finished
+[Fri Dec  5 00:49:42.692 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:42.698 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:42.698 2008] [  388] rotating finished
+[Fri Dec  5 00:49:43.546 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:43.552 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:43.553 2008] [  388] rotating finished
+[Fri Dec  5 00:49:44.456 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:44.463 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:44.463 2008] [  388] rotating finished
+[Fri Dec  5 00:49:45.340 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:45.346 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:45.346 2008] [  388] rotating finished
+[Fri Dec  5 00:49:46.195 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:46.201 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:46.201 2008] [  388] rotating finished
+[Fri Dec  5 00:49:47.107 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:47.119 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:47.119 2008] [  388] rotating finished
+[Fri Dec  5 00:49:47.947 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:47.953 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:47.953 2008] [  388] rotating finished
+[Fri Dec  5 00:49:48.790 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:48.797 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:48.798 2008] [  388] rotating finished
+[Fri Dec  5 00:49:49.639 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:49.645 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:49.645 2008] [  388] rotating finished
+[Fri Dec  5 00:49:50.492 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:50.497 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:50.497 2008] [  388] rotating finished
+[Fri Dec  5 00:49:51.341 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:51.346 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:51.346 2008] [  388] rotating finished
+[Fri Dec  5 00:49:52.215 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:52.228 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:52.228 2008] [  388] rotating finished
+[Fri Dec  5 00:49:53.064 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:53.073 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:53.076 2008] [  388] rotating finished
+[Fri Dec  5 00:49:53.924 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:53.931 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:53.931 2008] [  388] rotating finished
+[Fri Dec  5 00:49:54.807 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:54.813 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:54.813 2008] [  388] rotating finished
+[Fri Dec  5 00:49:55.662 2008] [  388] rotating indices (seamless=1)
+[Fri Dec  5 00:49:55.669 2008] [  388] rotating index 'product_delta': success
+[Fri Dec  5 00:49:55.670 2008] [  388] rotating finished
+[Fri Dec  5 02:52:32.193 2008] [  388] caught SIGTERM, shutting down
+[Fri Dec  5 02:52:32.195 2008] [  388] shutdown complete
+[Fri Dec  5 02:53:22.732 2008] [ 4174] creating server socket on 127.0.0.1:3312
+[Fri Dec  5 02:53:22.733 2008] [ 4174] accepting connections
+[Fri Dec  5 02:54:21.142 2008] [ 4174] caught SIGTERM, shutting down
+[Fri Dec  5 02:54:21.143 2008] [ 4174] shutdown complete
+[Fri Dec  5 02:54:48.557 2008] [ 4198] creating server socket on 127.0.0.1:3312
+[Fri Dec  5 02:54:48.557 2008] [ 4198] accepting connections
+[Fri Dec  5 03:33:12.116 2008] [ 4198] caught SIGTERM, shutting down
+[Fri Dec  5 03:33:12.136 2008] [ 4198] shutdown complete
+[Fri Dec  5 03:33:50.116 2008] [ 4434] creating server socket on 127.0.0.1:3312
+[Fri Dec  5 03:33:50.116 2008] [ 4434] accepting connections
+[Fri Dec  5 04:13:16.436 2008] [ 4434] caught SIGTERM, shutting down
+[Fri Dec  5 04:13:16.437 2008] [ 4434] shutdown complete
+[Fri Dec  5 04:13:49.083 2008] [ 4623] creating server socket on 127.0.0.1:3312
+[Fri Dec  5 04:13:49.105 2008] [ 4623] accepting connections
+[Fri Dec  5 09:07:29.983 2008] [ 4623] rotating indices (seamless=1)
+[Fri Dec  5 09:07:30.069 2008] [ 4623] rotating index 'product_delta': success
+[Fri Dec  5 09:07:30.078 2008] [ 4623] rotating index 'product_core': success
+[Fri Dec  5 09:07:30.208 2008] [ 4623] rotating index 'client_delta': success
+[Fri Dec  5 09:07:30.216 2008] [ 4623] rotating index 'client_core': success
+[Fri Dec  5 09:07:30.216 2008] [ 4623] rotating finished
+[Sat Dec 13 09:20:19.867 2008] [ 4623] caught SIGTERM, shutting down
+[Sat Dec 13 09:20:20.103 2008] [ 4623] shutdown complete
+[Sat Dec 13 10:35:31.862 2008] [  747] creating server socket on 127.0.0.1:3312
+[Sat Dec 13 10:35:31.871 2008] [  747] accepting connections
+[Fri Dec 19 15:52:43.499 2008] [  747] caught SIGTERM, shutting down
+[Fri Dec 19 15:52:44.010 2008] [  747] shutdown complete
+[Tue Dec 23 14:34:48.408 2008] [15662] creating server socket on 127.0.0.1:3312
+[Tue Dec 23 14:34:48.418 2008] [15662] accepting connections
+[Tue Dec 23 14:48:59.818 2008] [15662] rotating indices (seamless=1)
+[Tue Dec 23 14:48:59.855 2008] [15662] rotating index 'product_delta': success
+[Tue Dec 23 14:48:59.855 2008] [15662] rotating finished
+[Tue Dec 23 14:48:59.899 2008] [15662] rotating indices (seamless=1)
+[Tue Dec 23 14:48:59.904 2008] [15662] rotating index 'product_delta': success
+[Tue Dec 23 14:48:59.904 2008] [15662] rotating finished
+[Tue Dec 23 14:48:59.998 2008] [15662] rotating indices (seamless=1)
+[Tue Dec 23 14:49:00.031 2008] [15662] rotating index 'product_delta': success
+[Tue Dec 23 14:49:00.031 2008] [15662] rotating finished
+[Tue Dec 23 14:49:00.097 2008] [15662] rotating indices (seamless=1)
+[Tue Dec 23 14:49:00.108 2008] [15662] rotating index 'product_delta': success
+[Tue Dec 23 14:49:00.108 2008] [15662] rotating finished
+[Tue Dec 23 14:49:00.185 2008] [15662] rotating indices (seamless=1)
+[Tue Dec 23 14:49:00.192 2008] [15662] rotating index 'product_delta': success
+[Tue Dec 23 14:49:00.192 2008] [15662] rotating finished
+[Tue Dec 23 14:49:00.256 2008] [15662] rotating indices (seamless=1)
+[Tue Dec 23 14:49:00.266 2008] [15662] rotating index 'product_delta': success
+[Tue Dec 23 14:49:00.266 2008] [15662] rotating finished
+[Tue Dec 23 15:07:04.210 2008] [15662] rotating indices (seamless=1)
+[Tue Dec 23 15:07:04.218 2008] [15662] rotating index 'product_delta': success
+[Tue Dec 23 15:07:04.219 2008] [15662] rotating finished
+[Tue Dec 23 15:07:04.300 2008] [15662] rotating indices (seamless=1)
+[Tue Dec 23 15:07:04.310 2008] [15662] rotating index 'product_delta': success
+[Tue Dec 23 15:07:04.310 2008] [15662] rotating finished
+[Tue Dec 23 20:14:19.429 2008] [15662] rotating indices (seamless=1)
+[Tue Dec 23 20:14:19.638 2008] [15662] rotating index 'product_delta': success
+[Tue Dec 23 20:14:19.662 2008] [15662] rotating index 'product_core': success
+[Tue Dec 23 20:14:19.670 2008] [15662] rotating index 'client_delta': success
+[Tue Dec 23 20:14:19.681 2008] [15662] rotating index 'client_core': success
+[Tue Dec 23 20:14:19.681 2008] [15662] rotating finished
+[Thu Dec 25 10:37:49.465 2008] [15662] caught SIGTERM, shutting down
+[Thu Dec 25 10:37:49.620 2008] [15662] shutdown complete
+[Sun Jan 11 11:03:57.672 2009] [53111] creating server socket on 127.0.0.1:3312
+[Sun Jan 11 11:03:57.685 2009] [53111] accepting connections
+[Sun Feb 22 21:13:43.525 2009] [11472] creating server socket on 127.0.0.1:3312
+[Sun Feb 22 21:13:43.525 2009] [11472] accepting connections
+[Sun Feb 22 23:34:54.001 2009] [11472] rotating indices (seamless=1)
+[Sun Feb 22 23:34:54.014 2009] [11472] rotating index 'product_delta': success
+[Sun Feb 22 23:34:54.015 2009] [11472] rotating finished
+[Sun Feb 22 23:34:54.131 2009] [11472] rotating indices (seamless=1)
+[Sun Feb 22 23:34:54.138 2009] [11472] rotating index 'product_delta': success
+[Sun Feb 22 23:34:54.139 2009] [11472] rotating finished
+[Mon Feb 23 11:54:35.803 2009] [11472] caught SIGTERM, shutting down
+[Mon Feb 23 11:54:36.035 2009] [11472] shutdown complete
+[Tue Feb 24 08:54:45.944 2009] [ 4459] creating server socket on 127.0.0.1:3312
+[Tue Feb 24 08:54:45.968 2009] [ 4459] accepting connections
+[Tue Feb 24 10:49:23.766 2009] [ 4459] caught SIGTERM, shutting down
+[Tue Feb 24 10:49:23.802 2009] [ 4459] shutdown complete
+[Wed Feb 25 07:10:06.155 2009] [ 3736] creating server socket on 127.0.0.1:3312
+[Wed Feb 25 07:10:06.169 2009] [ 3736] accepting connections
+[Wed Feb 25 07:13:52.004 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:13:52.052 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:13:52.053 2009] [ 3736] rotating finished
+[Wed Feb 25 07:13:52.103 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:13:52.108 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:13:52.108 2009] [ 3736] rotating finished
+[Wed Feb 25 07:13:52.257 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:13:52.267 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:13:52.271 2009] [ 3736] rotating finished
+[Wed Feb 25 07:13:52.380 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:13:52.386 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:13:52.386 2009] [ 3736] rotating finished
+[Wed Feb 25 07:29:20.402 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:29:20.433 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:29:20.433 2009] [ 3736] rotating finished
+[Wed Feb 25 07:29:20.489 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:29:20.495 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:29:20.495 2009] [ 3736] rotating finished
+[Wed Feb 25 07:29:50.779 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:29:50.786 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:29:50.786 2009] [ 3736] rotating finished
+[Wed Feb 25 07:29:50.947 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:29:50.952 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:29:50.952 2009] [ 3736] rotating finished
+[Wed Feb 25 07:30:17.341 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:30:17.348 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:30:17.348 2009] [ 3736] rotating finished
+[Wed Feb 25 07:30:17.481 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:30:17.489 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:30:17.489 2009] [ 3736] rotating finished
+[Wed Feb 25 07:31:18.002 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:31:18.007 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:31:18.007 2009] [ 3736] rotating finished
+[Wed Feb 25 07:31:18.101 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:31:18.108 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:31:18.108 2009] [ 3736] rotating finished
+[Wed Feb 25 07:32:13.842 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:32:13.881 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:32:13.882 2009] [ 3736] rotating finished
+[Wed Feb 25 07:32:13.933 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:32:13.938 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:32:13.939 2009] [ 3736] rotating finished
+[Wed Feb 25 07:32:22.664 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:32:22.668 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:32:22.668 2009] [ 3736] rotating finished
+[Wed Feb 25 07:32:22.759 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:32:22.776 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:32:22.776 2009] [ 3736] rotating finished
+[Wed Feb 25 07:32:31.479 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:32:31.490 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:32:31.490 2009] [ 3736] rotating finished
+[Wed Feb 25 07:32:31.604 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:32:31.614 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:32:31.614 2009] [ 3736] rotating finished
+[Wed Feb 25 07:32:40.501 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:32:40.506 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:32:40.506 2009] [ 3736] rotating finished
+[Wed Feb 25 07:32:40.643 2009] [ 3736] rotating indices (seamless=1)
+[Wed Feb 25 07:32:40.648 2009] [ 3736] rotating index 'product_delta': success
+[Wed Feb 25 07:32:40.648 2009] [ 3736] rotating finished
+[Fri Feb 27 10:44:19.448 2009] [ 3736] rotating indices (seamless=1)
+[Fri Feb 27 10:44:19.557 2009] [ 3736] rotating index 'product_delta': success
+[Fri Feb 27 10:44:19.557 2009] [ 3736] rotating finished
+[Fri Feb 27 10:44:19.719 2009] [ 3736] rotating indices (seamless=1)
+[Fri Feb 27 10:44:19.732 2009] [ 3736] rotating index 'product_delta': success
+[Fri Feb 27 10:44:19.732 2009] [ 3736] rotating finished
+[Sat Feb 28 07:02:29.145 2009] [ 3736] rotating indices (seamless=1)
+[Sat Feb 28 07:02:29.263 2009] [ 3736] rotating index 'product_delta': success
+[Sat Feb 28 07:02:29.263 2009] [ 3736] rotating finished
+[Sat Feb 28 07:02:29.363 2009] [ 3736] rotating indices (seamless=1)
+[Sat Feb 28 07:02:29.368 2009] [ 3736] rotating index 'product_delta': success
+[Sat Feb 28 07:02:29.368 2009] [ 3736] rotating finished
+[Sat Feb 28 07:02:29.607 2009] [ 3736] rotating indices (seamless=1)
+[Sat Feb 28 07:02:29.622 2009] [ 3736] rotating index 'product_delta': success
+[Sat Feb 28 07:02:29.622 2009] [ 3736] rotating finished
+[Sat Feb 28 07:02:29.751 2009] [ 3736] rotating indices (seamless=1)
+[Sat Feb 28 07:02:29.774 2009] [ 3736] rotating index 'product_delta': success
+[Sat Feb 28 07:02:29.775 2009] [ 3736] rotating finished
+[Sat Feb 28 07:04:23.838 2009] [ 3736] rotating indices (seamless=1)
+[Sat Feb 28 07:04:23.848 2009] [ 3736] rotating index 'product_delta': success
+[Sat Feb 28 07:04:23.848 2009] [ 3736] rotating finished
+[Sat Feb 28 07:04:23.943 2009] [ 3736] rotating indices (seamless=1)
+[Sat Feb 28 07:04:23.951 2009] [ 3736] rotating index 'product_delta': success
+[Sat Feb 28 07:04:23.951 2009] [ 3736] rotating finished
+[Sat Feb 28 07:04:24.079 2009] [ 3736] rotating indices (seamless=1)
+[Sat Feb 28 07:04:24.097 2009] [ 3736] rotating index 'product_delta': success
+[Sat Feb 28 07:04:24.097 2009] [ 3736] rotating finished
+[Sat Feb 28 07:04:24.268 2009] [ 3736] rotating indices (seamless=1)
+[Sat Feb 28 07:04:24.277 2009] [ 3736] rotating index 'product_delta': success
+[Sat Feb 28 07:04:24.277 2009] [ 3736] rotating finished
+[Thu Mar 12 06:22:39.522 2009] [ 3736] caught SIGTERM, shutting down
+[Thu Mar 12 06:22:39.846 2009] [ 3736] shutdown complete
+[Tue Mar 17 09:23:06.148 2009] [14645] creating server socket on 127.0.0.1:3312
+[Tue Mar 17 09:23:06.364 2009] [14645] accepting connections
+[Thu Mar 19 19:50:06.127 2009] [14645] caught SIGTERM, shutting down
+[Thu Mar 19 19:50:06.397 2009] [14645] shutdown complete
+[Thu Mar 26 13:01:54.469 2009] [ 3364] creating server socket on 127.0.0.1:3312
+[Thu Mar 26 13:01:54.480 2009] [ 3364] accepting connections
+[Mon Mar 30 08:04:26.748 2009] [ 3364] caught SIGTERM, shutting down
+[Mon Mar 30 08:04:26.999 2009] [ 3364] shutdown complete
+[Mon Apr 13 17:59:51.012 2009] [10324] creating server socket on 127.0.0.1:3312
+[Mon Apr 13 17:59:51.029 2009] [10324] accepting connections
+[Mon Apr 13 18:02:17.094 2009] [10324] rotating indices (seamless=1)
+[Mon Apr 13 18:02:17.102 2009] [10324] rotating index 'product_delta': success
+[Mon Apr 13 18:02:17.102 2009] [10324] rotating finished
+[Mon Apr 13 18:02:17.239 2009] [10324] rotating indices (seamless=1)
+[Mon Apr 13 18:02:17.258 2009] [10324] rotating index 'product_delta': success
+[Mon Apr 13 18:02:17.258 2009] [10324] rotating finished
+[Mon Apr 13 18:15:11.231 2009] [10324] rotating indices (seamless=1)
+[Mon Apr 13 18:15:11.261 2009] [10324] rotating index 'product_delta': success
+[Mon Apr 13 18:15:11.262 2009] [10324] rotating finished
+[Mon Apr 13 18:15:11.391 2009] [10324] rotating indices (seamless=1)
+[Mon Apr 13 18:15:11.399 2009] [10324] rotating index 'product_delta': success
+[Mon Apr 13 18:15:11.399 2009] [10324] rotating finished
+[Mon Apr 13 18:15:58.536 2009] [10324] rotating indices (seamless=1)
+[Mon Apr 13 18:15:58.565 2009] [10324] rotating index 'product_delta': success
+[Mon Apr 13 18:15:58.565 2009] [10324] rotating finished
+[Mon Apr 13 18:15:58.745 2009] [10324] rotating indices (seamless=1)
+[Mon Apr 13 18:15:58.759 2009] [10324] rotating index 'product_delta': success
+[Mon Apr 13 18:15:58.759 2009] [10324] rotating finished
+[Mon Apr 13 18:16:33.790 2009] [10324] rotating indices (seamless=1)
+[Mon Apr 13 18:16:33.798 2009] [10324] rotating index 'product_delta': success
+[Mon Apr 13 18:16:33.802 2009] [10324] rotating finished
+[Mon Apr 13 18:16:33.953 2009] [10324] rotating indices (seamless=1)
+[Mon Apr 13 18:16:33.959 2009] [10324] rotating index 'product_delta': success
+[Mon Apr 13 18:16:33.959 2009] [10324] rotating finished
+[Mon Apr 27 08:32:00.021 2009] [10324] caught SIGTERM, shutting down
+[Mon Apr 27 08:32:00.352 2009] [10324] shutdown complete

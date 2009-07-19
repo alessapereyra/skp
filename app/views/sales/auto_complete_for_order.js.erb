@@ -1,0 +1,4 @@
+<% @clients.each do |client| %>
+<%= client.id %>|<%= client.name %>|<%= client.address %>|<%= client.telephone %>|<%= client.ruc %>
+<% end %>
+0|<%= link_to "registrar nuevo cliente ", inventory_client_path, :class=>'add_new' %>||

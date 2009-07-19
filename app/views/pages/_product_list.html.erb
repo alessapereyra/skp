@@ -1,0 +1,78 @@
+<div id="detalle">
+
+  <!-- <a href="/web/campana_escolar"><div id="campana_escolar"></div></a> -->
+	
+	<!-- <a href="/web/dia_madre"><img src='/images/web/madre.png' alt="dia de la madre" title="dia de la madre" id="diamadre"/></a> -->
+	
+	<p id="first">Mostrando <%= @catalogue.offset + 1 %> a 
+          <%= @catalogue.offset + @catalogue.length %> de <%= @catalogue.total_entries %> <%= (@catalogue.total_entries > 1 || @catalogue.total_entries == 0 )? "productos encontrados" : "producto encontrado" %> de 
+		  <%= @search ?  @search : "nuestros &uacute;ltimos productos" %>.
+	</p>
+
+
+	<ul id="list">
+		
+<%- @catalogue.each do |product| -%>
+		
+			<li class="product <%= cycle("","second") %>">
+				<div class="text">
+						<h3> <%= link_to product.name.humanize, product_catalogue_path(product.id), :rel=>'facebox' %> </h3>
+						<h4> C&oacute;digo: <%= product.code %> </h4>
+						<%= link_to_remote "<img src='/images/web/add_to_quote_small.png' alt='#{product.name}' class='add_to' />",:url=>{:action=>"add_to_quote",:id=>product.id} %>  
+						
+					</dl>
+				
+				</div>
+				
+				<div class="image">
+					<%= link_to "<img class='product_image' src='#{product.picture.thumb.url}' alt='#{product.name}'/><!--[if !IE]><!--><span class='icon'/><!-- <![endif]-->",product_catalogue_path(product.id), :rel=>'facebox' unless product.picture.nil? %>  
+				</div>
+
+			<div class="separator"> ---- </div>
+			
+			</li>
+			
+			
+<%- end -%>
+
+ 	</ul> <!-- list -->
+
+
+	<% unless @alternative.empty? %>
+		<ul id="list">
+
+			<h3>Productos relacionados</h3>
+
+
+	<%- @alternative.each do |product| -%>
+
+				<li class="product <%= cycle("","second") %>">
+					<div class="text">
+							<h3> <%= link_to product.name.humanize, product_catalogue_path(product.id), :rel=>'facebox' %> </h3>
+							<h4> C&oacute;digo: <%= product.code %> </h4>
+						</dl>
+					</div>
+
+					<div class="image">
+						<%= link_to "<img class='product_image' src='#{product.picture.thumb.url}' alt='#{product.name}'/><!--[if !IE]><!--><span class='icon'/><!-- <![endif]-->",product_catalogue_path(product.id), :rel=>'facebox' unless product.picture.nil? %>  
+						<%= link_to "<img src='/images/web/add_to_quote_small.png' alt='#{product.name}'/>",product_catalogue_path(product.id), :rel=>'facebox' %>  
+					</div>
+
+				<div class="separator"> ---- </div>
+
+				</li>
+
+
+	<%- end -%>
+
+	<% end %>
+	 	</ul> <!-- list -->
+
+
+
+	<div id="paginate" style="clear:both;">
+		<%= will_paginate @catalogue %>	
+	</div>
+
+
+</div>

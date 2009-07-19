@@ -1,0 +1,76 @@
+/* @override 
+	http://localhost:3000/stylesheets/factura.css
+	http://www.skykidsperu.com/stylesheets/factura.css
+*/
+
+#pagina {
+	
+	width: 630px;
+	height: auto;
+	
+}
+
+#datos {
+	margin-top: 140px;
+	margin-left: 80px;
+	width: 400px;
+}
+
+#nombre {
+	margin-bottom: 10px;
+}
+
+#ruc {
+	margin-bottom: 10px;
+}
+
+#fecha {
+
+	margin-right: 26px;
+	margin-top: 172px;
+	
+}
+
+#productos {
+
+	margin-left: 25px;
+	margin-top: 20px;
+	height: 230px;
+}
+
+
+#count {
+	width: 30px;
+	
+}
+
+#cantidad {
+	width: 120px;
+}
+
+#codigo {
+	width: 80px;
+}
+
+#descripcion {
+	width: 560px;
+}
+
+#unitario {
+	width: 100px;
+}
+
+#importe {
+	width: 60px;
+}
+
+#letras {
+	margin-top: 20px;
+	margin-left: 40px;
+}
+
+#totales {
+	width: 220px;
+	margin-top: 25px;
+	margin-right: 5px;
+}

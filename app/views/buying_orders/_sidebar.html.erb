@@ -1,0 +1,5 @@
+	<h3>Historial de los cinco últimos ingresos del producto</h3>
+	<div id="prices_list">
+		Seleccione un producto para visualizar sus &uacute;ltimos ingresos
+		<% @input_orders.each do | io | %> <%= io.cost %> <br /> <%= io.order_date %> <% end %>
+	</div>

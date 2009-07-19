@@ -1,0 +1,10 @@
+
+		<h2 id="cotizacion-title"><%= @quote.status == "requested" ?  "Pedido" : "Cotización de Skykids Perú Import S.A.C." %>   para <strong><%= @quote.client.name unless @quote.client.nil? %></strong></h2>
+		<h2 id="cotizacion-title">Consultas de stock : 2711253 o 98-110*8168 (Nextel) </h2>
+
+			<%= render :partial => 'finished_clean' %>
+		
+		<% unless @quote.status == 'requested' %>
+		<p>La presente cotizaci&oacute;n tiene una duraci&oacute;n v&aacute;lida de <%= @quote.duration.blank? ? "0" : @quote.duration.to_s %> d&iacute;as y est&aacute; sujeta a disponibilidad de stock</p>
+		<% end %>
+		<p>Los precios incluyen IGV</p>

@@ -1,0 +1,7 @@
+<%= content_tag(:h2, "Recepción de Productos")%>
+
+<span id="messages"><%= flash[:error] %></span>
+
+<h3>&Oacute;rdenes de productos pendientes</h3>
+	<p>Seleccione la orden de ingreso a recibir</p>
+<%= render :partial => 'pending_send_orders' %>

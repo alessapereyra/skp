@@ -1,0 +1,25 @@
+<%= content_tag(:h2, "Catálogo de Proveedores ")%>
+
+
+<table>
+	<thead>
+	<tr>
+		<th>Nombre</th>
+		<th>Direcci&oacute;n</th>
+		<th>Tel&eacute;fono</th>
+		<th>Email</th>
+	</tr>						
+	</thead>
+	<tbody>
+<%- @providers.each do |provider| -%>
+
+		<tr class="<%= cycle("even", "odd") -%>">
+			<td><%= provider.name %></td>
+			<td><%= provider.address %></td>
+			<td><%= provider.telephone %></td>
+			<td><%= provider.email %></td>
+
+<%- end -%>
+	</tbody>
+</table>
+

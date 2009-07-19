@@ -1,0 +1,164 @@
+<div id="content">
+
+	<img id="header-image" src="../images/web/catalogo-header.png" />
+
+</div> <!-- content -->
+
+
+<div id="header-strip">
+	<div class="left">
+		<a href="#">anterior</a>
+	</div>
+
+	<div class="right">
+		<a href="#">siguiente</a>
+	</div>
+
+	<p>revisa <em><%= link_to "nuestras ofertas", url_for(:action=>:search_product, :q=>"ofertas || remate") %></em> y nuestros <em><%= link_to "&uacute;ltimos productos",url_for(:action=>:search_product, :q=>"novedad") %></em></p>
+
+</div> <!-- header-strip -->
+
+
+
+<div class="end_content"></div>
+
+
+<div id="search">
+
+	<% remote_form_for :product, :url => { :controller=>"pages",:action => :search_product } do |od| %>
+	<fieldset>
+		<%= od.label :name, "empieza realizando una b&uacute;squeda" %>
+		<div>
+			<%= od.text_field :name, :class=>"ac_input" %>
+		</div>
+
+	</fieldset>	
+
+	<div id="name"><em id="help">ayuda</em></div>							
+
+	<div class="tip" style="display:none;">
+		<div id="help_tip">
+			<h2>&iquest;C&oacute;mo puedo buscar?</h2>
+			<p>Buscar en nuestro extenso cat&aacute;logo de productos es muy sencillo</p>
+			<p>Simplemente escribe una categor&iacute;a, descripci&oacute;n, o alg&uacute;n otro texto que tengas en mente y el
+				buscador se encargar&aacute; de ubicar los productos que deseas</p>
+				<p>Puedes afinar tus resultados usando operadores como &quot;+&quot; o &quot;-&quot;:</p>
+				<p>mu&ntilde;ecos + &quot;figuras de acci&oacute;n&quot;</p>
+				<p>juguetes - &quot;bob esponja&quot;</p>				
+			</div>
+
+	</div>		
+	<% end %>
+
+	</div> <!-- div search -->
+
+
+	<div class="start_subcontent"></div>
+
+	<div id="inside">
+
+
+		<div id="inside_content">
+			
+			<h1 id="catalogo">buscando en el cat&aacute;logo</h1>
+			
+			<%= render :partial => 'product_list' %> 
+	
+
+		</div> <!-- inside_content -->
+
+			<div id="sidebar">
+
+				<h2 id="refina">Refina tu b&uacute;squeda</h2>					
+
+				<%= render :partial=>"consulta" %>
+						
+				
+					<div id="open-sidebar">
+						
+						<div class="ui-accordion-group">
+							<h3 class="ui-accordion-header"><a href="#">seg&uacute;n edad</a></h3>
+							<div class="ui-accordion-content">
+
+								<%= link_to_remote "todas las edades",:url=>{:action=>:set_age, :q=>"0", :t=>"20"} %>			
+								
+								<div class="row">
+									<dd>
+										de  <%= select_tag :age_from, options_for_select((0..18).collect {|x| [x, x] },[session[:product_from]]), :class=>"small_fields" %>  a
+										<%= select_tag :age_to, options_for_select((0..18).collect {|x| [x, x] },[session[:product_to]]), :class=>"small_fields" %>  a&ntilde;os
+									</dd>
+								</div>
+
+								<%= observe_field :age_from, :url => { :action => :set_age_from },
+								      :with => 'q'
+								      %>
+
+								<%= observe_field :age_to, :url => { :action => :set_age_to },
+									  :with => 'q'
+								      %>
+
+
+								<%= link_to_remote "de 0 a 12 meses",:url=>{:action=>:set_age, :q=>"0", :t=>"1"} %>
+								<%= link_to_remote "de 1 a 3 años",:url=>{:action=>:set_age, :q=>"1", :t=>"3"} %>
+								<%= link_to_remote "de 3 a 5 años",:url=>{:action=>:set_age, :q=>"3", :t=>"5"} %>
+								<%= link_to_remote "de 5 a 8 años",:url=>{:action=>:set_age, :q=>"5", :t=>"8"} %>							
+								<%= link_to_remote "de 8 a 13 años",:url=>{:action=>:set_age, :q=>"8", :t=>"13"} %>
+								<%= link_to_remote "de 13 a 16 años",:url=>{:action=>:set_age, :q=>"13", :t=>"16"} %>
+								<%= link_to_remote "todas las edades",:url=>{:action=>:set_age, :q=>"0", :t=>"20"} %>							
+							</div>
+						</div>
+						<div class="ui-accordion-group">
+							<h3 class="ui-accordion-header"><a href="#">por precio</a></h3>
+							<div class="ui-accordion-content">
+								<div class="row">
+									<dd>De <%= text_field_tag :price_from, " ",:class=>"small_fields" %> a <%= text_field_tag :price_to, " 	",:class=>"small_fields" %> soles </dd>
+								</div>
+								<%= link_to_remote "todos los precios",:url=>{:action=>:set_price, :q=>"0", :t=>"1000"} %>								
+							</div>
+						</div>
+
+						<%= observe_field :price_from, :url => { :action => :set_price_from }, :with => 'q',:duration=>5 %>
+						<%= observe_field :price_to, :url => { :action => :set_price_to }, :with => 'q',:duration=>5 %>
+				</div> <!-- open sidebar -->
+
+				<div id="accordion">
+					<div class="ui-accordion-group">
+			
+						<div class="ui-accordion-group">
+							<h3 class="ui-accordion-header"><a href="#">seg&uacute;n categor&iacute;as</a></h3>
+							<div class="ui-accordion-content">
+								<%= link_to_remote "todos las categor&iacute;as",:url=>{:action=>:add_to_search, :q=>""} %>																
+										<%- Category.all(:conditions=>"(name not like '' or name not like ' ') and category_id = 8").each do |c| -%>
+												<%= link_to_remote c.name.humanize,:url=>{:action=>:add_to_search, :q=>c.name} -%>
+										<%- end -%>
+								<%= link_to_remote "todos las categor&iacute;as",:url=>{:action=>:add_to_search, :q=>""} %>																
+							</div>
+						</div>
+				
+					<div class="ui-accordion-group">
+						<h3 class="ui-accordion-header"><a href="#">o entre marcas</a></h3>
+						<div class="ui-accordion-content">
+								<%= link_to_remote "todos las marcas",:url=>{:action=>:add_to_search, :q=>""} %>																
+									<% Brand.all(:conditions=>"name not like '' or name not like ' ' ").each do |c| %>
+										<%= link_to_remote c.name.humanize, :url=>{:action=>:add_to_search, :q=>c.name} %>
+									<% end %>
+								<%= link_to_remote "todos las marcas",:url=>{:action=>:add_to_search, :q=>""} %>																
+						</div>
+					</div>
+				</div>
+
+				
+				<%= link_to_remote image_tag("web/ofertas.png"), :url=>{:action=>:search_product, :q=>"ofertas || remate"} %>
+		<!-- >	
+				<%= link_to image_tag("web/vale_navideno.png"), "http://www.skykidsperu.com/web/vale_navidad" %>
+		<-- >
+
+
+			</div> <!-- div sidebar -->
+
+			<%= observe_field :product_name, :url => { :controller=>"pages",:action => :search_product },
+						:frequency => 0.25,
+						:with => 'q'
+						%>
+						
+	</div> <!-- inside -->

@@ -1,0 +1,66 @@
+<div id="content">
+
+		<img id="header-image" src="http://www.skykidsperu.com/images/web/cotizacion-header.png" alt="Servicios" />
+
+	</div> <!-- content -->
+	
+		<div id="header-strip">
+
+		</div> <!-- header-strip -->
+
+
+
+	<div class="end_content"></div>
+
+
+
+	<div class="start_subcontent"></div>
+	
+
+<div id="inside">
+
+	<div id="quote_content">
+		
+		
+		<div id="quote_wrapper">
+
+				<h2 id="cotizacion-title"><%= @quotes.first.status == "requested" ?  "Pedidos" : "Cotizaciones de Skykids Perú Import S.A.C." %>   para <strong><%= @quotes.first.client.name unless @quotes.first.client.nil? %></strong></h2>
+				<h2 id="cotizacion-title">Consultas de stock : 271-1253 </h2>
+
+
+			<div class="notice">
+				<h2>Estos son cotizaciones que hemos preparado para ti. Puede revisarlas en el siguiente cuadro.</h2>
+				</div>
+
+				<table id="product_table">
+					<thead>
+					<tr>
+						<th>Fecha</th>				
+						<th>Cantidad de Juguetes</th>				
+						<th>Total</th>										
+						<th></th>			
+					</tr>						
+					</thead>
+					<tbody>
+					<% i=0 %>
+						<% @quotes.each do |quote| %>
+						<% i+=1  %>
+						<tr>
+
+							<td><%= quote.quote_date.strftime("%d/%m/%y")  %></td>									
+							<td><%= quote.total_products  %></td>									
+							<td><%= quote.price %></td>																							
+							<td><%= link_to "Revisar", url_for(:action=>"cotizacion_numerada",:contact_name=>Base64.encode64(quote.sending_details),:item=>i)  %></td>	
+						</tr>
+						<%- end -%>
+
+					</tbody>
+				</table>
+
+
+
+		</div>
+
+	</div> <!-- quote_content -->
+
+</div> <!-- inside -- >

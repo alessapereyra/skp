@@ -1,0 +1,39 @@
+<%= content_tag(:h3, "Precios actuales")%>
+
+<table id="edit_input_order">
+	<thead>
+	<tr>
+		<th width="20" rowspan="2">Proveedor</th>
+		<th width="20" rowspan="2">C&oacute;digo Proveedor</th>		
+		<% if store_admin? || store_supervisor? %>
+		<th width="20" colspan="4">Precios</th>	
+		<% else %>
+		<th width="20" colspan="5">Precios</th>			
+		<% end %>
+		<th width="20" rowspan="2"></th>
+	</tr>						
+	<tr>
+
+		<th width="20" class="subheader">Base</th>	
+		<th width="20" class="subheader">Mayorista</th>	
+		<th width="20" class="subheader">Corporativo</th>	
+		
+		<% if store_admin? || store_supervisor? %>
+			<% if current_store == 1 %>
+			<th width="20" class="subheader">El Trigal</th>				
+			<% else %>
+			<th width="20" class="subheader">El Polo</th>									
+			<% end %>
+			
+		<% else %>
+		<th width="20" class="subheader">El Trigal</th>	
+		<th width="20" class="subheader">El Polo</th>									
+		<% end %>
+	</tr>
+	</thead>
+	<tbody>
+
+<%= render :partial=>"detail", :collection=>@input_order_details %>
+
+	</tbody>
+</table>

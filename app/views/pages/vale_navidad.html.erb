@@ -1,0 +1,43 @@
+<div id="content">
+
+		<img id="header-image" src="../images/web/catalogo-header.png" />
+
+	</div> <!-- content -->
+	
+	
+	<div id="header-strip">
+		<div class="left">
+			<a href="#">anterior</a>
+		</div>
+		
+		<div class="right">
+			<a href="#">siguiente</a>
+		</div>
+		
+		<p>revisa <em><%= link_to "nuestras ofertas", url_for(:action=>:search_product, :q=>"ofertas || remate") %></em> y nuestros <em><%= link_to "&uacute;ltimos productos",url_for(:action=>:search_product, :q=>"novedad") %></em></p>
+
+	</div> <!-- header-strip -->
+
+
+		
+<div class="end_content"></div>
+
+
+<div id="full_inside">
+<%= content_tag(:h1, "Vale Navide&ntilde;o ")%>
+
+<p class="text">Con la modalidad del cr&eacute;dito institucional.</p>
+
+<ol>
+	<li>Se firma un contrato de cr&eacute;dito institucional, en el cual se especifica el tipo de atenci&oacute;n que se realizar&aacute;  con el trabajador, en este caso a  sus trabajadores, se les da la oportunidad de comprar juguetes sin intereses y a precios preferenciales, los descuentos a los cuales el cliente pueda acceder, los periodos de liquidaci&oacute;n y fechas de pago.</li>
+	<li>No se cobra intereses ni gastos administrativos.</li>
+	<li>Los vales podr&aacute;n ser emitidos a elecci&oacute;n del cliente, impresos por la misma empresa, o impresos por el proveedor conteniendo:  n&uacute;mero del vale, nombre del beneficiario, DNI del beneficiario, monto asignado, fecha , firma y sello del responsable de la instituci&oacute;n.</li>
+	<li>Para la atenci&oacute;n es requisito indispensable la firma y el sello del representante de la empresa que otorgue el cr&eacute;dito.</li>
+	<li>No es necesario que el beneficiario se apersone sino, puede mandar a otra persona que lo represente pero con el DNI, original del beneficiario (por ejemplo alg&uacute;n familiar, esposo y/o esposa  hermanos etc.).</li>
+	<li>No se exige que el trabajador consuma la totalidad del monto asignado.</li>
+	<li>El vale tendra validez hasta el 31/12/08</li>
+	<li>Los excedentes de vales ser&aacute;n cancelados a trav&eacute;s de boletas, por el mismo beneficiario en efectivo (ejemplo si tiene un vale de S/. 100.00  y  su  consumo fue  de  S/. 110.00, se le boleteara el diferencial en este caso de  los S/. 10.00).</li>
+</ol>
+
+</div>
+

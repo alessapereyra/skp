@@ -1,0 +1,40 @@
+#inventary {
+	
+	font-size: 0.5em;
+	
+}
+
+#inventary #results {
+	
+	margin-bottom:2em;
+	font-size: 1.5em;
+	
+}
+
+#inventary table#productos {
+	
+	width: 100%;
+	
+}
+
+#inventary th#codigo {
+	
+		width: 80px;
+		
+}
+
+#inventary th#descripcion {
+	
+}
+
+#inventary th#stock {
+	
+	width: 80px;
+	
+}
+
+#inventary th#precio_de_costo {
+
+	width: 80px;
+		
+}

@@ -1,0 +1,33 @@
+<h2>Facturas de Pedido</h2>
+
+<table>
+	<thead>
+	<tr>
+		<th>Número</th>		
+		<th>Tienda</th>		
+		<th>Fecha</th>
+		<th>Total</th>
+		<th>Costo</th>	
+		<th>estado</th>		
+		<th></th>
+	</tr>				
+	</thead>
+	<tbody>		
+	<% @quote.orders.each do |order| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= order.number %></td>		
+		<td><%= order.store.name %></td>
+		<td><%= order.order_date.strftime("%d/%m/%y") %></td>
+		<td><%= order.price %></td>
+		<td><%= order.cost %></td>		
+		<td><%= order.status == 'open' ? "pendiente" : "generada" %></td>		
+		<td><%= link_to "revisar", url_for(:controller=>"sales",:action=>"recover", :id=>order.id) %></td>
+	</tr>
+	<% end %>
+	</tbody>
+
+</table>
+
+<div id="endzone">
+<p><%= link_to "Regresar",reports_path %></p>
+</div>

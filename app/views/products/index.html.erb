@@ -1,0 +1,25 @@
+<%= content_tag(:h2, "Catálogo de Productos ")%>
+
+<% remote_form_for :product, :url=>{:action=>:search_product } do |od| %>
+
+<dl>
+	<fieldset>
+		<legend>Búsqueda de producto</legend>
+	<div id="single_column_left">
+		<dd><%= od.text_field :name, :class=>"ac_input" %></dd>
+	</div>			
+	</fieldset>	
+</dl>
+<% end %>
+
+<%= link_to_remote "Regenerar Stock", :url=>{:action=>:recalculate_stocks} %>
+
+<%= render :partial => 'product_list' %>
+
+
+	
+<div id="endzone">
+<%= link_to "agregar nuevo producto", new_product_path %>	
+</div>
+
+

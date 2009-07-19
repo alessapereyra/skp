@@ -1,0 +1,13 @@
+
+<%- remote_form_for :input_order, input_order, :url=>{:controller=>"input_orders", :action=>"update", :id=>input_order.id},:method=>"put",:index=>input_order.id do |t| -%>
+
+<tr id="row_<%= input_order.id -%>" class="<%= cycle("even", "odd") -%>">
+	<td><%= input_order.document %></td>				
+	<td><%= input_order.order_date.strftime("%d/%m/%y") %></td>
+	<td><div style="width:100px;"><%= input_order.provider.name %></div></td>
+	<td><%= input_order.cost %></td>
+	<td><%= t.select :input_type, InputOrder::InputTypes.collect {|x| [x.humanize, x]} %></td>
+	<td><%= t.submit "actualizar", :class=>"form_button" %></td>
+</tr>
+
+<%- end -%>

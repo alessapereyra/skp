@@ -1,0 +1,60 @@
+<div class="section">
+
+<h3>Ventas</h3>
+<table>
+	<thead>
+	<tr>
+		<th>Cantidad</th>		
+		<th>Fecha de Venta</th>
+		<th>Número</th>		
+		<th>Tipo</th>
+		<th>Pago</th>
+		<th>Precio</th>		
+		<th>Subtotal</th>
+		<th></th>				
+		<th></th>
+
+	</tr>				
+	</thead>
+	<tbody>		
+		<% if @order_details.empty? && @unloaded_order_details.empty? %>	
+			<tr>
+			<td colspan="8">
+				<p>El producto nunca ha sido vendido</p>
+			</td>
+			</tr>
+		<% else %>
+				
+	<% @order_details.each do |order_detail| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= order_detail.quantity %></td>		
+		<td><%= order_detail.order.order_date.strftime("%d/%m/%y") %></td>
+		<td><%= order_detail.order.number %></td>
+		<td><%= order_detail.order.type.humanize %></td>		
+		<td><%= order_detail.order.credit_card %></td>				
+		<td><%= order_detail.price %></td>				
+		<td><%= order_detail.subtotal %></td>						
+		<td><%= link_to "ver orden", order_report_path(order_detail.order.id) %></td>
+		<td></td>
+	</tr>
+	<% end %>
+	
+	<% @unloaded_order_details.each do |unloaded_order_detail| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= unloaded_order_detail.quantity %></td>		
+		<td><%= unloaded_order_detail.order.order_date.strftime("%d/%m/%y") %></td>
+		<td><%= unloaded_order_detail.order.number %></td>
+		<td><%= unloaded_order_detail.order.type.humanize %></td>		
+		<td><%= unloaded_order_detail.order.credit_card %></td>				
+		<td><%= unloaded_order_detail.price %></td>				
+		<td><%= unloaded_order_detail.subtotal %></td>						
+		<td><%= link_to "ver orden", order_report_path(unloaded_order_detail.order.id) %></td>
+		<td>sin descargar</td>		
+	</tr>
+	<% end %>
+	
+	<% end %>
+	</tbody>
+
+</table>
+</div>

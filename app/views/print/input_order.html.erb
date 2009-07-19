@@ -1,0 +1,61 @@
+
+
+	<div id="fecha">
+		<h2 class="fecha fecha_emision">
+		<em><%= @input_order.order_date.strftime("%d") %></em> 
+		<em><%= @input_order.order_date.strftime("%m")%></em>
+		<em><%= @input_order.order_date.strftime("%y")%></em>
+		</h2>		
+	</div>
+
+
+<div id="datos">
+  
+	<div id="domicilio_partida">
+      <%= @input_order.store.address %>
+	</div>
+			
+  <div id="domicilio_llegada">
+      <%= @input_order.owner.name unless @input_order.owner.blank? %>
+	</div>
+
+	<div id="destinatario">
+      <%= @input_order.provider.name unless @input_order.provider.blank? %><br />
+	</div>
+			
+	<div id="extra">
+
+	</div>			
+			
+</div>
+
+<div id="productos">
+  
+
+    <table>
+    	<thead>
+      	<tr>
+      		<th id="item" width="5"></th>		
+      		<th id="cantidad"></th>		
+      		<th id="codigo"></th>
+      		<th id="descripcion"></th>
+      		<th id="punit"></th>
+      		<th id="importe"></th>		
+      	</tr>
+    	</thead>
+    	<tbody>						
+      	<% i = 0 %>
+      	<% @input_order.input_order_details.each do |iod| %>
+        	<tr class="<%= cycle("even", "odd") -%>">
+
+          		<td><%= i+=1; i %></td>
+          		<td><%= iod.quantity %></td>
+          		<td><%= iod.product.code %></td>		
+          		<td><%= iod.product.name %> <br /><%= strip_tags(iod.product.description) if iod.product.print_description %></td>
+          		<td><%= iod.cost  %></td>				
+        	</tr>
+      	<% end %>
+    	</tbody>
+    </table>
+
+</div>

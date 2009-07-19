@@ -1,0 +1,93 @@
+<h2>Editando Cliente</h2>
+
+<% form_for(@client) do |f| %>
+  <%= f.error_messages %>
+
+<fieldset>
+<dl>	
+	<div class="single_column_left">
+		
+
+	<dt><%= f.label :name, "Nombre" %>  </dt>
+	<dd><%= f.text_field :name %>  </dd>
+
+	</div>
+
+	<div class="single_column_left">
+		
+
+	<dt class="odd"><%= f.label :address, "Dirección:" %>  </dt>
+	<dd class="odd"><%= f.text_field :address %>  </dd>
+
+	</div>
+
+	<div style="clear:both;"></div>
+
+	<div class="single_column_left">
+		
+
+	<dt><%= f.label :dni, "DNI:" %>  </dt>
+	<dd><%= f.text_field :dni %>  </dd>
+
+	</div>
+	
+	<div class="single_column_left">
+		
+
+	<dt class="odd"><%= f.label :telephone, "Tel&eacute;fono:" %>  </dt>
+	<dd class="odd"><%= f.text_field :telephone %>  </dd>
+
+	</div>
+
+	<div style="clear:both;"></div>	
+
+	<div class="single_column_left">
+		
+
+	<dt><%= f.label :ruc, "RUC" %>  </dt>
+	<dd><%= f.text_field :ruc %>  </dd>
+
+	</div>
+
+	<div class="single_column_left">
+		
+
+	<dt><%= f.label :legal_representative, "Representante Legal" %>  </dt>
+	<dd><%= f.text_field :legal_representative %>  </dd>
+
+	</div>
+
+	<div class="single_column_left">
+		
+
+	<dt><%= f.label :contact_person, "Persona de Contacto" %>  </dt>
+	<dd><%= f.text_field :contact_person %>  </dd>
+
+	</div>	
+	
+	<div class="single_column_left">
+		
+
+	<dt><%= f.label :contact_email, "Email de Contacto" %>  </dt>
+	<dd><%= f.text_field :contact_email %>  </dd>
+
+	</div>
+	
+	<div class="single_column_left">	
+	<dt><%= f.label :child_number, "N&uacute;mero de Ni&ntilde;os" %>  </dt>
+	<dd><%= f.text_field :child_number %>  </dd>
+	</div>
+	
+	<div class="single_column_left">
+	<dt><%= f.label :budget, "Presupuesto" %>  </dt>
+	<dd><%= f.text_field :budget %>  </dd>
+	</div>
+		
+</dl>
+</fieldset>
+
+<div id="endzone">
+  <%= f.submit "actualizar cliente", :confirm=>"¿Finalizar actualizaci&oacute;n de cliente?",:class=>"form_button" %> <p>o <%= link_to 'Cancelar', clients_path %></p>
+</div>
+
+<% end %>

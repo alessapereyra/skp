@@ -1,0 +1,34 @@
+<% fields_for :send_order_detail, @send_order_detail do |sod| %>
+
+<fieldset id="fieldset_sending">
+	<legend>Productos a enviar</legend> 
+
+	<dl>	
+
+
+			<div class="single_column_left">
+
+				<dt><%= sod.label :product_id, "Producto:" %></dt>
+				<dd><%= sod.text_field :product_id, :autocomplete =>"off" %>
+				<%= hidden_field_tag "send_order_detail[hidden_product_id]", "", :class=>"send_order_detail_hidden_product_id" %>
+				</dd>
+
+			</div>
+			
+			<div class="single_column_left">
+				
+				<dt>
+						<%= sod.label :quantity, "Cantidad:" %>
+				</dt>
+				
+				<dd>
+						<%= sod.text_field :quantity, :class=>'small_fields' %>
+				</dd>
+
+			</div>
+
+			<%= submit_to_remote "send_order_detail_button", "Agregar Producto", :url=>{ :controller=>'sending',:action=>'add_product' }, :html=>{:class=>'sending_submit button form_button'} %>
+
+	</dl>	
+</fieldset>	
+<% end %>

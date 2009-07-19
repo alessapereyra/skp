@@ -1,0 +1,106 @@
+<% form_for @input_order do |f| -%>
+
+
+<fieldset>
+	<legend>Datos del Ingreso</legend> 
+	<p>Ingrese la informaci&oacute;n del proveedor (o agregue uno nuevo) as&iacute; como de tienda y propietario de la mercader&iacute;a</p>
+
+	<dl>
+	  
+
+				<div class="single_column_left">
+
+					<dt>
+						<%= f.label :document, "Documento:" %>
+					</dt>
+
+					<dd>
+						<%= f.text_field :document %>
+					</dd>
+
+				</div>
+
+				<div class="single_column_left">
+
+					<dt>
+						<%= f.label :input_type, "Tipo de Ingreso:" %>
+					</dt>
+
+					<dd>
+						<%= f.select :input_type, InputOrder::InputTypes.collect {|x| [x.humanize, x]} -%>
+					</dd>
+
+				</div>
+				
+
+			<div class="single_column_left">
+
+				<dt>
+					<%= f.label :provider_id, "Proveedor:" %>
+				</dt>
+		
+				<dd>
+					<%= f.collection_select :provider_id, Provider.find(:all),:id,:name %>
+				</dd>
+				
+			</div>
+
+			<div class="single_column_left">
+
+				<dt>				
+					<%= f.label :order_date, "Fecha de Ingreso: " %>
+				</dt>
+					
+				<dd>
+				<div class="small_fields">
+				<%= f.date_select :order_date %>
+				</div>
+				</dd>			
+				
+			</div>
+		
+			<div class="single_column_left">
+
+				<dt>			
+				<%= f.label :store_id, "Tienda / Almac&eacute;n" %>
+				</dt>
+
+				<dd>
+				<%= f.collection_select :store_id, Store.find(:all), :id,:name %>
+				</dd>
+
+				
+			</div>
+		
+			<div class="single_column_left">
+
+				<dt>
+				<%= f.label :owner_id, "Dueño del Producto" %>
+				</dt>
+
+				<dd>
+				<%= f.collection_select :owner_id, Store.find(:all), :id,:name %>
+				</dd>
+				
+			</div>	
+				
+
+
+	</dl>
+	
+	
+</fieldset>
+
+	<%= render :partial=>"add_products_form" %>
+
+	<span id="product_error"></span>
+
+		<%= render :partial=>"product_list" %>		
+
+
+<div id="endzone">
+<%= f.submit "Finalizar Ingreso", :url=>{:action=>'create'}, :confirm=>'¿Finalizar ingreso?', :class=>'form_button' %> <p>o <%= link_to "cancelar", catalogue_path %></p>	
+</div>	
+
+
+<% end %>

@@ -1,0 +1,27 @@
+<%= content_tag(:h2, "Catálogo de Unidades ")%>
+
+<table>
+	<thead>
+  <tr>
+	<th>Nombre</th>
+	<th></th>
+	<th></th>
+	<th></th>			
+  </tr>
+</thead>
+<tbody>
+<% for unit in @units %>
+  <tr>
+    <td><%= unit.name %></td>	
+    <td><%= link_to 'Show', unit %></td>
+    <td><%= link_to 'Edit', edit_unit_path(unit) %></td>
+    <td><%= link_to 'Destroy', unit, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<div id="endzone">
+<%= link_to 'Agregar nueva unidad', new_unit_path %>	
+</div>
+

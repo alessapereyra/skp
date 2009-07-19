@@ -1,0 +1,14 @@
+	<% remote_form_for :send_order_detail,detail, :url=>{:controller=>"send_order_details", :action=>"update", :id=>detail.id},  :method=>'put',  :index=>detail.id do |t| -%>
+
+<tr id="row_<%= detail.id -%>" class="<%= cycle("even", "odd") -%>">
+	<td><%= detail_counter %></td>
+	<td><%= t.text_field :quantity %></td>
+	<td><%= detail.product.code %></td>				
+	<td><%= detail.product.name %></td>		
+	<td><%= strip_tags detail.product.description %></td>			
+	<td><%= t.submit "actualizar", :class=>"form_button" %></td>
+	<td><%= link_to_remote 'eliminar', :url=>{:controller=>'send_order_details',:action=>"destroy", :id=>detail.id}, :method=>"delete", :confirm=>"¿Desea eliminar el producto de la orden?	" %></td>	
+</tr>
+
+
+<% end -%>

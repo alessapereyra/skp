@@ -1,0 +1,40 @@
+	<div id="content">
+
+			<img id="header-image" src="http://www.skykidsperu.com/images/web/catalogo-header.png" />
+
+		</div> <!-- content -->
+		
+		
+		<div id="header-strip">
+			<div class="left">
+				<a href="#">anterior</a>
+			</div>
+			
+			<div class="right">
+				<a href="#">siguiente</a>
+			</div>
+			
+			<p>revisa <em><%= link_to "nuestras ofertas", url_for(:action=>:search_product, :q=>"ofertas || remates") %></em> y nuestros <em><%= link_to "&uacute;ltimos productos",url_for(:action=>:search_product, :q=>"novedad") %></em></p>
+
+		</div> <!-- header-strip -->
+
+
+			
+	<div class="end_content"></div>
+
+	<div class="start_subcontent"></div>
+
+	<div id="inside">
+
+		<div id="quote_content">
+
+			<h1 id="request">Viendo Consulta</h1>
+
+			<div id="quote_wrapper">
+				<%= render :partial => 'quote_list' %>
+			</div>
+
+		</div> <!-- quote_content -->
+
+	</div> <!-- inside -- >
+		

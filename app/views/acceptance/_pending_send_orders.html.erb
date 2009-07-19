@@ -1,0 +1,24 @@
+
+<ul id="pending_orders">
+
+	<% if @pending_send_orders.empty? %>
+	
+	<p>No hay &oacute;rdenes pendientes para esta tienda</p>
+	
+	<% else %>
+	
+	<% @pending_send_orders.each do |send_order| %>
+	<li class="<%= cycle("even", "odd") -%>">
+
+		<p>
+		 	Guía:  <%= send_order.document  %> orden del <em><%= send_order.send_date.strftime("%d/%m/%y") %></em>, de <em><%= send_order.owner.name %></em> dirigida a <em><%= send_order.store.name %></em> 
+		</p> 
+
+		<%= link_to 'revisar productos', check_order_path(send_order.id) %>
+
+	</li>
+	<% end %>
+	
+	<%- end -%>
+</ul>
+

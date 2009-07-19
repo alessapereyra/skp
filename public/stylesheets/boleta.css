@@ -1,0 +1,67 @@
+/* @override 
+	http://localhost:3000/stylesheets/boleta.css
+	http://www.skykidsperu.com/stylesheets/boleta.css
+*/
+
+#pagina {
+	
+	width: 620px;
+	height: auto;
+	
+}
+
+#datos {
+	margin-top: 115px;
+	margin-left: 80px;
+	width: 100px;
+}
+
+#nombre {
+	margin-bottom: 10px;
+}
+
+
+
+#fecha {
+
+	margin-right: 12px;
+	margin-top: 123px;
+	
+}
+
+#productos {
+
+	margin-left: 25px;
+	margin-top: 20px;
+	height: 220px;
+}
+
+
+#count {
+	width: 30px;
+}
+
+#cantidad {
+	width: 140px;
+}
+
+#codigo {
+	width: 80px;
+}
+
+#descripcion {
+	width: 580px;
+}
+
+#unitario {
+	width: 100px;
+}
+
+#importe {
+	width: 60px !important;
+}
+
+#totales {
+	margin-top: 30px;
+	margin-right: 10px;
+}

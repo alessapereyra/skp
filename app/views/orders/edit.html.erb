@@ -1,0 +1,108 @@
+<h2>Editando Orden de Venta <%= @order.number %></h2>
+
+<div id="general">
+	<% form_for @order, :url=>{:controller=>"orders", :action=>"update", :id=>@order} do |f| -%>
+	  
+
+	<dl>
+		<%= f.hidden_field :type %>
+
+			<div class="single_column_left">
+						<dt>
+							<%= f.label :number, "N&uacute;mero de boleta:" %>
+						</dt>
+
+						<dd>
+							<%= f.text_field :number %>
+						</dd>
+
+			</div>
+
+
+
+		<div class="single_column_left">
+					<dt class="odd">
+						<%= f.label :client_id, "Cliente:" %>
+					</dt>
+
+					<dd class="odd">
+						<%= f.text_field :client_id, :autocomplete =>"off" %>
+						<%= hidden_field_tag "order[hidden_client_id]", "",:class=>"order_hidden_client_id" %>
+					</dd>
+
+		</div>
+
+
+		<div class="single_column_left">
+
+
+					<dt class="odd">				
+						<%= f.label :order_date, "Fecha de Ingreso: " %>
+					</dt>
+
+					<dd class="odd">
+					<div class="small_fields">
+					<%= f.date_select :order_date %>
+					</div>
+					</dd>			
+
+		</div>
+
+
+		<div class="single_column_left">
+
+
+					<dt class="odd">				
+						<%= f.label :store_id, "Origen de Boleta: " %>
+					</dt>
+
+					<dd>
+					<%= f.collection_select :store_id, Store.find(:all), :id,:name %>
+					</dd>
+
+		</div>
+
+		<div class="single_column_left">
+
+
+					<dt class="odd">				
+						<%= f.label :type, "Tipo de Documento: " %>
+					</dt>
+
+					<dd>
+						<%= f.select :type, ["boleta","factura","nota_de_credito"].collect {|x| [x.humanize, x]} %>
+					</dd>
+		
+		</div>
+
+		<div class="single_column_left">
+
+
+					<dt class="odd">				
+						<%= f.label :unload_stock, "Descargar Stock?" %>
+					</dt>
+
+					<dd>
+						<%= f.check_box :unload_stock %>
+					</dd>
+		
+		</div>
+
+
+	
+	</dl>
+	
+
+</div>
+
+<div id="endzone">
+	<%= f.submit "Actualizar", :confirm=>"¿Finalizar edici&oacute;n de orden?",:class=>"form_button" %> <p> <%= link_to 'eliminar orden', delete_order_catalogue_path(@order.id), :confirm => '¿Seguro de eliminar la orden?', :method => :delete, :class=>'form_button' %></p> <p> o <%= link_to "cancelar",orders_catalogue_path %></p>
+	</div>
+<% end -%>
+
+
+
+ <%= render :partial=>"detail_product_list" %> 
+
+
+

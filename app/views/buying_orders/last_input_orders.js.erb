@@ -1,0 +1,20 @@
+<div id="remark">
+
+	<table>
+		<tr>
+			<th>Fecha</th>
+			<th>Precio de Compra</th>
+			<th>Precio de Venta</th>			
+			<th>Cantidad</th>			
+		</tr>						
+
+	<% @input_orders.each do |input| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= input.order_date.strftime("%d/%m/%y")	 %></td>
+		<td><%= input.cost %></td>
+		<td><%= input.prices.first.amount %></td>		
+		<td><%= input.quantity %></td>				
+	</tr>
+	<% end %>
+	</table>
+</div>

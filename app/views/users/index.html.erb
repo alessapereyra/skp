@@ -1,0 +1,32 @@
+<h2>Cat&aacute;logo de Usuarios</h2>
+
+<table>
+	<thead>
+  <tr>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Rol</th>
+    <th>Tienda</th>
+	<th></th>
+	<th></th>
+  </tr>
+	</thead>
+	<tbody>
+<% for user in @users %>
+  <tr class="<%= cycle("even","odd") %>">
+    <td><%=h user.username %></td>
+    <td><%=h user.email %></td>
+    <td><%=h user.role.name %></td>
+    <td><%=h user.store.name unless user.store.nil? %></td>
+    <td><%= link_to 'editar', edit_user_path(user) %></td>
+    <td><%= link_to 'eliminar', user, :confirm => '¿est&aacute; seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<div id="endzone">
+<%= link_to 'agregar usuario', new_user_path, :class=>"form_button" %>
+</div>

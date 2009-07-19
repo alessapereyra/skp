@@ -1,0 +1,43 @@
+<h2>Reporte de Órdenes de Salida</h2>
+<table>
+	<thead>
+	<tr>
+		<th>Documento</th>
+		<th>Fecha de Salida</th>
+		<th>Trabajador</th>						
+		<th>Cliente</th>				
+		<th>Monto</th>						
+		<th></th>
+		
+	</tr>
+	</thead>
+	<tbody>						
+	<% @exit_orders.each do |order| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= order.document %></td>	
+		<td><%= order.sending_date.strftime("%d/%m/%y") unless order.sending_date.nil? %></td>
+		<td><%= order.driver_name %></td>				
+		<td><%= order.client.name unless order.client.blank? %></td>				
+		<td><%= order.price %></td>				
+		<td><%= link_to "Ver orden", exit_order_report_path(order.id) %></td>
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+
+<div id="results">
+	<div class="result">
+	Total: S/.<%= @total %>
+	</div>
+	<div class="result">
+	Costo: S/.<%= @costs %>
+	</div>
+	
+	<div class="result">
+	Utilidades: S/.<%= @total - @costs %>
+	</div>	
+</div>
+
+<div id="endzone">
+  <%= link_to "Regresar", reports_path %>
+</div>

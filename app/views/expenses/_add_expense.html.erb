@@ -1,0 +1,21 @@
+<% remote_form_for(@expense) do |f| %>
+  <%= f.error_messages %>
+<fieldset>
+	<dl>
+
+	  <div class="single_column_left">
+    	<dt><%= f.label :description, "Concepto" %></dt>
+    	<dd><%= f.text_field :description %></dd>
+	  </div>
+
+	  <div class="single_column_left">
+    	<dt><%= f.label :amount, "Monto" %></dt>
+    	<dd><%= f.text_field :amount %></dd>
+	  </div>
+
+	</dl>
+	
+  <%= f.submit "registrar gasto", :class=>"form_button" %>
+	
+</fieldset>
+<% end %>

@@ -1,0 +1,24 @@
+<%= content_tag(:h2, "Editando Tienda")%>
+
+<%= content_tag(:span, flash[:notice] ) -%>
+
+<%= errors_for(@store) %>
+<% form_for @store do |f|%>
+<fieldset>
+	<legend>Datos de Tienda</legend>
+	<dt><%= f.label :name, "Nombre" -%></dt>	
+	<dd><%= f.text_field :name -%></dd>
+	<dt><%= f.label :addresss, "Dirección" -%></dt>	
+	<dd><%= f.text_field :address -%></dd>
+	<dt><%= f.label :telephone, "Teléfono" -%></dt>	
+	<dd><%= f.text_field :telephone -%></dd>
+	<dt><%= f.label :description, "Descripción" -%></dt>	
+	<dd><%= f.text_area :description -%></dd>
+</fieldset>
+
+<div id="endzone">
+	<%= f.submit "Enviar", :class=>"form_button", :confirm=>"¿Finalizar edici&oacute;n de tienda?" -%> <p>o <%= link_to "Cancelar", stores_path, :class=>'button' %></p>
+</div>
+	
+
+<% end %>

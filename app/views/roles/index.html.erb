@@ -1,0 +1,28 @@
+<h2>Cat&aacute;logo de Roles</h2>
+
+<span><%= flash[:notice] %></span>
+
+<table>
+	<thead>
+  		<tr>
+    		<th>Nombre</th>
+    		<th></th>
+    		<th></th>
+  		</tr>
+	</thead>
+	<tbody>
+<% for role in @roles %>
+  <tr class="<%= cycle("even", "odd") -%>">
+    <td><%=h role.name %></td>
+    <td><%= link_to 'Editar', edit_role_path(role) %></td>
+    <td><%= link_to 'Eliminar', role, :confirm => '¿estás seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+	</tbody>
+</table>
+
+<br />
+
+<div id="endzone">
+<%= link_to 'agregar rol', new_role_path %>
+</div>

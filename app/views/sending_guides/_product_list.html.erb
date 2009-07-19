@@ -1,0 +1,37 @@
+<div id="detalle">
+	<div id="input_order_details">
+		<table id="product_table">
+			<thead>
+			<tr>
+				<th>Item</th>
+				<th>Código</th>
+				<th>Producto</th>
+				<th>Cantidad</th>
+				<th>Opciones</th>					
+			</tr>						
+			</thead>
+			<tbody>
+		<% if @sending_guide_details.empty?  %>
+		
+		<tr>
+			<td colspan="3">
+				<p>Agregue productos a la orden de salida para visualizarlos</p>
+			</td>
+		</tr>
+		<%- else -%>
+		<% i = 0 %>
+		<% @sending_guide_details.reverse.each do |input| %>
+		<tr class="<%= cycle("even", "odd") -%>">
+			<td><%= i+= 1 %></td>				
+			<td><div style="width:80px;"><%= input.product.code unless input.product.nil?%></div></td>
+			<td><div style="width:100px;"><%= input.product.name unless input.product.nil?%></div></td>
+			<td><%= input.quantity %></td>				
+    		<td><%= link_to_remote 'Eliminar',:url=>{:action=>"destroyDetail", :id=>input.id} %></td>			
+		</tr>
+		<% end %>
+		
+		<%- end -%>
+			</tbody>
+		</table>
+	</div>
+</div>

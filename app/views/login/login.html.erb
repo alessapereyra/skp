@@ -1,0 +1,24 @@
+<%= content_tag(:h2, "Iniciando sesi&oacute;n")%>
+
+<span id="messages"><%= flash[:error] %></span>
+<div id="login_form">
+	
+<% form_for @user, :url=>{:action=>:authenticate} do |f| -%>
+	<dl>
+  		<dt><%= f.label :username, "Usuario" %></dt>
+  		<dd><%= f.text_field :username %></dd>
+
+		<dt><%= f.label :password, "Password" %></dt>
+		<dd><%= f.password_field :password %></dd>
+
+		<dt><%= f.label :store_id, "Tienda" %></dt>
+		<dd><%= f.collection_select :store_id, Store.find(:all), :id,:name %></dd>
+				
+	</dl>
+	<p><%= flash[:notice] %></p>
+	
+	<%= f.submit "Iniciar sesión", :class=>"form_button" %>
+<% end -%>
+
+</div>
+

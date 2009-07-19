@@ -1,0 +1,101 @@
+<h2>Editando Orden de Ingreso <%= @input_order.id %></h2>
+
+<div id="general">
+	<% form_for @input_order, :url=>{:controller=>"input_orders", :action=>"update", :id=>@input_order.id} do |f| -%>
+	  
+
+	<dl>
+	<div class="single_column_left">
+
+		<dt>
+			<%= f.label :provider_id, "Proveedor:" %>
+		</dt>
+
+		<dd>
+			<%= f.collection_select :provider_id, Provider.find(:all),:id,:name %>
+		</dd>
+		
+	</div>
+
+	<div class="single_column_left">
+
+		<dt>
+			<%= f.label :input_type, "Tipo de Ingreso:" %>
+		</dt>
+
+		<dd>
+			<%= f.select :input_type, InputOrder::InputTypes.collect {|x| [x.humanize, x]} -%>
+		</dd>
+
+	</div>
+
+
+	<div class="single_column_left">
+
+		<dt>				
+			<%= f.label :order_date, "Fecha de Ingreso: " %>
+		</dt>
+			
+		<dd>
+		<div class="small_fields">
+		<%= f.date_select :order_date %>
+		</div>
+		</dd>			
+		
+	</div>
+
+	<div class="single_column_left">
+
+		<dt>			
+		<%= f.label :store_id, "Tienda / Almac&eacute;n" %>
+		</dt>
+
+		<dd>
+		<%= f.collection_select :store_id, Store.find(:all), :id,:name %>
+		</dd>
+
+		
+	</div>
+
+	<div class="single_column_left">
+
+		<dt>
+		<%= f.label :owner_id, "Dueño del Producto" %>
+		</dt>
+
+		<dd>
+		<%= f.collection_select :owner_id, Store.find(:all), :id,:name %>
+		</dd>
+		
+	</div>	
+	
+	<div class="single_column_left">
+
+		<dt>
+		<%= f.label :document, "Documento" %>
+		</dt>
+
+		<dd>
+		<%= f.text_field :document %>
+		</dd>
+		
+	</div>	
+	
+	</dl>
+	<div id="endzone">
+		<%= f.submit "Actualizar", :confirm=>"¿Finalizar actualizaci&oacute;n de Orden de Ingreso?",:class=>"form_button" %> 
+		<%= link_to "reabrir orden",reopen_input_order_catalogue_path(@input_order.id), :class=>"form_button_inline" %> 
+		<p>o <%= link_to "cancelar",input_orders_catalogue_path %></p>
+		</div>
+	<% end -%>
+</div>
+
+<div style="clear:both;"></div>
+<%= render :partial=>"detail_product_list" %>	
+
+
+
+
+
+
+

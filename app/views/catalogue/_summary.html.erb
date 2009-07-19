@@ -1,0 +1,16 @@
+<div id="results">
+	<div class="result">
+	Total Stock Ingresado: <%= @input_stock %>
+	</div>
+	<div class="result">
+	Total Stock Enviado: <%= @send_stock %>
+	</div>
+
+	<div class="result">
+	Total Stock Vendido: <%= @sold_stock %>
+	</div>
+	
+	<div class="result">
+	Stock Vigente: <%= @input_stock - @send_stock - @sold_stock %>
+	</div>	
+</div>

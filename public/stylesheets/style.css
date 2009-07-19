@@ -1,0 +1,325 @@
+/* @override 
+	http://localhost:3000/stylesheets/style.css
+	http://localhost:3000/stylesheets/style.css?1215395624
+	http://localhost:3000/stylesheets/style.css?1216258449
+	http://localhost:3000/stylesheets/style.css?1216579727
+*/
+
+body {
+margin: 0px 0px;
+padding: 0px;
+background: #bec5cf url('../images/body-background.png') repeat-x;
+	font: normal 62.5% "Lucida Grande", Lucida, Verdana, sans-serif;
+
+}
+
+
+
+
+
+
+
+
+div#header {
+	height: 53px;
+	width: 100%;
+	background: black url(../images/header-background.png) repeat-x;
+}
+
+div#header h1 {
+	margin-top: 0px;
+	padding: 15px;
+	text-align: right;
+	color: #c8c8c8;
+	font-weight: normal;
+	font-style: normal;
+}
+
+div#wrapper {
+	overflow: hidden;
+	margin: 0px;
+	margin-top: 4px;
+}
+
+div#sidebar {
+	width: 172px;
+	background: #d1d7e2 url("../images/menu-background.png") repeat-x;
+	overflow: auto;
+	min-height: 540px;
+	float: left;
+}
+
+div#sidebar ul{
+	padding: 0px;	
+}
+
+div#sidebar ul li {
+	list-style-type: none;
+	margin-bottom: 5px;
+	overflow: hidden;
+}
+
+div#sidebar ul li a{
+	height: 48px;
+	background: url("../images/menu_off.png");
+	width: 171px;
+	display: block;
+	text-decoration: none;
+	color: #575757;
+	font-size: 1.2em;
+}
+
+div#sidebar ul li a:hover
+ {
+	height: 48px;
+	background: url("../images/menu_on.png");
+	width: 171px;
+	display: block;
+	color: white;
+}
+
+body#products div#sidebar ul li#productos a,
+body#sales div#sidebar ul li#ventas a,
+body#buying_orders div#sidebar ul li#ingresos a,
+body#providers div#sidebar ul li#proveedores a,
+body#stores div#sidebar ul li#tiendas a {
+	height: 48px;
+	background: url("../images/menu_active.png");
+	width: 171px;
+	display: block;
+	color: white;
+}
+
+
+div#sidebar ul li#separator {
+	margin-top: 180px;
+	text-align: right;
+	font-size: 1.3em;
+	font-weight: bold;
+	margin-bottom: 10px;
+	padding-right: 15px;
+	text-transform: lowercase;
+}
+
+div#sidebar ul li a span {
+	padding-top: 15px;
+	margin-right: 15px;
+	text-align: right;
+	display: block;
+}
+
+
+div#content {
+	float: left;
+	left: 0px;
+	width: 80%;
+	overflow: hidden;
+	background: #bfc6cf url('../images/background.png') repeat-x;
+	height: 100%;
+	min-height: 500px;
+	margin-left: 10px;
+	margin-top: 2px;
+
+}
+
+div#content div#content_sidebar {
+	float: left;
+	width: 415px;
+	padding: 20px;
+}
+
+div#content div#content_sidebar h3{
+	font-weight: lighter;
+	color:  #79778a;
+	font-size: 2em;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	clear: both;	
+}
+
+div#content div#content-inside {
+	padding: 20px;
+	width: 400px;
+	float: left;
+	margin-left: 20px;
+}
+
+
+body#reports div#wrapper div#content-inside,
+body#products div#wrapper div#content-inside,
+body#providers div#wrapper div#content-inside,
+body#stores div#wrapper div#content-inside,
+body#categories div#wrapper div#content-inside {
+	width: 800px;
+}
+
+div#content div#content_sidebar div#remark {
+}
+
+div#content a {
+	text-decoration: none;
+	color: #3e607e;
+	font-size: 1.3em;
+	padding: 10px;
+	display: block;
+	margin-bottom: 20px;
+}
+
+div#content a.more_link {
+	text-align: right;
+	display: block;
+}
+
+div#content  a:hover {
+	text-decoration: none;
+	color: black;
+}
+
+div#content h2 {
+	font-weight: lighter;
+	color:  #79778a;
+	font-size: 2em;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	clear: both;
+}
+
+div#content table {
+	padding: 10px;
+	margin: 20px 0;
+	margin-bottom: 0px;
+	width: 100%;
+}
+
+div#content div#content_sidebar div#remark table {
+	width: 100%;
+}
+
+div#content table tbody td a {
+	margin: 0px;
+	display: inline;
+	font-size: 1em;
+}
+
+
+div#content table tr th {
+	background: url(../images/table-background.png);
+	margin: 0px;
+	padding: 5px 10px;
+	text-align: center;
+	color: white;
+} 
+
+
+div#content table tr td {
+	background: url(../images/td-background.png);
+	margin: 0px;
+	padding: 5px 20px;
+	color: black;
+	text-align: center;
+} 
+
+div#content table tbody tr.odd td {
+	background: #f4f4f4; 
+}
+
+
+
+div#content form {
+	width: 400px;
+	margin: 30px 0px;
+	overflow: auto;
+}
+
+
+div#content form label{
+	width: 100%;
+	display: block;
+}
+
+div#content form input,
+div#content form textarea,
+div#content form select{
+	margin-bottom: 20px;
+	margin-top: 10px;
+	color:  #79778a;
+	padding: 4px;
+	outline: 0px;
+	border: 1px solid #b6acac;
+	background-color: #fceef1;
+	width: 300px;
+
+}
+
+div#content form div.small_fields {
+	float: left;
+}
+
+div#content form div.small_fields input {
+	width: 80px;
+	margin-right: 20px;
+}
+
+div#content form div.small_fields select {
+	width: 95px;
+	margin-right: 10px;
+}
+
+div#content form select {
+	color: black;
+	height: 25px;
+	width: 310px;
+	outline: 1px dotted grey ;
+}
+
+
+div#content div#content-inside form a.button {
+	border: 1px solid #b6acac;
+	background-color: #fceef1;
+	font-size: 1em !important;
+	color:  #79778a;
+	width: 80px;
+	text-align: center;
+	padding: 5px 25px;
+}
+
+div#content form textarea {
+	width: 300px;
+	height: 100px;
+	clear: both;	
+}
+
+
+div#content form input.active,
+div#content form textarea.active {
+	background-color: #fcfd9e;
+}
+
+div#content input.form_button {
+	width: 100px;
+
+}
+
+div#content div#content-inside div.errors {
+	color: #ce4b00;
+	margin-top: 15px;
+	font-size: 1.2em;
+}
+
+div#content div#content-inside div.errors li {
+	list-style-type: square;
+	margin-bottom: 10px;
+}
+
+div#footer {
+	clear: both;
+	height: 100%;
+	background: black url('../images/header-background.png');
+	color: white;
+	padding: 10px;
+	text-align: right;
+}
+
+div#footer a {
+	color: white;
+}

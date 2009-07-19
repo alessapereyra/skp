@@ -1,0 +1,85 @@
+/* @override 
+	http://localhost:3000/stylesheets/guia_de_salida_traslado.css
+	http://www.skykidsperu.com/stylesheets/guia_de_salida_traslado.css
+*/
+
+#pagina {
+	
+	width: 620px;
+	
+}
+
+#datos {
+	margin-top: 50px;
+}
+
+#fecha {
+
+	margin-top: 127px;	
+	margin-left: 15px;
+	
+}
+
+#domicilio_partida {
+	
+	width: 310px;
+	margin-bottom: 55px;
+}
+
+#domicilio_llegada {
+	
+	width: 310px;
+	margin-bottom: 55px;
+
+}
+
+#extra {
+	
+	width: 310px;
+	margin-bottom: 55px;
+
+}
+
+#destinatario {
+	width: 310px;
+	margin-bottom: 55px;
+}
+
+#productos {
+
+	margin-left: 20px;
+
+}
+
+
+#item {
+	width: 25px;
+}
+
+#cantidad {
+	width: 60px !important;
+}
+
+#codigo {
+	width: 80px !important;
+}
+
+#descripcion {
+	width: 580px !important;
+}
+
+#punit {
+	width: 80px !important;
+}
+
+#importe {
+	width: 60px !important;
+}
+
+#totales {
+	
+	margin-top: 30px;
+	margin-right: 10px;
+	
+}
+

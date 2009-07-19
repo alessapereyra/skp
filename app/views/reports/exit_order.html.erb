@@ -1,0 +1,93 @@
+<%- content_for :report_title do -%>-guia_remision<%- end -%>
+
+<div class="guia_remision">
+	
+<h2>Orden de Salida Fecha</h2>
+
+<div id="general">
+
+	<div id="date">
+		<h2 class="date fecha_emision">
+		<em><%= @exit_order.sending_date.strftime("%d") %></em> <span>/</span>
+		<em><%= @exit_order.sending_date.strftime("%m")%></em><span>/</span>
+		<em><%= @exit_order.sending_date.strftime("%y")%></em>
+		</h2>
+		
+	</div>
+
+	
+	<dl>
+
+		<dt class="hide">Document: </dt>
+		<dd class="hide"><%= @exit_order.document %></dd>
+
+		
+		<dt class="hide">Empresa: </dt>
+		<dd class="hide"><%= @exit_order.client.name unless @exit_order.client.blank? %></dd>
+
+
+			<div id="domicilio_partida">
+				<dt>Nombre / DNI: </dt>
+				<dd><%= @exit_order.driver_name %> <br /> <%= @exit_order.driver_dni %> </dd>				
+			</div>
+			
+			<div id="domicilio_llegada">
+				<dt>Datos Complementarios </dt>
+				<dd><%=  @exit_order.extra_data %></dd>
+				
+			</div>
+		
+	</dl>
+</div>
+
+<h3 class="hide">Lista de Productos Enviados</h3>
+
+<table>
+	<thead>
+	<tr>
+		<th id="count" width="5">Item</th>		
+		<th id="cantidad">Cantidad</th>		
+		<th id="codigo">Código</th>
+		<th id="descripcion">Descripci&oacute;n</th>
+		<th id="punit">P. Unit</th>
+		<th id="importe">Importe</th>		
+	</tr>
+	</thead>
+	<tbody>						
+	<% i = 0 %>
+	<% @exit_order.exit_order_details.each do |iod| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= i+=1; i %></td>
+		<td><%= iod.quantity %></td>
+		<td><%= iod.product.code %></td>		
+		<td><%= iod.product.name %> <br /><%= strip_tags(iod.product.description) if iod.product.print_description %></td>
+		<td><%= iod.price %></td>				
+		
+		<td><%= unless (iod.price.nil? or iod.quantity.nil?)  then iod.subtotal else 0.00 end  %></td>						
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+
+<table id="subtotals">
+	<thead>
+		<tr>
+			<th id="total">TOTAL</th>			
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td id="total">S/.<%= fill_zero(@exit_order.price.round(2)) %></td>			
+		</tr>
+	</tbody>
+</table>
+
+<div id="endzone">
+<%= link_to "imprimir",print_path(:controller=>"print",:action=>"exit_order",:id=>@exit_order.id), :class=>"form_button_inline" %> 
+<p>o <%= link_to "Regresar",reports_path %></p>
+</div>
+
+
+
+
+</div>

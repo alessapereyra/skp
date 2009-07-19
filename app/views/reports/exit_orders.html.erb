@@ -1,0 +1,41 @@
+<% form_tag(:action=>:exit_orders) do %>
+  <fieldset>
+	<legend>Viendo ordenes de salida del periodo</legend>
+	<dl>
+	<div class="single_column_left">
+	<dt>Desde:</dt>
+	<dd>
+	<div class="small_fields">
+	<%= select_date @time_from,:exit_order => [:day, :month, :year],:prefix=> 'from',:html_options=>{:class=>"small_fields" }%>
+	</div>
+	</dd>
+</div>
+
+<div class="small_fields">
+	<dt>Hasta:</dt>
+	<dd>
+	<div class="small_fields">
+	<%= select_date @time_to,:exit_order => [:day, :month, :year],:prefix=>'to',:html_options=>{:class=>"small_fields" } %>	
+	</div>
+	</dd>
+
+</div>	
+
+<div>
+	<dt>De Empresa:</dt>
+	<dd>
+	  <%= select("exit_order", "client_id", ExitOrder.clients.collect {|p| [ p.name, p.id ] }, { :include_blank => "Todas" }) %>
+  	
+	</dd>
+
+</div>	
+
+
+<%= submit_tag "Filtrar", :class=>"form_button" %>
+
+</dl>
+
+
+  </fieldset>
+<% end -%>
+<%= render :partial => 'exit_orders' %>

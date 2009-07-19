@@ -1,0 +1,50 @@
+<div class="section">
+
+<h3>Env&iacute;os a Clientes</h3>
+<table>
+	<thead>
+	<tr>
+		<th>Cantidad</th>		
+		<th>Fecha de Env&iacute;o</th>
+		<th>Tienda</th>		
+		<th>Documento</th>
+		<th></th>
+		<th></th>
+
+	</tr>				
+	</thead>
+	<tbody>		
+		<% if @sending_guide_details.empty? && @returned_sending_guide_details.empty? && @unloaded_sending_guide_details.empty? %>	
+			<tr>
+			<td colspan="5">
+				<p>El producto nunca ha sido enviado</p>
+			</td>
+			</tr>
+		<% else %>
+				
+	<% @sending_guide_details.each do |sending_guide_detail| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= sending_guide_detail.quantity %></td>		
+		<td><%= sending_guide_detail.sending_guide.sending_date.strftime("%d/%m/%y") %></td>
+		<td><%= sending_guide_detail.sending_guide.store.name %></td>
+		<td><%= sending_guide_detail.sending_guide.document %></td>				
+		<td>retornado</td>		
+		<td><%= link_to "ver orden", sending_guide_report_path(sending_guide_detail.sending_guide.id) %></td>
+	</tr>
+	<% end %>
+	<% @returned_sending_guide_details.each do |returned_sending_guide_detail| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= returned_sending_guide_detail.quantity %></td>		
+		<td><%= returned_sending_guide_detail.sending_guide.sending_date.strftime("%d/%m/%y") %></td>
+		<td><%= returned_sending_guide_detail.sending_guide.store.name %></td>
+		<td><%= returned_sending_guide_detail.sending_guide.document %></td>				
+		<td>stock no descargado</td>
+		<td><%= link_to "ver orden", sending_guide_report_path(returned_sending_guide_detail.sending_guide.id) %></td>
+	</tr>
+	<% end %>
+	
+	<% end %>
+	</tbody>
+
+</table>
+</div>

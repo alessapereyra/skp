@@ -1,0 +1,29 @@
+<h2>Editando usuario</h2>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+	<fieldset>
+		<dl>
+    	<dt><%= f.label :username %></dt>
+    	<dd><%= f.text_field :username %></dd>
+
+    	<dt><%= f.label :email %></dt>
+    	<dd><%= f.text_field :email %></dd>
+
+    	<dt><%= f.label :role_id %></dt>
+    	<dd><%= f.collection_select :role_id, Role.find(:all),:id,:name, :prompt=>"Elegir un rol" %></dd>
+
+    	<dt><%= f.label :password %></dt>
+    	<dd><%= f.password_field :password %></dd>
+
+    	<dt><%= f.label :store_id %></dt>
+		<dd><%= f.collection_select :store_id, Store.find(:all),:id,:name, :prompt=>"Elegir una tienda" %></d>
+	
+	</dl>
+	</fieldset>
+
+	<div id="endzone">
+    	<%= f.submit "actualizar usuario", :class=>"form_button", :confirm=>"¿Finalizar edici&oacute;n de usuario?"  %> <p>o <%= link_to 'regresar', users_path %></p>
+	</div>
+
+<% end %>

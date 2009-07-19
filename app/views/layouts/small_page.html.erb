@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<title>Skykids :: Importador de Juguetes y Más </title>
+
+
+	<%= stylesheet_link_tag 'jquery.ui.autocomplete','nextgen/menu.css','../javascripts/mopTip', '../javascripts/facebox/facebox', :media=>"all" %>
+	<%= stylesheet_link_tag 'nextgen/print.css', :media=>"print" %>
+	
+	<!--[if !IE]><!-->
+	
+	
+	<%= stylesheet_link_tag "nextgen/web.css", :media=>"all" %>	
+	
+	<!-- <![endif]-->
+	
+
+	<!--[if IE]>      
+		
+		<%= stylesheet_link_tag "nextgen/msie.css", :media=>"all" %>
+	<![endif]-->
+		
+	<!--[if lte IE 6]>
+		<%= stylesheet_link_tag "nextgen/msie6.css", :media=>"all" %>	
+	<![endif]-->
+
+
+	</head>
+	<body id="<%= params["controller"] %>">
+<div id="popupbody">
+	
+
+
+
+				<%= yield %>
+
+
+			<div class="end_real_content"></div>
+</div>
+</body>
+</html>

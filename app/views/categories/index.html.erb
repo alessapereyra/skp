@@ -1,0 +1,29 @@
+<%= content_tag(:h2, "Catálogo de Categor&iacute;as ")%>
+
+<table>
+	<thead>
+  		<tr>
+			<th>Nombre</th>
+			<th>Descripci&oacute;n</th>	
+			<th>Categoría Superior</th>						
+			<th></th>
+			<th></th>
+  		</tr>
+	</thead>
+	<tbody>
+<% for cat in @categories %>
+  <tr class="<%= cycle("even","odd") %>">
+	<td><%= cat.name %></td>
+	<td><%= cat.description %></td>	
+	<td><%= cat.parent_category.name unless cat.parent_category.nil? %></td>		
+    <td><%= link_to 'Editar', edit_category_path(cat) %></td>
+    <td><%= link_to 'Eliminar', cat, :confirm => '¿Seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+	</tbody>
+</table>
+
+<div id="endzone">
+<%= link_to 'agregar categor&iacute;a', new_category_path, :class=>'form_button' %>	
+</div>
+

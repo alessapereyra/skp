@@ -1,0 +1,550 @@
+/* @override 
+	http://localhost:3000/stylesheets/master_print.css
+	http://www.skykidsperu.com/stylesheets/master_print.css
+*/
+
+/*
+RESET 
+*/
+
+/* @group Main */
+
+
+
+*
+{
+	text-decoration:none;
+	font-size:1em;
+	outline:none;
+	margin:0;
+	padding:0;
+}
+
+
+
+code,kbd,samp,pre,tt,var,input,select,isindex,listing,xmp,plaintext
+{
+	font:inherit;
+	white-space:normal;
+}
+
+textarea
+{
+	font:inherit;
+}
+
+a,img,a img,iframe,form,abbr,acronym,object,applet,table,a abbr,a acronym
+{
+	border-width:0;
+}
+
+dfn,i,cite,var,address,em
+{
+	font-style:normal;
+}
+
+th,b,strong,h1,h2,h3,h4,h5,h6,dt
+{
+	font-weight:normal;
+}
+
+caption,th,td
+{
+	text-align:left;
+}
+
+html
+{
+	background: #fffa99;
+	color:black;
+	line-height:1;
+	font-family:arial, sans-serif;
+}
+
+/* \*/
+
+html
+{
+	font-family:sans-serif;
+}
+
+/* */
+
+q
+{
+	quotes:"\201C""\201D""\2018""\2019";
+}
+
+ul,ol,dir,menu
+{
+	list-style:none;
+}
+
+sub,sup
+{
+	vertical-align:baseline;
+}
+
+a
+{
+	color:inherit;
+}
+
+/*
+_______________________________
+DISABLE DEPRECATED HTML */
+
+font,basefont
+{
+	color:inherit;
+	font:inherit;
+	font-size:100%;
+}
+
+
+center,*[align]
+{
+	text-align:inherit;
+}
+
+s,strike,u
+{
+	text-decoration:inherit;
+}
+
+img
+{
+	border:none;
+	margin:0;
+}
+
+ol
+{
+	list-style-type:decimal;
+}
+
+body
+{
+	background-color:transparent;
+}
+
+tr,th,td
+{
+	width:auto;
+	height:auto;
+	background-color:transparent;
+	vertical-align:inherit;
+	border:none;
+}
+
+table[border],.content table[border]
+{
+	border-collapse:separate;
+	border-spacing:0;
+}
+
+nobr
+{
+	white-space:normal;
+}
+
+marquee
+{
+	overflow:visible;
+	-moz-binding:none;
+}
+
+blink
+{
+	text-decoration:none;
+}
+
+/*
+_______________________________
+GENERAL */
+
+html
+{
+	font-size:125%;
+}
+
+body
+{
+	font-size:50%;
+}
+
+a
+{
+	text-decoration:underline;
+}
+
+strong,th,thead td,h1,h2,h3,h4,h5,h6,dt
+{
+	font-weight:bold;
+}
+
+cite,em,dfn
+{
+	font-style:italic;
+}
+
+code,kbd,samp,pre,tt,var,input[type='text'],input[type='password'],textarea
+{
+	font-size:100%;
+	font-family:mono-space,monospace;
+}
+
+pre
+{
+	white-space:pre;
+}
+
+pre *
+{
+	font-size:100%;
+	white-space:pre;
+}
+
+del
+{
+	text-decoration:line-through;
+}
+
+ins,dfn
+{
+	border-bottom:1px solid black;
+}
+
+small,sup,sub
+{
+	font-size:85%;
+}
+
+big
+{
+	font-size:125%;
+	line-height:80%;
+}
+
+abbr,acronym
+{
+	text-transform:uppercase;
+	font-size:85%;
+	letter-spacing:.1em;
+}
+
+abbr[title],acronym[title],dfn[title]
+{
+	cursor:help;
+	border-bottom:1px dotted black;
+}
+
+sup
+{
+	vertical-align:super;
+}
+
+sub
+{
+	vertical-align:sub;
+}
+
+blockquote
+{
+	padding-left:2.2em;
+}
+
+hr
+{
+	display:none; /* We will re-reset it later for content */
+}
+
+:lang(af),:lang(nl),:lang(pl)
+{
+	quotes:'\201E' '\201D' '\201A' '\2019';
+}
+
+:lang(bg),:lang(cs),:lang(de),:lang(is),:lang(lt),:lang(sk),:lang(sr),:lang(ro)
+{
+	quotes:'\201E' '\201C' '\201A' '\2018';
+}
+
+:lang(da),:lang(hr)
+{
+	quotes:'\00BB' '\00AB' '\203A' '\2039';
+}
+
+:lang(el),:lang(es),:lang(sq),:lang(tr)
+{
+	quotes:'\00AB' '\00BB' '\2039' '\203A';
+}
+
+:lang(en-GB)
+{
+	quotes:'\2018' '\2019' '\201C' '\201D';
+}
+
+:lang(fi),:lang(sv)
+{
+	quotes:'\201D' '\201D' '\2019' '\2019';
+}
+
+:lang(fr)
+{
+	quotes:'\ab\2005' '\2005\bb' '\2039\2005' '\2005\203a';
+}
+
+*[lang|='en'] q:before
+{
+	content:'\201C';
+}
+
+*[lang|='en'] q:after
+{
+	content:'\201D';
+}
+
+*[lang|='en'] q q:before
+{
+	content:'\2018';
+}
+
+*[lang|='en'] q q:after
+{
+	content:'\2019';
+}
+
+input,select,button
+{
+	cursor:pointer;
+}
+
+input[type='text'],input[type='password']
+{
+	cursor:text;
+}
+
+input[type='hidden']
+{
+	display:none;
+}
+
+
+div#footnotes_debug {
+	display:none	
+}
+
+
+div#pagina {
+	
+	
+	background: white;
+	padding: 0.2cm;
+}
+
+/* @end */
+
+/* @group Base */
+
+div#productos {
+	clear: both;
+	float: none;
+	overflow: auto;
+	font-size: 1.1em;
+	line-height: 1.6em;
+	word-spacing: 0.4em;
+}
+
+div#datos {
+	overflow: hidden;
+}
+
+
+
+/* @end */
+
+/* @group Boletas */
+
+body#boleta {
+	font-size: 8pt;
+}
+
+body#boleta #pagina {
+	
+	overflow: auto;
+}
+
+body#boleta div#cabecera {
+	
+	overflow: auto;
+	display: block;
+}
+
+body#boleta div#fecha {
+	float: right;
+	font-size: 1.4em;
+}
+
+body#boleta div#fecha em {
+	margin-left: 15px;	
+}
+
+body#boleta div#ruc {
+	
+	display: none;
+}
+
+body#boleta div#datos {
+	float: left;
+}
+
+body#boleta div#totales {
+	float: right;
+	font-size: 1.5em;
+}
+
+body#boleta div#totales #subtotal {
+
+	display: none;
+}
+
+body#boleta div#totales #igv {
+
+	display: none;
+}
+
+body#boleta div#totales #subtotal {
+
+	font-size: 1.2em;
+}
+
+
+
+/* @end */
+
+/* @group Factura */
+
+body#factura {
+	font-size: 8pt;
+}
+
+body#factura #pagina {
+	
+	overflow: auto;
+}
+
+
+body#factura div#cabecera {
+	
+	overflow: auto;
+	display: block;
+}
+
+body#factura div#fecha {
+	float: right;
+	font-size: 1.4em;
+}
+
+body#factura div#fecha em {
+	margin-left: 15px;	
+}
+
+body#factura div#ruc {
+	
+
+}
+
+body#factura div#datos {
+	float: left;
+}
+
+body#factura div#totales {
+	float: right;
+	font-size: 1.2em;
+
+}
+
+body#factura div#totales table {
+	width: 100%;
+}
+
+body#factura div#totales table td{
+	text-align: center;
+}
+
+body#factura div#totales #subtotal {
+
+
+}
+
+body#factura div#totales #igv {
+
+
+
+}
+
+body#factura div#totales #total {
+
+
+}
+
+
+/* @end */
+
+
+
+/* @group GuiaEmisionTraslado */
+
+body#guia_de_salida_traslado {
+	font-size: 8pt;
+}
+
+body#guia_de_salida_traslado div#fecha em {
+	margin-left: 15px;	
+}
+
+body#guia_de_salida_traslado div#fecha {
+		font-size: 1.4em;
+}
+
+body#guia_de_salida_traslado div#domicilio_partida {
+	float: left;
+	text-align: center;
+	display: block;
+}
+
+
+body#guia_de_salida_traslado div#domicilio_llegada {
+	float: right;
+
+	text-align: center;
+}
+
+body#guia_de_salida_traslado div#destinatario {
+	float: left;
+	clear: both;
+	text-align: center;
+}
+
+body#guia_de_salida_traslado div#extra {
+	float: right;
+	text-align: center;
+}
+
+
+body#guia_de_salida_traslado div#totales {
+	float: right;
+	font-size: 1.2em;
+	text-align: center;
+	clear:both;
+}
+
+	
+
+
+
+
+
+
+
+/* @end */

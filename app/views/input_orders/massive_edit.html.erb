@@ -1,0 +1,29 @@
+<h2>Edición de Órdenes de Ingreso</h2>
+
+  <em id="messages"></em>
+
+<table>
+	<thead>
+	<tr>
+		<th>Documento</th>				
+		<th>Fecha de Ingreso</th>
+		<th>Proveedor</th>
+		<th>Costo Total</th>
+		<th>Tipo</th>
+		<th></th>
+	</tr>				
+	</thead>
+	<tbody>		
+
+    <%= render :partial =>"input_orders/input_order", :collection=>@input_orders -%>
+
+  </tbody>
+	  
+</table>
+
+
+<%= will_paginate @input_orders %>
+
+
+
+

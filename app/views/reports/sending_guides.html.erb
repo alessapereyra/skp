@@ -1,0 +1,28 @@
+<h2>Reporte de Órdenes de Salida a Clientes</h2>
+<table>
+	<thead>
+	<tr>
+		<th>Documento</th>
+		<th>Origen</th>				
+		<th>Fecha de Salida</th>
+		<th>Cliente</th>				
+		<th></th>
+		
+	</tr>
+	</thead>
+	<tbody>						
+	<% @sending_guides.each do |order| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= order.document %></td>
+		<td><%= order.store.name unless order.store.blank? %></td>		
+		<td><%= order.sending_date.strftime("%d/%m/%y") unless order.sending_date.nil? %></td>
+		<td><%= order.client.name unless order.client.blank? %></td>				
+		<td><%= link_to "Ver orden", sending_guide_report_path(order.id) %></td>
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+
+<div id="endzone">
+  <%= link_to "Regresar", reports_path %>
+</div>

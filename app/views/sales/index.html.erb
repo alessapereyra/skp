@@ -1,0 +1,8 @@
+<%= content_tag(:h2, "#{(@order.type != "boleta" and not @order.type.blank? ) ? @order.type.humanize : 'Boleta de Venta' } ")%>
+
+<%= render :partial =>'recover' %>
+
+<%= error_messages_for :input_order %>
+<span id="messages"><%= flash[:error] %></span>
+
+<%= render :partial=>"general_data" %>

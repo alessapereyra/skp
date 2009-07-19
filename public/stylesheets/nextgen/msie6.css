@@ -1,0 +1,137 @@
+/* @override http://localhost:3000/stylesheets/nextgen/msie6.css */
+
+div.start_content {
+	background: transparent url(../../images/web/start-content.png) no-repeat 0px 4px !important;
+	margin-left: 20px;
+	height: 10px !important;
+	margin-bottom:0px;
+	display:block;
+	padding-bottom:0px;
+}
+
+li.product {
+	
+	height: auto !important;
+	/* padding-bottom: 10px !important;  */
+	padding-bottom: 0px !important;
+	margin-bottom:0px !important;
+	min-height:120px !important;
+	overflow:hidden;
+	
+}
+
+div.popup li.product {
+	overflow: auto;
+}
+
+li.product div.text h3 a {
+	
+	font-size: 0.6em !important;
+	height: 40px !important;
+	min-height: 40px !important;
+	display: block;
+	
+}
+
+div.notice {
+	
+	width: 550px !important;
+}
+
+
+div#sidebar {
+	
+	background-color:white !important;
+	padding-right:0px;
+	width:200px;  /* 180 */
+}
+
+li.product div.text h4 {
+	
+	font-size: 0.9em !important;
+	
+}
+
+ul#list li.product div.text {
+	/* width: 130px !important; */
+
+}
+
+
+#wrapper div.start_subcontent {
+	background: url(../../images/web/start_real_content.png) no-repeat 1px 3px !important;
+	margin-left: 20px;
+	text-indent: -4000em;
+	height: 11px
+}
+
+div#search {
+	
+	background: transparent url(../../images/web/search-block.png) no-repeat !important;
+}
+
+div#search fieldset {
+
+	margin-left: 60px !important;
+}
+
+div#inside {
+	clear:both;
+	background: white url(../../images/web/real-content-background.png);
+	overflow:auto;
+	width:100%;
+	
+}
+
+div#inside_content {
+	
+	margin-left:0px !important;
+	padding-left:5px !important;
+	margin-right:10px !important;
+}
+
+li#conocenos a,
+li#servicios a,
+li#contactanos a,
+li#catalogo a {
+	
+	position:relative;
+	cursor:pointer;
+	display:block;
+	
+}
+
+div#sidebar p {
+	clear:both;
+}
+
+div#detalle {
+	height: auto;
+	width:100%;
+	margin-right:0px;
+}
+
+div#detalle p#first {
+	
+	font-size: 1.4em;
+	
+}
+
+div#request {
+	float: left;
+	padding: 10px;
+	clear: both;
+	overflow: auto;
+	background-color: #ffffff;
+	margin: 0px auto;
+	margin-left: 10px;
+}
+
+div#request h3 {
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	color: #3cb3bf;
+	margin-top: 0px;
+}
+

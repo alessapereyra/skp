@@ -1,0 +1,73 @@
+/* @override 
+	http://localhost:3000/stylesheets/jquery.ui.autocomplete.css?1216300729
+	http://localhost:3000/stylesheets/jquery.ui.autocomplete.css?1216323237
+	http://localhost:3000/stylesheets/jquery.ui.autocomplete.css
+*/
+
+.ac_input {
+/*	width: 200px;*/
+}
+.ac_results {
+	width: 350px;
+	padding: 0px;
+	border: 1px solid #a1a1a1;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+.ac_results ul {
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	color: #595755;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.ac_results iframe {
+	display:none;/*sorry for IE5*/
+	display/**/:block;/*sorry for IE5*/
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:-1;
+	filter:mask();
+	width:3000px;
+	height:3000px;
+}
+
+.ac_results li,
+.ac_results a {
+	margin: 0px;
+	cursor: pointer;
+	display: block;
+	font-size: 11px;
+	overflow: hidden;
+	padding: 10px 5px;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+}
+
+.ac_results a {
+ text-decoration: none;
+ color: #1e3c49;	
+ cursor: pointer;
+ margin: 0px 0px;
+ padding: 0px 0px;
+	text-transform: lowercase;
+}
+
+.ac_loading {
+	background : url('../images/indicator.gif') right center no-repeat;
+}
+
+.ac_over {
+	background: #85c6da repeat-x;
+
+}
+
+.ac_over a {
+ color: #ffeaf9;		
+}

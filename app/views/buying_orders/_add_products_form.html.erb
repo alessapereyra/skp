@@ -1,0 +1,142 @@
+<% fields_for :input_order_detail, @input_order_detail do |iod| %>
+
+<fieldset id="fieldset_buying_orders">
+	<legend>Detalle de Ingreso</legend> 
+
+	<dl>	
+
+
+			<div class="single_column_left product">
+
+				<dt><%= iod.label :product_id, "Producto:" %></dt>
+				<dd><%= iod.text_field :product_id, :autocomplete =>"off", :tabindex=>8 %>
+				<%= hidden_field_tag "input_order_detail[hidden_product_id]", "" , :class=>"input_order_detail_hidden_product_id" %>
+				<%= link_to "registrar nuevo producto ", inventory_path, :class=>'sublink' %>
+				</dd>
+
+			</div>
+		
+			<div class="single_column_left">
+
+
+				<dt>
+						<%= iod.label :additional_code, "C&oacute;digo de Proveedor" %>
+				</dt>
+
+				<dd>
+						<%= iod.text_field :additional_code,:class=>'small_fields', :tabindex=>9 %>
+				</dd>
+
+
+
+			</div>
+			
+			<div class="single_column_left quantity">
+				
+				<dt>
+					<%= iod.label :quantity, "Cantidad:" %>
+				</dt>
+									
+				<dd>
+					<%= iod.text_field :quantity, :class=>'small_fields', :tabindex=>10 %>					
+				</dd>	
+
+			</div>
+			
+			<div style="clear:both;"></div>
+
+			<div class="single_column_left">
+				
+
+				<dt>
+						<%= iod.label :cost, "Precio de Costo" %>
+				</dt>
+				
+				<dd>
+						<%= iod.text_field :cost, :id=>"buying_price",:class=>'small_fields', :tabindex=>12 %> soles
+						<br /><strong>Original: </strong><span id="buying_price_bk"></span>
+				</dd>
+
+				
+				
+			</div>
+			
+			<div style="clear:both;"></div>
+
+
+
+				<fieldset>
+						<% fields_for :price, @price do |p| %>
+		
+							<div class="single_column_left first">
+
+								<dt class="odd">
+									<%= p.label :amount, "Precio Base:" %>	
+								</dt>
+
+								<dd  class="odd">
+								<%= p.text_field :amount, :id=>"base_price",:class=>'small_fields', :tabindex=>13 %> soles
+								<br /><strong>Original: </strong><span id="base_price_bk"></span>
+								</dd>
+							
+							</div>
+
+							<div class="single_column_left second">
+							
+							<dt class="odd">
+								<%= label_tag 'input_order[boxed_price]', 'Precio Mayorista:' %>
+							</dt class="odd">
+
+							<dd class="odd">
+							<%= text_field_tag 'input_order[boxed_price]', nil, :class=>'small_fields input_order_boxed_price', :tabindex=>14 %> soles
+							<br /><strong>Original: </strong><span id="boxed_price_bk"></span>
+							</dd>
+							</div>							
+
+							<div class="single_column_left third">							
+							<dt class="odd">
+								<%= label_tag 'input_order[wholesale_price]', 'Precio Corporativo:' %>								
+							</dt>						
+							<dd class="odd">
+							<%= text_field_tag 'input_order[wholesale_price]', nil, :class=>'small_fields input_order_wholesale_price',:tabindex=>15 %> soles
+							<br /><strong>Original: </strong><span id="wholesale_price_bk"></span>
+							</dd>
+							</div>				
+							
+							<div style="clear:both;"></div>
+							
+							<div class="single_column_left fourth">
+							<dt class="odd">
+								<%= label_tag 'input_order[final_price]', 'Precio El Trigal:' %>
+							</dt>
+
+							<dd class="odd">
+							<%= text_field_tag 'input_order[final_price]', nil, :class=>'small_fields input_order_final_price', :tabindex=>16 %> soles
+							<br /><strong>Original: </strong><span id="final_price_bk"></span>
+							</dd>
+							</div>				
+							
+									<div class="single_column_left fourth">
+									<dt class="odd">
+										<%= label_tag 'input_order[final_price_polo]', 'Precio El Polo:' %>
+									</dt>
+
+									<dd class="odd">
+									<%= text_field_tag 'input_order[final_price_polo]', nil, :class=>'small_fields input_order_final_price_polo', :tabindex=>17 %> soles
+								  <br /><strong>Original: </strong><span id="final_price_polo_bk"></span>
+									</dd>
+									</div>
+																				
+						<% end %>
+						
+						
+						
+				</fieldset>		
+
+
+
+			<%= submit_to_remote "input_order_detail_button", "Agregar Producto", :url=>{ :controller=>'buying_orders',:action=>'add_product' }, :html=>{:class=>'input_order_detail_submit button form_button', :tabindex=>11} %>
+
+	</dl>	
+</fieldset>	
+<% end %>

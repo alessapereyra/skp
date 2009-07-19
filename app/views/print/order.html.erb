@@ -1,0 +1,90 @@
+<div id="cabecera">
+  
+
+
+<div id="datos">
+	
+	<div id="nombre">
+      <%= @order.client.name unless @order.client.nil? %>
+  </div>
+			
+	<div id="ruc">
+	    <%= @order.client.ruc unless @order.client.nil? %>
+	</div>
+
+	<div id="direccion">
+	    <%= @order.address %>
+	</div>
+	
+
+</div>
+
+<div id="fecha">
+
+    <em><%= @order.order_date.strftime("%d") %></em>
+		<em><%= @order.order_date.strftime("%m")%></em>
+		<em><%= @order.order_date.strftime("%y")%></em>
+  
+</div>
+
+</div>
+
+<div id="productos">
+	
+  <table id="detalle">
+  	<thead>
+  	    <tr>
+          		<th id="count"></th>
+          		<th id="cantidad"></th>
+          		<th id="unidad"></th>		
+          		<th id="codigo"></th>
+          		<th id="descripcion"></th>
+          		<th id="unitario"></th>
+          		<th id="importe"></th>				
+      	</tr>
+  	</thead>						
+  	<tbody>
+      	<% i = 0 %>
+      	<% @order.order_details.each do |iod| %>
+            	<tr class="<%= cycle("even", "odd") -%>">
+                		<% discount = 0 %>
+                		<% discount = iod.discount unless iod.discount.nil? %>
+                		<td><%= i+=1; i %></td>		
+                		<td><%= iod.quantity %></td>
+                		<td><%= "" %></td>		
+                		<td><%= iod.product.code %></td>		
+                		<td><%= iod.product.name %></td>		
+                		<td><%= fill_zero((iod.price.round(2)*(1-(discount/100.0))).round(2)) %></td>
+                		<td><%= fill_zero(iod.subtotal.round(2)) %></td>						
+            	</tr>
+      	<% end %>
+  	</tbody>
+  </table>
+</div>
+
+<div id="letras">
+  <p id="letters"><%= @order.price.to_letters unless @order.type == "boleta" %></p>  
+</div>
+
+<div id="totales">
+  
+
+  <table id="subtotals">
+  	<thead>
+  		<tr>
+  			<th id="subtotal"></th>
+  			<th id="igv"></th>			
+  			<th id="total"></th>			
+  		</tr>
+  	</thead>
+  	<tbody>
+  		<tr>
+  			<td id="subtotal">S/.<%= fill_zero(@order.price_without_taxes.round(2)) %></td>
+  			<td id="igv">S/.<%= fill_zero(@order.taxes.round(2)) %></td>			
+  			<td id="total">S/.<%= fill_zero(@order.price.round(2)) %></td>			
+  		</tr>
+  	</tbody>
+  </table>
+
+  
+</div>

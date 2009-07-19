@@ -1,0 +1,79 @@
+/* @override 
+	http://localhost:3000/stylesheets/nextgen/menu.css
+	http://www.skykidsperu.com/stylesheets/nextgen/menu.css
+*/
+
+h3.ui-accordion-header {
+	margin: 0px;
+	padding: 15px 0;
+	background-color: #00beff;
+	text-align: center;
+	font: 1.3em "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+input#price_from.small_fields,
+input#price_to.small_fields {
+	padding: 5px;
+	margin: 0px 2px;
+}
+
+div.ui-accordion-group div.ui-accordion-content a,
+div.ui-accordion-group div.ui-accordion-content div {
+	display: block;	
+	text-decoration: none;
+	text-align: center;
+	padding: 15px 0px !important;
+	font-size: 1.2em;
+	color: #00b6f6;
+}
+
+dd {
+	margin: 0px;	
+}
+
+h3.ui-accordion-header.selected {
+	background-color: #d3fe00;
+	color: white;	
+}
+
+div.ui-accordion-content {
+	overflow: hidden;
+	height: auto !important;
+}
+
+select#age_from.small_fields,
+select#age_to.small_fields {
+	margin: 0px 5px;
+	width: 50px;
+}
+
+h3.ui-accordion-header a,
+h3.ui-accordion-header a:link,
+h3.ui-accordion-header a:active {
+	text-decoration: none;
+	color: white;	
+}
+
+h3.ui-accordion-header.selected a,
+h3.ui-accordion-header.selected a:link,
+h3.ui-accordion-header.selected a:active {
+	color: #8eb14d;	
+}
+
+div.ui-accordion-group div.ui-accordion-content a,
+div.ui-accordion-group div.ui-accordion-content div {
+	background-color: #d9f3f5;
+	margin: 0px;
+	padding: 0px;
+}
+
+div.ui-accordion-group div.ui-accordion-content a:hover,
+div.ui-accordion-group div.ui-accordion-content div:hover {
+	background-color: #68e4f9;
+	color: white;
+
+}
+
+div#open-sidebar .ui-accordion-group {
+	margin-bottom: 40px;
+}

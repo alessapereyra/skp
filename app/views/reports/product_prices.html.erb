@@ -1,0 +1,28 @@
+<h2><%= @total %> precios registrados para <%= @product.name %></h2>
+
+<table>
+	<thead>
+	<tr>
+		<th>Precio</th>
+		<th>Precio (con IGV)</th>		
+		<th>Cantidad</th>
+		<th>Fecha</th>
+		<th>Proveedor</th>		
+	</tr>						
+	</thead>
+	<tbody>
+	<% @prices.each do |price| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td>S/.<%= ((price.amount.to_f)/1.19).round(2) %></td>		
+		<td>S/.<%= price.amount.to_f %></td>		
+		<td><%= price.input_order_detail.quantity %></td>
+		<td><%= price.input_order_detail.input_order.order_date.strftime("%d/%m/%y") %></td>
+		<td><%= price.input_order_detail.input_order.provider.name %></td>		
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+
+	 <%= will_paginate @prices %>
+
+<%= link_to "Regresar",catalogue_path %>

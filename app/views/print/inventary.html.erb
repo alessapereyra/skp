@@ -1,0 +1,31 @@
+<div id="results">
+	<p>Costo Total de Inventario del <%= session[:inventory_time_from] %> al <%= session[:inventory_time_to] %> : S/.<%= @total_cost %></p>
+  <p>Tienda: <%= Store.find(current_store).name %> - <%= Store.find(current_store).address %></p>
+  Inventario <%= "#{Category.find(@category).name}" unless @category.zero? %> <%= "de #{Provider.find(@provider).name} " unless @provider.zero? %>
+
+</div>
+
+<table id="productos">
+	<thead>
+	<tr>
+		<th id="codigo">C&oacute;digo</th>
+		<th id="descripcion">Descripci&oacute;n</th>
+		<th id="stock">Stock</th>
+		<th id="precio_de_costo">Precio de Costo</th>		
+	</tr>			
+	</thead>
+	<tbody id="list">
+<%- @products.each do |product| -%>
+
+  <% next if product.nil? %>
+
+		<tr class="<%= cycle("even", "odd") -%>">
+			<td><%= product.code  %></td>			
+			<td><div style="width:400px;"><%= strip_tags product.name %></div></td>
+			<td><%= product.store_stock(current_store) %></td>		
+			<td><%= product.cost_price %></td>
+<%- end -%>
+
+	
+	</tbody>
+</table>

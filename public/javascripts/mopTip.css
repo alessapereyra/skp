@@ -1,0 +1,113 @@
+/* @override 
+	http://localhost:3000/stylesheets/mopTip.css
+	http://localhost:3000/javascripts/mopTip.css
+*/
+
+@charset "UTF-8";
+
+#mopTip01 {
+	position: absolute;
+	display: none;
+	z-index: 999;
+}
+#mopTip01 .tip {
+	background-color: #d0ff70;
+	position:relative;
+}
+#mopTip01 .content {
+	padding: 4px;
+	font-size: 10px;
+	cursor:default;
+	color: #135983;
+}
+#mopTip01 .leftTop {
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	top: 0px;
+	left: 0px;
+	background-image: url(../images/web/tip-background.png);
+	background-repeat: no-repeat;
+}
+#mopTip01 .rightTop {
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	top: 0px;
+	right: 0px;
+	background: url(../images/web/tip-background.png) no-repeat right top;
+}
+#mopTip01 .leftBottom {
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	Bottom: 0px;
+	left: 0px;
+	background: url(../images/web/tip-background.png) no-repeat 0 bottom;
+}
+#mopTip01 .rightBottom {
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	Bottom: 0px;
+	right: 0px;
+	background: url(../images/web/tip-background.png) no-repeat right bottom;
+}
+#mopTip01 .arrow {
+	position: absolute;
+	height: 20px;
+	width: 40px;
+	background: url(../images/web/tip-background.png) repeat-x -20px top;
+}
+#mopTip01 .arrowBottom {
+	position: absolute;
+	height: 20px;
+	width: 40px;
+	background: url(../images/web/tip-background.png) repeat-x -20px bottom;
+}
+#mopTip01 .left {
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	top: 20px;
+	left: 0px;
+	background: url(../images/web/tip-background.png) repeat-y left -20px;
+}
+#mopTip01 .right {
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	top: 20px;
+	right: 0px;
+	background: url(../images/web/tip-background.png) repeat-y right -20px;
+}
+#mopTip01 .top {
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	top: 0px;
+	left: 20px;
+	background: url(../images/web/tip-background.png) repeat-x -20px top;
+}
+#mopTip01 .bottom {
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	left: 20px;
+	bottom: 0px;
+	background: url(../images/web/tip-background.png) repeat-x -20px bottom;
+}
+#mopTip01 .close {
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	right: 2px;
+	bottom: 2px;
+	cursor: pointer;
+	background-image: url(http://www.skykidsperu.com/javascripts/closeBtn.png);
+	background-repeat: no-repeat;
+}
+#mopTip01 .close:hover {
+	background-image: url(http://www.skykidsperu.com/javascripts/closeBtn_h.png);
+	background-repeat: no-repeat;
+}

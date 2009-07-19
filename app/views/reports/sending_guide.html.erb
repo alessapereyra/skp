@@ -1,0 +1,107 @@
+<%- content_for :report_title do -%>-guia_remision<%- end -%>
+
+<div class="guia_remision">
+	
+<h2>Orden de Salida Fecha</h2>
+
+<div id="general">
+
+	<div id="date">
+		<h2 class="date fecha_emision">
+		<em><%= @sending_guide.sending_date.strftime("%d") %></em> <span>/</span>
+		<em><%= @sending_guide.sending_date.strftime("%m")%></em><span>/</span>
+		<em><%= @sending_guide.sending_date.strftime("%y")%></em>
+		</h2>
+
+		<h2 class="date inicio_traslado">
+		<em><% #@sending_guide.sending_date.strftime("%d") %></em> <span>/</span>
+		<em><% #@sending_guide.sending_date.strftime("%m") %></em><span>/</span>
+		<em><% #@sending_guide.sending_date.strftime("%y") %></em>
+		</h2>
+		
+	</div>
+
+	
+	<dl>
+		
+		<dt class="hide">C&oacute;digo: </dt>
+		<dd class="hide"><%= @sending_guide.id %></dd>
+
+		<dt class="hide">Documento: </dt>
+		<dd class="hide"><%= @sending_guide.document %></dd>
+		
+		<dt class="hide">Facturas asociadas: </dt>
+		<dd class="hide"><% @sending_guide.orders.each do |o| %>
+						N&uacute;mero: <%= o.number %> <br/>
+						<% end %>
+						<br />
+		</dd>
+
+
+			<div id="domicilio_partida">
+				<dt>Domicilio de Partida: </dt>
+				<dd><%= @sending_guide.store.name %> <br /> <%= @sending_guide.store.address %> </dd>				
+			</div>
+			
+			<div id="domicilio_llegada">
+				<dt>Domicilio de Llegada </dt>
+				<dd><%=  @sending_guide.delivery_address.blank? ?  (@sending_guide.client.address unless @sending_guide.client.blank?) : @sending_guide.delivery_address %></dd>
+				
+			</div>
+
+			<div id="destinatario">
+				<dt>Destinatario</dt>
+				<dd><%= @sending_guide.client.name unless @sending_guide.client.nil? %></dd>				
+			</div>
+			
+
+		<dt class="hide">Persona de Recepci&oacute;n</dt>
+		<dd class="hide"><%= @sending_guide.delivery_contact %></d>
+
+		<dt class="hide">Teléfono de Recepci&oacute;n</dt>
+		<dd class="hide"><%= @sending_guide.delivery_phone %></d>
+
+		<dt class="hide">Volumen</dt>
+		<dd class="hide"><%= total_volume(@sending_guide) %> m3 </dd>
+		
+	</dl>
+</div>
+
+<h3 class="hide">Lista de Productos Enviados</h3>
+
+<table>
+	<thead>
+	<tr>
+		<th id="count" width="5">Item</th>		
+		<th id="cantidad">Cantidad</th>		
+		<th id="codigo">Código</th>
+		<th id="descripcion">Descripci&oacute;n</th>
+		<th id="punit">P. Unit</th>
+		<th id="importe">Importe</th>		
+	</tr>
+	</thead>
+	<tbody>						
+	<% i = 0 %>
+	<% @sending_guide.sending_guide_details.each do |iod| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= i+=1; i %></td>
+		<td><%= iod.quantity %></td>
+		<td><%= iod.product.code %></td>		
+		<td><%= iod.product.name %> <br /><%= strip_tags(iod.product.description) if iod.product.print_description %></td>
+
+		<td><%= 0.00 %></td>				
+		<td><%= 0.00 %></td>						
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+
+<div id="endzone">
+<%= link_to "imprimir", print_path(:controller=>"print",:action=>"sending_guide",:id=>@sending_guide.id), :class=>"form_button" %>  
+<%= link_to ("retornar stock",return_admin_sending_guide_catalogue_path(@sending_guide.id), :class=>"form_button_inline") if ((admin? || store_admin? || store_supervisor? ) && !@sending_guide.returned? ) %> <%= link_to ("generar factura",order_from_guide_path(@sending_guide.id), :class=>"form_button_inline") if ((admin? || store_admin? || store_supervisor? ) && !@sending_guide.complete? ) %>  <%= link_to("editarla",edit_admin_sending_guide_catalogue_path(@sending_guide.id), :class=>"form_button_inline") if admin? %><p>o <%= link_to "Regresar",reports_path %></p>
+</div>
+
+
+
+
+</div>

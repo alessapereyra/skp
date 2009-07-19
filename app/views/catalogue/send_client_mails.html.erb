@@ -1,0 +1,35 @@
+<%= content_tag(:h2, "Catálogo de Clientes ")%>
+
+<span id="messages"><%= flash[:error] %><%= flash[:notice] %></span>
+
+<table>
+	<thead>
+		<tr>
+			<th width="50">Nombre</th>			
+			<th width="20">Tel&eacute;fono</th>						
+			<th width="50">Persona Contacto</th>												
+			<th width="30" style="width:150px !important; overflow:hidden;">Email</th>
+			<th width="20"></th>
+		</tr>	
+	</thead>
+	<tbody>
+	<% form_for :client, :url=>{:action=>:send_mails} do |f| %>
+	<% for client in @clients %>
+
+	<tr class="<%= cycle("even","odd") %>">
+		<td><%= client.name %></td>
+		<td><%= client.telephone %></td>	
+		<td><%= client.contact_person %></td>			
+		<td width="30" style="width:150px !important; overflow:hidden;">
+			<div style="width:150px;">
+				<%= client.contact_email %>
+			</div>
+		</td>															
+		<td><%= check_box_tag "client[#{client.id}][sendable]" %>
+	</tr>
+	<% end %>
+</tbody>
+</table>
+
+<%= f.submit "Enviar a cliente", :class=>'form_button' %>
+<% end %>

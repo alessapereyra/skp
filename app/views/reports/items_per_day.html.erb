@@ -1,0 +1,87 @@
+<h2>Reporte de Productos Vendidos del D&iacute;a</h2>
+
+<% form_tag(:action=>:items_per_day) do %>
+  <fieldset>
+	<legend>Viendo ventas del periodo</legend>
+	<dl>
+	<div class="single_column_left">
+	<dt>Desde:</dt>
+	<dd>
+	<div class="small_fields">
+	<%= select_date @time_from,:order => [:day, :month, :year],:prefix=> 'from',:html_options=>{:class=>"small_fields" }%>
+	</div>
+	</dd>
+</div>
+
+<div class="small_fields">
+	<dt>Hasta:</dt>
+	<dd>
+	<div class="small_fields">
+	<%= select_date @time_to,:order => [:day, :month, :year],:prefix=>'to',:html_options=>{:class=>"small_fields" } %>	
+	</div>
+	</dd>
+
+</div>	
+
+<%= submit_tag "Filtrar", :class=>"form_button" %>
+<% end %>
+</dl>
+
+
+<div id="table_detalle">
+	
+
+<table id="detalle">
+	<thead>
+	<tr>
+		<th id="count">item</th>
+		<th id="codigo">Código</th>
+		<th id="description">Descripci&oacute;n</th>	
+		<th id="imagen">Imagen</th>	
+		<th id="cantidad">Cantidad</th>	
+		<th id="importe">Importe</th>					
+		<th id="importe">Costo</th>
+		<th id="importe">Utilidad Unitaria</th>					
+	</tr>
+	</thead>						
+	<tbody>
+	<% i = 0 %>
+	<% @products.each do |p| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<% quantity = @quantities[i].to_i %>
+		<% subtotal = @amounts[i].to_f.round(2) %>
+		<% total_cost = p.cost_price * quantity %>
+		<td><%= i+=1; i %></td>		
+		<td><%= p.code %></td>
+		<td><%= strip_tags p.name %></td>
+		<td><%= link_to image_tag(p.picture.thumb.url, :width=>50), p.picture.url unless p.picture.nil? %></td>
+		<td><%= quantity %></td>		
+		<td><%= subtotal %></td>		
+		<td><%= total_cost %></td>				
+		<td><%= subtotal - total_cost  %></td>		
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+<table id="subtotals">
+	<thead>
+		<tr>
+			<th id="total">Total de Productos</th>			
+			<th id="total">Total</th>			
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td id="total"><%= @total_quantity %></td>			
+			<td id="total"><%= @total_amount %></td>			
+		</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+	<div id="endzone">
+		<%= link_to "regresar",reports_path %>	</p>
+	</div>

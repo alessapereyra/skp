@@ -1,0 +1,44 @@
+<% unless @pending_quotes.nil? or @pending_quotes.empty? %>
+
+<div id="recover">
+	<div class="opener">
+		<p class="message">Tiene <%= @pending_quotes.size %> cotizaciones abiertas adicionales</p>
+		<p class="action"><a href="#" id="down">revisar</a></p>
+	</div>
+	<div class="recover_results">
+
+		<table>
+			<thead>
+			<tr>
+				<th>Documento</th>		
+				<th>Cliente</th>
+				<th>Contacto</th>				
+				<th>Email</th>				
+				<th>Fecha</th>
+				<th></th>
+				<th></th>
+				<th></th>		
+			</tr>				
+			</thead>
+			<tbody>		
+			<% @pending_quotes.each do |quote| %>
+			<tr class="<%= cycle("even", "odd") -%>">
+				<td><%= quote.document %></td>		
+				<td><%= quote.client.name unless quote.client.nil? %></td>				
+				<td><%= quote.contact_name %></td>					
+				<td><%= quote.sending_details %></td>							
+				<td><%= quote.quote_date.strftime("%d/%m/%y") %></td>
+				<td><%= link_to "revisar", quote_report_path(quote.id) %></td>
+				<td><%= link_to "recuperar", url_for(:action=>'recover',:id=>quote.id), :method=>:post %></td>
+		 		<td><%= link_to "eliminar", url_for(:action=>'destroy',:id=>quote.id), :method=>:delete %></td>		
+			</tr>
+			<% end %>
+			</tbody>
+
+		</table>
+
+
+	</div>
+</div>
+
+<% end %>

@@ -1,0 +1,47 @@
+<table>
+	<thead>
+	<tr>	
+		<th id="codigo">Código</th>
+		<th id="cantidad">Cantidad</th>		
+		<th id="descripcion">Descripci&oacute;n</th>
+		<th id="importe">Faltantes</th>		
+		<th id="importe">Trasladar de Almacen</th>		
+		<th id="importe">Trasladar de Carisa</th>		
+		<th id="importe">Trasladar de Trigal</th>		
+		<th id="importe">Trasladar de Polo</th>				
+	</tr>
+	</thead>
+	<tbody>						
+	
+	<% unless @quote_request.stock_completed? %>	
+
+	<% @products.each do |p| %>	
+
+		<% #total,pending = p.total_and_pending_amounts_by_quote(@quote_request.id) %>
+			<% total,pending,on_almacen,on_carisa,on_trigal,on_polo = p.get_pending_stocks_per_store_by_quote(@quote_request) %>		
+		<% unless pending == 0 %>
+		<tr class="<%= cycle("even", "odd") -%>">
+			<td><%= link_to p.code, product_history_path(p.id) %></td>		
+			<td><%= total %></td>
+			<td><%= p.name %></td>
+			<td><%= pending %></td>				
+			<td><%= on_almacen.to_i %></td>				
+			<td><%= on_carisa.to_i %></td>				
+			<td><%= on_trigal.to_i %></td>				
+			<td><%= on_polo.to_i %></td>						
+		</tr>
+		<% end #total == 0 %>
+		
+	<% end  # each product %>
+	
+	<% else %>
+	
+	<tr>
+		<td colspan="8">
+			<p>Se cuenta suficiente stock en esta tienda para enviar el pedido.</p>
+		</td>
+	</tr>
+	
+ 	<% end #unless all completed %>
+	</tbody>
+</table>

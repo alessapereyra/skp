@@ -1,0 +1,36 @@
+<% unless @pending_exit_orders.nil? or @pending_exit_orders.size.zero?  %>
+
+<div id="recover">
+	<div class="opener">
+		<p class="message">Tiene <%= @pending_exit_orders.size %> órden(es) de salida abiertas</p>
+		<p class="action"><a href="#" id="down">revisar</a></p>
+	</div>
+	<div class="recover_results">
+
+		<table>
+			<thead>
+			<tr>
+				<th>Documento</th>		
+				<th>Fecha</th>
+				<th>Empresa</th>		
+				<th></th>
+				<th></th>		
+			</tr>				
+			</thead>
+			<tbody>		
+			<% @pending_exit_orders.each do |order| %>
+			<tr class="<%= cycle("even", "odd") -%>">
+				<td><%= order.document %></td>					
+				<td><%= order.sending_date.strftime("%d/%m/%y") %></td>
+				<td><%= order.client.name unless order.client.blank? %></td>
+				<td><%= link_to "recuperar", url_for(:action=>'recover',:id=>order.id), :method=>:post %></td>
+		 		<td><%= link_to "eliminar", url_for(:action=>'destroy',:id=>order.id), :method=>:delete %></td>		
+			</tr>
+			<% end %>
+			</tbody>
+			</table>
+
+	</div>
+</div>
+
+<% end %>

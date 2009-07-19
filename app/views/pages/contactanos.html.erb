@@ -1,0 +1,71 @@
+<div id="content">
+
+		<img id="header-image" src="../images/web/contactenos-header.png" alt="Servicios" />
+
+	</div> <!-- content -->
+	
+	
+	<div id="header-strip">
+		
+		<p> <em><%= link_to "env&iacute;anos un email ", "#email" %></em>, danos una <em><%= link_to "llamada","#llamada" %> o <%= link_to "escr&iacute;benos dir&eacute;ctamente", "#contact_form" %></em></p>
+
+	</div> <!-- header-strip -->
+
+
+		
+<div class="end_content"></div>
+
+
+
+<div class="start_subcontent"></div>
+
+<div id="inside">
+
+
+	<div id="text_content">
+
+		<h1 id="que-hacemos">queremos oir de ti</h1>
+
+		<p>¿Tienes alguna duda sobre nuestros productos o servicios? Estamos más que felices de responderlas y resolverlas.</p>
+		
+		<p class="notice" id="email">
+			Escríbenos a nuestro email <a href="mailto:ventas@skykidsperu.com">ventas@skykidsperu.com</a>
+			<img src="../images/web/email.png" alt="Email" align="middle" height="80" />				
+		</p>
+		
+		<p class="notice" id="llamada" >
+			Llámanos a nuestro teléfono <em>271-1253</em>
+			<img src="../images/web/call.png" alt="Email" align="middle" height="60" />				
+		</p>
+
+		<h2>o env&iacute;anos un mensaje</h2>
+		
+		<div id="message">
+			<%= flash[:message] %>
+		</div>
+		<div id="contact_form">
+		<% form_tag url_for(:controller=>"pages", :action=>"send_email") do -%>
+		<ul>
+			<div id="general">
+			  	<li><%= label_tag "name", "Nombre" %></li>		 	
+		   		<li><%= text_field "email", "name" %></li>
+			  	<li><%= label_tag "email", "Email" %></li>		 	
+		   		<li><%= text_field "email", "email" %></li>
+			  	<li><%= label_tag "business", "Empresa" %></li>		 	
+		   		<li><%= text_field "email", "business" %></li>			
+			<img src="../images/web/sendbox.png" alt="Email" align="middle"  />					
+			</div>
+			<div id="message">
+			  	<li><%= label_tag "message", "Mensaje" %></li>		 		
+		   		<li><%= text_area "email", "message" %></li>				
+			</div>
+			<li><%= submit_tag "Enviar", :class=>"send" %></li>
+		</ul>
+		<% end -%>
+		</div>
+	
+
+	</div> <!-- text_content -->
+
+
+	</div> <!-- inside -- >

@@ -1,0 +1,33 @@
+<p>
+  <b>Store:</b>
+  <%=h @sending_guide.store_id %>
+</p>
+
+<p>
+  <b>Client:</b>
+  <%=h @sending_guide.client_id %>
+</p>
+
+<p>
+  <b>Sending date:</b>
+  <%=h @sending_guide.sending_date %>
+</p>
+
+<p>
+  <b>Driver name:</b>
+  <%=h @sending_guide.driver_name %>
+</p>
+
+<p>
+  <b>License plate:</b>
+  <%=h @sending_guide.license_plate %>
+</p>
+
+<p>
+  <b>Truck description:</b>
+  <%=h @sending_guide.truck_description %>
+</p>
+
+
+<%= link_to 'Edit', edit_sending_guide_path(@sending_guide) %> |
+<%= link_to 'Back', sending_guides_path %>

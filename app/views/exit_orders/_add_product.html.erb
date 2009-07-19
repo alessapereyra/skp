@@ -1,0 +1,77 @@
+<% fields_for :exit_order_detail, @exit_order_detail do |eod| %>
+
+<fieldset id="fieldset_sending">
+	<legend>Agregar productos</legend> 
+
+	<dl>	
+
+
+			<div class="single_column_left">
+
+				<dt><%= eod.label :product_id, "Producto:" %></dt>
+				<dd><%= eod.text_field :product_id %>
+				<%= hidden_field_tag "exit_order_detail[hidden_product_id]", "", :class=>"exit_order_detail_hidden_product_id" %>
+        	<br /><br />
+  				<span style="width: 200px !important; display: block;"><strong>Producto Seleccionado:</strong>
+  				<br /><span class="product_name">Ninguno</span>
+  				<br />
+  				<strong>Stock:</strong>
+  				<br /><span class="product_stock">--</span></span>
+				</dd>
+
+			</div>
+			
+			<div class="single_column_left">
+				
+				<dt>
+						<%= eod.label :quantity, "Cantidad:" %>
+				</dt>
+				
+				<dd>
+						<%= eod.text_field :quantity, :class=>'small_fields' %>
+				</dd>
+
+			</div>
+			
+      		<div class="single_column_left">
+
+    				<dt>
+    						<%= eod.label :price, "Precio (inc. IGV):" %>
+    				</dt>
+
+
+    				<dd>				
+    						<%= select :exit_order_detail, :price, [], {:include_blank => ""}, :class=>'price_select' %>
+    				</dd>
+
+
+    			</div>
+
+    			<div class="single_column_left">
+
+    				<dt>
+    						<%= eod.label :discount, "Descuento (%):" %>
+    				</dt>
+
+    				<dd>
+    						<%= eod.text_field :discount, :class=>'small_fields' %>
+    				</dd>
+
+    			</div>			
+
+			<%= submit_to_remote "exit_order_detail_button", "Agregar Producto", :url=>{ :controller=>'exit_orders',:action=>'add_product' }, :html=>{:class=>'exit_order_detail_submit button form_button'} %>
+
+	</dl>	
+</fieldset>	
+<% end %>
+
+<% if admin? or store_supervisor? %>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+	$("#exit_order_detail_price").dxCombobox();
+});
+//]]>	
+
+</script>
+<% end %>

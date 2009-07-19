@@ -1,0 +1,41 @@
+<div id="content">
+
+		<img id="header-image" src="../images/web/catalogo-header.png" />
+
+	</div> <!-- content -->
+	
+	
+	<div id="header-strip">
+		
+		<p>revisa <em><%= link_to "nuestras ofertas", url_for(:action=>:search_product, :q=>"ofertas || remate") %></em> y nuestros <em><%= link_to "&uacute;ltimos productos",url_for(:action=>:search_product, :q=>"novedad") %></em></p>
+
+	</div> <!-- header-strip -->
+
+
+		
+<div class="end_content"></div>
+
+
+<div id="full_inside">
+
+<div id="christmas_price">
+	
+	<%= image_tag "web/chrismas_title.png", :id=>"justimeano_titulo" %>
+	
+	<p class="first">¡Accede a nuestros precios especiales por campaña navideña para tus compras!</p>
+
+	<p>Del <strong>15 al 20 de Diciembre</strong> pres&eacute;ntate en <a href="http://www.skykidsperu.com/web/conocenos#stores">nuestras tiendas</a> y descifra los precios de nuestros productos con esta clave:</p>
+
+	<%= image_tag "web/tarjeta.png", :id=>"tarjeta_titulo" %>
+
+	<p>Ubica el precio en letras en la etiqueta de los productos y b&uacute;scalas seg&uacute;n clave:</p>
+
+	<%= image_tag "web/explicacion.png", :id=>"tarjeta_explicacion" %>
+
+	<p>Los precios especiales son v&aacute;lidos para <strong>compras en efectivo</strong> y con un <strong>m&iacute;nimo de 03 productos de cualquier precio</strong> del <strong>15 al 20 de Diciembre</strong></p>
+
+	
+</div>
+
+</div>
+

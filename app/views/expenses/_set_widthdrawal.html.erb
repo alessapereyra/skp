@@ -1,0 +1,29 @@
+<div class="inner_form">
+  
+
+<% if admin? %>
+
+<% form_for(@fund) do |f| %>
+
+
+    <div class="result">
+      <%= f.error_messages %>
+      <%= f.label :widthdrawal, "Monto a ser retirado: " %><%= f.text_field :widthdrawal %>
+                <%= hidden_field_tag "fund[net_income]", "#{yesterdays_fund + @totals - @total_expenses}" %>
+
+        <%= f.submit "actualizar", :class=>"form_button" %>
+  	
+  	</div>
+
+
+<% end %>
+
+<% else %>
+
+	<div id="result">
+		Monto a retirar: <%= @yesterday_fund.widthdrawal %>
+	</div>
+
+<% end %>
+
+</div>

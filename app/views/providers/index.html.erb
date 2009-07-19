@@ -1,0 +1,32 @@
+<%= content_tag(:h2, "Catálogo de Proveedores ")%>
+
+
+<table>
+	<thead>
+	<tr>
+		<th>Nombre</th>
+		<th>Direcci&oacute;n</th>
+		<th>Tel&eacute;fono</th>
+		<th>Email</th>
+		<th></th>
+		<th></th>
+	</tr>						
+	</thead>
+	<tbody>
+<%- @providers.each do |provider| -%>
+
+		<tr class="<%= cycle("even", "odd") -%>">
+			<td><div style="width:100px;"><%= provider.name %></div></td>
+			<td><div style="width:150px;"><%= provider.address %></div></td>
+			<td><%= provider.telephone %></td>
+			<td><%= provider.email %></td>
+			<td><%= link_to 'Editar', edit_provider_path(provider) %></td>
+			<td><%= link_to 'Eliminar', provider, :confirm => 'Seguro?', :method => :delete %></td>
+
+<%- end -%>
+	</tbody>
+</table>
+
+<div id="endzone">
+<%= link_to "agregar nuevo proveedor", new_provider_path %>	
+</div>

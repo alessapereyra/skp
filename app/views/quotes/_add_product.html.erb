@@ -1,0 +1,51 @@
+<fieldset id="fieldset_sending">
+	<legend>3. Agregar productos <%= "#{@quote.is_requested ? 'a pedido' : 'a cotizar' }" %></legend> 
+
+	<dl>	
+
+
+		<div class="single_column_left">
+
+			<dd>Desde <%= select_tag :age_from, options_for_select((0..18).collect {|x| [x, x] },[0]), :class=>"small_fields" %></dd>
+			</dd>
+
+		</div>
+
+		<div class="single_column_left">
+			<dd>a <%= select_tag :age_to, options_for_select((0..18).collect {|x| [x, x] },[18]), :class=>"small_fields" %> a&ntilde;os </dd>
+			</dd>
+
+		</div>
+
+		<div class="single_column_left">
+			<dd><%= text_field_tag "quote_detail_product_id", "",:class=>'ac_input' %>
+			</dd>
+		</div>
+		
+		<%= observe_field :age_from, :url => { :action => :set_age_from },
+		      :with => 'q'
+		      %>
+
+		<%= observe_field :age_to, :url => { :action => :set_age_to },
+			  :with => 'q'
+		      %>
+			
+		<script type="text/javascript">
+		//<![CDATA[
+		
+		
+		
+		$('#quote_detail_product_id').delayedObserver(0.5, function(element, value) {
+
+			window.location.hash =  value;
+
+			$.ajax({data:'q=' + value + '&authenticity_token=' + encodeURIComponent('3b8cb750e19257f451b140a143b9146a378ac9c1'), dataType:'script', url:'/quotes/search_product'})
+
+			})
+		//]]>	
+		</script>	
+	</dl>	
+	
+	<%= render :partial =>"detail" %>
+	
+</fieldset>	

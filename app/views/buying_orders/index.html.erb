@@ -1,0 +1,8 @@
+<%= content_tag(:h2, "Ingreso a Inventario")%>
+
+<%= render :partial =>'recover' %>
+
+<%= error_messages_for :input_order %>
+<span id="messages"><%= flash[:error] %></span>
+
+<%= render :partial=>"general_data" %>

@@ -1,0 +1,127 @@
+	<dl id="general_data">
+		<dt>Realizada para: <strong><%= @quote.client.name unless @quote.client.nil? %></strong></dt>
+
+		<dt>RUC: <strong><%= @quote.client.ruc unless @quote.client.nil? %></strong></dt>
+		<dd></dd>
+
+		<dt>Teléfono: <strong><%= @quote.client.telephone unless @quote.client.nil? %></strong></dt>
+		
+		<dt>Contacto: <strong><%= @quote.contact_name %> (<%= @quote.sending_details %>) </strong></dt>
+	
+		<% unless @quote.status == "requested" %>
+		<dt>Duración: <strong><%= @quote.duration.blank? ? "5": @quote.duration %> d&iacute;as </strong></dt>
+		<% end %>
+		
+		<dt>Anotaciones: <strong><%= @quote.quote_comments %></strong></dt>
+		
+	</dl>
+	
+		<% unless @quote.status == 'requested' %>
+		<p style="clear:both">La presente cotizaci&oacute;n tiene una duraci&oacute;n v&aacute;lida de <%= @quote.duration.blank? ? "5" : @quote.duration.to_s %> d&iacute;as y est&aacute; sujeta a disponibilidad de stock</p>
+		<p>Los precios incluyen IGV</p>
+		<% end %>
+
+	<table id="product_table">
+		<thead>
+		<tr>
+			<th>item</th>
+			<th width="100">edad</th>
+			<th>sexo</th>
+			<th>codigo</th>
+			<th>descripci&oacute;n</th> 
+			<th>Foto</th>
+			<th>Precio (sin IGV)</th>
+			<th>Precio</th>
+			<th>Cantidad</th>				
+			<th>Subtotal</th>		
+		</tr>						
+		</thead>
+		<tbody>
+			<% if @quote.quote_details.final.empty?  %>
+			<tr>
+				<td colspan="9">
+					<p></p>
+				</td>
+			</tr>
+				<%- else -%>
+				<% i=0 %>
+	
+				<% @final_quote_details.each do |qd| %>
+					<tr id="row_<%= qd.id.to_s %>" class="<%= cycle("even", "odd") -%>">
+						<td><%= i+=1 %></td>
+						<td>
+						<%= qd.age_from %>	- <%= qd.age_to %></td>
+						<td><%= qd.sex.blank? ? change_sex(qd.product.sex) : qd.sex %></td>
+						<td><%= qd.product.code %></td>						
+						<td><%= qd.product.name.humanize %> </td>
+						<td>
+							<img class='product_image' src='<%= qd.product.picture.thumb.url unless qd.product.picture.nil? %>' alt='<%= h qd.product.name.gsub!("'","") %> title='click en la imagen para cerrar'/>" 
+						</td>
+						<td>S/. <%= unless qd.price.blank? then (qd.price/1.19).round(2) else 0.00 end  %></td>
+						<td>S/. <%= unless qd.price.blank? then qd.price else 0.00 end  %></td>
+						<td><%= qd.quantity %></td>
+						<td>S/. <%= unless qd.subtotal.blank? then qd.subtotal else 0.00 end %></td>
+						</tr>
+				<% end %>
+
+				<%- end -%>
+			
+		</tbody>
+	</table>
+		<div id="total">
+			Total: S/. <%= @quote.price %>
+		</div>
+		
+		<% unless @quote.quote_details.additional.empty? %>
+		<h2>Alternativas de Productos para Cotizar</h2>
+		<table id="additional_product_table">			
+			<thead>
+			<tr>
+				<th>item</th>
+				<th width="100">edad</th>
+				<th>sexo</th>
+				<th>codigo</th>
+				<th>descripci&oacute;n</th> 
+				<th>Foto</th>
+				<th>Precio (sin IGV)</th>
+				<th>Precio</th>
+				<th>Cantidad</th>				
+				<th>Subtotal</th>		
+			</tr>						
+			</thead>
+			<tbody>
+				<% if @quote.quote_details.additional.empty?  %>
+				<tr>
+					<td colspan="9">
+						<p></p>
+					</td>
+				</tr>
+					<%- else -%>
+					<% i=0 %>
+
+
+					<% @alternative_quote_details.each do |qd| %>
+						<tr id="row_<%= qd.id.to_s %>" class="<%= cycle("even", "odd") -%>">
+							<td><%= i+=1 %></td>
+							<td><%= qd.age_from %>-<%= qd.age_to %></td>
+							<td><%= change_sex(qd.product.sex) %></td>
+							<td><%= qd.product.code %></td>						
+							<td><%= qd.product.name.humanize %> </td>
+							<td><img class='product_image' src='<%= qd.product.picture.thumb.url unless qd.product.picture.nil?  %>' alt='<%= qd.product.name %>'/> </td>
+							<td>S/. <%= unless qd.price.blank? then (qd.price/1.19).round(2) else 0.00 end  %></td>
+							<td>S/. <%= unless qd.price.blank? then qd.price else 0.00 end  %></td>
+							<td><%= qd.quantity %></td>
+							<td>S/. <%= unless qd.subtotal.blank? then qd.subtotal else 0.00 end %></td>
+							</tr>
+					<% end %>
+
+					<%- end -%>
+
+			</tbody>
+		</table>
+		<% end %>
+
+		
+		
+	
+	<!--  ></div>  quote_partial -->

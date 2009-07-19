@@ -1,0 +1,19 @@
+<h2>Editando rol</h2>
+
+<% form_for(@role) do |f| %>
+<fieldset>
+  <%= f.error_messages %>
+
+  <dl>
+    <dt><%= f.label :name, "Nombre" %></dt>
+    <dd><%= f.text_field :name %></dd>
+  </dl>
+
+
+</fieldset>
+<div id="endzone">
+<%= f.submit "actualizar rol", :class=>"form_button",:confirm=>"¿Finalizar actualizaci&oacute;n de rol?" %> <p>o <%= link_to 'regresar', roles_path %></p>
+</div>
+
+<% end %>
+

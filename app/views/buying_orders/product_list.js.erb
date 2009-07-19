@@ -1,0 +1,18 @@
+
+<table>
+	<tr>
+		<th>Producto</th>
+		<th>Precio de Compra</th>
+		<th>Cantidad</th>		
+		<th> </th>					
+	</tr>						
+
+<% @input_order_details.each do |input| %>
+<tr class="<%= cycle("even", "odd") -%>">
+	<td><%= input.product.name %></td>
+	<td><%= input.price %></td>
+	<td><%= input.quantity %></td>				
+	<td><%= link_to "X", delete_input_order_details_path %></td>					
+</tr>
+<% end %>
+</table>

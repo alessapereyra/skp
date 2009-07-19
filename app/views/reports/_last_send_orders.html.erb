@@ -1,0 +1,26 @@
+<h3>&Uacute;ltimos traslados de productos</h3>
+<table>
+	<thead>
+	<tr>
+		<th>Documento</th>
+		<th>Origen</th>
+		<th>Fecha de Salida</th>		
+		<th>Destino</th>		
+		<th>Fecha de Recibo</th>		
+		<th></th>
+	</tr>
+	</thead>
+	<tbody>						
+	<% @send_orders.each do |send_order| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= send_order.document %></td>		
+		<td><%= send_order.owner.name %></td>		
+		<td><%= send_order.send_date.strftime("%d/%m/%y") %></td>		
+		<td><%= send_order.store.name %></td>		
+		<td><%= send_order.received_date.strftime("%d/%m/%y") unless send_order.received_date.nil? %></td>				
+		<td><%= link_to "Ver orden", send_order_report_path(send_order.id) %></td>
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+<%= link_to "leer reporte completo", send_orders_report_path,:class=>"more_link" %>

@@ -1,0 +1,29 @@
+<%= content_tag(:h2, "Catálogo de Productos ")%>
+
+<% remote_form_for :product, :url=>{:action=>"search_product"} do |od| %>
+
+<dl>
+	<fieldset>
+		<legend>Búsqueda de producto</legend>
+	<div id="single_column_left">
+		<dd><%= od.text_field :name, :class=>"ac_input" %></dd>
+	</div>			
+	</fieldset>	
+</dl>
+<% end %>
+
+
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+	if (window.location.hash != ""){ 
+	$.ajax({data:'product[name]=' + window.location.hash.substring(1) + '&authenticity_token=' + encodeURIComponent('3b8cb750e19257f451b140a143b9146a378ac9c1'), dataType:'script', url:'/catalogue/search_product'})
+	}
+});
+//]]>	
+
+</script>
+
+<%= render :partial => 'product_list' %>
+
+

@@ -1,0 +1,33 @@
+<div id="content">
+
+		<img id="header-image" src="../images/web/<%= params["title"] %>-header.png" />
+
+	</div> <!-- content -->
+	
+	
+	<div id="header-strip">
+		<div class="left">
+			<a href="#">anterior</a>
+		</div>
+		
+		<div class="right">
+			<a href="#">siguiente</a>
+		</div>
+		
+		<p>revisa <em><%= link_to "nuestras ofertas", "#" %></em> y nuestros <em><%= link_to "&uacute;ltimos productos","#" %></em></p>
+
+	</div> <!-- header-strip -->
+
+
+		
+<div class="end_content"></div>
+
+
+<div class="start_subcontent"></div>
+
+<div id="full_inside">
+
+<h1><%= h @page.title  %></h1>
+
+	<p><%= @page.content %></p>
+	

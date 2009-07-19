@@ -1,0 +1,41 @@
+<div class="section">
+
+<h3>Pedidos de Clientes</h3>
+<table>
+	<thead>
+	<tr>
+		<th>Documento</th>
+		<th>Cliente</th>		
+		<th>Cantidad Total</th>		
+		<th>Cantidad de esta tienda</th>				
+		<th>Fecha de Pedido</th>
+		<th></th>
+	</tr>				
+	</thead>
+	<tbody>		
+		<% if @requested_quote_details.empty? && @requested_quote_details.empty? %>	
+			<tr>
+			<td colspan="5">
+				<p>El producto nunca ha sido pedido</p>
+			</td>
+			</tr>
+		<% else %>
+				
+	<% @requested_quote_details.each do |requested_quote_detail| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= requested_quote_detail.quote.document %></td>				
+		<td><div style="width:100px;"><%= requested_quote_detail.quote.client.name %></div></td>		
+		<td><%= requested_quote_detail.quantity %></td>
+		<td><%= requested_quote_detail.stock_from_store(current_store) %></td>
+		<td><%= requested_quote_detail.quote.quote_date %></td>
+
+		<td><%= link_to "ver orden", quote_request_report_path(requested_quote_detail.quote.id) %></td>
+	</tr>
+	<% end %>
+
+	
+	<% end %>
+	</tbody>
+
+</table>
+</div>

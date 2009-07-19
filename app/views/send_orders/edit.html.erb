@@ -1,0 +1,97 @@
+<h2>Editando Orden de Traslado <%= @send_order.document %></h2>
+
+<div id="general">
+	<% form_for @send_order, :url=>{:controller=>"send_orders", :action=>"update", :id=>@send_order} do |f| -%>
+	  
+
+	<dl>
+
+		<div class="single_column_left">
+
+			<dt>
+				<%= f.label :document, "Documento:" %>
+			</dt>
+
+			<dd>
+				<%= f.text_field :document %>
+			</dd>
+
+		</div>
+
+
+				
+	<div class="single_column_left">
+
+
+				<dt>
+					<%= f.label :owner_id, "Origen:" %>
+				</dt>
+		
+				<dd>
+					<%= f.collection_select :owner_id, Store.find(:all),:id,:name %>
+				</dd>
+		
+
+	</div>
+	
+	<div class="single_column_left">
+		
+			<dt>			
+			<%= f.label :store_id, "Destino" %>
+			</dt>
+
+			<dd>
+			<%= f.collection_select :store_id, Store.find(:all), :id,:name %>
+			</dd>
+		
+				
+	</div>
+
+
+	<div class="single_column_left">
+		
+		
+			<dt class="odd">				
+				<%= f.label :send_date, "Fecha de Salida: " %>
+			</dt>
+
+			<dd class="odd">
+			<div class="small_fields">
+			<%= f.date_select :send_date, :class=>"small_fields"%>
+			</div>
+			</dd>
+		
+	</div>
+
+
+	<div class="single_column_left">
+		
+		
+			<dt class="odd">				
+				<%= f.label :received_date, "Fecha de Recepci&oacute;n: " %>
+			</dt>
+
+			<dd class="odd">
+			<div class="small_fields">
+			<%= f.date_select :received_date, :class=>"small_fields"%>
+			</div>
+			</dd>
+		
+	</div>
+	
+	</dl>
+
+
+</div>
+<div id="endzone">
+	<%= f.submit "Actualizar", :class=>"form_button",:confirm=>"&iquest;Finalizar actualizac&oacute;n de Orden de Env&iacute;o?" %>  <%= link_to "reabrir gu&iacute;a",reopen_send_order_path(@send_order.id), :class=>"form_button_inline" %> <p>o <%= link_to "cancelar",send_orders_catalogue_path %></p>
+	</div>
+<% end -%>
+
+
+<%= render :partial=>"detail_product_list" %>
+
+
+
+
+

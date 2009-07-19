@@ -1,0 +1,105 @@
+<%- content_for :report_title do -%>-guia_remision<%- end -%>
+
+<div class="guia_remision">
+	
+<h2>Orden de Salida Fecha</h2>
+
+<div id="general">
+
+	<div id="date">
+		<h2 class="date fecha_emision">
+		<em><%= @send_order.send_date.strftime("%d") %></em> <span>/</span>
+		<em><%= @send_order.send_date.strftime("%m")%></em><span>/</span>
+		<em><%= @send_order.send_date.strftime("%y")%></em>
+		</h2>
+
+		<h2 class="date inicio_traslado">
+		<em><% #@send_order.send_date.strftime("%d") %></em> <span>/</span>
+		<em><% #@send_order.send_date.strftime("%m")%></em><span>/</span>
+		<em><% #@send_order.send_date.strftime("%y")%></em>
+		</h2>
+		
+	</div>
+
+	
+	<dl>
+		
+		<dt class="hide">C&oacute;digo: </dt>
+		<dd class="hide"><%= @send_order.id %></dd>
+
+		<dt class="hide">Volumen</dt>
+		<dd class="hide"><%= total_volume(@send_order) %> m3</dd>
+
+		<dt class="hide">Documento: </dt>
+		<dd class="hide"><%= @send_order.document %></dd>
+		
+
+
+			<div id="domicilio_partida">
+				<dt>Domicilio de Partida: </dt>
+				<dd><%= @send_order.owner.name %> <br /> <%= @send_order.owner.address %> </dd>				
+			</div>
+			
+			<div id="domicilio_llegada">
+				<dt>Domicilio de Llegada </dt>
+				<dd><%= @send_order.store.address %></dd>
+				
+			</div>
+
+			<div id="destinatario">
+				<dt>Destinatario</dt>
+				<dd><%= @send_order.store.name %></dd>				
+			</div>
+			
+
+		<dt class="hide">Fecha de recepción: </dt>
+		<dd class="hide"><%= @send_order.pending? ? "En tr&aacute;nsito" : @send_order.received_date.strftime("%d/%m/%y") %>			
+		
+	</dl>
+</div>
+
+<h3 class="hide">Lista de Productos Enviados</h3>
+
+<table>
+	<thead>
+	<tr>
+		<th id="count" width="5">Item</th>		
+		<th id="cantidad">Cantidad</th>		
+		<th id="codigo">Código</th>
+		<th id="descripcion">Descripci&oacute;n</th>
+		<th id="punit">P. Unit</th>
+		<th id="importe">Importe</th>		
+	</tr>
+	</thead>
+	<tbody>						
+	<% i = 0 %>
+	<% @send_order.send_order_details.each do |iod| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= i+=1; i %></td>
+		<td><%= iod.quantity %></td>
+		<td><%= iod.product.code %></td>		
+		<td><%= iod.product.name %> <br /><%= strip_tags(iod.product.description) if iod.product.print_description %></td>
+		<% unless store? #or @send_order.store_id == 5 #CARISA  %>
+		<td> 0.00</td>				
+		<td>0.00</td>	
+		<% else %>					
+		<td><%= 0.00  %></td>				
+		<td><%= 0.00 %></td>	
+		
+		<% end %>
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+
+<div id="endzone">
+<%= link_to "imprimir",print_path(:controller=>"print",:action=>"send_order",:id=>@send_order.id), :class=>"form_button_inline" %> 
+<%= link_to "imprimir etiquetas",print_send_order_tags_path(@send_order), :class=>"form_button_inline" %> 
+<%= link_to("editarla",edit_send_order_catalogue_path(@send_order.id), :class=>"form_button_inline") if admin? %>  
+<p>o <%= link_to "Regresar",reports_path %></p>
+</div>
+
+
+
+
+</div>

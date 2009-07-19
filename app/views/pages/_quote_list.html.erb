@@ -1,0 +1,63 @@
+		<div class="notice">
+			<h2>Estos son los productos que tienes en tu consulta a nosotros. Puede cambiar las cantidades antes de enviarla.</h2>
+			</div>
+
+			<div id="message">
+				<%= flash[:message] || flash[:error] %>
+			</div>
+
+
+			<% form_for :quote, :url=>{:action=>:send_quote} do |f| %>			
+			<table id="product_table">
+				<thead>
+				<tr>
+					<th>item</th>
+					<th></th>
+					<th>Producto</th> 
+					<th>Cantidad</th>				
+					<th></th>			
+				</tr>						
+				</thead>
+				<tbody>
+					<% if @quote.quote_details.empty?  %>
+					<tr>
+						<td colspan="5">
+							<p>Todavía no ha agregado ningún producto a su consulta. <%= link_to "Agregue uno ahora", "/web/catalogo" %></p>
+						</td>
+					</tr>
+						<%- else -%>
+						<% i=0 %>
+						<% @quote.quote_details.reverse.each do |qd| %>
+							<% fields_for :quote_detail, qd, :index=>qd.id do |fd| %>
+							<tr id="row_<%= qd.id %>" class="<%= cycle("even", "odd") -%>">
+								<td><%= i+=1 %>
+									<td><%= link_to "<img class='product_image' src='#{qd.product.picture.thumb.url}' alt='#{qd.product.name}'/>",product_catalogue_path(qd.product.id), :rel=>'facebox' unless qd.product.picture.nil? %> </td>
+									<td><%= link_to qd.product.name.humanize, product_catalogue_path(qd.product.id), :rel=>'facebox' %> </td>
+									<td><%= fd.text_field :quantity %></td>
+									<td><%= link_to_remote 'Eliminar',:url=>{:action=>"destroyDetail", :id=>qd.id} %></td>							
+								</tr>
+							<% end %>
+						<% end %>
+
+						<%- end -%>
+					
+				</tbody>
+			</table>
+
+			<div id="instructions">
+				<p>Ingresa tu informaci&oacute;n de contacto y env&iacute;anos tu consulta. Te la responderemos a tu email.</p>
+			</div>
+
+			<div id="form_footer">
+				<%= label "quote", "Nombre:" %>			
+				<%= text_field_tag "quote[client]" %>
+
+				<%= label_tag "quote", "email:" %>			
+				<%= text_field_tag "quote[email]" %>
+			</div>
+	
+
+			<p id="footer_section"><%= link_to "regresar", "/web/catalogo" %>  <%= image_submit_tag "/images/web/send_request.png", :class=>"send_button" %></p>
+			
+
+			<% end %>		

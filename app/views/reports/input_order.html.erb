@@ -1,0 +1,58 @@
+<h2>Orden de Ingreso Fecha <%= @input_order.order_date.strftime("%d/%m/%y") %></h2>
+
+<div id="general">
+	
+	<dl>
+		<dt>C&oacute;digo: </dt>
+		<dd><%= @input_order.id %>
+
+		<dt>Documento: </dt>
+		<dd><%= @input_order.document %>
+		
+		<dt>Proveedor: </dt>
+		<dd><%= @input_order.provider.name %>
+	
+		<dt>Almacenado en: </dt>
+		<dd><%= @input_order.store.name %>
+			
+		<dt>Dueño de la mercadería: </dt>
+		<dd><%= @input_order.owner.name %>
+	</dl>
+</div>
+<div style="clear:both"></div>
+<h3>Lista de Productos Ingresados</h3>
+
+<table>
+	<thead>
+	<tr>
+		<th>item</th>
+		<th>Cantidad</th>		
+		<th>Código</th>
+		<th>Descripci&oacute;n</th>
+		<th>Precio de Costo</th>
+	</tr>						
+	</thead>
+	<tbody>
+		<% i = 0 %>
+	<% @input_order.input_order_details.each do |iod| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= i+=1 %></td>
+		<td><%= iod.quantity %></td>
+		<td><%= iod.product.code %></td>		
+		<td><%= iod.product.name %></td>		
+		<td>S/. <%= iod.cost %></td>
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+
+<h3 id="subtotal">Total: S/.<%= @input_order.cost %></h3>
+
+<div id="endzone">
+	<%= link_to "imprimir",print_path(:controller=>"print",:action=>"input_order",:id=>@input_order.id), :class=>"form_button_inline" %> 
+	<%= link_to "imprimir etiquetas",print_input_order_tags_path(@input_order), :class=>"form_button_inline" %>
+	<%= link_to "reabrir orden",reopen_input_order_catalogue_path(@input_order.id), :class=>"form_button_inline" %> 
+	<%= link_to("editarla",edit_input_order_catalogue_path(@input_order.id), :class=>"form_button_inline") if admin? %>
+ <p> o <%= link_to "regresar",reports_path %>	</p>
+</div>
+

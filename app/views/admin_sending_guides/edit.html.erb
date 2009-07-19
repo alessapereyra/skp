@@ -1,0 +1,94 @@
+<h2>Editando Orden de Traslado <%= @sending_guide.document %></h2>
+
+<div id="general">
+	<% form_for @sending_guide, :url=>{:controller=>"admin_sending_guides", :action=>"update", :id=>@sending_guide} do |f| -%>
+	  
+
+	<dl>
+
+
+		<div class="single_column_left">
+
+			<dt>
+				<%= f.label :sending_type, "Tipo de Salida:" %>
+			</dt>
+
+			<dd>
+				<%= f.select :sending_type, SendingGuide::SendingTypes.collect {|x| [x.humanize, x]} -%>
+			</dd>
+
+		</div>
+		
+		<div class="single_column_left">
+
+			<dt>
+				<%= f.label :document, "Documento:" %>
+			</dt>
+
+			<dd>
+				<%= f.text_field :document %>
+			</dd>
+
+		</div>
+
+
+				
+	<div class="single_column_left">
+
+
+				<dt>
+					<%= f.label :store_id, "Origen:" %>
+				</dt>
+		
+				<dd>
+					<%= f.collection_select :store_id, Store.find(:all),:id,:name %>
+				</dd>
+		
+
+	</div>
+	
+	<div class="single_column_left">
+		
+			<dt>			
+			<%= f.label :client_id, "Cliente" %>
+			</dt>
+
+			<dd>
+			<%= f.collection_select :client_id, Client.find(:all), :id,:name %>
+			</dd>
+		
+				
+	</div>
+
+
+	<div class="single_column_left">
+		
+		
+			<dt class="odd">				
+				<%= f.label :sending_date, "Fecha de Salida: " %>
+			</dt>
+
+			<dd class="odd">
+			<div class="small_fields">
+			<%= f.date_select :sending_date, :class=>"small_fields"%>
+			</div>
+			</dd>
+		
+	</div>
+	
+	</dl>
+
+
+</div>
+<div id="endzone">
+	<%= f.submit "Actualizar", :class=>"form_button",:confirm=>"&iquest;Finalizar actualizac&oacute;n de Orden de Env&iacute;o?" %> <%= link_to "reabrir gu&iacute;a",reopen_admin_sending_guide_catalogue_path(@sending_guide.id), :class=>"form_button_inline" %> <p>o <%= link_to "cancelar",admin_sending_guides_catalogue_path %></p>
+	</div>
+<% end -%>
+
+
+<%= render :partial=>"detail_product_list" %>
+
+
+
+
+

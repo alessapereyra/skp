@@ -1,0 +1,38 @@
+<div class="section">
+
+<h3>Retornos de Clientes</h3>
+<table>
+	<thead>
+	<tr>
+		<th>Cantidad</th>		
+		<th>Fecha de Env&iacute;o</th>
+		<th>Tienda</th>		
+		<th>Documento</th>
+		<th></th>
+
+	</tr>				
+	</thead>
+	<tbody>		
+		<% if @returned_sending_guide_details.empty? %>	
+			<tr>
+			<td colspan="5">
+				<p>El producto nunca ha sido retornado</p>
+			</td>
+			</tr>
+		<% else %>
+				
+	<% @returned_sending_guide_details.each do |sending_guide_detail| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= sending_guide_detail.quantity %></td>		
+		<td><%= sending_guide_detail.sending_guide.sending_date.strftime("%d/%m/%y") %></td>
+		<td><%= sending_guide_detail.sending_guide.store.name %></td>
+		<td><%= sending_guide_detail.sending_guide.document %></td>				
+		<td><%= link_to "ver orden", sending_guide_report_path(sending_guide_detail.sending_guide.id) %></td>
+	</tr>
+	<% end %>
+	
+	<% end %>
+	</tbody>
+
+</table>
+</div>

@@ -1,0 +1,38 @@
+<div class="section">
+
+<h3>Ingresos desde otra Tienda</h3>
+<table>
+	<thead>
+	<tr>
+		<th>Cantidad</th>		
+		<th>Fecha de Ingreso</th>
+		<th>Tienda</th>		
+		<th>Documento</th>
+		<th></th>
+
+	</tr>				
+	</thead>
+	<tbody>		
+		<% if @accepted_send_order_details.empty? %>	
+			<tr>
+			<td colspan="5">
+				<p>El producto nunca ha sido recibido</p>
+			</td>
+			</tr>
+		<% else %>
+				
+	<% @accepted_send_order_details.each do |accepted_send_order_detail| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= accepted_send_order_detail.quantity %></td>		
+		<td><%= accepted_send_order_detail.send_order.received_date.strftime("%d/%m/%y") %></td>
+		<td><%= accepted_send_order_detail.send_order.owner.name %></td>
+		<td><%= accepted_send_order_detail.send_order.document %></td>				
+		<td><%= link_to "ver orden", send_order_report_path(accepted_send_order_detail.send_order.id) %></td>
+	</tr>
+	<% end %>
+	
+	<% end %>
+	</tbody>
+
+</table>
+</div>

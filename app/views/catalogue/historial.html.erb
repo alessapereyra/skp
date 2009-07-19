@@ -1,0 +1,27 @@
+<%= content_tag(:h2, "Historial de Producto #{@product.name} - #{@product.code} ")%>
+
+<span id="messages"><%= flash[:error] %><%= flash[:notice] %></span>
+
+<%= render :partial =>'catalogue/general' %>
+
+<%= render :partial => 'catalogue/input_orders' %>
+
+<%= render :partial => 'catalogue/accepted_send_orders' %>
+
+<%= render :partial => 'catalogue/send_orders' %>
+
+<%= render :partial => 'catalogue/sending_guides' %>
+
+<%= render :partial => 'catalogue/returned_sending_guides' %>
+
+<%= render :partial => 'catalogue/requested_quote_details' %>
+
+<%= render :partial => 'catalogue/orders' %>
+
+<%= render :partial => 'catalogue/exit_orders' %>
+
+<%= render :partial => 'catalogue/summary' %>
+
+<div id="endzone">
+<%= link_to "regresar", catalogue_path %>
+</div>

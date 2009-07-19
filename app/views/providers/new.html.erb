@@ -1,0 +1,38 @@
+<%= content_tag(:h2, "Agregando Proveedor ")%>
+
+<%= content_tag(:span, flash[:notice] ) -%>
+
+<p>Ingrese los datos del producto a insertar</p>
+<%= errors_for(@provider) %>
+<% form_for @provider do |f|%>
+<fieldset>
+<legend>Datos de Proveedor</legend>
+<div class="single_column_left">
+	<dt><%= f.label :name, "Nombre" -%></dt>	
+	<dd><%= f.text_field :name -%></dd>
+</div>
+<div class="single_column_left">
+	<dt><%= f.label :address, "Dirección" -%></dt>	
+	<dd><%= f.text_field :address -%></dd>
+
+</div>
+
+<div class="single_column_left">
+	<dt><%= f.label :telephone, "Teléfono" -%></dt>	
+	<dd><%= f.text_field :telephone -%></dd>
+
+</div>
+
+<div class="single_column_left">
+	<dt><%= f.label :email, "Email" -%></dt>	
+	<dd><%= f.text_field :email -%></dd>
+
+</div>	
+	
+</fieldset>
+
+<div id="endzone">
+<%= f.submit "agregar", :class=>"form_button", :confirm=>"¿Finalizar creaci&oacute;n de proveedor?" -%> <p>o <%= link_to "Cancelar", providers_path, :class=>'button' %></p>
+</div>
+
+<% end %>

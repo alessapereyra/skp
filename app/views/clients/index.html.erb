@@ -1,0 +1,30 @@
+<%= content_tag(:h2, "Catálogo de Clientes ")%>
+
+<span id="messages"><%= flash[:error] %><%= flash[:notice] %></span>
+
+
+<% remote_form_for :client, :url=>{:action =>"search_client"} do |od| %>
+
+<dl>
+	<fieldset>
+		<legend>Búsqueda de clientes</legend>
+	<div id="single_column_left">
+		<dd><%= od.text_field :name, :class=>"ac_input" %></dd>
+	</div>			
+	</fieldset>	
+</dl>
+<% end %>
+
+<div id="endzone">
+<%= link_to 'agregar nuevo cliente', new_client_path %>	
+</div>
+
+
+<%= render :partial => "client_list" %>
+
+<div id="endzone">
+<%= link_to 'agregar nuevo cliente', new_client_path %>	
+</div>
+
+
+

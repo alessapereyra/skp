@@ -1,0 +1,22 @@
+<%= content_tag(:h2, "Impresión etiquetas")%>
+<% form_for :product do |od| %>
+
+<dl>
+	<fieldset>
+		<legend>Búsqueda de producto</legend>
+	<div id="single_column_left">
+		<dd><%= od.text_field :name, :class=>"ac_input" %></dd>
+	</div>			
+	</fieldset>	
+</dl>
+<% end %>
+
+<%= render :partial => 'product_list' %>
+
+
+<%= observe_field :product_name, :url => { :action => :search_product },
+      :frequency => 0.25,
+      :with => 'q'
+      %>
+
+

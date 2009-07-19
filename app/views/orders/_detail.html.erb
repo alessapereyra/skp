@@ -1,0 +1,15 @@
+<tr class="<%= cycle("even", "odd") -%>">
+
+	<% remote_form_for :order_detail,detail, :url=>{:controller=>"order_details", :action=>"update", :id=>detail.id},:index=>detail.id, :method=>'put' do |t| -%>
+
+	<td><%= detail_counter %></td>
+	<td><%= detail.product.code %></td>				
+	<td><%= t.text_field :quantity, :class=>'small_fields' %></td>
+	<td><%= detail.product.name %></td>				
+	<td><%= strip_tags detail.product.description %></td>			
+	<td><%= t.text_field :price %></td>				
+	<td><%= t.submit "actualizar", :class=>"form_button" %></td>
+</tr>
+
+
+<% end -%>

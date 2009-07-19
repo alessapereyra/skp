@@ -1,0 +1,2 @@
+module SendingGuidesHelper
+end
