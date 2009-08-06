@@ -151,6 +151,21 @@ class PagesController < ApplicationController
       end
 
     end
+    
+    
+    def importacion
+      begin
+         @quote = Quote.find(current_quote)
+       rescue
+         @quote = Quote.new
+         @quote.document = "De Web"
+         @quote.save
+         cookies[:quote_id] = @quote.id.to_s
+         cookies[:quote_id].to_i
+       end
+      @catalogue = Product.importables.paginate(:all, :page=>params[:page], :per_page => 20, :order=>"created_at DESC")
+      @alternative = []
+    end
 
     def conocenos
 

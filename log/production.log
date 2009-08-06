@@ -22463,3 +22463,1381 @@ Processing PrintController#inventary (for 127.0.0.1 at 2009-03-26 15:29:22) [GET
 Rendering template within layouts/print_reports
 Rendering print/inventary
 Completed in 27.06286 (0 reqs/sec) | Rendering: 0.00516 (0%) | DB: 2.10803 (7%) | 200 OK [http://localhost/print/inventary]
+
+
+Processing BuyingOrdersController#inventario (for 127.0.0.1 at 2009-07-30 10:05:20) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"inventario", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+
+ 
+
+ActionView::TemplateError (undefined local variable or method `inventario_path' for #<ActionView::Base:0x31b0e38>) on line #68 of layouts/application.html.erb:
+65: 			<div id="subnavigation">
+66: 
+67: 				<ul id="submenu">
+68: 					<li><div id="divsubmenu"><%= menues_for(params[:controller]) %></div></li>									
+69: 				</ul>
+70: 				
+71: 				<ul id="options">
+
+    app/helpers/application_helper.rb:328:in `menues_for'
+    app/views/layouts/application.html.erb:68:in `_run_erb_47app47views47layouts47application46html46erb'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:342:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:342:in `execute'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template_handlers/compilable.rb:29:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template_handlers/compilable.rb:29:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:35:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:22:in `render_template'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:248:in `render_file'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/layout.rb:257:in `render_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render_without_trace_View____determine_metric_path__Rendering'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render_without_trace_View____determine_metric_path__Rendering'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:138:in `render'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:41:in `trace_method_execution_with_scope'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:137:in `render'
+    app/controllers/buying_orders_controller.rb:89:in `inventario'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1166:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1166:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:579:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action_without_newrelic_trace'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action_without_newrelic_trace'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:58:in `perform_action'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:41:in `trace_method_execution_with_scope'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:47:in `perform_action'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:18:in `trace_method_execution_no_scope'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:41:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/session_management.rb:130:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:389:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch_without_newrelic'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/dispatcher_instrumentation.rb:47:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/webrick_server.rb:78:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/webrick_server.rb:62:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/commands/servers/webrick.rb:66
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+  
+Rendering template within layouts/application
+Rendering buying_orders/index
+
+
+ActionView::TemplateError (undefined local variable or method `inventario_path' for #<ActionView::Base:0x31b0e38>) on line #68 of layouts/application.html.erb:
+65: 			<div id="subnavigation">
+66: 
+67: 				<ul id="submenu">
+68: 					<li><div id="divsubmenu"><%= menues_for(params[:controller]) %></div></li>									
+69: 				</ul>
+70: 				
+71: 				<ul id="options">
+
+    app/helpers/application_helper.rb:328:in `menues_for'
+    app/views/layouts/application.html.erb:68:in `_run_erb_47app47views47layouts47application46html46erb'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:342:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:342:in `execute'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template_handlers/compilable.rb:29:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template_handlers/compilable.rb:29:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:35:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:22:in `render_template'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:248:in `render_file'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/layout.rb:257:in `render_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render_without_trace_View____determine_metric_path__Rendering'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render_without_trace_View____determine_metric_path__Rendering'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:138:in `render'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:41:in `trace_method_execution_with_scope'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:137:in `render'
+    app/controllers/buying_orders_controller.rb:95:in `inventario'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1166:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1166:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:579:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action_without_newrelic_trace'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action_without_newrelic_trace'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:58:in `perform_action'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:41:in `trace_method_execution_with_scope'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:47:in `perform_action'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:18:in `trace_method_execution_no_scope'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:41:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/session_management.rb:130:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:389:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch_without_newrelic'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/dispatcher_instrumentation.rb:47:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/webrick_server.rb:78:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/webrick_server.rb:62:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/commands/servers/webrick.rb:66
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing BuyingOrdersController#inventario (for 127.0.0.1 at 2009-07-30 10:05:49) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"inventario", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.67134 (1 reqs/sec) | Rendering: 0.10838 (16%) | DB: 0.19079 (28%) | 200 OK [http://localhost/inventario]
+
+
+Processing BuyingOrdersController#index (for 127.0.0.1 at 2009-07-30 10:06:00) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"index", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.60965 (1 reqs/sec) | Rendering: 0.01633 (2%) | DB: 0.13475 (22%) | 200 OK [http://localhost/ingresos]
+
+
+Processing BuyingOrdersController#compras (for 127.0.0.1 at 2009-07-30 10:06:02) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"compras", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.58830 (1 reqs/sec) | Rendering: 0.01660 (2%) | DB: 0.13807 (23%) | 200 OK [http://localhost/compras]
+
+
+Processing BuyingOrdersController#inventario (for 127.0.0.1 at 2009-07-30 10:06:04) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"inventario", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.58368 (1 reqs/sec) | Rendering: 0.01638 (2%) | DB: 0.13335 (22%) | 200 OK [http://localhost/inventario]
+
+
+Processing BuyingOrdersController#devoluciones (for 127.0.0.1 at 2009-07-30 10:06:05) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"devoluciones", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.56228 (1 reqs/sec) | Rendering: 0.01818 (3%) | DB: 0.13603 (24%) | 200 OK [http://localhost/devoluciones]
+
+
+Processing AcceptanceController#index (for 127.0.0.1 at 2009-07-30 10:06:07) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"index", "controller"=>"acceptance"}
+Rendering template within layouts/application
+Rendering acceptance/index
+Completed in 0.07536 (13 reqs/sec) | Rendering: 0.05481 (72%) | DB: 0.14076 (186%) | 200 OK [http://localhost/recepcion]
+
+
+Processing BuyingOrdersController#devoluciones (for 127.0.0.1 at 2009-07-30 10:06:11) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"devoluciones", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.42030 (2 reqs/sec) | Rendering: 0.01653 (3%) | DB: 0.13575 (32%) | 200 OK [http://localhost/devoluciones]
+
+
+Processing BuyingOrdersController#inventario (for 127.0.0.1 at 2009-07-30 10:06:13) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"inventario", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.42427 (2 reqs/sec) | Rendering: 0.01561 (3%) | DB: 0.13228 (31%) | 200 OK [http://localhost/inventario]
+
+
+Processing BuyingOrdersController#compras (for 127.0.0.1 at 2009-07-30 10:06:16) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"compras", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.62673 (1 reqs/sec) | Rendering: 0.01965 (3%) | DB: 0.14451 (23%) | 200 OK [http://localhost/compras]
+
+
+Processing AcceptanceController#index (for 127.0.0.1 at 2009-07-30 10:11:33) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"index", "controller"=>"acceptance"}
+Rendering template within layouts/application
+Rendering acceptance/index
+Completed in 0.00994 (100 reqs/sec) | Rendering: 0.00651 (65%) | DB: 0.00387 (38%) | 200 OK [http://localhost/recepcion]
+
+
+Processing BuyingOrdersController#devoluciones (for 127.0.0.1 at 2009-07-30 10:11:34) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"devoluciones", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.61550 (1 reqs/sec) | Rendering: 0.01621 (2%) | DB: 0.13976 (22%) | 200 OK [http://localhost/devoluciones]
+
+
+Processing BuyingOrdersController#inventario (for 127.0.0.1 at 2009-07-30 10:11:38) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"inventario", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.60453 (1 reqs/sec) | Rendering: 0.01683 (2%) | DB: 0.12905 (21%) | 200 OK [http://localhost/inventario]
+
+
+Processing BuyingOrdersController#inventario (for 127.0.0.1 at 2009-07-30 10:12:57) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"inventario", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.14258 (7 reqs/sec) | Rendering: 0.10611 (74%) | DB: 0.04177 (29%) | 200 OK [http://localhost/inventario]
+
+
+Processing BuyingOrdersController#devoluciones (for 127.0.0.1 at 2009-07-30 10:13:00) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"devoluciones", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.02687 (37 reqs/sec) | Rendering: 0.02022 (75%) | DB: 0.00647 (24%) | 200 OK [http://localhost/devoluciones]
+
+
+Processing BuyingOrdersController#inventario (for 127.0.0.1 at 2009-07-30 10:13:01) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"inventario", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.16093 (6 reqs/sec) | Rendering: 0.15392 (95%) | DB: 0.00730 (4%) | 200 OK [http://localhost/inventario]
+
+
+Processing BuyingOrdersController#index (for 127.0.0.1 at 2009-07-30 10:13:02) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"index", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.54079 (1 reqs/sec) | Rendering: 0.02526 (4%) | DB: 0.20704 (38%) | 200 OK [http://localhost/ingresos]
+
+
+Processing BuyingOrdersController#compras (for 127.0.0.1 at 2009-07-30 10:13:04) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"compras", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.02314 (43 reqs/sec) | Rendering: 0.01687 (72%) | DB: 0.03039 (131%) | 200 OK [http://localhost/compras]
+
+
+Processing BuyingOrdersController#inventario (for 127.0.0.1 at 2009-07-30 10:13:06) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"inventario", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.16680 (5 reqs/sec) | Rendering: 0.15951 (95%) | DB: 0.00717 (4%) | 200 OK [http://localhost/inventario]
+
+
+Processing BuyingOrdersController#devoluciones (for 127.0.0.1 at 2009-07-30 10:13:07) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"devoluciones", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.03629 (27 reqs/sec) | Rendering: 0.02792 (76%) | DB: 0.00791 (21%) | 200 OK [http://localhost/devoluciones]
+
+
+Processing AcceptanceController#index (for 127.0.0.1 at 2009-07-30 10:13:08) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"index", "controller"=>"acceptance"}
+Rendering template within layouts/application
+Rendering acceptance/index
+Completed in 0.01757 (56 reqs/sec) | Rendering: 0.01043 (59%) | DB: 0.00654 (37%) | 200 OK [http://localhost/recepcion]
+
+
+Processing BuyingOrdersController#devoluciones (for 127.0.0.1 at 2009-07-30 10:13:10) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"devoluciones", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.02397 (41 reqs/sec) | Rendering: 0.01715 (71%) | DB: 0.01987 (82%) | 200 OK [http://localhost/devoluciones]
+
+
+Processing BuyingOrdersController#devoluciones (for 127.0.0.1 at 2009-07-30 10:13:29) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"devoluciones", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.15598 (6 reqs/sec) | Rendering: 0.10893 (69%) | DB: 0.05400 (34%) | 200 OK [http://localhost/devoluciones]
+
+
+Processing BuyingOrdersController#index (for 127.0.0.1 at 2009-07-30 10:13:31) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"index", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.71952 (1 reqs/sec) | Rendering: 0.02255 (3%) | DB: 0.14466 (20%) | 200 OK [http://localhost/ingresos]
+
+
+Processing BuyingOrdersController#compras (for 127.0.0.1 at 2009-07-30 10:13:36) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"compras", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.02791 (35 reqs/sec) | Rendering: 0.02113 (75%) | DB: 0.00783 (28%) | 200 OK [http://localhost/compras]
+
+
+Processing BuyingOrdersController#inventario (for 127.0.0.1 at 2009-07-30 10:13:38) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"inventario", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.02528 (39 reqs/sec) | Rendering: 0.01845 (72%) | DB: 0.00711 (28%) | 200 OK [http://localhost/inventario]
+
+
+Processing BuyingOrdersController#devoluciones (for 127.0.0.1 at 2009-07-30 10:13:40) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"devoluciones", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.02664 (37 reqs/sec) | Rendering: 0.01756 (65%) | DB: 0.01894 (71%) | 200 OK [http://localhost/devoluciones]
+
+
+Processing BuyingOrdersController#devoluciones (for 127.0.0.1 at 2009-07-30 10:14:22) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"devoluciones", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.14069 (7 reqs/sec) | Rendering: 0.10624 (75%) | DB: 0.04104 (29%) | 200 OK [http://localhost/devoluciones]
+
+
+Processing BuyingOrdersController#index (for 127.0.0.1 at 2009-07-30 10:14:24) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"index", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+
+
+ActionView::TemplateError (undefined method `capitalize' for nil:NilClass) on line #1 of buying_orders/index.html.erb:
+1: <%= content_tag(:h2, "Ingreso a Tienda - #{@input_order.input_type.capitalize}")%>
+2: 
+3: <%= render :partial =>'recover' %>
+4: 
+
+    app/views/buying_orders/index.html.erb:1:in `_run_erb_47app47views47buying_orders47index46html46erb'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:342:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:342:in `execute'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template_handlers/compilable.rb:29:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template_handlers/compilable.rb:29:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:35:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:22:in `render_template'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:248:in `render_file'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1112:in `render_for_file'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:845:in `render_with_no_layout'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/layout.rb:251:in `render_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render_without_trace_View____determine_metric_path__Rendering'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render_without_trace_View____determine_metric_path__Rendering'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:138:in `render'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:41:in `trace_method_execution_with_scope'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:137:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1161:in `default_render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1167:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:579:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action_without_newrelic_trace'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action_without_newrelic_trace'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:58:in `perform_action'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:41:in `trace_method_execution_with_scope'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:47:in `perform_action'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:18:in `trace_method_execution_no_scope'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:41:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/session_management.rb:130:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:389:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch_without_newrelic'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/dispatcher_instrumentation.rb:47:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/webrick_server.rb:78:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/webrick_server.rb:62:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/commands/servers/webrick.rb:66
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing BuyingOrdersController#index (for 127.0.0.1 at 2009-07-30 10:15:20) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"index", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+
+
+ActionView::TemplateError (undefined method `input_type' for nil:NilClass) on line #1 of buying_orders/index.html.erb:
+1: <%= content_tag(:h2, "Ingreso a Tienda - #{print_input_type}")%>
+2: 
+3: <%= render :partial =>'recover' %>
+4: 
+
+    app/helpers/buying_orders_helper.rb:4:in `print_input_type'
+    app/views/buying_orders/index.html.erb:1:in `_run_erb_47app47views47buying_orders47index46html46erb'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:342:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:342:in `execute'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template_handlers/compilable.rb:29:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template_handlers/compilable.rb:29:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:35:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:22:in `render_template'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:248:in `render_file'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1112:in `render_for_file'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:845:in `render_with_no_layout'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/layout.rb:251:in `render_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render_without_trace_View____determine_metric_path__Rendering'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render_without_trace_View____determine_metric_path__Rendering'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:138:in `render'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:41:in `trace_method_execution_with_scope'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:137:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1161:in `default_render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1167:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:579:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action_without_newrelic_trace'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action_without_newrelic_trace'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:58:in `perform_action'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:41:in `trace_method_execution_with_scope'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:47:in `perform_action'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:18:in `trace_method_execution_no_scope'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:41:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/session_management.rb:130:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:389:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch_without_newrelic'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/dispatcher_instrumentation.rb:47:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/webrick_server.rb:78:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/webrick_server.rb:62:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/commands/servers/webrick.rb:66
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing BuyingOrdersController#index (for 127.0.0.1 at 2009-07-30 10:23:17) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"index", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+
+
+ActionView::TemplateError (undefined local variable or method `input_type' for #<ActionView::Base:0x346f46c>) on line #2 of buying_orders/index.html.erb:
+1: <% input_order = @input_order %>
+2: <%= content_tag(:h2, "Ingreso a Tienda - #{print_input_type(input_order)}")%>
+3: 
+4: <%= render :partial =>'recover' %>
+5: 
+
+    app/helpers/buying_orders_helper.rb:4:in `print_input_type'
+    app/views/buying_orders/index.html.erb:2:in `_run_erb_47app47views47buying_orders47index46html46erb'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:342:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:342:in `execute'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template_handlers/compilable.rb:29:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template_handlers/compilable.rb:29:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:35:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:22:in `render_template'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:248:in `render_file'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1112:in `render_for_file'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:845:in `render_with_no_layout'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/layout.rb:251:in `render_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render_without_trace_View____determine_metric_path__Rendering'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render_without_trace_View____determine_metric_path__Rendering'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:138:in `render'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:41:in `trace_method_execution_with_scope'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:137:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1161:in `default_render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1167:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:579:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action_without_newrelic_trace'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action_without_newrelic_trace'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:58:in `perform_action'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:41:in `trace_method_execution_with_scope'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:47:in `perform_action'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:18:in `trace_method_execution_no_scope'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:41:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/session_management.rb:130:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:389:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch_without_newrelic'
+    vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/dispatcher_instrumentation.rb:47:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/webrick_server.rb:78:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/webrick_server.rb:62:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/commands/servers/webrick.rb:66
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing BuyingOrdersController#index (for 127.0.0.1 at 2009-07-30 10:23:54) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"index", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.85597 (1 reqs/sec) | Rendering: 0.11659 (13%) | DB: 0.18293 (21%) | 200 OK [http://localhost/ingresos]
+
+
+Processing BuyingOrdersController#compras (for 127.0.0.1 at 2009-07-30 10:23:58) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"compras", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.02393 (41 reqs/sec) | Rendering: 0.01713 (71%) | DB: 0.00690 (28%) | 200 OK [http://localhost/compras]
+
+
+Processing BuyingOrdersController#inventario (for 127.0.0.1 at 2009-07-30 10:23:59) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"inventario", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.14738 (6 reqs/sec) | Rendering: 0.14040 (95%) | DB: 0.00691 (4%) | 200 OK [http://localhost/inventario]
+
+
+Processing BuyingOrdersController#devoluciones (for 127.0.0.1 at 2009-07-30 10:24:00) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"devoluciones", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.02475 (40 reqs/sec) | Rendering: 0.01658 (66%) | DB: 0.00730 (29%) | 200 OK [http://localhost/devoluciones]
+
+
+Processing AcceptanceController#index (for 127.0.0.1 at 2009-07-30 10:24:01) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"index", "controller"=>"acceptance"}
+Rendering template within layouts/application
+Rendering acceptance/index
+Completed in 0.01378 (72 reqs/sec) | Rendering: 0.00963 (69%) | DB: 0.00509 (36%) | 200 OK [http://localhost/recepcion]
+
+
+Processing BuyingOrdersController#devoluciones (for 127.0.0.1 at 2009-07-30 10:24:02) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"devoluciones", "controller"=>"buying_orders"}
+Rendering template within layouts/application
+Rendering buying_orders/index
+Completed in 0.03741 (26 reqs/sec) | Rendering: 0.02759 (73%) | DB: 0.06084 (162%) | 200 OK [http://localhost/devoluciones]
+
+
+Processing SalesController#index (for 127.0.0.1 at 2009-07-30 11:15:42) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"index", "controller"=>"sales"}
+Rendering template within layouts/application
+Rendering sales/index
+Completed in 1.96780 (0 reqs/sec) | Rendering: 0.07579 (3%) | DB: 0.50352 (25%) | 200 OK [http://localhost/ventas]
+
+
+Processing SendingController#index (for 127.0.0.1 at 2009-07-30 11:20:13) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"index", "controller"=>"sending"}
+Rendering template within layouts/application
+Rendering sending/index
+Completed in 0.74581 (1 reqs/sec) | Rendering: 0.09031 (12%) | DB: 0.24534 (32%) | 200 OK [http://localhost/envios]
+
+
+Processing SendingGuidesController#perdida (for 127.0.0.1 at 2009-07-30 11:20:16) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"perdida", "controller"=>"sending_guides"}
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 0.14124 (7 reqs/sec) | Rendering: 0.09625 (68%) | DB: 0.04007 (28%) | 200 OK [http://localhost/perdida]
+
+
+Processing SendingGuidesController#mal_estado (for 127.0.0.1 at 2009-07-30 11:20:18) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"mal_estado", "controller"=>"sending_guides"}
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 0.02247 (44 reqs/sec) | Rendering: 0.02072 (92%) | DB: 0.02718 (120%) | 200 OK [http://localhost/mal_estado]
+
+
+Processing SendingGuidesController#perdida (for 127.0.0.1 at 2009-07-30 11:20:22) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"perdida", "controller"=>"sending_guides"}
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 0.02796 (35 reqs/sec) | Rendering: 0.02537 (90%) | DB: 0.01949 (69%) | 200 OK [http://localhost/perdida]
+
+
+Processing SendingGuidesController#perdida (for 127.0.0.1 at 2009-07-30 11:20:22) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"perdida", "controller"=>"sending_guides"}
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 0.01594 (62 reqs/sec) | Rendering: 0.01428 (89%) | DB: 0.00251 (15%) | 200 OK [http://localhost/perdida]
+
+
+Processing SendingGuidesController#mal_estado (for 127.0.0.1 at 2009-07-30 11:20:24) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"mal_estado", "controller"=>"sending_guides"}
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 0.02007 (49 reqs/sec) | Rendering: 0.01775 (88%) | DB: 0.04324 (215%) | 200 OK [http://localhost/mal_estado]
+
+
+Processing SendingGuidesController#consumo_interno (for 127.0.0.1 at 2009-07-30 11:20:26) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"consumo_interno", "controller"=>"sending_guides"}
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 0.02131 (46 reqs/sec) | Rendering: 0.01955 (91%) | DB: 0.00400 (18%) | 200 OK [http://localhost/consumo_interno]
+
+
+Processing SendingGuidesController#consumo_externo (for 127.0.0.1 at 2009-07-30 11:20:27) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"consumo_externo", "controller"=>"sending_guides"}
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 0.01748 (57 reqs/sec) | Rendering: 0.01600 (91%) | DB: 0.00334 (19%) | 200 OK [http://localhost/consumo_externo]
+
+
+Processing SendingGuidesController#consumo_externo (for 127.0.0.1 at 2009-07-30 11:27:56) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"consumo_externo", "controller"=>"sending_guides"}
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 0.12654 (7 reqs/sec) | Rendering: 0.09261 (73%) | DB: 0.04416 (34%) | 200 OK [http://localhost/consumo_externo]
+
+
+Processing SendingGuidesController#consumo_interno (for 127.0.0.1 at 2009-07-30 11:28:00) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"consumo_interno", "controller"=>"sending_guides"}
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 0.02003 (49 reqs/sec) | Rendering: 0.01471 (73%) | DB: 0.02988 (149%) | 200 OK [http://localhost/consumo_interno]
+
+
+Processing SendingGuidesController#mal_estado (for 127.0.0.1 at 2009-07-30 11:28:01) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"mal_estado", "controller"=>"sending_guides"}
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 0.01895 (52 reqs/sec) | Rendering: 0.01696 (89%) | DB: 0.02158 (113%) | 200 OK [http://localhost/mal_estado]
+
+
+Processing SendingGuidesController#perdida (for 127.0.0.1 at 2009-07-30 11:28:02) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"perdida", "controller"=>"sending_guides"}
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 0.01989 (50 reqs/sec) | Rendering: 0.01801 (90%) | DB: 0.00385 (19%) | 200 OK [http://localhost/perdida]
+
+
+Processing SendingController#index (for 127.0.0.1 at 2009-07-30 11:28:04) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"index", "controller"=>"sending"}
+Rendering template within layouts/application
+Rendering sending/index
+Completed in 0.24454 (4 reqs/sec) | Rendering: 0.02786 (11%) | DB: 0.07488 (30%) | 200 OK [http://localhost/envios]
+
+
+Processing SendingGuidesController#index (for 127.0.0.1 at 2009-07-30 11:28:08) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"index", "controller"=>"sending_guides"}
+
+
+NoMethodError (undefined method `sending_guide=' for #<SendingGuide:0x4e08acc>):
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/attribute_methods.rb:251:in `method_missing'
+    /app/controllers/sending_guides_controller.rb:8:in `index'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1166:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1166:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:579:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action_without_newrelic_trace'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action_without_newrelic_trace'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:58:in `perform_action'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:41:in `trace_method_execution_with_scope'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:47:in `perform_action'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:18:in `trace_method_execution_no_scope'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:41:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/session_management.rb:130:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:389:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch_without_newrelic'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/dispatcher_instrumentation.rb:47:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/rack/adapter/rails.rb:81:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/rack/adapter/rails.rb:69:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:76:in `pre_process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `catch'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `pre_process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:57:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:42:in `receive_data'
+    /opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.8/lib/eventmachine.rb:242:in `run_machine'
+    /opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.8/lib/eventmachine.rb:242:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/backends/base.rb:57:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/server.rb:156:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/controllers/controller.rb:80:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `run_command'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:140:in `run!'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/bin/thin:6
+    /opt/local/bin/thin:19:in `load'
+    /opt/local/bin/thin:19
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing SendingGuidesController#index (for 127.0.0.1 at 2009-07-30 11:28:40) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"index", "controller"=>"sending_guides"}
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 0.10107 (9 reqs/sec) | Rendering: 0.08193 (81%) | DB: 0.58078 (574%) | 200 OK [http://localhost/envios_clientes]
+
+
+Processing SendingGuidesController#index (for 127.0.0.1 at 2009-07-30 11:29:20) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"index", "controller"=>"sending_guides"}
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 0.10588 (9 reqs/sec) | Rendering: 0.08589 (81%) | DB: 0.02739 (25%) | 200 OK [http://localhost/envios_clientes]
+
+
+Processing SendingGuidesController#consumo_externo (for 127.0.0.1 at 2009-07-30 11:29:22) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"consumo_externo", "controller"=>"sending_guides"}
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 0.01375 (72 reqs/sec) | Rendering: 0.01227 (89%) | DB: 0.00383 (27%) | 200 OK [http://localhost/consumo_externo]
+
+
+Processing SendingGuidesController#consumo_interno (for 127.0.0.1 at 2009-07-30 11:29:24) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"consumo_interno", "controller"=>"sending_guides"}
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 0.01785 (56 reqs/sec) | Rendering: 0.01589 (89%) | DB: 0.00372 (20%) | 200 OK [http://localhost/consumo_interno]
+
+
+Processing SendingGuidesController#mal_estado (for 127.0.0.1 at 2009-07-30 11:29:25) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"mal_estado", "controller"=>"sending_guides"}
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 0.01897 (52 reqs/sec) | Rendering: 0.01605 (84%) | DB: 0.03222 (169%) | 200 OK [http://localhost/mal_estado]
+
+
+Processing SendingGuidesController#perdida (for 127.0.0.1 at 2009-07-30 11:29:28) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"perdida", "controller"=>"sending_guides"}
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 0.15528 (6 reqs/sec) | Rendering: 0.15325 (98%) | DB: 0.00317 (2%) | 200 OK [http://localhost/perdida]
+
+
+Processing BuyingOrdersController#auto_complete_for_input_order (for 127.0.0.1 at 2009-07-30 11:29:34) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"auto_complete_for_input_order", "q"=>"de", "controller"=>"buying_orders"}
+
+
+MissingSourceFile (no such file to load -- RMagick):
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/barby-0.3.1/lib/barby/outputter/rmagick_outputter.rb:2
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /app/models/product.rb:50
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:102:in `require_or_load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:261:in `load_missing_constant'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:468:in `const_missing'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:480:in `const_missing'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:273:in `load_missing_constant'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:484:in `const_missing'
+    /app/controllers/buying_orders_controller.rb:166:in `auto_complete_for_input_order'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1166:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1166:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:579:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action_without_newrelic_trace'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action_without_newrelic_trace'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:58:in `perform_action'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:41:in `trace_method_execution_with_scope'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:47:in `perform_action'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:18:in `trace_method_execution_no_scope'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:41:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/session_management.rb:130:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:389:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch_without_newrelic'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/dispatcher_instrumentation.rb:47:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/rack/adapter/rails.rb:81:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/rack/adapter/rails.rb:69:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:76:in `pre_process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `catch'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `pre_process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:57:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:42:in `receive_data'
+    /opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.8/lib/eventmachine.rb:242:in `run_machine'
+    /opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.8/lib/eventmachine.rb:242:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/backends/base.rb:57:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/server.rb:156:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/controllers/controller.rb:80:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `run_command'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:140:in `run!'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/bin/thin:6
+    /opt/local/bin/thin:19:in `load'
+    /opt/local/bin/thin:19
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing BuyingOrdersController#auto_complete_for_input_order (for 127.0.0.1 at 2009-07-30 11:29:35) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"auto_complete_for_input_order", "q"=>"dem", "controller"=>"buying_orders"}
+
+
+MissingSourceFile (no such file to load -- RMagick):
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/barby-0.3.1/lib/barby/outputter/rmagick_outputter.rb:2
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /app/models/product.rb:50
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:102:in `require_or_load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:261:in `load_missing_constant'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:468:in `const_missing'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:480:in `const_missing'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:273:in `load_missing_constant'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:484:in `const_missing'
+    /app/controllers/buying_orders_controller.rb:166:in `auto_complete_for_input_order'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1166:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1166:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:579:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action_without_newrelic_trace'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action_without_newrelic_trace'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:58:in `perform_action'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:41:in `trace_method_execution_with_scope'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:47:in `perform_action'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:18:in `trace_method_execution_no_scope'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:41:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/session_management.rb:130:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:389:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch_without_newrelic'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/dispatcher_instrumentation.rb:47:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/rack/adapter/rails.rb:81:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/rack/adapter/rails.rb:69:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:76:in `pre_process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `catch'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `pre_process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:57:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:42:in `receive_data'
+    /opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.8/lib/eventmachine.rb:242:in `run_machine'
+    /opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.8/lib/eventmachine.rb:242:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/backends/base.rb:57:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/server.rb:156:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/controllers/controller.rb:80:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `run_command'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:140:in `run!'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/bin/thin:6
+    /opt/local/bin/thin:19:in `load'
+    /opt/local/bin/thin:19
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing BuyingOrdersController#auto_complete_for_input_order (for 127.0.0.1 at 2009-07-30 11:29:35) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"auto_complete_for_input_order", "q"=>"demo", "controller"=>"buying_orders"}
+
+
+MissingSourceFile (no such file to load -- RMagick):
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/barby-0.3.1/lib/barby/outputter/rmagick_outputter.rb:2
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /app/models/product.rb:50
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:102:in `require_or_load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:261:in `load_missing_constant'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:468:in `const_missing'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:480:in `const_missing'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:273:in `load_missing_constant'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:484:in `const_missing'
+    /app/controllers/buying_orders_controller.rb:166:in `auto_complete_for_input_order'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1166:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1166:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:579:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action_without_newrelic_trace'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action_without_newrelic_trace'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:58:in `perform_action'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:41:in `trace_method_execution_with_scope'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:47:in `perform_action'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:18:in `trace_method_execution_no_scope'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:41:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/session_management.rb:130:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:389:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch_without_newrelic'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/dispatcher_instrumentation.rb:47:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/rack/adapter/rails.rb:81:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/rack/adapter/rails.rb:69:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:76:in `pre_process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `catch'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `pre_process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:57:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:42:in `receive_data'
+    /opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.8/lib/eventmachine.rb:242:in `run_machine'
+    /opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.8/lib/eventmachine.rb:242:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/backends/base.rb:57:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/server.rb:156:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/controllers/controller.rb:80:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `run_command'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:140:in `run!'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/bin/thin:6
+    /opt/local/bin/thin:19:in `load'
+    /opt/local/bin/thin:19
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing SendingGuidesController#create (for 127.0.0.1 at 2009-07-30 11:29:58) [POST]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"commit"=>"Finalizar Envío", "sending_guide_detail"=>{"product_id"=>"demo", "hidden_product_id"=>"", "quantity"=>""}, "sending_guide"=>{"sending_date(2i)"=>"7", "sending_date(3i)"=>"30", "document"=>"Perdida 12", "store_id"=>"1", "sending_date(1i)"=>"2009"}, "authenticity_token"=>"5303a8448ecce9f3ddac7ef16e7085df6ecdb423", "action"=>"create", "controller"=>"sending_guides"}
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 0.08781 (11 reqs/sec) | Rendering: 0.02027 (23%) | DB: 0.05881 (66%) | 200 OK [http://localhost/envios_clientes]
+
+
+Processing ReportsController#index (for 127.0.0.1 at 2009-07-30 11:56:55) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"index", "controller"=>"reports"}
+Rendering template within layouts/application
+Rendering reports/index
+Completed in 0.60421 (1 reqs/sec) | Rendering: 0.19247 (31%) | DB: 0.41351 (68%) | 200 OK [http://localhost/reportes]
+
+
+Processing ReportsController#exit_orders (for 127.0.0.1 at 2009-07-30 11:57:31) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"exit_orders", "controller"=>"reports"}
+Rendering template within layouts/application
+Rendering reports/exit_orders
+Completed in 0.41732 (2 reqs/sec) | Rendering: 0.22123 (53%) | DB: 0.20481 (49%) | 200 OK [http://localhost/reportes/ordenes_salidas]
+
+
+Processing ReportsController#sending_guides (for 127.0.0.1 at 2009-07-30 11:57:35) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"sending_guides", "controller"=>"reports"}
+Rendering template within layouts/application
+Rendering reports/sending_guides
+Completed in 0.28058 (3 reqs/sec) | Rendering: 0.18972 (67%) | DB: 0.09994 (35%) | 200 OK [http://localhost/reportes/guia_envios]
+
+
+Processing ReportsController#exit_orders (for 127.0.0.1 at 2009-07-30 11:57:38) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"exit_orders", "controller"=>"reports"}
+Rendering template within layouts/application
+Rendering reports/exit_orders
+Completed in 0.40200 (2 reqs/sec) | Rendering: 0.37886 (94%) | DB: 0.02298 (5%) | 200 OK [http://localhost/reportes/ordenes_salidas]
+
+
+Processing ReportsController#sending_guides (for 127.0.0.1 at 2009-07-30 11:57:45) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"sending_guides", "controller"=>"reports"}
+Rendering template within layouts/application
+Rendering reports/sending_guides
+Completed in 0.18398 (5 reqs/sec) | Rendering: 0.13522 (73%) | DB: 0.04321 (23%) | 200 OK [http://localhost/reportes/guia_envios]
+
+
+Processing ReportsController#sending_guides (for 127.0.0.1 at 2009-07-30 11:59:49) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"sending_guides", "controller"=>"reports"}
+Rendering template within layouts/application
+Rendering reports/sending_guides
+Completed in 0.37348 (2 reqs/sec) | Rendering: 0.32503 (87%) | DB: 0.05227 (13%) | 200 OK [http://localhost/reportes/guia_envios]
+
+
+Processing ReportsController#send_orders (for 127.0.0.1 at 2009-07-30 12:00:01) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"send_orders", "controller"=>"reports"}
+Rendering template within layouts/application
+Rendering reports/send_orders
+Completed in 0.36386 (2 reqs/sec) | Rendering: 0.33882 (93%) | DB: 0.01115 (3%) | 200 OK [http://localhost/reportes/envios]
+
+
+Processing ReportsController#exit_orders (for 127.0.0.1 at 2009-07-30 12:00:06) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"exit_orders", "controller"=>"reports"}
+Rendering template within layouts/application
+Rendering reports/exit_orders
+Completed in 1.08561 (0 reqs/sec) | Rendering: 0.20927 (19%) | DB: 0.89831 (82%) | 200 OK [http://localhost/reportes/ordenes_salidas]
+
+
+Processing ReportsController#sending_guides (for 127.0.0.1 at 2009-07-30 12:00:26) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"sending_guides", "controller"=>"reports"}
+Rendering template within layouts/application
+Rendering reports/sending_guides
+Completed in 0.35980 (2 reqs/sec) | Rendering: 0.13010 (36%) | DB: 0.02024 (5%) | 200 OK [http://localhost/reportes/guia_envios]
+
+
+Processing ReportsController#perdidas (for 127.0.0.1 at 2009-07-30 12:00:29) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"perdidas", "controller"=>"reports"}
+Rendering template within layouts/application
+Rendering reports/perdidas
+
+
+ActionView::MissingTemplate (Missing template reports/perdidas.html.erb in view path /Users/alvaropereyrarabanal/Development/SKProduction/app/views):
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:85:in `raise_missing_template_exception'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:78:in `set_extension_and_file_name'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:15:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:248:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:248:in `render_file'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1112:in `render_for_file'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:845:in `render_with_no_layout'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/layout.rb:251:in `render_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render_without_trace_View____determine_metric_path__Rendering'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render_without_trace_View____determine_metric_path__Rendering'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:138:in `render'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:41:in `trace_method_execution_with_scope'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:137:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1161:in `default_render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1167:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:579:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action_without_newrelic_trace'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action_without_newrelic_trace'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:58:in `perform_action'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:41:in `trace_method_execution_with_scope'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:47:in `perform_action'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:18:in `trace_method_execution_no_scope'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/rails/action_controller.rb:41:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/session_management.rb:130:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:389:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch_without_newrelic'
+    /vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/dispatcher_instrumentation.rb:47:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/rack/adapter/rails.rb:81:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/rack/adapter/rails.rb:69:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:76:in `pre_process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `catch'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `pre_process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:57:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/connection.rb:42:in `receive_data'
+    /opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.8/lib/eventmachine.rb:242:in `run_machine'
+    /opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.8/lib/eventmachine.rb:242:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/backends/base.rb:57:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/server.rb:156:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/controllers/controller.rb:80:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `run_command'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/lib/thin/runner.rb:140:in `run!'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-1.2.2/bin/thin:6
+    /opt/local/bin/thin:19:in `load'
+    /opt/local/bin/thin:19
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing ReportsController#perdidas (for 127.0.0.1 at 2009-07-30 12:07:55) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"perdidas", "controller"=>"reports"}
+Rendering template within layouts/application
+Rendering reports/sending_guides
+Completed in 0.04348 (22 reqs/sec) | Rendering: 0.02741 (63%) | DB: 0.02803 (64%) | 200 OK [http://localhost/reportes/perdidas]
+
+
+Processing ReportsController#mal_estados (for 127.0.0.1 at 2009-07-30 12:08:00) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"mal_estados", "controller"=>"reports"}
+Rendering template within layouts/application
+Rendering reports/sending_guides
+Completed in 0.02274 (43 reqs/sec) | Rendering: 0.01362 (59%) | DB: 0.00360 (15%) | 200 OK [http://localhost/reportes/mal_estados]
+
+
+Processing ReportsController#consumos_internos (for 127.0.0.1 at 2009-07-30 12:08:02) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"consumos_internos", "controller"=>"reports"}
+Rendering template within layouts/application
+Rendering reports/sending_guides
+Completed in 0.01610 (62 reqs/sec) | Rendering: 0.00938 (58%) | DB: 0.02034 (126%) | 200 OK [http://localhost/reportes/consumos_internos]
+
+
+Processing ReportsController#sending_guides (for 127.0.0.1 at 2009-07-30 12:08:06) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"sending_guides", "controller"=>"reports"}
+Rendering template within layouts/application
+Rendering reports/sending_guides
+Completed in 0.23384 (4 reqs/sec) | Rendering: 0.19599 (83%) | DB: 0.03035 (12%) | 200 OK [http://localhost/reportes/guia_envios]
+
+
+Processing ReportsController#sending_guides (for 127.0.0.1 at 2009-07-30 12:21:11) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"sending_guides", "controller"=>"reports"}
+Rendering template within layouts/application
+Rendering reports/sending_guides
+Completed in 0.43679 (2 reqs/sec) | Rendering: 0.36482 (83%) | DB: 0.11385 (26%) | 200 OK [http://localhost/reportes/guia_envios]
+
+
+Processing ReportsController#perdidas (for 127.0.0.1 at 2009-07-30 12:21:15) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"perdidas", "controller"=>"reports"}
+Rendering template within layouts/application
+Rendering reports/sending_guides
+Completed in 0.01323 (75 reqs/sec) | Rendering: 0.00872 (65%) | DB: 0.00332 (25%) | 200 OK [http://localhost/reportes/perdidas]
+
+
+Processing ReportsController#mal_estados (for 127.0.0.1 at 2009-07-30 12:21:17) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"mal_estados", "controller"=>"reports"}
+Rendering template within layouts/application
+Rendering reports/sending_guides
+Completed in 0.01667 (59 reqs/sec) | Rendering: 0.00915 (54%) | DB: 0.00499 (29%) | 200 OK [http://localhost/reportes/mal_estados]
+
+
+Processing ReportsController#consumos_internos (for 127.0.0.1 at 2009-07-30 12:21:18) [GET]
+  Session ID: b0c657bae9b700690e49d9a70451ccfc
+  Parameters: {"action"=>"consumos_internos", "controller"=>"reports"}
+Rendering template within layouts/application
+Rendering reports/sending_guides
+Completed in 0.01625 (61 reqs/sec) | Rendering: 0.01096 (67%) | DB: 0.02293 (141%) | 200 OK [http://localhost/reportes/consumos_internos]

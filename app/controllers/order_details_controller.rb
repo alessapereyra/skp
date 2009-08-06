@@ -28,7 +28,7 @@ class OrderDetailsController < ApplicationController
 
 
           @order_detail.product.update_stock(temp)
-          @order_detail.product.update_store_stock(temp,@order_detail.order.store_id)
+          @order_detail.product.update_store_stock(temp,@order_detail.order.store_id,self.class,this_method_name)
           @order_detail.product.unload_if_pending
           @order = @order_detail.order 
               

@@ -31,8 +31,8 @@ class AdminExitOrdersController < ApplicationController
     if store_id != @exit_order.store_id        # si ha cambiado la tienda de donde se genera la guia de envio
       
       @exit_order.exit_order_details.each do |iod|
-          iod.product.update_store_stock(iod.quantity,store_id) #se devuelve stock a la tienda de donde se origina
-          iod.product.update_store_stock(iod.quantity*-1,@exit_order.store_id) #se le quita stock a la tienda nueva
+          iod.product.update_store_stock(iod.quantity,store_id,self.class,this_method_name) #se devuelve stock a la tienda de donde se origina
+          iod.product.update_store_stock(iod.quantity*-1,@exit_order.store_id,self.class,this_method_name) #se le quita stock a la tienda nueva
           
           iod.product.unload_if_pending
       end
@@ -56,7 +56,7 @@ class AdminExitOrdersController < ApplicationController
              io.exit_order_details.each do |iod|   # cuando se reabre la orden de envio, se devuelve el stock
 
                iod.product.update_stock(iod.quantity)  # devuelve el stock que se estaba enviando 
-               iod.product.update_store_stock(iod.quantity,io.store_id) #se devuelve el stock a la tienda de donde se origina
+               iod.product.update_store_stock(iod.quantity,io.store_id,self.class,this_method_name) #se devuelve el stock a la tienda de donde se origina
           
              end
              
@@ -81,7 +81,7 @@ class AdminExitOrdersController < ApplicationController
     @exit_order.exit_order_details.each do |exit_order_detail|       # al eliminar
                                                                      # se devuelve a la tienda original
  
-         exit_order_detail.product.update_store_stock(exit_order_detail.quantity,@exit_order.store_id)
+         exit_order_detail.product.update_store_stock(exit_order_detail.quantity,@exit_order.store_id,self.class,this_method_name)
          exit_order_detail.product.update_stock(exit_order_detail.quantity)
          exit_order_detail.product.unload_if_pending
          exit_order_detail.destroy

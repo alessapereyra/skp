@@ -44,7 +44,8 @@ class SendingGuide < ActiveRecord::Base
    "perdida",
    "mal-estado",
    "consumo-interno",
-   "consumo-externo"]
+   "consumo-externo",
+   "devolucion"]
   
   
   def complete?
@@ -53,6 +54,10 @@ class SendingGuide < ActiveRecord::Base
   
   def returned?
     status == "returned"
+  end
+  
+  def no_type?
+    self.sending_type == ""
   end
   
 

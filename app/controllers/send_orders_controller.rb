@@ -31,10 +31,10 @@ class SendOrdersController < ApplicationController
 
 
                 sod.product.update_stock(sod.quantity)
-                sod.product.update_store_stock(sod.quantity,io.owner_id)
+                sod.product.update_store_stock(sod.quantity,io.owner_id,self.class,this_method_name)
 
                     if io.status == "accepted"        # si ya habia sido aceptada, se quita el stock de la tienda receptora
-                      sod.product.update_store_stock(sod.quantity*-1,io.store_id)              
+                      sod.product.update_store_stock(sod.quantity*-1,io.store_id,self.class,this_method_name)              
                     end
 
 
@@ -84,15 +84,15 @@ class SendOrdersController < ApplicationController
           @send_order.send_order_details.each do |sod|
             
             if change_owner
-              sod.product.update_store_stock(sod.quantity,owner_id)
-              sod.product.update_store_stock(sod.quantity*-1,@send_order.owner_id)              
+              sod.product.update_store_stock(sod.quantity,owner_id,self.class,this_method_name)
+              sod.product.update_store_stock(sod.quantity*-1,@send_order.owner_id,self.class,this_method_name)              
               sod.product.unload_if_pending
             end
             
             if change_endpoint
 
-              sod.product.update_store_stock(sod.quantity,@send_order.store_id)
-              sod.product.update_store_stock(sod.quantity*-1,store_id)                            
+              sod.product.update_store_stock(sod.quantity,@send_order.store_id,self.class,this_method_name)
+              sod.product.update_store_stock(sod.quantity*-1,store_id,self.class,this_method_name)                            
               sod.product.unload_if_pending
             end
             
@@ -128,12 +128,12 @@ class SendOrdersController < ApplicationController
 
        if @send_order.status == "accepted" 
 
-         send_order_detail.product.update_store_stock(-send_order_detail.quantity,@send_order.store_id)
-         send_order_detail.product.update_store_stock(send_order_detail.quantity,@send_order.owner_id)
+         send_order_detail.product.update_store_stock(-send_order_detail.quantity,@send_order.store_id,self.class,this_method_name)
+         send_order_detail.product.update_store_stock(send_order_detail.quantity,@send_order.owner_id,self.class,this_method_name)
 
        else
          send_order_detail.product.update_stock(send_order_detail.quantity)
-         send_order_detail.product.update_store_stock(send_order_detail.quantity,@send_order.owner_id)
+         send_order_detail.product.update_store_stock(send_order_detail.quantity,@send_order.owner_id,self.class,this_method_name)
                
        end                                               
        send_order_detail.product.unload_if_pending

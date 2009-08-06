@@ -21,7 +21,7 @@ class SendOrderDetailsController < ApplicationController
        temp -= @send_order_detail.quantity
        
        @send_order_detail.product.update_stock(-temp)
-       @send_order_detail.product.update_store_stock(-temp,Options.GetCurrentStore)
+       @send_order_detail.product.update_store_stock(-temp,Options.GetCurrentStore,self.class,this_method_name)
 
     end
     

@@ -13,7 +13,7 @@ class SendingGuideDetailsController < ApplicationController
         @sending_guide = @sending_guide_detail.sending_guide      
         
       if @sending_guide.unload_stock or @sending_guide.unload_stock.nil?
-        @sending_guide_detail.product.update_store_stock(@sending_guide_detail.quantity,@sending_guide_detail.sending_guide.store_id)
+        @sending_guide_detail.product.update_store_stock(@sending_guide_detail.quantity,@sending_guide_detail.sending_guide.store_id,self.class,this_method_name)
         @sending_guide_detail.product.update_stock(@sending_guide_detail.quantity)
         @sending_guide_detail.product.unload_if_pending
       end
@@ -87,14 +87,14 @@ class SendingGuideDetailsController < ApplicationController
             if @sending_guide.unload_stock or @sending_guide.unload_stock.nil?
                           logger.info "Si descarga stock"
               @sending_guide_detail.product.update_stock(temp)
-              @sending_guide_detail.product.update_store_stock(temp,@sending_guide_detail.sending_guide.store_id)
+              @sending_guide_detail.product.update_store_stock(temp,@sending_guide_detail.sending_guide.store_id,self.class,this_method_name)
             end
 
             if @sending_guide.status == 'accepted'  #si la orden ya fue acceptada
                                                               # tambien se modifica el stock del receptor
              if @sending_guide.unload_stock or @sending_guide.unload_stock.nil?
                              logger.info "Si descarga stock"
-                  @sending_guide_detail.product.update_store_stock(temp*-1,@sending_guide_detail.sending_guide.order_id)
+                  @sending_guide_detail.product.update_store_stock(temp*-1,@sending_guide_detail.sending_guide.order_id,self.class,this_method_name)
               end
             end
             @sending_guide_detail.product.unload_if_pending

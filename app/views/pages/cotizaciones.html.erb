@@ -36,11 +36,15 @@
 		<p>La presente cotizaci&oacute;n tiene una duraci&oacute;n v&aacute;lida de <%= @quote.duration.blank? ? "0" : @quote.duration.to_s %> d&iacute;as y est&aacute; sujeta a disponibilidad de stock</p>
 		<% end %>
 		
+		<h4>
+			<%= link_to "Imprima", url_for(:action=>"print_quote", :id=>@quote.id), :class=>"download_pdf" %> 
+			la cotización para poder acceder a los precios especiales en tienda
+		</h4>
 		<div id="end_zone">
 			
 			<%= link_to "Imprimir", url_for(:action=>"print_quote", :id=>@quote.id), :class=>"download_pdf" %>
-			<%= link_to "Descargar en Excel (*.xls)", download_quote_path(@quote.id), :class=>"download_xls" %> 
-		 <!---	<%= link_to "Descargar en PDF (*.pdf)", download_pdf_quote_path(@quote.id), :class=>"download_pdf" %> -->
+			<%= link_to("Descargar en Excel (*.xls)", download_quote_path(@quote.id), :class=>"download_xls") unless @quote.from_web %> 
+		 	<%= link_to "Descargar en PDF (*.pdf)", download_pdf_quote_path(@quote.id), :class=>"download_pdf" %>
 		</div>
 
 	</div> <!-- quote_content -->

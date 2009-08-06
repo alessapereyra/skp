@@ -32,7 +32,7 @@ class ExitOrdersController < ApplicationController
     if @exit_order.unload_stock or @exit_order.unload_stock.nil?
       @exit_order.exit_order_details.each do |sgd|
       
-          sgd.product.update_store_stock(sgd.quantity,@exit_order.store_id)
+          sgd.product.update_store_stock(sgd.quantity,@exit_order.store_id,self.class,this_method_name)
           sgd.product.update_stock(sgd.quantity)
       end
     end
@@ -56,7 +56,7 @@ class ExitOrdersController < ApplicationController
       if @exit_order.unload_stock or @exit_order.unload_stock.nil?
          @exit_order.exit_order_details.each do |sgd|
 
-              sgd.product.update_store_stock(sgd.quantity,@exit_order.store_id)
+              sgd.product.update_store_stock(sgd.quantity,@exit_order.store_id,self.class,this_method_name)
               sgd.product.update_stock(sgd.quantity)
          end
        end #unload_stock
@@ -264,7 +264,7 @@ class ExitOrdersController < ApplicationController
 
             if @exit_order.unload_stock
               sod.product.update_stock(sod.quantity*-1) unless sod.product.nil?
-              sod.product.update_store_stock(sod.quantity*-1,@exit_order.store_id) unless sod.product.nil?
+              sod.product.update_store_stock(sod.quantity*-1,@exit_order.store_id,self.class,this_method_name) unless sod.product.nil?
             end
           end
 

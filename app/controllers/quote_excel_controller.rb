@@ -84,6 +84,9 @@ class QuoteExcelController < ApplicationController
 
 
     quote_book.write(5,3,clean("Cotizacion de Skykids Peru S.A.C."))
+
+    quote_book.write(8,2,clean("Codigo:"))
+    quote_book.write(8,3,(@quote.document))
     
     quote_book.write(8,2,clean("Empresa:"))
     quote_book.write(8,3,(@quote.client.name))  unless @quote.client.blank?

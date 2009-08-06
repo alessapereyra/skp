@@ -32,8 +32,8 @@ class AdminSendingGuidesController < ApplicationController
       
       @sending_guide.sending_guide_details.each do |iod|
         if @sending_guide.unload_stock or @sending_guide.unload_stock.nil?
-          iod.product.update_store_stock(iod.quantity,store_id) #se devuelve stock a la tienda de donde se origina
-          iod.product.update_store_stock(iod.quantity*-1,@sending_guide.store_id) #se le quita stock a la tienda nueva
+          iod.product.update_store_stock(iod.quantity,store_id,self.class,this_method_name) #se devuelve stock a la tienda de donde se origina
+          iod.product.update_store_stock(iod.quantity*-1,@sending_guide.store_id,self.class,this_method_name) #se le quita stock a la tienda nueva
           
           iod.product.unload_if_pending
         end
@@ -57,7 +57,7 @@ class AdminSendingGuidesController < ApplicationController
 
             if io.unload_stock or io.unload_stock.nil?   # si la guia descarga stock, o es nil (se sume que nunca se usó)
               iod.product.update_stock(iod.quantity)  # devuelve el stock que se estaba enviando 
-              iod.product.update_store_stock(iod.quantity,io.store_id) #se devuelve el stock a la tienda de donde se origina
+              iod.product.update_store_stock(iod.quantity,io.store_id,self.class,this_method_name) #se devuelve el stock a la tienda de donde se origina
           
             end
 
@@ -83,7 +83,7 @@ class AdminSendingGuidesController < ApplicationController
                                                                      # se devuelve a la tienda original
  
         if @sending_guide.unload_stock or @sending_guide.unload_stock.nil?                                                           
-         sending_guide_detail.product.update_store_stock(sending_guide_detail.quantity,@sending_guide.store_id)
+         sending_guide_detail.product.update_store_stock(sending_guide_detail.quantity,@sending_guide.store_id,self.class,this_method_name)
          sending_guide_detail.product.update_stock(sending_guide_detail.quantity)
          sending_guide_detail.product.unload_if_pending
         end

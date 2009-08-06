@@ -243,15 +243,87 @@ class ReportsController < ApplicationController
   end
 
   def sending_guides
+    @report_type = ""
     if admin? or store_supervisor?
       if get_current_store == 4 
-        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned'")
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' and (sending_type like '' or sending_type IS NULL) ")
       else
-        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store}")
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store} and (sending_type like '' or sending_type IS NULL)")
       end
     else
-      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' )")
+      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' ) and (sending_type like '' or sending_type IS NULL)")
     end
+  end
+
+  def perdidas
+    @report_type = "perdidas"
+    if admin? or store_supervisor?
+      if get_current_store == 4 
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' and sending_type like 'perdida'")
+      else
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store} and sending_type like 'perdida'")
+      end
+    else
+      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' ) and sending_type like 'perdida'")
+    end
+    render :action => "sending_guides"
+  end
+  
+  def devoluciones
+    @report_type = "devoluciones"
+    if admin? or store_supervisor?
+      if get_current_store == 4 
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' and sending_type like 'devolucion'")
+      else
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store} and sending_type like 'devolucion'")
+      end
+    else
+      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' ) and sending_type like 'devolucion'")
+    end
+    render :action => "sending_guides"
+  end  
+  
+  def mal_estados
+    @report_type = "mal_estados"    
+    if admin? or store_supervisor?
+      if get_current_store == 4 
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' and sending_type like 'mal-estado'")
+      else
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store}  and sending_type like 'mal-estado'")
+      end
+    else
+      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' ) and sending_type like 'mal-estado'")
+    end
+    render :action => "sending_guides"    
+  end
+
+
+  def consumos_internos
+    @report_type = "consumos_internos"        
+    if admin? or store_supervisor?
+      if get_current_store == 4 
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' and sending_type like 'consumo-interno'")
+      else
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store} and sending_type like 'consumo-interno'")
+      end
+    else
+      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' ) and sending_type like 'consumo-interno'")
+    end
+    render :action => "sending_guides"    
+  end
+
+  def consumos_externos
+    @report_type = "consumos_externos"        
+    if admin? or store_supervisor?
+      if get_current_store == 4 
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' and sending_type like 'consumo-externo'")
+      else
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store} and sending_type like 'consumo-externo'")
+      end
+    else
+      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' ) and sending_type like 'consumo-externo'")
+    end
+    render :action => "sending_guides"    
   end
 
 

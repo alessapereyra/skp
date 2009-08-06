@@ -1,4 +1,6 @@
 	<dl id="general_data">
+		<dt>C&oacute;digo: <strong><%= @quote.document %></strong></dt>
+
 		<dt>Realizada para: <strong><%= @quote.client.name unless @quote.client.nil? %></strong></dt>
 
 		<dt>RUC: <strong><%= @quote.client.ruc unless @quote.client.nil? %></strong></dt>

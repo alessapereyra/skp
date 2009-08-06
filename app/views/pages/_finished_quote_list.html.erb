@@ -5,6 +5,8 @@
 	</div>
 
 	<dl id="general_data">
+		<dt>C&oacute;digo: <strong><%= @quote.document %></strong></dt>
+
 		<dt>Realizada para: <strong><%= @quote.client.name unless @quote.client.nil? %></strong></dt>
 
 		<dt>RUC: <strong><%= @quote.client.ruc unless @quote.client.nil? %></strong></dt>
@@ -63,7 +65,7 @@
 					<% fields_for :quote_detail, qd, :index=>qd.id do |fd| %>
 					<% if qd.unavailable %>
 					<tr class="unavailable_product">
-						<td colspan="12">Producto no disponible</td>
+						<td colspan="12">Producto no disponible o sin stock</td>
 					</tr> 
 					<% end %>
 
@@ -88,9 +90,9 @@
 						<td><%= qd.product.code %></td>						
 						<td><%= link_to qd.product.name.humanize, product_catalogue_path(qd.product.id), :rel=>'facebox' %> </td>
 						<td>
-							<%= link_to "<img class='product_image' src='#{qd.product.picture.thumb.url}' alt='#{h qd.product.name.gsub!("'","")} title='click en la imagen para cerrar'/>",qd.product.picture.large.url unless qd.product.picture.nil? -%> 
+							<%= link_to("<img class='product_image' src='#{qd.product.picture.thumb.url}' alt='#{h qd.product.name.gsub!("'","")}' title='click en la imagen para cerrar'/>",qd.product.picture.large.url, :title=>"Altura: #{qd.product.height} Largo:#{qd.product.length} Ancho:#{qd.product.width}") unless qd.product.picture.nil? -%> 
 							<br />
-							<%= link_to( "click para agrandar", qd.product.picture.large.url, :title=>'click en la imagen para cerrar') unless qd.product.picture.nil? -%>
+							<%= link_to( "click para agrandar", qd.product.picture.large.url, :title=>"Altura: #{qd.product.height} Largo:#{qd.product.length} Ancho:#{qd.product.width}") unless qd.product.picture.nil? -%>
 						</td>
 						<td>S/. <%= unless qd.price.blank? then (qd.price/1.19).round(2) else 0.00 end  %></td>
 						<td>S/. <%= unless qd.price.blank? then qd.price else 0.00 end  %></td>

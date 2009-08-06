@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090718165613) do
+ActiveRecord::Schema.define(:version => 20090805202504) do
 
   create_table "age_range_versions", :force => true do |t|
     t.integer  "age_range_id"
@@ -109,10 +109,10 @@ ActiveRecord::Schema.define(:version => 20090718165613) do
   end
 
   create_table "fast_sessions", :force => true do |t|
-    t.integer  "session_id_crc",                               :null => false
-    t.string   "session_id",     :limit => 32, :default => "", :null => false
-    t.datetime "updated_at",                                   :null => false
-    t.text     "data"
+    t.integer   "session_id_crc",               :null => false
+    t.string    "session_id",     :limit => 32, :null => false
+    t.timestamp "updated_at",                   :null => false
+    t.text      "data"
   end
 
   add_index "fast_sessions", ["session_id_crc", "session_id"], :name => "session_id", :unique => true
@@ -121,12 +121,15 @@ ActiveRecord::Schema.define(:version => 20090718165613) do
   create_table "funds", :force => true do |t|
     t.integer  "store_id"
     t.datetime "registry_date"
-    t.decimal  "net_income",    :precision => 10, :scale => 2
-    t.decimal  "decimal",       :precision => 10, :scale => 2
-    t.decimal  "widthdrawal",   :precision => 10, :scale => 2
-    t.decimal  "cash_amount",   :precision => 10, :scale => 2
+    t.decimal  "net_income",     :precision => 10, :scale => 2
+    t.decimal  "decimal",        :precision => 10, :scale => 2
+    t.decimal  "widthdrawal",    :precision => 10, :scale => 2
+    t.decimal  "cash_amount",    :precision => 10, :scale => 2
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "expenses",       :precision => 10, :scale => 2
+    t.decimal  "earnings",       :precision => 10, :scale => 2
+    t.integer  "yesterday_fund"
   end
 
   create_table "input_order_details", :force => true do |t|
@@ -223,6 +226,25 @@ ActiveRecord::Schema.define(:version => 20090718165613) do
   add_index "prices", ["product_id"], :name => "product_id"
   add_index "prices", ["input_order_detail_id"], :name => "input_order_detail_id"
 
+  create_table "product_logs", :force => true do |t|
+    t.integer  "product_logs_id"
+    t.integer  "product_id"
+    t.string   "controller"
+    t.string   "method"
+    t.decimal  "last_stock",         :precision => 10, :scale => 2
+    t.decimal  "last_stock_trigal",  :precision => 10, :scale => 2
+    t.decimal  "last_stock_polo",    :precision => 10, :scale => 2
+    t.decimal  "last_stock_almacen", :precision => 10, :scale => 2
+    t.decimal  "last_stock_clarisa", :precision => 10, :scale => 2
+    t.decimal  "stock",              :precision => 10, :scale => 2
+    t.decimal  "stock_trigal",       :precision => 10, :scale => 2
+    t.decimal  "stock_polo",         :precision => 10, :scale => 2
+    t.decimal  "stock_almacen",      :precision => 10, :scale => 2
+    t.decimal  "stock_clarisa",      :precision => 10, :scale => 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "products", :force => true do |t|
     t.string   "additional_code"
     t.string   "name"
@@ -261,6 +283,10 @@ ActiveRecord::Schema.define(:version => 20090718165613) do
     t.integer  "stock_carisa_compromised",                                              :default => 0
     t.decimal  "corporative_price",                      :precision => 10, :scale => 2
     t.boolean  "delta",                                                                 :default => false
+    t.decimal  "min_stock",                              :precision => 10, :scale => 2
+    t.boolean  "for_import"
+    t.decimal  "special_price",                          :precision => 10, :scale => 2
+    t.string   "note"
   end
 
   add_index "products", ["code"], :name => "index_products_on_code"
@@ -347,24 +373,6 @@ ActiveRecord::Schema.define(:version => 20090718165613) do
   add_index "quote_details", ["quote_id"], :name => "quote_id"
   add_index "quote_details", ["product_id"], :name => "product_id"
 
-  create_table "quote_versions", :force => true do |t|
-    t.integer  "quote_id"
-    t.integer  "version"
-    t.integer  "client_id",       :limit => 8
-    t.integer  "store_id",        :limit => 8
-    t.integer  "user_id",         :limit => 8
-    t.string   "client_address"
-    t.datetime "quote_date"
-    t.integer  "duration",        :limit => 8
-    t.string   "sending_details"
-    t.text     "quote_comments"
-    t.datetime "updated_at"
-    t.string   "document"
-    t.string   "status"
-    t.string   "contact_name"
-    t.string   "price_type"
-  end
-
   create_table "quotes", :force => true do |t|
     t.integer  "client_id"
     t.integer  "store_id"
@@ -426,7 +434,7 @@ ActiveRecord::Schema.define(:version => 20090718165613) do
     t.integer  "sending_guide_id"
     t.integer  "product_id"
     t.integer  "quantity"
-    t.integer  "price"
+    t.integer  "price",            :limit => 10, :precision => 10, :scale => 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "status"
@@ -455,7 +463,7 @@ ActiveRecord::Schema.define(:version => 20090718165613) do
   end
 
   create_table "sessions", :force => true do |t|
-    t.string   "session_id", :default => "", :null => false
+    t.string   "session_id", :null => false
     t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"

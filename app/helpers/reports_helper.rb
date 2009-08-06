@@ -5,6 +5,17 @@
 
 module ReportsHelper
   
+ def print_sending_guide_report_title(type)
+    case type
+      when "" then "Órdenes de Salida a Clientes"
+      when "perdidas" then "Retiros por P&eacute;rdida"
+      when "mal_estados" then "Retiros por Mal Estado"
+      when "consumos_internos" then "Consumos Internos"
+      when "consumos_externos" then "Consumos Externos"        
+      when "devoluciones" then "Devoluciones a Proveedor"                
+    end
+ end  
+  
  def total_volume(send_order)
   
   total = 0

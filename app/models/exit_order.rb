@@ -47,7 +47,7 @@ class ExitOrder < ActiveRecord::Base
 
              if self.unload_stock or self.unload_stock.nil?
                iod.product.update_stock(iod.quantity)
-               iod.product.update_store_stock(iod.quantity, self.store_id)
+               iod.product.update_store_stock(iod.quantity, self.store_id,self.class,this_method_name)
                iod.product.status = "open"
                iod.product.save!
 

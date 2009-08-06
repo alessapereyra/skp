@@ -50,7 +50,7 @@ class InputOrdersController < ApplicationController
       
           if io.unload_stock or io.unload_stock.nil?
             iod.product.update_stock(iod.quantity*-1)
-            iod.product.update_store_stock(iod.quantity*-1,io.store_id)
+            iod.product.update_store_stock(iod.quantity*-1,io.store_id,self.class,this_method_name)
           end
       
         end
@@ -80,8 +80,8 @@ class InputOrdersController < ApplicationController
                   @input_order.input_order_details.each do |iod|              # a la nueva
                     
                       if (@input_order.unload_stock or @input_order.unload_stock.nil?)
-                        iod.product.update_store_stock(iod.quantity*-1,store_id)
-                        iod.product.update_store_stock(iod.quantity,@input_order.store_id)
+                        iod.product.update_store_stock(iod.quantity*-1,store_id,self.class,this_method_name)
+                        iod.product.update_store_stock(iod.quantity,@input_order.store_id,self.class,this_method_name)
                         iod.product.unload_if_pending
                       end
 
@@ -128,7 +128,7 @@ class InputOrdersController < ApplicationController
 
       if @input_order.unload_stock or @input_order.unload_stock.nil?
         input_order_detail.product.update_stock(input_order_detail.quantity*-1)
-        input_order_detail.product.update_store_stock(input_order_detail.quantity*-1,@input_order.store_id)
+        input_order_detail.product.update_store_stock(input_order_detail.quantity*-1,@input_order.store_id,self.class,this_method_name)
         input_order_detail.product.unload_if_pending
         input_order_detail.destroy
       end

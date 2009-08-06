@@ -35,7 +35,7 @@ class ExitOrderDetailsController < ApplicationController
 
 
           @exit_order_detail.product.update_stock(temp)
-          @exit_order_detail.product.update_store_stock(temp,@exit_order_detail.exit_order.store_id)
+          @exit_order_detail.product.update_store_stock(temp,@exit_order_detail.exit_order.store_id,self.class,this_method_name)
           @exit_order_detail.product.unload_if_pending
           @exit_order = @exit_order_detail.exit_order 
                             RAILS_DEFAULT_LOGGER.error("\n Actualizo stock  \n")                     
@@ -124,7 +124,7 @@ def destroy
       @exit_order.price -= @exit_order_detail.subtotal
       @exit_order.save
       
-      @exit_order_detail.product.update_store_stock(@exit_order_detail.quantity,@exit_order_detail.exit_order.store_id)
+      @exit_order_detail.product.update_store_stock(@exit_order_detail.quantity,@exit_order_detail.exit_order.store_id,self.class,this_method_name)
       @exit_order_detail.product.update_stock(@exit_order_detail.quantity)
       @exit_order_detail.product.unload_if_pending
       

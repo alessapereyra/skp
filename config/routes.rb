@@ -102,7 +102,16 @@ ActionController::Routing::Routes.draw do |map|
   map.reopen_admin_exit_order_catalogue '/admin_ordenes_salida/:id/reabrir', :controller=>"admin_exit_orders", :action=>"reopen"
   map.return_admin_exit_order_catalogue '/admin_ordenes_salida/:id/finalizar', :controller=>"exit_orders", :action=>"return_stock"
 
+  map.compras '/compras/', :controller=>"buying_orders", :action=>"compras"
+  map.inventario '/inventario/', :controller=>"buying_orders", :action=>"inventario"
+  map.devoluciones '/devoluciones/', :controller=>"buying_orders", :action=>"devoluciones"  
 
+  map.perdida '/perdida/', :controller => "sending_guides", :action => "perdida"
+  map.mal_estado '/mal_estado/', :controller => "sending_guides", :action => "mal_estado"
+  map.consumo_interno '/consumo_interno/', :controller => "sending_guides", :action => "consumo_interno"
+  map.consumo_externo '/consumo_externo/', :controller => "sending_guides", :action => "consumo_externo"
+  map.devolucion '/devolucion/', :controller => "sending_guides", :action => "devolucion"  
+      
   map.quotes_catalogue '/cotizaciones/', :controller=>"quotes", :action=>"index"
   map.edit_quote_catalogue '/cotizaciones/:id/recover', :controller=>"quotes", :action=>"recover"
   map.delete_quote_catalogue '/cotizaciones/:id/delete', :controller=>'quotes', :action=>"delete"  
@@ -135,7 +144,14 @@ ActionController::Routing::Routes.draw do |map|
 
   map.input_orders_report "/reportes/inventarios", :controller=>"reports",:action=>"input_orders"    
   map.buyings_report "/reportes/compras", :controller=>"reports",:action=>"buyings"  
-  map.returns_report "/reportes/devoluciones", :controller=>"reports",:action=>"returns"  
+  map.returns_report "/reportes/devoluciones_clientes", :controller=>"reports",:action=>"returns"  
+
+
+  map.perdidas_report "/reportes/perdidas", :controller=>"reports",:action=>"perdidas"    
+  map.mal_estados_report "/reportes/mal_estados", :controller=>"reports",:action=>"mal_estados"  
+  map.consumos_internos_report "/reportes/consumos_internos", :controller=>"reports",:action=>"consumos_internos"  
+  map.consumos_externos_report "/reportes/consumos_externos", :controller=>"reports",:action=>"consumos_externos"
+  map.devoluciones_report "/reportes/devoluciones_proveedor", :controller=>"reports",:action=>"devoluciones"  
     
   map.input_order_report "/reportes/ingresos/:id", :controller=>"reports",:action=>"input_order"    
 

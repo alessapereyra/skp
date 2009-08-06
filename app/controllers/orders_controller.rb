@@ -54,8 +54,8 @@ class OrdersController < ApplicationController
           @order.order_details.each do |od|
             
             if @order.unload_stock or @order.unload_stock.nil?
-              od.product.update_store_stock(od.quantity,store_id)
-              od.product.update_store_stock(od.quantity*-1,@order.store_id)
+              od.product.update_store_stock(od.quantity,store_id,self.class,this_method_name)
+              od.product.update_store_stock(od.quantity*-1,@order.store_id,self.class,this_method_name)
               od.product.unload_if_pending
             end
             
@@ -95,7 +95,7 @@ class OrdersController < ApplicationController
 
       if @order.unload_stock
         order_detail.product.update_stock(order_detail.quantity)
-        order_detail.product.update_store_stock(order_detail.quantity,@order.store_id)
+        order_detail.product.update_store_stock(order_detail.quantity,@order.store_id,self.class,this_method_name)
         order_detail.product.unload_if_pending
       end
       

@@ -4,6 +4,7 @@
 	http://localhost:3000/stylesheets/nextgen/print.css
 	http://localhost:3000/stylesheets/nextgen/web.css?1229177402
 	http://srdperu.com/skykids/stylesheets/nextgen/web.css
+	http://skykidsperu.com/stylesheets/nextgen/web.css?1241621009
 */
 
 body {
@@ -11,6 +12,30 @@ body {
 	padding: 0px;
 	font: 62.5% "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	background: #eef6f7 url(../../images/web/background.png) repeat-x center top;
+}
+
+#inside_content p {
+	font-size: 1.3em;
+	text-align: center;
+}
+
+#sidebar #importa_info h3 {
+	color: #005062;
+	font-size: 1.2em;
+	text-align: center;
+}
+
+#sidebar #importa_info ol {
+	margin-left: 10px;
+	padding-left: 0px;
+}
+
+#sidebar #importa_info ol li {
+	font-size: 1.2em;
+	line-height: 1.6em;
+	margin-bottom: 1em;
+	color: #057fa9;
+	text-align: center;
 }
 
 
@@ -855,6 +880,21 @@ div#full_inside ul#list li.product {
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
 	list-style: none;
+	background-color: #f9f3bb;
+	border: 1px solid #e8cb80;
+}
+
+div#importa_info {
+	background-color: #98dce1;
+	border: 1px solid #4690c9;
+	padding: 20px;
+}
+
+#importa_info p {
+	text-indent: 0.4em !important;
+	color: #282828;
+	font-size: 1.3em;
+	line-height: 1.3em;
 }
 
 
@@ -1685,3 +1725,10 @@ img#diamadre3 {
 	margin: 0px auto;
 	display: block;
 }
+
+img#dia_nino {
+	width: 450px;
+	margin: 0px auto;
+	display: block;
+}
+

@@ -11,10 +11,10 @@ class SendOrderDetailsController < ApplicationController
       #si se elimina, se devuelve el stock, y se actualiza el costo de la Orden de Ingreso
       #si ya se aceptó, se elimina el stock de la tienda destino
       
-      @send_order_detail.product.update_store_stock(@send_order_detail.quantity,@send_order_detail.send_order.owner_id)
+      @send_order_detail.product.update_store_stock(@send_order_detail.quantity,@send_order_detail.send_order.owner_id,self.class,this_method_name)
        
       if @send_order_detail.send_order.status == "accepted"
-        @send_order_detail.product.update_store_stock(@send_order_detail.quantity*-1,@send_order_detail.send_order.store_id)
+        @send_order_detail.product.update_store_stock(@send_order_detail.quantity*-1,@send_order_detail.send_order.store_id,self.class,this_method_name)
       else
         @send_order_detail.product.update_stock(@send_order_detail.quantity)
       end
@@ -91,13 +91,13 @@ class SendOrderDetailsController < ApplicationController
             temp -= @send_order_detail.quantity
 
             @send_order_detail.product.update_stock(temp)
-            @send_order_detail.product.update_store_stock(temp,@send_order_detail.send_order.owner_id)
+            @send_order_detail.product.update_store_stock(temp,@send_order_detail.send_order.owner_id,self.class,this_method_name)
             
                         RAILS_DEFAULT_LOGGER.error("\n Se actualiza stock de tienda y general  \n")                 
             
             if @send_order_detail.send_order.status == 'accepted'  #si la orden ya fue aceptada
                                                               # tambien se modifica el stock del receptor
-                  @send_order_detail.product.update_store_stock(temp*-1,@send_order_detail.send_order.store_id)
+                  @send_order_detail.product.update_store_stock(temp*-1,@send_order_detail.send_order.store_id,self.class,this_method_name)
                         RAILS_DEFAULT_LOGGER.error("\n Se actualiza del que lo envia  \n")                 
             end
             @send_order_detail.product.unload_if_pending

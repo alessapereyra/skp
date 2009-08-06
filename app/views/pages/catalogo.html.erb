@@ -69,6 +69,18 @@
 
 			<div id="sidebar">
 
+
+				<%= image_tag("web/oferta-dia-nino.png") %>
+	
+
+				<%= link_to_remote image_tag("web/ofertas.png"), :url=>{:action=>:search_product, :q=>"ofertas"} %>
+
+				<%= link_to image_tag("web/importa.jpg"), :action=>:importacion %>
+				<!-- >	
+						<%= link_to image_tag("web/vale_navideno.png"), "http://www.skykidsperu.com/web/vale_navidad" %>
+				<-- >
+	
+	
 				<h2 id="refina">Refina tu b&uacute;squeda</h2>					
 
 				<%= render :partial=>"consulta" %>
@@ -147,13 +159,9 @@
 					</div>
 				</div>
 
+
+			<%= link_to_remote image_tag("web/building-blocks.jpg"), :url=>{:action=>:search_product, :q=>"bloques || blocks"} %>
 				
-				<%= link_to_remote image_tag("web/ofertas.png"), :url=>{:action=>:search_product, :q=>"ofertas || remate"} %>
-		<!-- >	
-				<%= link_to image_tag("web/vale_navideno.png"), "http://www.skykidsperu.com/web/vale_navidad" %>
-		<-- >
-
-
 			</div> <!-- div sidebar -->
 
 			<%= observe_field :product_name, :url => { :controller=>"pages",:action => :search_product },

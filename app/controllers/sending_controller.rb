@@ -189,7 +189,7 @@ class SendingController < ApplicationController
 
             #  if @send_order.unload_stock or @send_order.unload_stock.nil?
                 sod.product.update_stock(sod.quantity*-1) unless sod.product.nil?
-                sod.product.update_store_stock(sod.quantity*-1,@send_order.owner_id) unless sod.product.nil?
+                sod.product.update_store_stock(sod.quantity*-1,@send_order.owner_id,self.class,this_method_name) unless sod.product.nil?
                 sod.product.unload_if_pending
             #  end
             end  # each
@@ -243,10 +243,10 @@ class SendingController < ApplicationController
 
 
               sod.product.update_stock(sod.quantity)
-              sod.product.update_store_stock(sod.quantity,io.owner_id)
+              sod.product.update_store_stock(sod.quantity,io.owner_id,self.class,this_method_name)
 
                   if io.status == "accepted"        # si ya habia sido aceptada, se quita el stock de la tienda receptora
-                    sod.product.update_store_stock(sod.quantity*-1,io.store_id)              
+                    sod.product.update_store_stock(sod.quantity*-1,io.store_id,self.class,this_method_name)              
                   end
 
 

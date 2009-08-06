@@ -1,4 +1,5 @@
-<%= content_tag(:h2, "Ingreso a Inventario")%>
+<% input_order = @input_order %>
+<%= content_tag(:h2, "Ingreso a Tienda - #{print_input_type(input_order)}")%>
 
 <%= render :partial =>'recover' %>
 

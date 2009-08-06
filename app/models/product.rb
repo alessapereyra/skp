@@ -96,6 +96,7 @@ class Product < ActiveRecord::Base
   validates_uniqueness_of :code, :message => "debe ser único"
   
   
+  named_scope :importables, :conditions=>{:for_import => true }
   
   #acts_as_ferret :fields=>[:name, :description, :code, :category_name, :subcategory_name,:brand_name,:product_provider_codes]
   
@@ -165,7 +166,7 @@ class Product < ActiveRecord::Base
     #  stock_almacen_compromised :integer(11)     default(0)
     #  stock_carisa_compromised  :integer(11)     default(0)
 
-
+    
     case store_id
       when 1
         self.stock_trigal_compromised += quantity
@@ -771,25 +772,41 @@ class Product < ActiveRecord::Base
   
   end
   
-  def update_store_stock (quantity, store)
+  def update_store_stock (quantity, store, cont, met)
+
+    pl = ProductLog.new
+    pl.product_id = self.id
+    pl.last_stock = self.stock
+    pl.controller = cont.to_s
+    pl.method = met.to_s
+    pl.last_stock_trigal = self.stock_trigal
+    pl.last_stock_polo = self.stock_polo
+    pl.last_stock_almacen = self.stock_almacen
+    pl.last_stock_clarisa = self.stock_clarisa   
    
     Product.transaction do 
       return if quantity.nil?
 
       if store == 1
         self.stock_trigal.nil? ?  self.stock_trigal = quantity : self.stock_trigal += quantity 
+        pl.stock_trigal = self.stock_trigal
         self.save! unless self.stock_trigal < 0
       elsif store == 2
         self.stock_polo.nil? ? self.stock_polo = quantity : self.stock_polo += quantity 
+        pl.stock_polo = self.stock_polo
         self.save! unless self.stock_polo < 0
       elsif store == 3
         self.stock_almacen.nil? ? self.stock_almacen = quantity : self.stock_almacen += quantity 
+        pl.stock_almacen = self.stock_almacen
         self.save! unless self.stock_almacen < 0
       elsif store == 5  # el ID 4 es de todas las tiendas
         self.stock_clarisa.nil? ? self.stock_clarisa = quantity : self.stock_clarisa += quantity 
+        pl.stock_clarisa = self.stock_clarisa
         self.save! unless self.stock_clarisa < 0      
       end
 
+    pl.stock = self.stock
+    pl.save
     end #transaction
 
   end

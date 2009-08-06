@@ -3,12 +3,12 @@
 
 <% if admin? %>
 
-<% form_for(@yesterday_fund) do |f| %>
+<% form_for(@fund) do |f| %>
 
 
     <div class="result">
       <%= f.error_messages %>
-      <%= f.label :cash_amount, "Saldo del día anterior: " %><%= f.text_field :cash_amount %>
+      <%= f.label :net_income, "Saldo del día anterior: " %><%= f.text_field :net_income %>
  
         <%= f.submit "actualizar", :class=>"form_button" %>
   	
@@ -21,7 +21,7 @@
 <% else %>
 
 	<div id="result">
-		Saldo del d&iacute;a anterior: <%= @yesterday_fund.cash_amount %>
+		Saldo del d&iacute;a anterior: <%= @fund.net_income %>
 	</div>
 
 <% end %>

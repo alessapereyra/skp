@@ -22,12 +22,111 @@ class BuyingOrdersController < ApplicationController
     begin    
       @input_order =  session[:input_order_id] ?  InputOrder.find(session[:input_order_id])  : InputOrder.new
       @input_order.order_date ||= Time.zone.now
+      @input_order.input_type = ""            
       @input_order_details = @input_order.input_order_details
     rescue Exception => ex
       RAILS_DEFAULT_LOGGER.error("\n #{ ex}  \n")                 
       @input_order = InputOrder.new
+      @input_order.input_type = ""            
       @input_order_details = @input_order.input_order_details
       
+    end
+  end
+
+
+  def compras 
+    
+    @pending_input_orders = []
+    temp = InputOrder.find(:all, :conditions=>"status like 'pendiente' and input_type like 'compras' and id != #{current_input_order}")
+    temp.each do |t|
+      @pending_input_orders << t unless t.childless?
+    end
+    
+    session[:age_from] = 0
+    session[:age_to] = 18
+        
+    
+    @input_order_detail = InputOrderDetail.new
+    @price = Price.new
+    @products = ""
+    @input_orders = ""
+
+    begin    
+      @input_order =  session[:input_order_id] ?  InputOrder.find(session[:input_order_id])  : InputOrder.new
+      @input_order.order_date ||= Time.zone.now
+      @input_order.input_type = "compras"
+      @input_order_details = @input_order.input_order_details
+      render :action => "index"
+    rescue Exception => ex
+      RAILS_DEFAULT_LOGGER.error("\n #{ ex}  \n")                 
+      @input_order = InputOrder.new
+      @input_order.input_type = "compras"      
+      @input_order_details = @input_order.input_order_details
+      render :action => "index"      
+    end
+  end
+
+  def inventario 
+    
+    @pending_input_orders = []
+    temp = InputOrder.find(:all, :conditions=>"status like 'pendiente' and input_type like 'inventario' and id != #{current_input_order}")
+    temp.each do |t|
+      @pending_input_orders << t unless t.childless?
+    end
+    
+    session[:age_from] = 0
+    session[:age_to] = 18
+        
+    
+    @input_order_detail = InputOrderDetail.new
+    @price = Price.new
+    @products = ""
+    @input_orders = ""
+
+    begin    
+      @input_order =  session[:input_order_id] ?  InputOrder.find(session[:input_order_id])  : InputOrder.new
+      @input_order.order_date ||= Time.zone.now
+      @input_order_details = @input_order.input_order_details
+      @input_order.input_type = "inventario"      
+      render :action => "index"
+    rescue Exception => ex
+      RAILS_DEFAULT_LOGGER.error("\n #{ ex}  \n")                 
+      @input_order = InputOrder.new
+      @input_order.input_type = "inventario"            
+      @input_order_details = @input_order.input_order_details
+      render :action => "index"      
+    end
+  end
+
+  def devoluciones 
+    
+    @pending_input_orders = []
+    temp = InputOrder.find(:all, :conditions=>"status like 'pendiente' and input_type like 'devoluciones' and id != #{current_input_order}")
+    temp.each do |t|
+      @pending_input_orders << t unless t.childless?
+    end
+    
+    session[:age_from] = 0
+    session[:age_to] = 18
+        
+    
+    @input_order_detail = InputOrderDetail.new
+    @price = Price.new
+    @products = ""
+    @input_orders = ""
+
+    begin    
+      @input_order =  session[:input_order_id] ?  InputOrder.find(session[:input_order_id])  : InputOrder.new
+      @input_order.order_date ||= Time.zone.now
+      @input_order_details = @input_order.input_order_details
+      @input_order.input_type = "devoluciones"            
+      render :action => "index"
+    rescue Exception => ex
+      RAILS_DEFAULT_LOGGER.error("\n #{ ex}  \n")                 
+      @input_order = InputOrder.new
+      @input_order.input_type = "devoluciones"                  
+      @input_order_details = @input_order.input_order_details
+      render :action => "index"
     end
   end
 
@@ -44,7 +143,7 @@ class BuyingOrdersController < ApplicationController
 
         if @input_order.unload_stock or @input_order.unload_stock.nil?
           iod.product.update_stock(-iod.quantity)
-          iod.product.update_store_stock(-iod.quantity, @input_order.store_id)
+          iod.product.update_store_stock(-iod.quantity, @input_order.store_id,self.class,this_method_name)
           iod.product.status = "open"
           iod.product.save!
         
@@ -302,7 +401,7 @@ class BuyingOrdersController < ApplicationController
 
               if @input_order.unload_stock or @input_order.unload_stock.nil?
                 iod.product.update_stock(iod.quantity)
-                iod.product.update_store_stock(iod.quantity, @input_order.store_id)
+                iod.product.update_store_stock(iod.quantity, @input_order.store_id,self.class,this_method_name)
                 iod.product.status = "terminada"
                 iod.product.save!
               

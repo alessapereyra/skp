@@ -181,13 +181,13 @@ class QuoteDetail < ActiveRecord::Base
       if self.pending <= stock_from_store and not self.pending.zero?  # si con el stock de carisa se cubre..
 
           product.update_stock(-self.pending)                    # se quita el stock del total
-          product.update_store_stock(-self.pending,store_id)            #disminuye el stock de tienda
+          product.update_store_stock(-self.pending,store_id,self.class,this_method_name)            #disminuye el stock de tienda
           update_from_store(self.pending,store_id)                    # se registra que se extrajo de tienda todo
           self.pending = 0                                             # se indica que ya no falta nada más
           pending = self.pending
       elsif self.pending > stock_from_store                            # si no se cubre, se descarga lo que se pueda
           product.update_stock(-stock_from_store)                 # todo lo que habia de la tienda
-          product.update_store_stock(-stock_from_store,store_id)
+          product.update_store_stock(-stock_from_store,store_id,self.class,this_method_name)
           update_from_store(stock_from_store,store_id)                 # se registra lo que se sacó
           self.pending -= stock_from_store                             # y disminuyo lo que falta
           pending = self.pending
@@ -205,13 +205,13 @@ class QuoteDetail < ActiveRecord::Base
     
     case self.quote.store_id 
       when 1
-        product.update_store_stock(self.stock_from_trigal,1)      
+        product.update_store_stock(self.stock_from_trigal,1,self.class,this_method_name)      
       when 2
-        product.update_store_stock(self.stock_from_polo,2)        
+        product.update_store_stock(self.stock_from_polo,2,self.class,this_method_name)        
       when 3
-        product.update_store_stock(self.stock_from_almacen,3)
+        product.update_store_stock(self.stock_from_almacen,3,self.class,this_method_name)
       when 5
-        product.update_store_stock(self.stock_from_carisa,5)     
+        product.update_store_stock(self.stock_from_carisa,5,self.class,this_method_name)     
     end
     
     product.update_available_stock(1,self.stock_trigal_compromised)

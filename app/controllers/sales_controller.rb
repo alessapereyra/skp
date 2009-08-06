@@ -259,11 +259,11 @@ class SalesController < ApplicationController
 
           if @order.type == "nota_de_credito"
             sod.product.update_stock(sod.quantity) unless sod.product.nil?
-            sod.product.update_store_stock(sod.quantity,@order.store_id) unless sod.product.nil?
+            sod.product.update_store_stock(sod.quantity,@order.store_id,self.class,this_method_name) unless sod.product.nil?
             sod.product.unload_if_pending
           elsif @order.unload_stock or @order.unload_stock.nil?
             sod.product.update_stock(sod.quantity*-1) unless sod.product.nil?
-            sod.product.update_store_stock(sod.quantity*-1,@order.store_id) unless sod.product.nil?      
+            sod.product.update_store_stock(sod.quantity*-1,@order.store_id,self.class,this_method_name) unless sod.product.nil?      
             sod.product.unload_if_pending    
           end
 
@@ -290,7 +290,7 @@ class SalesController < ApplicationController
 
       if @order.unload_stock or @order.unload_stock.nil?
         order_detail.product.update_stock(order_detail.quantity)
-        order_detail.product.update_store_stock(order_detail.quantity,@order.store_id)
+        order_detail.product.update_store_stock(order_detail.quantity,@order.store_id,self.class,this_method_name)
         order_detail.product.unload_if_pending
       end
 
@@ -359,7 +359,7 @@ class SalesController < ApplicationController
 
             if @order.unload_stock or @order.unload_stock.nil?
               order_detail.product.update_stock(order_detail.quantity)
-              order_detail.product.update_store_stock(order_detail.quantity,@order.store_id)
+              order_detail.product.update_store_stock(order_detail.quantity,@order.store_id,self.class,this_method_name)
               order_detail.product.unload_if_pending
             end
           end  #each od

@@ -34,7 +34,9 @@
 		
 
 	</div>
+		
 	
+	<% if @sending_guide.no_type? %>
 	<div class="single_column_left">
 				<dt class="odd">
 					<%= f.label :client_id, "Cliente:" %>
@@ -46,6 +48,7 @@
 				</dd>
 		
 	</div>
+	<% end %>
 
 	<div class="single_column_left">
 		
@@ -62,6 +65,7 @@
 		
 	</div>
 
+	<% if @sending_guide.no_type? %>
 	<div class="single_column_left">
 		
 		
@@ -141,6 +145,7 @@
 			</dd>
 		
 	</div>
+	<% end %>
 
 	</dl>
 

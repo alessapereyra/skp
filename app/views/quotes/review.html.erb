@@ -103,6 +103,7 @@
 		
 		<span>Producto: <%= qd.product.code %> </span>
 		<span>Descripci&oacute;n: <%= qd.product.name %> <br /><%= strip_tags qd.product.description %></span>
+		<span>¿Sin stock?: <%= ff.check_box :unavailable %></span>		
 		<span>Cantidad: <%= ff.text_field :quantity %></span>
 		<span>Precio: <%= ff.text_field :price %></span>				
 			

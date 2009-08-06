@@ -6,7 +6,7 @@
 #  sending_guide_id :integer(4)
 #  product_id       :integer(4)
 #  quantity         :integer(4)
-#  price            :integer(4)
+#  price            :integer(10)
 #  created_at       :datetime
 #  updated_at       :datetime
 #  status           :string(255)

@@ -5,11 +5,70 @@ class SendingGuidesController < ApplicationController
 
     @sending_guide = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id])  : SendingGuide.new
     @sending_guide.unload_stock ||= true
+    @sending_guide.sending_type = ""
     @sending_guide_detail = SendingGuideDetail.new
     @sending_guide_details = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id]).sending_guide_details  : []
 
 
   end
+  
+  def perdida
+
+    @sending_guide = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id])  : SendingGuide.new
+    @sending_guide.unload_stock ||= true
+    @sending_guide.sending_type = "perdida"    
+    @sending_guide_detail = SendingGuideDetail.new
+    @sending_guide_details = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id]).sending_guide_details  : []
+
+    render :action => "index"
+  end
+
+
+  def devolucion
+
+    @sending_guide = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id])  : SendingGuide.new
+    @sending_guide.unload_stock ||= true
+    @sending_guide.sending_type = "devolucion"    
+    @sending_guide_detail = SendingGuideDetail.new
+    @sending_guide_details = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id]).sending_guide_details  : []
+
+    render :action => "index"
+  end
+
+
+  def mal_estado
+
+    @sending_guide = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id])  : SendingGuide.new
+    @sending_guide.unload_stock ||= true
+    @sending_guide.sending_type = "mal-estado"    
+    @sending_guide_detail = SendingGuideDetail.new
+    @sending_guide_details = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id]).sending_guide_details  : []
+
+    render :action => "index"
+  end
+
+  def consumo_interno
+
+    @sending_guide = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id])  : SendingGuide.new
+    @sending_guide.unload_stock ||= true
+    @sending_guide.sending_type = "consumo-interno"
+    @sending_guide_detail = SendingGuideDetail.new
+    @sending_guide_details = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id]).sending_guide_details  : []
+
+    render :action => "index"
+  end
+
+  def consumo_externo
+
+    @sending_guide = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id])  : SendingGuide.new
+    @sending_guide.unload_stock ||= true
+    @sending_guide.sending_type = "consumo-externo"
+    @sending_guide_detail = SendingGuideDetail.new
+    @sending_guide_details = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id]).sending_guide_details  : []
+
+    render :action => "index"
+  end
+  
   
   def return_stock
     
@@ -19,7 +78,7 @@ class SendingGuidesController < ApplicationController
     unless @sending_guide.unload_stock    
       @sending_guide.sending_guide_details.each do |sgd|
       
-          sgd.product.update_store_stock(sgd.quantity,@sending_guide.store_id)
+          sgd.product.update_store_stock(sgd.quantity,@sending_guide.store_id,self.class,this_method_name)
           sgd.product.update_stock(sgd.quantity)
       end
     end
@@ -43,7 +102,7 @@ class SendingGuidesController < ApplicationController
       unless @sending_guide.unload_stock
          @sending_guide.sending_guide_details.each do |sgd|
 
-              sgd.product.update_store_stock(sgd.quantity,@sending_guide.store_id)
+              sgd.product.update_store_stock(sgd.quantity,@sending_guide.store_id,self.class,this_method_name)
               sgd.product.update_stock(sgd.quantity)
          end
        end
@@ -197,7 +256,7 @@ class SendingGuidesController < ApplicationController
 
             if @sending_guide.unload_stock
               sod.product.update_stock(sod.quantity*-1) unless sod.product.nil?
-              sod.product.update_store_stock(sod.quantity*-1,@sending_guide.store_id) unless sod.product.nil?
+              sod.product.update_store_stock(sod.quantity*-1,@sending_guide.store_id,self.class,this_method_name) unless sod.product.nil?
             end
           end
 

@@ -14,7 +14,7 @@ class InputOrderDetailsController < ApplicationController
      if @input_order.status == "terminada" 
        if @input_order.unload_stock or @input_order.unload_stock.nil?
          @input_order_detail.product.update_stock(@input_order_detail.quantity*-1)
-         @input_order_detail.product.update_store_stock(@input_order_detail.quantity*-1,@input_order_detail.input_order.store_id)
+         @input_order_detail.product.update_store_stock(@input_order_detail.quantity*-1,@input_order_detail.input_order.store_id,self.class,this_method_name)
          @input_order_detail.product.unload_if_pending
        end
       end
@@ -114,7 +114,7 @@ class InputOrderDetailsController < ApplicationController
 
        if input_order.unload_stock or input_order.unload_stock.nil?
          @input_order_detail.product.update_stock(-temp)
-         @input_order_detail.product.update_store_stock(-temp,@input_order_detail.input_order.store_id)
+         @input_order_detail.product.update_store_stock(-temp,@input_order_detail.input_order.store_id,self.class,this_method_name)
          @input_order_detail.product.unload_if_pending
        end
     end

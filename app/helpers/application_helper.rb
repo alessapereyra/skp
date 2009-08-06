@@ -219,10 +219,20 @@ module ApplicationHelper
 
      if salesclerk?
        content_tag(:ul, ""<< 
-       content_tag(:li, (link_to "traslado",sending_path ,extra_options("sending",controller))))
+       content_tag(:li, (link_to "traslado",sending_path ,extra_options("sending",controller))) <<
+       content_tag(:li, (link_to "perdida",perdida_path ,extra_options("sending_guides",controller))) <<
+       content_tag(:li, (link_to "mal estado",mal_estado_path ,extra_options("sending_guides",controller))) <<
+       content_tag(:li, (link_to "consumo interno",consumo_interno_path ,extra_options("sending_guides",controller))) <<       
+       content_tag(:li, (link_to "consumo externo",consumo_externo_path ,extra_options("sending_guides",controller))) <<
+       content_tag(:li, (link_to "devolucion",devolucion_path ,extra_options("sending_guides",controller))))
      else
        content_tag(:ul, ""<< 
        content_tag(:li, (link_to "traslado",sending_path ,extra_options("sending",controller))) <<
+       content_tag(:li, (link_to "perdida",perdida_path ,extra_options("sending_guides",controller))) <<
+       content_tag(:li, (link_to "mal estado",mal_estado_path ,extra_options("sending_guides",controller))) <<
+       content_tag(:li, (link_to "consumo interno",consumo_interno_path ,extra_options("sending_guides",controller))) <<       
+       content_tag(:li, (link_to "consumo externo",consumo_externo_path ,extra_options("sending_guides",controller))) <<       
+       content_tag(:li, (link_to "devolucion",devolucion_path ,extra_options("sending_guides",controller))) <<  
        content_tag(:li, (link_to "env&iacute;os a clientes", sending_guides_path,extra_options("sending_guides",controller))))
      end
 
@@ -280,13 +290,19 @@ module ApplicationHelper
        if admin? || store_admin? || store_supervisor? 
         content_tag(:ul, ""<< 
         content_tag(:li, (link_to "resumen",reports_path, extra_options("reports", controller))) <<
-        content_tag(:li, (link_to "traslados",send_orders_report_path, extra_options("reports", controller))) <<
         content_tag(:li, (link_to "aceptaciones", acceptance_report_path,extra_options("reports", controller))) <<
-        content_tag(:li, (link_to "ordenes salida", exit_orders_report_path,extra_options("reports", controller))) <<
-        content_tag(:li, (link_to "envios",sending_guides_report_path, extra_options("reports", controller))) <<    
         content_tag(:li, (link_to "ingresos de inventario", input_orders_report_path,extra_options("reports", controller))) <<
         content_tag(:li, (link_to "compras", buyings_report_path,extra_options("reports", controller))) <<
-        content_tag(:li, (link_to "devoluciones", returns_report_path,extra_options("reports", controller))) <<
+        content_tag(:li, (link_to "devoluciones de clientes", returns_report_path,extra_options("reports", controller))) <<
+
+        content_tag(:li, (link_to "traslados",send_orders_report_path, extra_options("reports", controller))) <<
+        content_tag(:li, (link_to "ordenes salida", exit_orders_report_path,extra_options("reports", controller))) <<
+        content_tag(:li, (link_to "envios",sending_guides_report_path, extra_options("reports", controller))) <<    
+        content_tag(:li, (link_to "perdidas", perdidas_report_path,extra_options("reports", controller))) <<
+        content_tag(:li, (link_to "mal estado", mal_estados_report_path,extra_options("reports", controller))) <<
+        content_tag(:li, (link_to "consumos internos", consumos_internos_report_path,extra_options("reports", controller))) <<
+        content_tag(:li, (link_to "consumos externos", consumos_externos_report_path,extra_options("reports", controller))) <<
+        content_tag(:li, (link_to "devoluciones a proveedor", devoluciones_report_path,extra_options("reports", controller))) <<        
         content_tag(:li, (link_to "cotizaciones", quotes_report_path,extra_options("reports", controller))) <<  
         content_tag(:li, (link_to "cotizaciones web", quotes_from_web_report_path,extra_options("reports", controller))) <<        
         content_tag(:li, (link_to "pedidos", quote_requests_report_path,extra_options("reports", controller))) <<        
@@ -324,6 +340,9 @@ module ApplicationHelper
 
         content_tag(:ul, ""<< 
         content_tag(:li, (link_to "proveedores", input_orders_path, extra_options("buying_orders",controller))) <<
+        content_tag(:li, (link_to "compras", compras_path, extra_options("buying_orders",controller))) <<
+        content_tag(:li, (link_to "inventario", inventario_path, extra_options("buying_orders",controller))) <<
+        content_tag(:li, (link_to "devoluciones", devoluciones_path, extra_options("buying_orders",controller))) <<                
         content_tag(:li, (link_to "tienda", acceptance_path,extra_options("acceptance",controller) )))
 
 
