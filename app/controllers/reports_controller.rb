@@ -415,6 +415,8 @@ class ReportsController < ApplicationController
 
       def inventary
 
+        
+
         #Parámetros = FECHA
         #Tienda 
         session[:inventory_time_from] ||= Date.new(Time.zone.now.year,Time.zone.now.month,Time.zone.now.day)
@@ -432,6 +434,10 @@ class ReportsController < ApplicationController
 
         @time_from,@time_to = session[:inventory_time_from], session[:inventory_time_to]
 
+        #Fecha Creación del mundo 
+        day_start = Date.new(2008,01,01)
+        @time_from = day_start
+        
         unless get_current_store == 4 
 
           store_query = "and store_id = #{get_current_store}"
