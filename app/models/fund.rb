@@ -67,7 +67,7 @@ class Fund < ActiveRecord::Base
         yesterday_fund.net_income = 0.0
         yesterday_fund.widthdrawal = 0.0
         yesterday_fund.cash_amount = 0.0
-        yesterday_fund.store_id = store
+        yesterday_fund.store_id = tienda_id
         yesterday_fund.save!
         @yesterday_fund = yesterday_fund
         
@@ -89,7 +89,7 @@ class Fund < ActiveRecord::Base
         todays_fund.net_income = 0.0
         todays_fund.widthdrawal = 0.0
         todays_fund.cash_amount = 0.0
-        todays_fund.store_id = store
+        todays_fund.store_id = tienda_id
         todays_fund.save!
         @today = todays_fund
       end

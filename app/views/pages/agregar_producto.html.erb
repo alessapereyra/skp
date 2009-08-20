@@ -20,6 +20,16 @@
 							<div class="description_text">
 								<%= strip_tags @product.description.humanize %>
 							</div>
+							
+							<% if @product.available_sale %>
+							<div class="product_sale">
+								<p><strong>OFERTA</strong></p> 
+								<p><%= @product.sales_price(1) # Tienda Trigal %>(<%= @product.sale_discount %>% de descuento)</p>
+								<p><%= @product.sale_description %></p>
+							</div>
+							
+							<% end %>
+							
 							<p><em>Categor&iacute;a:</em> <%= @product.category.nil? ?  "ninguna" : @product.category.name.humanize  %></p>
 							<p><em>C&oacute;digo:</em> <%= @product.code %></p>
 							<p><em>Edad:</em> <%= @product.age %></p>

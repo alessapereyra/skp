@@ -167,6 +167,21 @@ class PagesController < ApplicationController
       @alternative = []
     end
 
+    def ofertas
+      begin
+         @quote = Quote.find(current_quote)
+       rescue
+         @quote = Quote.new
+         @quote.document = "De Web"
+         @quote.save
+         cookies[:quote_id] = @quote.id.to_s
+         cookies[:quote_id].to_i
+       end
+      @catalogue = Product.in_sale.paginate(:all, :page=>params[:page], :per_page => 20, :order=>"created_at DESC")
+      @alternative = []
+    end
+
+
     def conocenos
 
     end
@@ -302,13 +317,18 @@ class PagesController < ApplicationController
 
     def send_email
       begin
+        if params[:email][:mail].blank?
+          flash[:message] = "<span>Hubieron algunos campos err&oacute;neos. Verifique que ingres&oacute; una cuenta de correo</span>"
+          render :action =>:contactanos
+        else                
         Emailer::deliver_contact_email(params[:email])
         flash[:message] = "<span>Mensaje enviado satisfactoriamente</span>"
         render :action =>:contactanos
+        end
+        
       rescue
         flash[:message] = "<span>Hubieron algunos campos err&oacute;neos. Verifique que ingres&oacute; una cuenta de correo v&aacute;lida.</span>"
         render :action =>:contactanos
-
       end
     end
 

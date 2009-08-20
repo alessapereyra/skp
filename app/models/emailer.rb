@@ -1,16 +1,18 @@
 class Emailer < ActionMailer::Base
 
       def contact_email(email_params, sent_at = Time.now)
-          # You only need to customize @recipients.
-          name = email_params[:name]
-          @recipients = "ventas@skykidsperu.com"
-          @from = name + " <" + email_params[:email] + ">"
-          @subject = "[SKYKIDSWEB]"
-          @sent_on = sent_at
-          @body["email_body"] = email_params[:message]
-          @body["email_name"] = name
-          @body["email_address"] = email_params[:address]
-          @body["email_business"] = email_params[:business]
+        # You only need to customize @recipients.
+        name = email_params[:name]
+        @from = name + " <" + email_params[:mail] + ">"
+        @recipients = "ventas@skykidsperu.com"
+        # @recipients = "alvaro.pereyra@srdperu.com"
+        @subject = "[SKYKIDSWEB] Consulta de #{name} <#{email_params[:mail]}>"
+        @sent_on = sent_at
+        @body["email_body"] = email_params[:message]
+        @body["email_name"] = name
+        @body["email_mail"] = email_params[:mail]
+        @body["email_address"] = email_params[:address]
+        @body["email_business"] = email_params[:business]
       end
       
       def quote_mail(quote, sent_at = Time.now)
@@ -32,7 +34,6 @@ class Emailer < ActionMailer::Base
         @subject = "[Skykids Perú Import S.A.C.] CAMPAÑA NAVIDAD 2008"
         @body["contact_name"] = client.contact_person
         @body["name"] = client.name
-        
       end
 
 end

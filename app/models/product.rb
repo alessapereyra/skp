@@ -1,5 +1,4 @@
 # == Schema Information
-# Schema version: 20090320214122
 #
 # Table name: products
 #
@@ -41,6 +40,13 @@
 #  stock_carisa_compromised  :integer(4)      default(0)
 #  corporative_price         :decimal(10, 2)
 #  delta                     :boolean(1)
+#  min_stock                 :decimal(10, 2)
+#  for_import                :boolean(1)
+#  special_price             :decimal(10, 2)
+#  note                      :string(255)
+#  available_sale            :boolean(1)
+#  sale_discount             :integer(4)
+#  sale_description          :string(255)
 #
 
 
@@ -96,7 +102,8 @@ class Product < ActiveRecord::Base
   validates_uniqueness_of :code, :message => "debe ser único"
   
   
-  named_scope :importables, :conditions=>{:for_import => true }
+  named_scope :importables, :conditions=>{ :for_import => true }
+  named_scope :in_sale, :conditions=>{ :available_sale => true }  
   
   #acts_as_ferret :fields=>[:name, :description, :code, :category_name, :subcategory_name,:brand_name,:product_provider_codes]
   
@@ -830,6 +837,11 @@ class Product < ActiveRecord::Base
     
   end
   
+  def sales_price(store)
+    base_price = self.store_price(store).to_f 
+    base_price -= base_price * (self.sale_discount.to_f / 100.00)
+    base_price.round(2)
+  end
   
   def split_age
     if age == "de 0 a 12 meses"

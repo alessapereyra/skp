@@ -182,7 +182,15 @@ class SalesController < ApplicationController
   def product_prices
     user = User.find_by_username(session[:logged_user])
     admin = (user.store_supervisor? or user.admin? or user.store_admin?)
-    @prices = Product.find(params[:product_id]).current_prices(admin,get_current_store)
+    product = Product.find(params[:product_id]) 
+    @prices = product.current_prices(admin,get_current_store)
+    
+    # si existe una oferta, aplicar el descuento directamente al monto
+    # se aplica sólo al precio Tienda (que es el primero) 
+    if product.available_sale
+      @prices[0].amount -= @prices[0].amount.to_f.round(2) * (product.sale_discount.to_f/100.00).round(2)
+    end
+    
     render :text => @prices.to_json, :layout=>false
   end
 

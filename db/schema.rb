@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090805202504) do
+ActiveRecord::Schema.define(:version => 20090819143113) do
 
   create_table "age_range_versions", :force => true do |t|
     t.integer  "age_range_id"
@@ -287,6 +287,9 @@ ActiveRecord::Schema.define(:version => 20090805202504) do
     t.boolean  "for_import"
     t.decimal  "special_price",                          :precision => 10, :scale => 2
     t.string   "note"
+    t.boolean  "available_sale"
+    t.integer  "sale_discount"
+    t.string   "sale_description"
   end
 
   add_index "products", ["code"], :name => "index_products_on_code"

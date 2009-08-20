@@ -11,7 +11,6 @@
 				<th>foto</th>
 				<th>cantidad</th>
 				<th>precio</th>				
-				<th>Subtotal</th>
 				<th width="10">¿Adicional?</th>
 				<th width="10">¿no disponible?</th>				
 				<th width="10">pack</th>				
@@ -47,7 +46,7 @@
 			<td><%= link_to image_tag(quote.product.picture.thumb.url, :width=>35), quote.product.picture.url unless quote.product.picture.nil? %></td>		
 			<td><%= qd.text_field :quantity, :class=>"small_fields" %></td>				
 			<td><%= text_field_tag "quote_detail[#{quote.id}][price]", price, :class=>"small_fields" %></td>							
-			<td><%= subtotal %></td>										
+			<!-- <td><%= subtotal %></td>										 -->
 			<td><%= qd.check_box :additional %></td>
 			<td><%= qd.check_box :unavailable %></td>		
 			<td><%= qd.text_field :pack_number, :class=>"small_fields" %>	

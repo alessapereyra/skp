@@ -8179,3 +8179,8 @@ script/server:3
 [07/31/09 14:22:19 (28353)] ERROR : Error running task in Agent Worker Loop: getaddrinfo: No address associated with nodename
 [07/31/09 14:23:19 (28353)] ERROR : Error running task in Agent Worker Loop: getaddrinfo: No address associated with nodename
 [07/31/09 14:24:19 (28353)] ERROR : Error running task in Agent Worker Loop: getaddrinfo: No address associated with nodename
+[08/19/09 09:56:23 (48670)] INFO : New Relic RPM Agent 2.7.3 Initialized: pid = 48670
+[08/19/09 09:56:24 (48670)] INFO : Agent Log is found in /Users/alvaropereyrarabanal/Development/SKProduction/log/newrelic_agent.3000.log
+[08/19/09 09:56:24 (48670)] INFO : Runtime environment: webrick
+[08/19/09 09:56:24 (48670)] INFO : Error collector is enabled in agent config
+[08/19/09 09:56:24 (48670)] INFO : Transaction tracing is enabled in agent config
