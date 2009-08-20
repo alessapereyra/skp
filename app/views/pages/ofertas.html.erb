@@ -1,0 +1,113 @@
+<div id="content">
+
+	<img id="header-image" src="../images/web/catalogo-header.png" />
+
+</div> <!-- content -->
+
+
+<div id="header-strip">
+	<div class="left">
+		<a href="#">anterior</a>
+	</div>
+
+	<div class="right">
+		<a href="#">siguiente</a>
+	</div>
+
+	<p>revisa <em><%= link_to "nuestras ofertas", url_for(:action=>:search_product, :q=>"ofertas || remate") %></em> y nuestros <em><%= link_to "&uacute;ltimos productos",url_for(:action=>:search_product, :q=>"novedad") %></em></p>
+
+</div> <!-- header-strip -->
+
+
+
+<div class="end_content"></div>
+
+
+<div id="search">
+
+	<% remote_form_for :product, :url => { :controller=>"pages",:action => :search_product } do |od| %>
+	<fieldset>
+		<%= od.label :name, "empieza realizando una b&uacute;squeda" %>
+		<div>
+			<%= od.text_field :name, :class=>"ac_input" %>
+		</div>
+
+	</fieldset>	
+
+	<div id="name"><em id="help">ayuda</em></div>							
+
+	<div class="tip" style="display:none;">
+		<div id="help_tip">
+			<h2>&iquest;C&oacute;mo puedo buscar?</h2>
+			<p>Buscar en nuestro extenso cat&aacute;logo de productos es muy sencillo</p>
+			<p>Simplemente escribe una categor&iacute;a, descripci&oacute;n, o alg&uacute;n otro texto que tengas en mente y el
+				buscador se encargar&aacute; de ubicar los productos que deseas</p>
+				<p>Puedes afinar tus resultados usando operadores como &quot;+&quot; o &quot;-&quot;:</p>
+				<p>mu&ntilde;ecos + &quot;figuras de acci&oacute;n&quot;</p>
+				<p>juguetes - &quot;bob esponja&quot;</p>				
+			</div>
+
+	</div>		
+	<% end %>
+
+	</div> <!-- div search -->
+
+
+	<div class="start_subcontent"></div>
+
+	<div id="inside">
+
+
+		<div id="inside_content">
+			
+			<h1 id="catalogo">Catálogo de Ofertas</h1>
+			
+			
+			<p>Cat&aacute;logo de Ofertas</p>
+			
+			<%= render :partial => 'product_list' %> 
+	
+
+		</div> <!-- inside_content -->
+
+			<div id="sidebar">
+
+				<h2 id="refina"></h2>					
+
+				<%= render :partial=>"consulta" %>
+						
+				<div id="importa_info">
+
+				<p>Este es un servicio dirigido a nuestro cliente corporativo, instituci&oacute;n  o persona en general.
+
+				<h3>&iquest;Qu&eacute; beneficios obtiene mi empresa?:</h3> 
+
+				<ol>
+				<li>es una pre-compra, los beneficios son los precios preferenciales. es decir al realizarse una compra antes del embarque de los productos se abaratan los costos y usted o su empresa logra obtener un mejor precio final.</li>
+				<li>obtendr&aacute; el juguete requerido con la cantidad exacta</li>
+				<li>se le brinda la opci&oacute;n de un 10% de demas&iacute;a para casos de faltantes.</li>
+				</ol>
+				
+				<h3>&iquest;C&oacute;mo elijo los productos?</h3>
+
+				<p>desde este sitio usted puede visualizar el catalogo con juguetes pr&oacute;ximos a llegar, con todos los detalles 	
+				del producto, fotos, medidas de largo ancho y espesor.</p>
+
+				<h3>pasos a seguir:</h3>
+
+				<ol>
+					<li>primero: se firma un contrato de pre-venta</li>
+					<li>segundo: se solicitar&aacute; el 30% del total de la compra.</li>
+					<li>tercero: se fijar&aacute;n la fecha de entrega y los detalles adicionales</li>
+				</ol>				
+
+				</div>
+				
+			</div> <!-- div sidebar -->
+
+			<%= observe_field :product_name, :url => { :controller=>"pages",:action => :search_product },
+						:frequency => 0.25,
+						:with => 'q'
+						%>
+						
+	</div> <!-- inside -->
