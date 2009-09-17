@@ -124,7 +124,7 @@ class InputOrderDetailsController < ApplicationController
             format.html {  }
             format.xml  {  }
             format.js  { 
-
+  
                     render :update do |page|
                          page.visual_effect :highlight, 'edit_input_order'     
                          page.visual_effect :highlight, "row_#{@input_order_detail.id}"                                     

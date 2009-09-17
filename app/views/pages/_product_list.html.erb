@@ -4,7 +4,7 @@
 	
 	<!-- <a href="/web/dia_madre"><img src='/images/web/madre.png' alt="dia de la madre" title="dia de la madre" id="diamadre"/></a> -->
 
-	<img src='/images/web/dia-del-nino-top.png' alt="Dia del Niño" title="Feliz dia del Niño" id="dia_nino"/>
+	<!-- <img src='/images/web/dia-del-nino-top.png' alt="Dia del Niño" title="Feliz dia del Niño" id="dia_nino"/> -->
 	
 	<p id="first">Mostrando <%= @catalogue.offset + 1 %> a 
           <%= @catalogue.offset + @catalogue.length %> de <%= @catalogue.total_entries %> <%= (@catalogue.total_entries > 1 || @catalogue.total_entries == 0 )? "productos encontrados" : "producto encontrado" %> de 
@@ -20,7 +20,9 @@
 				<div class="text">
 						<h3> <%= link_to product.name.humanize, product_catalogue_path(product.id), :rel=>'facebox' %> </h3>
 						<h4> C&oacute;digo: <%= product.code %> </h4>
-						<%- if product.available_sale %>  EN OFERTA  <%- end -%>
+						<%- if product.available_sale %>  EN OFERTA <br /> 
+							S/. <%= @product.sales_price(1).to_f.round(2) %>
+						<%- end -%>
 						<%= link_to_remote "<img src='/images/web/add_to_quote_small.png' alt='#{product.name}' class='add_to' />",:url=>{:action=>"add_to_quote",:id=>product.id} %>  
 						
 					<!-- </dl> -->

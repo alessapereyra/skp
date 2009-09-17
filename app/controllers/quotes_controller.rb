@@ -182,10 +182,14 @@ class QuotesController < ApplicationController
     
     if params[:quote_detail]
       params[:quote_detail].each do |id,line|
+        begin
         quote_detail = QuoteDetail.find(id)
         quote_detail.from_web = true
         quote_detail.update_attributes(line)
         @quote = quote_detail.quote
+        rescue Exception => ex
+          RAILS_DEFAULT_LOGGER.error("\n #{ ex}  \n")                 
+        end
       end
     end
 

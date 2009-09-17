@@ -8184,3 +8184,126 @@ script/server:3
 [08/19/09 09:56:24 (48670)] INFO : Runtime environment: webrick
 [08/19/09 09:56:24 (48670)] INFO : Error collector is enabled in agent config
 [08/19/09 09:56:24 (48670)] INFO : Transaction tracing is enabled in agent config
+[08/20/09 08:46:22 (90822)] INFO : New Relic RPM Agent 2.7.3 Initialized: pid = 90822
+[08/20/09 08:46:22 (90822)] INFO : Agent Log is found in /Users/alvaropereyrarabanal/Development/SKProduction/log/newrelic_agent.3000.log
+[08/20/09 08:46:22 (90822)] INFO : Runtime environment: webrick
+[08/20/09 08:46:22 (90822)] INFO : Error collector is enabled in agent config
+[08/20/09 08:46:22 (90822)] INFO : Transaction tracing is enabled in agent config
+[08/20/09 09:11:11 (3077)] INFO : New Relic RPM Agent 2.7.3 Initialized: pid = 3077
+[08/20/09 09:11:11 (3077)] INFO : Agent Log is found in /Users/alvaropereyrarabanal/Development/SKProduction/log/newrelic_agent.3000.log
+[08/20/09 09:11:11 (3077)] INFO : Runtime environment: webrick
+[08/20/09 09:11:11 (3077)] INFO : Error collector is enabled in agent config
+[08/20/09 09:11:11 (3077)] INFO : Transaction tracing is enabled in agent config
+[08/20/09 09:17:26 (3077)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00108-thumb.jpg" with {:method=>:get}
+[08/20/09 09:17:28 (3077)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00116-thumb.jpg" with {:method=>:get}
+[08/20/09 09:33:45 (3077)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: Mongrel::TimeoutError: Mongrel timed out this thread: shutdown: SELECT count(*) AS count_all FROM `order_details` WHERE (`order_details`.order_id = 1004) 
+[08/20/09 09:34:03 (3232)] INFO : New Relic RPM Agent 2.7.3 Initialized: pid = 3232
+[08/20/09 09:34:03 (3232)] INFO : Agent Log is found in /Users/alvaropereyrarabanal/Development/SKProduction/log/newrelic_agent.3000.log
+[08/20/09 09:34:03 (3232)] INFO : Runtime environment: webrick
+[08/20/09 09:34:03 (3232)] INFO : Error collector is enabled in agent config
+[08/20/09 09:34:03 (3232)] INFO : Transaction tracing is enabled in agent config
+[08/20/09 09:34:20 (3232)] INFO : Connected to NewRelic Service at collector.newrelic.com:80.
+[08/20/09 09:34:25 (3232)] INFO : Reporting performance data every 60 seconds
+[08/20/09 09:36:47 (3232)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01208-thumb.jpg" with {:method=>:get}
+[08/20/09 09:36:48 (3232)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01209-thumb.jpg" with {:method=>:get}
+[08/20/09 09:36:48 (3232)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01219-thumb.jpg" with {:method=>:get}
+[08/20/09 09:36:48 (3232)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01665-thumb.jpg" with {:method=>:get}
+[08/20/09 09:36:48 (3232)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01667-thumb.jpg" with {:method=>:get}
+[08/20/09 09:36:48 (3232)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01668-thumb.jpg" with {:method=>:get}
+[08/20/09 09:36:48 (3232)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01669-thumb.jpg" with {:method=>:get}
+[08/20/09 09:36:48 (3232)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01670-thumb.jpg" with {:method=>:get}
+[08/20/09 09:36:48 (3232)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01671-thumb.jpg" with {:method=>:get}
+[08/20/09 09:36:48 (3232)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01672-thumb.jpg" with {:method=>:get}
+[08/20/09 09:39:36 (3339)] INFO : New Relic RPM Agent 2.7.3 Initialized: pid = 3339
+[08/20/09 09:39:36 (3339)] INFO : Agent Log is found in /Users/alvaropereyrarabanal/Development/SKProduction/log/newrelic_agent.3000.log
+[08/20/09 09:39:36 (3339)] INFO : Runtime environment: webrick
+[08/20/09 09:39:36 (3339)] INFO : Error collector is enabled in agent config
+[08/20/09 09:39:36 (3339)] INFO : Transaction tracing is enabled in agent config
+[08/20/09 09:39:42 (3339)] INFO : Connected to NewRelic Service at collector.newrelic.com:80.
+[08/20/09 09:39:44 (3339)] INFO : Reporting performance data every 60 seconds
+[08/20/09 09:40:09 (3339)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00483-thumb.jpg" with {:method=>:get}
+[08/20/09 09:40:10 (3339)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00131-thumb.jpg" with {:method=>:get}
+[08/20/09 09:40:10 (3339)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00651-thumb.jpg" with {:method=>:get}
+[08/20/09 09:40:10 (3339)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/508376-thumb.jpg" with {:method=>:get}
+[08/20/09 09:40:10 (3339)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01284-thumb.jpg" with {:method=>:get}
+[08/20/09 09:40:10 (3339)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/507034-thumb.jpg" with {:method=>:get}
+[08/20/09 09:40:10 (3339)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00127-thumb.jpg" with {:method=>:get}
+[08/20/09 09:40:10 (3339)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01324-thumb.jpg" with {:method=>:get}
+[08/20/09 09:40:10 (3339)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/n2542-thumb.jpg" with {:method=>:get}
+[08/20/09 23:13:32 (3339)] ERROR : Error running task in Agent Worker Loop: getaddrinfo: nodename nor servname provided, or not known
+[08/21/09 09:39:52 (3339)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00103-thumb.jpg" with {:method=>:get}
+[08/21/09 09:39:53 (3339)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00108-thumb.jpg" with {:method=>:get}
+[08/21/09 09:39:53 (3339)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00116-thumb.jpg" with {:method=>:get}
+[08/22/09 08:05:01 (3339)] ERROR : Error running task in Agent Worker Loop: getaddrinfo: nodename nor servname provided, or not known
+[08/22/09 08:06:01 (3339)] ERROR : Error running task in Agent Worker Loop: getaddrinfo: nodename nor servname provided, or not known
+[08/22/09 08:07:01 (3339)] ERROR : Error running task in Agent Worker Loop: getaddrinfo: nodename nor servname provided, or not known
+[08/22/09 08:08:01 (3339)] ERROR : Error running task in Agent Worker Loop: getaddrinfo: nodename nor servname provided, or not known
+[08/22/09 08:09:01 (3339)] ERROR : Error running task in Agent Worker Loop: getaddrinfo: nodename nor servname provided, or not known
+[08/22/09 08:10:01 (3339)] ERROR : Error running task in Agent Worker Loop: getaddrinfo: nodename nor servname provided, or not known
+[08/22/09 08:11:01 (3339)] ERROR : Error running task in Agent Worker Loop: getaddrinfo: nodename nor servname provided, or not known
+[08/24/09 10:06:35 (54059)] INFO : New Relic RPM Agent 2.7.3 Initialized: pid = 54059
+[08/24/09 10:06:35 (54059)] INFO : Agent Log is found in /Users/alvaropereyrarabanal/Development/SKProduction/log/newrelic_agent.3000.log
+[08/24/09 10:06:35 (54059)] INFO : Runtime environment: webrick
+[08/24/09 10:06:35 (54059)] INFO : Error collector is enabled in agent config
+[08/24/09 10:06:35 (54059)] INFO : Transaction tracing is enabled in agent config
+[08/24/09 10:09:43 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01384-thumb.jpg" with {:method=>:get}
+[08/24/09 10:09:43 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00124-thumb.jpg" with {:method=>:get}
+[08/24/09 10:09:44 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01208-thumb.jpg" with {:method=>:get}
+[08/24/09 10:09:45 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01209-thumb.jpg" with {:method=>:get}
+[08/24/09 10:09:45 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01219-thumb.jpg" with {:method=>:get}
+[08/24/09 10:09:48 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01665-thumb.jpg" with {:method=>:get}
+[08/24/09 10:09:49 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01667-thumb.jpg" with {:method=>:get}
+[08/24/09 10:09:50 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01668-thumb.jpg" with {:method=>:get}
+[08/24/09 10:09:51 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01669-thumb.jpg" with {:method=>:get}
+[08/24/09 10:09:51 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01670-thumb.jpg" with {:method=>:get}
+[08/24/09 10:09:52 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01671-thumb.jpg" with {:method=>:get}
+[08/24/09 10:09:52 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01672-thumb.jpg" with {:method=>:get}
+[08/24/09 10:11:49 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00762-thumb.jpg" with {:method=>:get}
+[08/24/09 10:11:50 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01632-thumb.jpg" with {:method=>:get}
+[08/24/09 10:11:51 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00125-thumb.jpg" with {:method=>:get}
+[08/24/09 10:11:51 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01384-thumb.jpg" with {:method=>:get}
+[08/24/09 10:11:52 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00124-thumb.jpg" with {:method=>:get}
+[08/24/09 10:11:53 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01208-thumb.jpg" with {:method=>:get}
+[08/24/09 10:11:53 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01209-thumb.jpg" with {:method=>:get}
+[08/24/09 10:11:54 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01219-thumb.jpg" with {:method=>:get}
+[08/24/09 10:11:54 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01665-thumb.jpg" with {:method=>:get}
+[08/24/09 10:11:55 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01667-thumb.jpg" with {:method=>:get}
+[08/24/09 10:11:56 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01668-thumb.jpg" with {:method=>:get}
+[08/24/09 10:11:57 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01669-thumb.jpg" with {:method=>:get}
+[08/24/09 10:11:58 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01670-thumb.jpg" with {:method=>:get}
+[08/24/09 10:11:59 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01671-thumb.jpg" with {:method=>:get}
+[08/24/09 10:11:59 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01672-thumb.jpg" with {:method=>:get}
+[08/24/09 10:18:56 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00762-thumb.jpg" with {:method=>:get}
+[08/24/09 10:18:57 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01632-thumb.jpg" with {:method=>:get}
+[08/24/09 10:18:58 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00125-thumb.jpg" with {:method=>:get}
+[08/24/09 10:18:58 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01384-thumb.jpg" with {:method=>:get}
+[08/24/09 10:18:59 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00124-thumb.jpg" with {:method=>:get}
+[08/24/09 10:19:00 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01208-thumb.jpg" with {:method=>:get}
+[08/24/09 10:19:00 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01209-thumb.jpg" with {:method=>:get}
+[08/24/09 10:19:01 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01219-thumb.jpg" with {:method=>:get}
+[08/24/09 10:19:01 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01665-thumb.jpg" with {:method=>:get}
+[08/24/09 10:19:02 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01667-thumb.jpg" with {:method=>:get}
+[08/24/09 10:19:02 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01668-thumb.jpg" with {:method=>:get}
+[08/24/09 10:19:03 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01669-thumb.jpg" with {:method=>:get}
+[08/24/09 10:19:05 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01670-thumb.jpg" with {:method=>:get}
+[08/24/09 10:19:05 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01671-thumb.jpg" with {:method=>:get}
+[08/24/09 10:19:06 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01672-thumb.jpg" with {:method=>:get}
+[08/24/09 10:29:56 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00762-thumb.jpg" with {:method=>:get}
+[08/24/09 10:29:57 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01632-thumb.jpg" with {:method=>:get}
+[08/24/09 10:29:58 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00125-thumb.jpg" with {:method=>:get}
+[08/24/09 10:29:58 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01384-thumb.jpg" with {:method=>:get}
+[08/24/09 10:29:59 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k00124-thumb.jpg" with {:method=>:get}
+[08/24/09 10:29:59 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01208-thumb.jpg" with {:method=>:get}
+[08/24/09 10:30:00 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01209-thumb.jpg" with {:method=>:get}
+[08/24/09 10:30:01 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01219-thumb.jpg" with {:method=>:get}
+[08/24/09 10:30:01 (54059)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/images/picture/k01665-thumb.jpg" with {:method=>:get}
+[09/16/09 09:04:50 (26840)] INFO : New Relic RPM Agent 2.7.3 Initialized: pid = 26840
+[09/16/09 09:04:50 (26840)] INFO : Agent Log is found in /Users/alvaropereyrarabanal/Development/SKProduction/log/newrelic_agent.3000.log
+[09/16/09 09:04:50 (26840)] INFO : Runtime environment: webrick
+[09/16/09 09:04:50 (26840)] INFO : Error collector is enabled in agent config
+[09/16/09 09:04:50 (26840)] INFO : Transaction tracing is enabled in agent config
+[09/17/09 10:05:16 (40197)] INFO : New Relic RPM Agent 2.7.3 Initialized: pid = 40197
+[09/17/09 10:05:16 (40197)] INFO : Agent Log is found in /Users/alvaropereyrarabanal/Development/SKProduction/log/newrelic_agent.3000.log
+[09/17/09 10:05:16 (40197)] INFO : Runtime environment: webrick
+[09/17/09 10:05:16 (40197)] INFO : Error collector is enabled in agent config
+[09/17/09 10:05:16 (40197)] INFO : Transaction tracing is enabled in agent config

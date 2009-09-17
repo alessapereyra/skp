@@ -14,7 +14,7 @@
 		<a href="#">siguiente</a>
 	</div>
 
-	<p>revisa <em><%= link_to "nuestras ofertas", url_for(:action=>:search_product, :q=>"ofertas || remate") %></em> y nuestros <em><%= link_to "&uacute;ltimos productos",url_for(:action=>:search_product, :q=>"novedad") %></em></p>
+	<p>revisa <em><%= link_to "nuestras ofertas", url_for(:action=>:ofertas) %></em> y nuestros <em><%= link_to "&uacute;ltimos productos",url_for(:action=>:search_product, :q=>"novedad") %></em></p>
 
 </div> <!-- header-strip -->
 
@@ -69,12 +69,13 @@
 
 			<div id="sidebar">
 
-				<%= image_tag("web/oferta_14.png") %>
+				<!-- <%= image_tag("web/oferta_14.png") %> -->
 
-				<%= image_tag("web/oferta-dia-nino.png") %>
+				<!-- <%= image_tag("web/oferta-dia-nino.png") %> -->
 	
+				<%= link_to image_tag("web/clientes.png"), :action=>:empresas %>
 
-				<%= link_to_remote image_tag("web/ofertas.png"), :url=>{:action=>:search_product, :q=>"ofertas"} %>
+				<%= link_to image_tag("web/ofertas.png"), :action=>:ofertas %>
 
 				<%= link_to image_tag("web/importa.jpg"), :action=>:importacion %>
 				<!-- >	

@@ -15,11 +15,22 @@
 							<%= link_to( image_tag("web/click.png"), @product.picture.large.url, :title=>'click en la imagen para cerrar') unless @product.picture.nil? %>
 						</div>
 	
+	
 						<div class="text">
 								<h2><%= @product.name.humanize %></h2> 							
 								<div class="description_text">
 									<%= @product.description.humanize %>
 								</div>
+								
+							<% if @product.available_sale then %>
+							<div class="product_sale">
+							<p><strong>OFERTA</strong></p> 
+							<p>S/. <%= @product.sales_price(1).to_f.round(2) %> <span>(<%= @product.sale_discount %>% de ahorro)</span></p>									
+							<p class="sale_description"><%= @product.sale_description %></p>
+							</div>
+							<% end %>
+
+								
 								<p><em>Categor&iacute;a:</em> <%= @product.category.nil? ?  "ninguna" : @product.category.name.humanize  %></p>
 								<p><em>C&oacute;digo:</em> <%= @product.code %></p>
 								<p><em>Edad:</em> de <%= @product.age_from %> a <%= @product.age_to %> años</p>

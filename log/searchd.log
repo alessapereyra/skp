@@ -2313,3 +2313,34 @@
 [Mon Apr 13 18:16:33.959 2009] [10324] rotating finished
 [Mon Apr 27 08:32:00.021 2009] [10324] caught SIGTERM, shutting down
 [Mon Apr 27 08:32:00.352 2009] [10324] shutdown complete
+[Thu Aug 20 09:08:27.728 2009] [ 3035] creating server socket on 127.0.0.1:3312
+[Thu Aug 20 09:08:27.749 2009] [ 3035] accepting connections
+[Thu Aug 20 09:35:08.168 2009] [ 3035] rotating indices (seamless=1)
+[Thu Aug 20 09:35:08.185 2009] [ 3035] rotating index 'product_delta': success
+[Thu Aug 20 09:35:08.185 2009] [ 3035] rotating finished
+[Thu Aug 20 09:35:40.578 2009] [ 3035] rotating indices (seamless=1)
+[Thu Aug 20 09:35:40.601 2009] [ 3035] rotating index 'product_delta': success
+[Thu Aug 20 09:35:40.601 2009] [ 3035] rotating finished
+[Thu Aug 20 09:35:40.726 2009] [ 3035] rotating indices (seamless=1)
+[Thu Aug 20 09:35:40.741 2009] [ 3035] rotating index 'product_delta': success
+[Thu Aug 20 09:35:40.741 2009] [ 3035] rotating finished
+[Thu Aug 20 09:35:40.858 2009] [ 3035] rotating indices (seamless=1)
+[Thu Aug 20 09:35:40.864 2009] [ 3035] rotating index 'product_delta': success
+[Thu Aug 20 09:35:40.864 2009] [ 3035] rotating finished
+[Thu Aug 20 09:35:42.084 2009] [ 3035] rotating indices (seamless=1)
+[Thu Aug 20 09:35:42.105 2009] [ 3035] rotating index 'product_delta': success
+[Thu Aug 20 09:35:42.105 2009] [ 3035] rotating finished
+[Thu Aug 20 09:35:42.208 2009] [ 3035] rotating indices (seamless=1)
+[Thu Aug 20 09:35:42.223 2009] [ 3035] rotating index 'product_delta': success
+[Thu Aug 20 09:35:42.224 2009] [ 3035] rotating finished
+[Thu Aug 20 09:35:42.340 2009] [ 3035] rotating indices (seamless=1)
+[Thu Aug 20 09:35:42.348 2009] [ 3035] rotating index 'product_delta': success
+[Thu Aug 20 09:35:42.348 2009] [ 3035] rotating finished
+[Thu Aug 20 09:35:56.369 2009] [ 3035] rotating indices (seamless=1)
+[Thu Aug 20 09:35:56.376 2009] [ 3035] rotating index 'product_delta': success
+[Thu Aug 20 09:35:56.376 2009] [ 3035] rotating finished
+[Thu Aug 20 09:36:42.638 2009] [ 3035] rotating indices (seamless=1)
+[Thu Aug 20 09:36:42.644 2009] [ 3035] rotating index 'product_delta': success
+[Thu Aug 20 09:36:42.644 2009] [ 3035] rotating finished
+[Wed Aug 26 22:05:41.302 2009] [ 3035] caught SIGTERM, shutting down
+[Wed Aug 26 22:05:42.407 2009] [ 3035] shutdown complete

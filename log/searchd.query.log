@@ -3277,3 +3277,51 @@
 [Mon Apr 13 18:16:23.694 2009] 0.014 sec [all/2/rel 158 (0,20)] [*] "*gs*"
 [Mon Apr 13 18:16:33.691 2009] 0.000 sec [scan/2/rel 1 (0,20)] [product_core] 
 [Mon Apr 13 18:16:33.863 2009] 0.000 sec [scan/2/rel 0 (0,20)] [product_core] 
+[Thu Aug 20 09:11:30.714 2009] 0.030 sec [ext/4/ext 630 (0,20)] [*] @visible 1
+[Thu Aug 20 09:13:55.384 2009] 0.001 sec [ext/2/rel 7 (0,20)] [*] "*demo*" @status terminada
+[Thu Aug 20 09:17:04.521 2009] 0.000 sec [scan/2/rel 1 (0,20)] [product_core] 
+[Thu Aug 20 09:17:04.807 2009] 0.000 sec [scan/2/rel 0 (0,20)] [product_core] 
+[Thu Aug 20 09:17:04.991 2009] 0.000 sec [scan/2/rel 0 (0,20)] [product_core] 
+[Thu Aug 20 09:17:06.644 2009] 0.000 sec [scan/2/rel 0 (0,20)] [product_core] 
+[Thu Aug 20 09:17:06.908 2009] 0.000 sec [scan/2/rel 0 (0,20)] [product_core] 
+[Thu Aug 20 09:17:07.033 2009] 0.000 sec [scan/2/rel 0 (0,20)] [product_core] 
+[Thu Aug 20 09:17:09.655 2009] 0.000 sec [scan/2/rel 0 (0,20)] [product_core] 
+[Thu Aug 20 09:17:09.818 2009] 0.000 sec [scan/2/rel 0 (0,20)] [product_core] 
+[Thu Aug 20 09:17:09.925 2009] 0.000 sec [scan/2/rel 0 (0,20)] [product_core] 
+[Thu Aug 20 09:17:17.163 2009] 0.000 sec [scan/2/rel 0 (0,20)] [product_core] 
+[Thu Aug 20 09:34:25.367 2009] 0.048 sec [all/2/rel 9 (0,20)] [*] "*DEMO*"
+[Thu Aug 20 09:34:43.046 2009] 0.002 sec [ext/2/rel 6 (0,20)] [*] "*DEMO*" @status terminada
+[Thu Aug 20 09:35:07.900 2009] 0.001 sec [scan/2/rel 1 (0,20)] [product_core] 
+[Thu Aug 20 09:35:11.503 2009] 0.003 sec [ext/2/rel 7 (0,20)] [*] "*demo*" @status terminada
+[Thu Aug 20 09:35:40.523 2009] 0.000 sec [scan/2/rel 1 (0,20)] [product_core] 
+[Thu Aug 20 09:35:40.665 2009] 0.000 sec [scan/2/rel 0 (0,20)] [product_core] 
+[Thu Aug 20 09:35:40.784 2009] 0.000 sec [scan/2/rel 0 (0,20)] [product_core] 
+[Thu Aug 20 09:35:42.037 2009] 0.000 sec [scan/2/rel 0 (0,20)] [product_core] 
+[Thu Aug 20 09:35:42.134 2009] 0.000 sec [scan/2/rel 0 (0,20)] [product_core] 
+[Thu Aug 20 09:35:42.239 2009] 0.001 sec [scan/2/rel 0 (0,20)] [product_core] 
+[Thu Aug 20 09:35:56.298 2009] 0.000 sec [scan/2/rel 0 (0,20)] [product_core] 
+[Thu Aug 20 09:35:59.725 2009] 0.051 sec [ext/2/rel 1 (0,20)] [*] "*DEMO001*" @status terminada
+[Thu Aug 20 09:36:16.395 2009] 0.001 sec [all/2/rel 1 (0,20)] [*] "*DEMO001*"
+[Thu Aug 20 09:36:26.216 2009] 0.001 sec [all/2/rel 1 (0,20)] [*] "*DEMO001*"
+[Thu Aug 20 09:36:34.820 2009] 0.001 sec [ext/2/rel 1 (0,20)] [*] "*DEMO001*" @status terminada
+[Thu Aug 20 09:36:42.562 2009] 0.000 sec [scan/2/rel 0 (0,20)] [product_core] 
+[Thu Aug 20 09:36:46.514 2009] 0.003 sec [ext/4/ext 631 (0,20)] [*] @visible 1
+[Thu Aug 20 09:36:55.813 2009] 0.016 sec [ext/4/ext 1 (0,20)] [*] "*DEMO001*" @visible 1
+[Thu Aug 20 09:36:56.022 2009] 0.001 sec [ext/4/ext 1 (0,20)] [*] "*DEMO001*" @visible 1
+[Thu Aug 20 09:36:56.324 2009] 0.001 sec [ext/4/ext 1 (0,20)] [*] "*DEMO001*" @visible 1
+[Thu Aug 20 09:36:59.450 2009] 0.001 sec [ext/4/ext 1 (0,20)] [*] "*DEMO001*" @visible 1
+[Thu Aug 20 09:40:04.775 2009] 0.004 sec [ext/4/ext 631 (0,20)] [*] @visible 1
+[Thu Aug 20 09:40:07.778 2009] 0.001 sec [ext/4/ext 0 (0,20)] [*] "*available_sale*" @visible 1
+[Thu Aug 20 09:40:09.354 2009] 0.037 sec [ext/4/ext 115 (0,20)] [*] "*DE*" @visible 1
+[Thu Aug 20 09:40:10.417 2009] 0.001 sec [ext/4/ext 1 (0,20)] [*] "*DEMO001*" @visible 1
+[Thu Aug 20 09:40:10.693 2009] 0.001 sec [ext/4/ext 1 (0,20)] [*] "*DEMO001*" @visible 1
+[Thu Aug 20 09:40:10.733 2009] 0.004 sec [ext/4/ext 1 (0,20)] [*] "*DEMO001*" @visible 1
+[Thu Aug 20 09:40:11.070 2009] 0.003 sec [ext/4/ext 1 (0,20)] [*] "*DEMO001*" @visible 1
+[Mon Aug 24 10:06:48.630 2009] 0.327 sec [ext/4/ext 631 (0,20)] [*] @visible 1
+[Mon Aug 24 10:09:39.071 2009] 0.003 sec [ext/4/ext 631 (0,20)] [*] @visible 1
+[Mon Aug 24 10:09:46.162 2009] 0.049 sec [ext/4/ext 1 (0,20)] [*] "*demo*" @visible 1
+[Mon Aug 24 10:09:47.054 2009] 0.001 sec [ext/4/ext 1 (0,20)] [*] "*demo*" @visible 1
+[Mon Aug 24 10:09:47.909 2009] 0.001 sec [ext/4/ext 1 (0,20)] [*] "*demo*" @visible 1
+[Mon Aug 24 10:11:41.999 2009] 0.003 sec [ext/4/ext 631 (0,20)] [*] @visible 1
+[Mon Aug 24 10:18:51.547 2009] 0.023 sec [ext/4/ext 631 (0,20)] [*] @visible 1
+[Mon Aug 24 10:29:54.863 2009] 0.024 sec [ext/4/ext 631 (0,20)] [*] @visible 1

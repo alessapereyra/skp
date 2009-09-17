@@ -5,6 +5,8 @@
 	http://localhost:3000/stylesheets/nextgen/web.css?1229177402
 	http://srdperu.com/skykids/stylesheets/nextgen/web.css
 	http://skykidsperu.com/stylesheets/nextgen/web.css?1241621009
+	http://localhost:3000/stylesheets/nextgen/web.css?1249397244
+	http://localhost:3000/stylesheets/nextgen/web.css?1251127436
 */
 
 body {
@@ -1391,12 +1393,13 @@ div#request {
 	float: left;
 	padding: 10px;
 	clear: both;
-	overflow: auto;
+	overflow: hidden;
 	background-color: #ffffff;
 	width: 300px;
 	margin: 0px auto;
 	text-align: center;
-	margin-left:50px
+	margin-left:50px;
+	border: 1px solid #baaa7b;
 }
 
 div#request h3 {
@@ -1432,9 +1435,7 @@ div#request_result {
 }
 
 div#request form {
-	width: 270px;
 	margin: 0px auto;
-	overflow: auto;
 }
 
 div#form_footer label,
@@ -1445,8 +1446,6 @@ div#request form label {
 
 #request form input.form_button {
 	width: 150px;
-	margin: 10px auto;
-
 	border: 0px;
 }
 
@@ -1494,6 +1493,40 @@ div#form_footer input,
 	border: 1px solid #afbfb7;
 	color: #787374;
 	width: 100px;
+}
+
+#list li.product div.text div.product_sale {
+	font-size: 1.7em;
+}
+
+#list li.product div.text div.product_sale p {
+	margin: 0px;	
+}
+
+#list li.product div.text div.product_sale p strong {
+	color: #ffe6d2;
+	font-weight: bold;
+	font-size: 0.5em;
+	text-transform: uppercase;
+	background-color: #f00;
+	padding: 2px 5px;
+	display: block;
+	text-align: center;
+	width: 65px;
+}
+
+#list li.product div.text div.product_sale p span {
+	font: bold 0.6em "Lucida Grande", Lucida, Verdana, sans-serif;
+	color: #cb0000;
+	display: block;
+	margin-bottom: 1em;
+}
+#list li.product div.text div.product_sale
+p.sale_description {
+	font-size: 0.6em;
+	color: #6a6a6a;
+	text-transform: lowercase;
+	font-style: italic;
 }
 
 div#full_inside ol {
@@ -1732,3 +1765,35 @@ img#dia_nino {
 	display: block;
 }
 
+ul#client_list {
+	width: 600px;
+	margin: 0px auto;
+	overflow: auto;
+}
+ul#client_list li {
+	width: 250px;
+	height: 100px;
+	margin-right: 50px;
+	margin-bottom: 50px;
+	float: left;
+	list-style: none;
+	text-align: center;
+	font: 1.1em "Lucida Grande", Lucida, Verdana, sans-serif;
+	color: #645e52;
+}
+
+ul#client_list li span{
+	font-size: 10px;
+	display: block;
+	margin-top: 5px;
+}
+
+ul#client_list li span.nologo{
+	font-size: 16px;
+	margin-top: 25px;
+	display: block;
+	padding: 10px 5px;
+	background-color: #c2ff11;
+	color: #5b5b5b;
+	margin-bottom: 30px;
+}
