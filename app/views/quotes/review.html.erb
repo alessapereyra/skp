@@ -97,7 +97,7 @@
 
 					
 	<% i = 0 %>
-	<% @quote.quote_details.each do |qd| %>
+	<% @quote.quote_details.find(:all,:include=>[:product]).each do |qd| %>
 	<% fields_for :quote_details, qd, :index=>qd.id do |ff| %>
 	<div class="quote_detail">
 		

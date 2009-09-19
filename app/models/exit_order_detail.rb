@@ -16,7 +16,7 @@
 
 class ExitOrderDetail < ActiveRecord::Base
 
-  belongs_to :exit_order
+  belongs_to :exit_order, :counter_cache => true
   belongs_to :product
   
   validates_presence_of :price

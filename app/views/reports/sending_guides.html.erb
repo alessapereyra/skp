@@ -6,7 +6,8 @@
 		<th>Documento</th>
 		<th>Origen</th>				
 		<th>Fecha de Salida</th>
-		<th>Cliente</th>				
+		<th>Cliente</th>		
+		<th>Tipo de Salida</th>						
 		<th></th>
 		
 	</tr>
@@ -18,6 +19,7 @@
 		<td><%= order.store.name unless order.store.blank? %></td>		
 		<td><%= order.sending_date.strftime("%d/%m/%y") unless order.sending_date.nil? %></td>
 		<td><%= order.client.name unless order.client.blank? %></td>				
+		<td><%= order.sending_type %></td>						
 		<td><%= link_to "Ver orden", sending_guide_report_path(order.id) %></td>
 	</tr>
 	<% end %>

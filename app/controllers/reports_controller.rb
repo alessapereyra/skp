@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
 
-  protect_from_forgery :except=>[:orders], :secret => '852e5b7badfdd5ddf13d56af9385c874'
+  protect_from_forgery :except=>[:orders]
 
   def index
 
@@ -9,24 +9,24 @@ class ReportsController < ApplicationController
       if get_current_store == 4 
 
 
-        @input_orders = InputOrder.find(:all, :conditions=>"status LIKE 'terminada'",:order=>"created_at DESC", :limit=>5)
-        @send_orders = SendOrder.find(:all, :order=>"created_at DESC", :limit=>5, :conditions=>"status LIKE 'accepted'")
+        @input_orders = InputOrder.find(:all, :conditions=>"status LIKE 'terminada'",:order=>"created_at DESC", :limit=>5, :include => [:store, :provider])
+        @send_orders = SendOrder.find(:all, :order=>"created_at DESC", :limit=>5, :conditions=>"status LIKE 'accepted'", :include => [:owner,:store])
         @active_send_orders = SendOrder.find(:all, :order=>"created_at DESC", :limit=>5, :conditions=>"status LIKE 'pending'")
-        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC", :limit=>5, :conditions=>"status LIKE 'complete'")
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC", :limit=>5, :conditions=>"status LIKE 'complete'", :include => [:store,:client])
       else
 
-        @input_orders = InputOrder.find(:all, :conditions=>"status LIKE 'terminada' and store_id = #{get_current_store}",:order=>"created_at DESC", :limit=>5)
-        @send_orders = SendOrder.find(:all, :order=>"created_at DESC", :limit=>5, :conditions=>"status LIKE 'accepted' and (store_id = #{get_current_store} or owner_id = #{get_current_store})")
-        @active_send_orders = SendOrder.find(:all, :order=>"created_at DESC", :limit=>5, :conditions=>"status LIKE 'pending' and owner_id = #{get_current_store}")
-        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC", :limit=>5, :conditions=>"status LIKE 'accepted' and (store_id = #{get_current_store} or store_id=#{get_current_store})")
+        @input_orders = InputOrder.find(:all, :conditions=>"status LIKE 'terminada' and store_id = #{get_current_store}",:order=>"created_at DESC", :limit=>5, :include => [:store, :provider])
+        @send_orders = SendOrder.find(:all, :order=>"created_at DESC", :limit=>5, :conditions=>"status LIKE 'accepted' and (store_id = #{get_current_store} or owner_id = #{get_current_store})", :include => [:owner,:store])
+        @active_send_orders = SendOrder.find(:all, :order=>"created_at DESC", :limit=>5, :conditions=>"status LIKE 'pending' and owner_id = #{get_current_store}", :include => [:owner,:store])
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC", :limit=>5, :conditions=>"status LIKE 'accepted' and (store_id = #{get_current_store} or store_id=#{get_current_store})", :include => [:store,:client])
       end 
 
     else
 
-      @input_orders = InputOrder.find(:all, :conditions=>"store_id = #{get_current_store} AND status LIKE 'terminada'",:order=>"created_at DESC", :limit=>5)
-      @send_orders = SendOrder.find(:all, :order=>"created_at DESC", :limit=>5, :conditions=>"store_id = #{get_current_store} AND status LIKE 'accepted'")
-      @active_send_orders = SendOrder.find(:all, :order=>"created_at DESC", :limit=>5, :conditions=>"store_id = #{get_current_store} AND status LIKE 'pending'")
-      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC", :limit=>5, :conditions=>"status LIKE 'accepted' and store_id = #{get_current_store}")
+      @input_orders = InputOrder.find(:all, :conditions=>"store_id = #{get_current_store} AND status LIKE 'terminada'",:order=>"created_at DESC", :limit=>5, :include => [:store, :provider])
+      @send_orders = SendOrder.find(:all, :order=>"created_at DESC", :limit=>5, :conditions=>"store_id = #{get_current_store} AND status LIKE 'accepted'", :include => [:owner,:store])
+      @active_send_orders = SendOrder.find(:all, :order=>"created_at DESC", :limit=>5, :conditions=>"store_id = #{get_current_store} AND status LIKE 'pending'", :include => [:owner,:store])
+      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC", :limit=>5, :conditions=>"status LIKE 'accepted' and store_id = #{get_current_store}", :include => [:store,:client])
 
     end
 
@@ -71,14 +71,14 @@ class ReportsController < ApplicationController
 
       if get_current_store == 4
 
-        @input_orders = InputOrder.find(:all,:order=>"created_at DESC", :conditions=>"order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' and status LIKE 'terminada' and (input_type is NULL or input_type like 'inventario')") 
+        @input_orders = InputOrder.find(:all,:order=>"created_at DESC", :conditions=>"order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' and status LIKE 'terminada' and (input_type is NULL or input_type like 'inventario')",:include => [:store, :provider]) 
       else
-        @input_orders = InputOrder.find(:all,:order=>"created_at DESC", :conditions=>"order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' and status LIKE 'terminada' and store_id=#{get_current_store} and (input_type is NULL or input_type like 'inventario')" )
+        @input_orders = InputOrder.find(:all,:order=>"created_at DESC", :conditions=>"order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' and status LIKE 'terminada' and store_id=#{get_current_store} and (input_type is NULL or input_type like 'inventario')",:include => [:store, :provider] )
 
       end
 
     else
-      @input_orders = InputOrder.find(:all,:conditions=>"order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' and status LIKE 'terminada' and store_id = #{get_current_store} and (input_type is NULL or input_type like 'inventario')",:order=>"created_at DESC")
+      @input_orders = InputOrder.find(:all,:conditions=>"order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' and status LIKE 'terminada' and store_id = #{get_current_store} and (input_type is NULL or input_type like 'inventario')",:order=>"created_at DESC",:include => [:store, :provider])
     end
   end
 
@@ -94,14 +94,14 @@ class ReportsController < ApplicationController
 
       if get_current_store == 4
 
-        @input_orders = InputOrder.find(:all,:order=>"created_at DESC", :conditions=>"order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' and status LIKE 'terminada' and input_type like 'compras' ") 
+        @input_orders = InputOrder.find(:all,:order=>"created_at DESC", :conditions=>"order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' and status LIKE 'terminada' and input_type like 'compras' ",:include => [:store, :provider]) 
       else
-        @input_orders = InputOrder.find(:all,:order=>"created_at DESC", :conditions=>"order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' and status LIKE 'terminada' and store_id=#{get_current_store} and input_type like 'compras'")
+        @input_orders = InputOrder.find(:all,:order=>"created_at DESC", :conditions=>"order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' and status LIKE 'terminada' and store_id=#{get_current_store} and input_type like 'compras'",:include => [:store, :provider])
 
       end
 
     else
-      @input_orders = InputOrder.find(:all,:conditions=>"order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' and status LIKE 'terminada' and store_id = #{get_current_store} and input_type like 'compras'", :order=>"created_at DESC")
+      @input_orders = InputOrder.find(:all,:conditions=>"order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' and status LIKE 'terminada' and store_id = #{get_current_store} and input_type like 'compras'", :order=>"created_at DESC",:include => [:store, :provider])
     end
     
     @provider_id = params[:provider_id].to_i
@@ -132,14 +132,14 @@ class ReportsController < ApplicationController
 
       if get_current_store == 4
 
-        @input_orders = InputOrder.find(:all,:order=>"created_at DESC", :conditions=>"order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' and status LIKE 'terminada' and input_type like 'devoluciones'" )
+        @input_orders = InputOrder.find(:all,:order=>"created_at DESC", :conditions=>"order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' and status LIKE 'terminada' and input_type like 'devoluciones'" ,:include => [:store, :provider])
       else
-        @input_orders = InputOrder.find(:all, :order=>"created_at DESC", :conditions=>"order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' and status LIKE 'terminada' and store_id=#{get_current_store} and input_type like 'devoluciones'" )
+        @input_orders = InputOrder.find(:all, :order=>"created_at DESC", :conditions=>"order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' and status LIKE 'terminada' and store_id=#{get_current_store} and input_type like 'devoluciones'" ,:include => [:store, :provider])
 
       end
 
     else
-      @input_orders = InputOrder.find(:all, :conditions=>"order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' and status LIKE 'terminada' and store_id = #{get_current_store} and input_type like 'devoluciones'",:order=>"created_at DESC")
+      @input_orders = InputOrder.find(:all, :conditions=>"order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' and status LIKE 'terminada' and store_id = #{get_current_store} and input_type like 'devoluciones'",:order=>"created_at DESC",:include => [:store, :provider])
     end
 
     render :action => "input_orders"
@@ -154,12 +154,12 @@ class ReportsController < ApplicationController
   def send_orders
     if admin? or store_supervisor?
       if get_current_store == 4 
-        @send_orders = SendOrder.find(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'accepted'")
+        @send_orders = SendOrder.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'pending')",:include => [:owner, :store])
       else
-        @send_orders = SendOrder.find(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'accepted' and (store_id = #{get_current_store} or owner_id = #{get_current_store})")
+        @send_orders = SendOrder.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted'  or status LIKE 'pending') and (store_id = #{get_current_store} or owner_id = #{get_current_store})",:include => [:owner, :store])
       end
     else
-      @send_orders = SendOrder.find(:all, :order=>"created_at DESC",:conditions=>"(owner_id = #{get_current_store} or store_id=#{get_current_store}) and status LIKE 'accepted'")
+      @send_orders = SendOrder.find(:all, :order=>"created_at DESC",:conditions=>"(owner_id = #{get_current_store} or store_id=#{get_current_store}) and (status LIKE 'accepted', or status LIKE 'pending')",:include => [:owner, :store])
     end
   end
 
@@ -181,12 +181,12 @@ class ReportsController < ApplicationController
 
     if admin? or store_supervisor?
       if get_current_store == 4 
-        @quote_requests = Quote.find(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'requested'")
+        @quote_requests = Quote.find(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'requested'",:include => [:client])
       else
-        @quote_requests = Quote.find(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'requested'")
+        @quote_requests = Quote.find(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'requested'",:include => [:client])
       end
     else
-      @quote_requests = Quote.find(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'requested'")
+      @quote_requests = Quote.find(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'requested'",:include => [:client])
     end
 
   end
@@ -195,24 +195,24 @@ class ReportsController < ApplicationController
   def quotes
     if admin? or store_supervisor?
       if get_current_store == 4 
-        @quotes = Quote.find(:all, :order=>"created_at DESC",:conditions=>"(status like 'accepted' or status like 'requested') and (from_web is false or from_web is null)")
+        @quotes = Quote.find(:all, :order=>"created_at DESC",:conditions=>"(status like 'accepted' or status like 'requested') and (from_web is false or from_web is null)",:include => [:client])
       else
-        @quotes = Quote.find(:all, :order=>"created_at DESC",:conditions=>"(status like 'accepted' or status like 'requested') and (from_web is false or from_web is null)")
+        @quotes = Quote.find(:all, :order=>"created_at DESC",:conditions=>"(status like 'accepted' or status like 'requested') and (from_web is false or from_web is null)",:include => [:client])
       end
     else
-      @quotes = Quote.find(:all, :order=>"created_at DESC",:conditions=>"(status like 'accepted' or status like 'requested') and (from_web is false or from_web is null)")
+      @quotes = Quote.find(:all, :order=>"created_at DESC",:conditions=>"(status like 'accepted' or status like 'requested') and (from_web is false or from_web is null)",:include => [:client])
     end
   end
 
   def web_quotes
     if admin? or store_supervisor?
       if get_current_store == 4 
-        @quotes = Quote.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status like 'requested') and from_web is true")
+        @quotes = Quote.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status like 'requested') and from_web is true",:include => [:client])
       else
-        @quotes = Quote.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status like 'requested') and from_web is true")
+        @quotes = Quote.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status like 'requested') and from_web is true",:include => [:client])
       end
     else
-      @quotes = Quote.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status like 'requested') and from_web is true")
+      @quotes = Quote.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status like 'requested') and from_web is true",:include => [:client])
     end
   end
 
@@ -246,12 +246,12 @@ class ReportsController < ApplicationController
     @report_type = ""
     if admin? or store_supervisor?
       if get_current_store == 4 
-        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and (sending_type like '' or sending_type IS NULL) ")
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and (sending_type like '' or sending_type IS NULL)",:include => [:store, :client])
       else
-        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store} and (sending_type like '' or sending_type IS NULL)")
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store} and (sending_type like '' or sending_type IS NULL)",:include => [:store, :client])
       end
     else
-      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' ) and (sending_type like '' or sending_type IS NULL)")
+      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' ) and (sending_type like '' or sending_type IS NULL)",:include => [:store, :client])
     end
   end
 
@@ -259,12 +259,12 @@ class ReportsController < ApplicationController
     @report_type = "perdidas"
     if admin? or store_supervisor?
       if get_current_store == 4 
-        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and sending_type like 'perdida'")
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and sending_type like 'perdida'",:include => [:store, :client])
       else
-        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store} and sending_type like 'perdida'")
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store} and sending_type like 'perdida'",:include => [:store, :client])
       end
     else
-      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' ) and sending_type like 'perdida'")
+      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' ) and sending_type like 'perdida'",:include => [:store, :client])
     end
     render :action => "sending_guides"
   end
@@ -273,12 +273,12 @@ class ReportsController < ApplicationController
     @report_type = "devoluciones"
     if admin? or store_supervisor?
       if get_current_store == 4 
-        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and sending_type like 'devolucion'")
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and sending_type like 'devolucion'",:include => [:store, :client])
       else
-        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store} and sending_type like 'devolucion'")
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store} and sending_type like 'devolucion'",:include => [:store, :client])
       end
     else
-      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' ) and sending_type like 'devolucion'")
+      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' ) and sending_type like 'devolucion'",:include => [:store, :client])
     end
     render :action => "sending_guides"
   end  
@@ -287,12 +287,12 @@ class ReportsController < ApplicationController
     @report_type = "mal_estados"    
     if admin? or store_supervisor?
       if get_current_store == 4 
-        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and sending_type like 'mal-estado'")
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and sending_type like 'mal-estado'",:include => [:store, :client])
       else
-        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store}  and sending_type like 'mal-estado'")
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store}  and sending_type like 'mal-estado'",:include => [:store, :client])
       end
     else
-      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' ) and sending_type like 'mal-estado'")
+      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' ) and sending_type like 'mal-estado'",:include => [:store, :client])
     end
     render :action => "sending_guides"    
   end
@@ -302,12 +302,12 @@ class ReportsController < ApplicationController
     @report_type = "consumos_internos"        
     if admin? or store_supervisor?
       if get_current_store == 4 
-        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and sending_type like 'consumo-interno'")
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and sending_type like 'consumo-interno'",:include => [:store, :client])
       else
-        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store} and sending_type like 'consumo-interno'")
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store} and sending_type like 'consumo-interno'",:include => [:store, :client])
       end
     else
-      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' ) and sending_type like 'consumo-interno'")
+      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' ) and sending_type like 'consumo-interno'",:include => [:store, :client])
     end
     render :action => "sending_guides"    
   end
@@ -316,12 +316,12 @@ class ReportsController < ApplicationController
     @report_type = "consumos_externos"        
     if admin? or store_supervisor?
       if get_current_store == 4 
-        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and sending_type like 'consumo-externo'")
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and sending_type like 'consumo-externo'",:include => [:store, :client])
       else
-        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store} and sending_type like 'consumo-externo'")
+        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned') and store_id = #{get_current_store} and sending_type like 'consumo-externo'",:include => [:store, :client])
       end
     else
-      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' ) and sending_type like 'consumo-externo'")
+      @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>"store_id = #{get_current_store} and (status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' ) and sending_type like 'consumo-externo'",:include => [:store, :client])
     end
     render :action => "sending_guides"    
   end
@@ -438,9 +438,11 @@ class ReportsController < ApplicationController
         day_start = Date.new(2008,01,01)
         @time_from = day_start
         
+        store_query = String.new
+        
         unless get_current_store == 4 
 
-          store_query = "and store_id = #{get_current_store}"
+          store_query << "and store_id = #{get_current_store}"
 
         end
 
@@ -603,7 +605,7 @@ class ReportsController < ApplicationController
           @products = total_products.values.select {|p| (not p.store_stock(get_current_store).zero?) && (p.providers.include? @provider) }.sort_by { |k| k['created_at'] }.reverse
         else 
           RAILS_DEFAULT_LOGGER.error("\n Ninguno  \n")
-          @products = total_products.values.select {|p| not p.store_stock(get_current_store).zero?  }.sort_by { |k| k['created_at'] }.reverse
+          @products = total_products.values.select {|p| (not p.store_stock(get_current_store).zero? ) }.sort_by { |k| k['created_at'] }.reverse
         end
    
     # @products = @products.select {|p| not p.store_stock(get_current_store).zero?  }
@@ -659,18 +661,18 @@ class ReportsController < ApplicationController
       if admin? or store_supervisor?
 
             if get_current_store == 4
-              @facturas = Order.find(:all, :order=>"number DESC", :conditions=>"type like 'factura' and status LIKE 'accepted' and order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' ")    
-              @boletas = Order.find(:all, :order=>"number DESC", :conditions=>"type like 'boleta' and status LIKE 'accepted' and order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' ")    
+              @facturas = Order.find(:all, :order=>"number DESC", :conditions=>"type like 'factura' and status LIKE 'accepted' and order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' ",:include => [:store])    
+              @boletas = Order.find(:all, :order=>"number DESC", :conditions=>"type like 'boleta' and status LIKE 'accepted' and order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' ",:include => [:store])    
 
             else
-              @boletas = Order.find(:all, :order=>"number DESC", :conditions=>"store_id = #{get_current_store} and type like 'boleta' and status LIKE 'accepted' and order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' ")    
-              @facturas = Order.find(:all, :order=>"number DESC", :conditions=>"store_id = #{get_current_store} and type like 'factura' and status LIKE 'accepted' and order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' ")    
+              @boletas = Order.find(:all, :order=>"number DESC", :conditions=>"store_id = #{get_current_store} and type like 'boleta' and status LIKE 'accepted' and order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' ",:include => [:store])    
+              @facturas = Order.find(:all, :order=>"number DESC", :conditions=>"store_id = #{get_current_store} and type like 'factura' and status LIKE 'accepted' and order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' ",:include => [:store])    
             end
             
       else
 
-            @boletas = Order.find(:all, :order=>"number DESC", :conditions=>"type like 'boletas' and status LIKE 'accepted' and store_id = #{get_current_store} and order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' ")    
-            @facturas = Order.find(:all, :order=>"number DESC",:conditions=>"type like 'facturas' and status LIKE 'accepted' and store_id = #{get_current_store} and order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' ")    
+            @boletas = Order.find(:all, :order=>"number DESC", :conditions=>"type like 'boletas' and status LIKE 'accepted' and store_id = #{get_current_store} and order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' ",:include => [:store])    
+            @facturas = Order.find(:all, :order=>"number DESC",:conditions=>"type like 'facturas' and status LIKE 'accepted' and store_id = #{get_current_store} and order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' ",:include => [:store])    
 
 
       end
@@ -772,14 +774,14 @@ class ReportsController < ApplicationController
                 if admin? or store_supervisor?
 
                   if get_current_store == 4
-                    @orders = Order.find(:all, :order=>"number DESC", :include=>:order_details,:conditions=>"type like 'boleta' and status LIKE 'accepted' and order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' ")    
+                    @orders = Order.find(:all, :order=>"number DESC", :include=>[:products],:conditions=>"type like 'boleta' and status LIKE 'accepted' and order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' ")    
                   else
-                    @orders = Order.find(:all, :order=>"number DESC", :include=>:order_details,:conditions=>"store_id = #{get_current_store} and type like 'boleta' and status LIKE 'accepted' and order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' ")    
+                    @orders = Order.find(:all, :order=>"number DESC", :include=>[:products],:conditions=>"store_id = #{get_current_store} and type like 'boleta' and status LIKE 'accepted' and order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' ")    
                   end
 
                 else
 
-                  @orders = Order.find(:all, :order=>"number DESC", :include=>:order_details,:conditions=>"store_id = #{get_current_store} and type like 'boleta' and status LIKE 'accepted' and order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' ")    
+                  @orders = Order.find(:all, :order=>"number DESC", :include=>[:products],:conditions=>"store_id = #{get_current_store} and type like 'boleta' and status LIKE 'accepted' and order_date >= '#{@time_from}' and order_date < '#{@time_to+1.day}' ")    
                 end
                 @quantities = []
                 @amounts = []

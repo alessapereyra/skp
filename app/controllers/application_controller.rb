@@ -10,7 +10,7 @@ include ExceptionNotifiable
 
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
-  protect_from_forgery :secret => '852e5b7badfdd5ddf13d56af9385c874'
+  protect_from_forgery
   
   before_filter :is_authenticated
   #before_filter :log_ram # or use after_filter

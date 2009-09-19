@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 
   skip_before_filter :is_authenticated
 
-  protect_from_forgery :only=>[:new], :secret => '852e5b7badfdd5ddf13d56af9385c874'
+  protect_from_forgery :only=>[:new]
 
   #caches_page :vale_navidad, :catalogo, :conocenos, :contactanos, :empresas, :servicios
 

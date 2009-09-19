@@ -23,7 +23,7 @@ module ReportsHelper
   
   if send_order.is_a? SendOrder
 
-    send_order.send_order_details.each do |sod|
+    send_order.send_order_details.find(:all,:include => [:product]).each do |sod|
       
       height = sod.product.height 
       width = sod.product.width 
@@ -36,7 +36,7 @@ module ReportsHelper
       
   elsif send_order.is_a? SendingGuide
     
-    send_order.sending_guide_details.each do |sgd|
+    send_order.sending_guide_details.find(:all,:include => [:product]).each do |sgd|
       
       height = sgd.product.height
       width = sgd.product.width

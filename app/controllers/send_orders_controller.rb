@@ -5,13 +5,13 @@ class SendOrdersController < ApplicationController
   def index
     unless store_admin?
       if get_current_store == 4
-    @send_orders = SendOrder.paginate(:all, :conditions=>"status not like 'open'",:order=>"created_at DESC", :page=>params[:page], :per_page => 5)
+    @send_orders = SendOrder.paginate(:all, :conditions=>"status not like 'open'",:order=>"created_at DESC", :page=>params[:page], :per_page => 15)
     else
-      @send_orders = SendOrder.paginate(:all, :conditions=>"status not like 'open' and owner_id=#{get_current_store}",:order=>"created_at DESC", :page=>params[:page], :per_page => 5)
+      @send_orders = SendOrder.paginate(:all, :conditions=>"status not like 'open' and owner_id=#{get_current_store}",:order=>"created_at DESC", :page=>params[:page], :per_page => 15)
       
     end
     else
-      @send_orders = SendOrder.paginate(:all, :conditions=>"status NOT LIKE 'open' and owner_id=#{get_current_store}",:order=>"created_at DESC", :page=>params[:page], :per_page => 5)
+      @send_orders = SendOrder.paginate(:all, :conditions=>"status NOT LIKE 'open' and owner_id=#{get_current_store}",:order=>"created_at DESC", :page=>params[:page], :per_page => 15)
     
     end
   end

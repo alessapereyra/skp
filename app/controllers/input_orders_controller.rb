@@ -6,13 +6,13 @@ class InputOrdersController < ApplicationController
     
     unless store_admin?
       if get_current_store == 4
-    @input_orders = InputOrder.paginate(:all, :conditions=>"status like 'terminada'",:order=>"created_at DESC", :page=>params[:page], :per_page => 5)
+    @input_orders = InputOrder.paginate(:all, :conditions=>"status like 'terminada'",:order=>"created_at DESC", :page=>params[:page], :per_page => 5, :include => [:provider])
     else
-      @input_orders = InputOrder.paginate(:all, :conditions=>"status like 'terminada' and store_id=#{get_current_store}",:order=>"created_at DESC", :page=>params[:page], :per_page => 5)
+      @input_orders = InputOrder.paginate(:all, :conditions=>"status like 'terminada' and store_id=#{get_current_store}",:order=>"created_at DESC", :page=>params[:page], :per_page => 5, :include => [:provider])
     
     end
   else
-    @input_orders = InputOrder.paginate(:all, :conditions=>"status LIKE 'terminada' and store_id = #{get_current_store}",:order=>"created_at DESC", :page=>params[:page], :per_page => 5)
+    @input_orders = InputOrder.paginate(:all, :conditions=>"status LIKE 'terminada' and store_id = #{get_current_store}",:order=>"created_at DESC", :page=>params[:page], :per_page => 5, :include => [:provider])
   end
   
   end

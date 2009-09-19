@@ -220,7 +220,7 @@ class SendingGuidesController < ApplicationController
       @sending_guide.delivery_address = params[:sending_guide][:delivery_address]
       @sending_guide.delivery_contact = params[:sending_guide][:delivery_contact]
       @sending_guide.delivery_phone = params[:sending_guide][:delivery_phone]  
-      @sending_guide.sending_type = params[:sending_type][:sending_type]
+      @sending_guide.sending_type = params[:sending_guide][:sending_type]
       #  delivery_address  :string(255)
       #  delivery_contact  :string(255)
       #  delivery_phone    :string(255)

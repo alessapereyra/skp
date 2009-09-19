@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090819143113) do
+ActiveRecord::Schema.define(:version => 20090917231411) do
 
   create_table "age_range_versions", :force => true do |t|
     t.integer  "age_range_id"
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(:version => 20090819143113) do
     t.datetime "updated_at"
   end
 
-  add_index "categories", ["name"], :name => "index_categories_on_name"
   add_index "categories", ["category_id"], :name => "index_categories_on_category_id"
+  add_index "categories", ["name"], :name => "index_categories_on_name"
 
   create_table "clients", :force => true do |t|
     t.string   "name"
@@ -96,7 +96,8 @@ ActiveRecord::Schema.define(:version => 20090819143113) do
     t.string   "document"
     t.boolean  "unload_stock"
     t.string   "address"
-    t.decimal  "price",        :precision => 10, :scale => 2
+    t.decimal  "price",                    :precision => 10, :scale => 2
+    t.integer  "exit_order_details_count",                                :default => 0
   end
 
   create_table "expenses", :force => true do |t|
@@ -143,24 +144,25 @@ ActiveRecord::Schema.define(:version => 20090819143113) do
     t.integer  "prices_count",                                                :default => 0
   end
 
-  add_index "input_order_details", ["product_id"], :name => "product_id"
   add_index "input_order_details", ["input_order_id"], :name => "input_order_id"
+  add_index "input_order_details", ["product_id"], :name => "product_id"
 
   create_table "input_orders", :force => true do |t|
-    t.integer  "provider_id",  :limit => 8
-    t.decimal  "cost",                      :precision => 10, :scale => 2
+    t.integer  "provider_id",               :limit => 8
+    t.decimal  "cost",                                   :precision => 10, :scale => 2
     t.datetime "order_date"
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "store_id",     :limit => 8
-    t.integer  "owner_id",     :limit => 8
+    t.integer  "store_id",                  :limit => 8
+    t.integer  "owner_id",                  :limit => 8
     t.date     "buying_date"
     t.string   "code"
     t.string   "status"
     t.string   "document"
     t.boolean  "unload_stock"
     t.string   "input_type"
+    t.integer  "input_order_details_count",                                             :default => 0
   end
 
   create_table "options", :force => true do |t|
@@ -182,26 +184,27 @@ ActiveRecord::Schema.define(:version => 20090819143113) do
     t.integer  "pending"
   end
 
-  add_index "order_details", ["sending_guide_detail_id"], :name => "sending_guide_detail_id"
-  add_index "order_details", ["product_id"], :name => "product_id"
   add_index "order_details", ["order_id"], :name => "order_id"
+  add_index "order_details", ["product_id"], :name => "product_id"
+  add_index "order_details", ["sending_guide_detail_id"], :name => "sending_guide_detail_id"
 
   create_table "orders", :force => true do |t|
-    t.integer  "store_id",         :limit => 8
+    t.integer  "store_id",            :limit => 8
     t.datetime "order_date"
-    t.integer  "client_id",        :limit => 8
+    t.integer  "client_id",           :limit => 8
     t.string   "address"
-    t.decimal  "price",                         :precision => 10, :scale => 2
+    t.decimal  "price",                            :precision => 10, :scale => 2
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "type"
-    t.integer  "number",           :limit => 8
+    t.integer  "number",              :limit => 8
     t.string   "status"
     t.string   "credit_card"
     t.integer  "sending_guide_id"
     t.boolean  "unload_stock"
     t.integer  "quote_id"
     t.boolean  "orders_generated"
+    t.integer  "order_details_count",                                             :default => 0
   end
 
   create_table "pages", :force => true do |t|
@@ -223,8 +226,8 @@ ActiveRecord::Schema.define(:version => 20090819143113) do
     t.integer  "input_order_detail_id", :limit => 8
   end
 
-  add_index "prices", ["product_id"], :name => "product_id"
   add_index "prices", ["input_order_detail_id"], :name => "input_order_detail_id"
+  add_index "prices", ["product_id"], :name => "product_id"
 
   create_table "product_logs", :force => true do |t|
     t.integer  "product_logs_id"
@@ -292,11 +295,11 @@ ActiveRecord::Schema.define(:version => 20090819143113) do
     t.string   "sale_description"
   end
 
-  add_index "products", ["code"], :name => "index_products_on_code"
-  add_index "products", ["code"], :name => "code"
-  add_index "products", ["category_id"], :name => "category_id"
-  add_index "products", ["subcategory_id"], :name => "subcategory_id"
   add_index "products", ["brand_id"], :name => "brand_id"
+  add_index "products", ["category_id"], :name => "category_id"
+  add_index "products", ["code"], :name => "code"
+  add_index "products", ["code"], :name => "index_products_on_code"
+  add_index "products", ["subcategory_id"], :name => "subcategory_id"
 
   create_table "providers", :force => true do |t|
     t.string   "name"
@@ -339,9 +342,9 @@ ActiveRecord::Schema.define(:version => 20090819143113) do
     t.boolean  "months"
   end
 
-  add_index "quote_detail_versions", ["quote_id"], :name => "quote_id"
   add_index "quote_detail_versions", ["product_id"], :name => "product_id"
   add_index "quote_detail_versions", ["quote_detail_id"], :name => "quote_detail_id"
+  add_index "quote_detail_versions", ["quote_id"], :name => "quote_id"
 
   create_table "quote_details", :force => true do |t|
     t.integer  "quote_id"
@@ -373,8 +376,8 @@ ActiveRecord::Schema.define(:version => 20090819143113) do
     t.boolean  "months"
   end
 
-  add_index "quote_details", ["quote_id"], :name => "quote_id"
   add_index "quote_details", ["product_id"], :name => "product_id"
+  add_index "quote_details", ["quote_id"], :name => "quote_id"
 
   create_table "quotes", :force => true do |t|
     t.integer  "client_id"
@@ -421,16 +424,17 @@ ActiveRecord::Schema.define(:version => 20090819143113) do
   add_index "send_order_details", ["send_order_id"], :name => "send_order_id"
 
   create_table "send_orders", :force => true do |t|
-    t.integer  "owner_id",      :limit => 8
-    t.integer  "store_id",      :limit => 8
+    t.integer  "owner_id",                 :limit => 8
+    t.integer  "store_id",                 :limit => 8
     t.datetime "send_date"
-    t.integer  "user_id",       :limit => 8
+    t.integer  "user_id",                  :limit => 8
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "status"
     t.datetime "received_date"
     t.string   "document"
     t.string   "sending_type"
+    t.integer  "send_order_details_count",              :default => 0
   end
 
   create_table "sending_guide_details", :force => true do |t|
@@ -444,8 +448,8 @@ ActiveRecord::Schema.define(:version => 20090819143113) do
     t.integer  "pending"
   end
 
-  add_index "sending_guide_details", ["sending_guide_id"], :name => "sending_guide_id"
   add_index "sending_guide_details", ["product_id"], :name => "product_id"
+  add_index "sending_guide_details", ["sending_guide_id"], :name => "sending_guide_id"
 
   create_table "sending_guides", :force => true do |t|
     t.integer  "store_id"

@@ -34,7 +34,7 @@
 	</tr>						
 	</thead>
 	<tbody>
-	<% @send_order.send_order_details.each do |iod| %>
+	<% @send_order.send_order_details.find(:all,:include => [:product]).each do |iod| %>
 	<tr class="<%= cycle("even", "odd") -%>">
 		<td><%= iod.product.code %></td>		
 		<td><%= iod.product.name %></td>		

@@ -17,7 +17,7 @@
 
 class OrderDetail < ActiveRecord::Base
   
-  belongs_to :order
+  belongs_to :order, :counter_cache => true
   belongs_to :client
   belongs_to :product
   belongs_to :sending_guide_detail

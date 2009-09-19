@@ -5,7 +5,7 @@ class BuyingOrdersController < ApplicationController
   def index 
     
     @pending_input_orders = []
-    temp = InputOrder.find(:all, :conditions=>"status like 'pendiente' and id != #{current_input_order}")
+    temp = InputOrder.find(:all, :conditions=>"status like 'pendiente' and id != #{current_input_order}", :include => [:provider])
     temp.each do |t|
       @pending_input_orders << t unless t.childless?
     end

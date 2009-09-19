@@ -20,3 +20,13 @@ config.action_view.cache_template_loading            = true
 
 # Disable delivery errors, bad email addresses will be ignored
 # config.action_mailer.raise_delivery_errors = false
+config.after_initialize do
+  require 'ruby-growl'
+  Bullet.enable = true 
+  Bullet.alert = true
+  Bullet.bullet_logger = true  
+  Bullet.console = true
+  Bullet.growl = true
+  Bullet.rails_logger = true
+  Bullet.disable_browser_cache = true
+end

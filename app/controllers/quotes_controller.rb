@@ -24,7 +24,7 @@ class QuotesController < ApplicationController
   def setup_quote
 
     @pending_quotes = []
-    temp = Quote.find(:all, :conditions=>"status like 'open' and id != #{current_quote}",:order=>"updated_at DESC")
+    temp = Quote.find(:all, :conditions=>"status like 'open' and id != #{current_quote}",:order=>"updated_at DESC", :include => [:client])
     temp.each do |t|
       @pending_quotes << t unless t.childless?
     end

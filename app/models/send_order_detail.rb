@@ -16,7 +16,7 @@
 class SendOrderDetail < ActiveRecord::Base
   
   belongs_to :product
-  belongs_to :send_order
+  belongs_to :send_order, :counter_cache => true
   
   validates_associated :product
   validates_associated :send_order

@@ -81,7 +81,7 @@ class Order < ActiveRecord::Base
   def cost
     
     cost = 0
-    self.order_details.each do |od|
+    self.order_details.find(:all,:include => [:product]).each do |od|
       
       cost += od.product.cost_price * od.quantity
       

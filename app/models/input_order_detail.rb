@@ -16,7 +16,7 @@
 
 class InputOrderDetail < ActiveRecord::Base
   
-  belongs_to :input_order
+  belongs_to :input_order, :counter_cache => true
   belongs_to :product
   has_many :prices
   

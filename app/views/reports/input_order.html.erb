@@ -34,7 +34,7 @@
 	</thead>
 	<tbody>
 		<% i = 0 %>
-	<% @input_order.input_order_details.each do |iod| %>
+	<% @input_order.input_order_details.find(:all,:include => [:product]).each do |iod| %>
 	<tr class="<%= cycle("even", "odd") -%>">
 		<td><%= i+=1 %></td>
 		<td><%= iod.quantity %></td>

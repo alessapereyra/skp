@@ -27448,3 +27448,7 @@ ActionController::RoutingError (No route matches "/images/picture/k00116-thumb.j
     script/server:3
 
 Rendering /Users/alvaropereyrarabanal/.gem/ruby/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ReportsController#items_per_day (for 127.0.0.1 at 2009-09-17 19:44:58) [POST]
+  Parameters: {"commit"=>"Filtrar", "from"=>{"month"=>"1", "day"=>"17", "year"=>"2009"}, "authenticity_token"=>"3ZGdJDO0W0fTd/2ieWplXy2NZrgqvg9y9pl8mCZacYY=", "to"=>{"month"=>"9", "day"=>"17", "year"=>"2009"}}

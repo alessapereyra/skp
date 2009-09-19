@@ -292,6 +292,8 @@ class Product < ActiveRecord::Base
       self.stock_almacen || 0.0
     elsif store == 5  #4 es todas las tiendas
       self.stock_clarisa || 0.0
+    elsif store == 4
+      self.stock || 0.0
     end
   end
    

@@ -7,6 +7,7 @@
 		<th>Fecha de Salida</th>
 		<th>Destino</th>				
 		<th>Fecha de Recepción</th>		
+		<th>Tipo de Salida</th>		
 		<th></th>
 		
 	</tr>
@@ -19,6 +20,7 @@
 		<td><%= order.send_date.strftime("%d/%m/%y") unless order.send_date.nil? %></td>
 		<td><%= order.store.name %></td>				
 		<td><%= order.received_date.strftime("%d/%m/%y") unless order.received_date.nil? %></td>		
+		<td><%= order.sending_type %></td>		
 		<td><%= link_to "Ver orden", send_order_report_path(order.id) %></td>
 	</tr>
 	<% end %>
