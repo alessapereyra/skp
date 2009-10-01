@@ -72,7 +72,7 @@
 				
 				<% if logged? %>
 					<li id="info">
-						<%= User.find_by_username(session[:logged_user]).username %> desde <%= Store.find(session[:current_store_id]).name %>
+						<%= session[:logged_user] %> desde <%= Store.find(session[:current_store_id]).name %>
 					</li>
 				<% end %>
 					<% if logged? && admin? %>

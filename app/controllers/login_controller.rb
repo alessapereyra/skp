@@ -54,7 +54,13 @@ class LoginController < ApplicationController
 
   def logout
 
-    session[:logged_user] = nil
+   session[:logged_user] = nil
+   session[:user_storage] = nil
+   session[:user_store] = nil
+   session[:user_admin]    = nil
+   session[:user_supervisor]   = nil
+   session[:user_store_admin]   = nil
+   session[:user_salesclerk]  = nil
     reset_session
     redirect_to :action=>:login
 

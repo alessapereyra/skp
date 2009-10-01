@@ -143,28 +143,28 @@ module ApplicationHelper
   end
   
   def storage?
-    User.find_by_username(session[:logged_user]).storage? unless session[:logged_user].blank?
+    session[:user_storage] ||= (User.find_by_username(session[:logged_user]).storage? unless session[:logged_user].blank?)
   end
   
   def store?
-    User.find_by_username(session[:logged_user]).store? unless session[:logged_user].blank?
+    session[:user_store] ||= (User.find_by_username(session[:logged_user]).store? unless session[:logged_user].blank?)
   end
   
   
   def admin?
-    User.find_by_username(session[:logged_user]).admin?
+   session[:user_admin] ||= User.find_by_username(session[:logged_user]).admin?
   end
 
   def store_supervisor?
-    User.find_by_username(session[:logged_user]).store_supervisor?
+    session[:user_supervisor] ||= User.find_by_username(session[:logged_user]).store_supervisor?
   end
   
   def store_admin?
-    User.find_by_username(session[:logged_user]).store_admin?
+    session[:user_store_admin] ||= User.find_by_username(session[:logged_user]).store_admin?
   end
   
   def salesclerk?
-    User.find_by_username(session[:logged_user]).salesclerk?
+    session[:user_salesclerk] ||= User.find_by_username(session[:logged_user]).salesclerk?
   end
   
   def menues_for(controller)

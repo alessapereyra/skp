@@ -2345,3 +2345,5 @@
 [Wed Aug 26 22:05:41.302 2009] [ 3035] caught SIGTERM, shutting down
 [Wed Aug 26 22:05:42.407 2009] [ 3035] shutdown complete
 [Thu Sep 17 18:07:17.102 2009] [54825] accepting connections
+[Tue Sep 22 21:41:37.557 2009] [54825] caught SIGTERM, shutting down
+[Tue Sep 22 21:41:38.846 2009] [54825] shutdown complete

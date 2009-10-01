@@ -415,29 +415,28 @@ class ReportsController < ApplicationController
 
       def inventary
 
-        
-
         #Parámetros = FECHA
         #Tienda 
-        session[:inventory_time_from] ||= Date.new(Time.zone.now.year,Time.zone.now.month,Time.zone.now.day)
-        session[:inventory_time_to] ||= Date.new(Time.zone.now.year,Time.zone.now.month,Time.zone.now.day)
+          session[:inventory_time_to] ||= Time.zone.now
 
-        unless params[:from].nil? && params[:to].nil?
-          session[:inventory_time_from] = Date.new(params[:from][:year].to_i,
-          params[:from][:month].to_i,
-          params[:from][:day].to_i)
+        unless params[:to].nil?
 
-          session[:inventory_time_to] = Date.new(params[:to][:year].to_i,
-          params[:to][:month].to_i,
-          params[:to][:day].to_i)
+          date_hash = params[:to]
+          year,month,day = date_hash[:year],date_hash[:month],date_hash[:day]
+          to_date = [year,month,day].map do |t| t.to_i end
+          
+          session[:inventory_time_to] = Date.new(to_date[0],to_date[1],to_date[2])
         end
-
-        @time_from,@time_to = session[:inventory_time_from], session[:inventory_time_to]
+        
+        
+        @time_to = session[:inventory_time_to]
 
         #Fecha Creación del mundo 
         day_start = Date.new(2008,01,01)
+
         @time_from = day_start
         
+
         store_query = String.new
         
         unless get_current_store == 4 
@@ -450,140 +449,157 @@ class ReportsController < ApplicationController
         total_products = Hash.new
 
         # + INGRESOS    
-        @inputs = InputOrder.find(:all, :conditions=>["status LIKE 'terminada' and order_date >= ? and order_date < ? " + store_query,@time_from,@time_to+1.day], :include=>[:input_order_details,:products])
+        # @inputs = InputOrder.find(
+        #             :all, :select => ["input_orders.id"],
+        #             :conditions=>["input_orders.status LIKE ? and order_date >= ? and order_date < ? " + store_query,'terminada',@time_from,@time_to+1.day],
+        #             :joins=>{:input_order_details=>:product}, :group => "input_orders.id")
 
-        @inputs.each do |i| 
+        @products = Product.find(:all,:include => {:input_order_details => :input_order}, :conditions=>["input_orders.status LIKE ? and order_date >= ? and order_date < ? " + store_query,'terminada',@time_from,@time_to+1.day])
+        
+        # @products = Product.find(:all, :limit => 1000)
 
-               i.products.each do |p|
 
+        # @inputs = InputOrder.find(
+        #             :all, :conditions=>["input_orders.status LIKE ? and order_date >= ? and order_date < ? " + store_query,'terminada',@time_from,@time_to+1.day],
+        #             :include=>:input_order_details, :group => "input_orders.id")
+
+
+        # @inputs.each do |i| 
+
+# products.find(:all,:select=>["products.id, products.stock, products.stock_trigal, products.stock_polo, products.stock_almacen, products.stock_clarisa, products.category_id, products.created_at"])
+
+               # i.products.find(:all,:select=>["products.id, products.stock, products.stock_trigal, products.stock_polo, products.stock_almacen, products.stock_clarisa, products.category_id, products.created_at, products.code, products.name"]).each do |p|
+
+            @products.each do |p|
                if total_products.include? p
                  total_products["#{p.id}".to_sym].stock += p.stock
-                 update_products_stock(total_products["#{p.id}".to_sym],p.stock)
+                # update_products_stock(total_products["#{p.id}".to_sym],p.stock)
                else
                  total_products["#{p.id}".to_sym] = p unless p.nil?
                end 
 
              end
 
-         end
+         # end
 
+# 
+# 
+#         # - SALES (Boleta o Factura)
+#         @sales = Order.find(:all, :conditions=>["(type like 'factura' or type like 'boleta') and status LIKE 'accepted' and order_date >= ? and order_date < ? " + store_query,@time_from,@time_to+1.day], :include=>[:order_details,:products] )    
+# 
+#         @sales.each do |s|
+#           
+#           s.products.each do |p|
+#             
+#             if total_products.include? p
+# 
+#               total_products["#{p.id}".to_sym].stock -= p.stock
+#               update_products_stock(total_products["#{p.id}".to_sym],-p.stock)
+# #            else
+#  #              total_products["#{p.id}".to_sym] = p unless p.nil?
+#              end 
+#             
+#           end
+#           
+#           
+#         end
+# 
 
-
-        # - SALES (Boleta o Factura)
-        @sales = Order.find(:all, :conditions=>["(type like 'factura' or type like 'boleta') and status LIKE 'accepted' and order_date >= ? and order_date < ? " + store_query,@time_from,@time_to+1.day], :include=>[:order_details,:products] )    
-
-        @sales.each do |s|
-          
-          s.products.each do |p|
-            
-            if total_products.include? p
-
-              total_products["#{p.id}".to_sym].stock -= p.stock
-              update_products_stock(total_products["#{p.id}".to_sym],-p.stock)
-#            else
- #              total_products["#{p.id}".to_sym] = p unless p.nil?
-             end 
-            
-          end
-          
-          
-        end
-
-
-        # RETORNOS
-        @returns = Order.find(:all, :conditions=>["type like 'nota_de_credito' and status LIKE 'accepted' and order_date >= ? and order_date < ? " + store_query,@time_from,@time_to+1.day], :include=>[:order_details,:products])    
-
-        @returns.each do |r|
-          
-          r.products.each do |p|
-
-            if total_products.include? p            
-            total_products["#{p.id}".to_sym].stock += p.stock
-            update_products_stock(total_products["#{p.id}".to_sym],p.stock)
-   #         else
-  #            total_products["#{p.id}".to_sym] = p unless p.nil?
-            end 
-
-            
-          end
-          
-        end
-
-        # - EXIT_ORDERS
-        @exit_orders = ExitOrder.find(:all, :conditions=>["status LIKE 'accepted' and sending_date >= ? and sending_date < ? " + store_query,@time_from,@time_to+1.day], :include=>[:exit_order_details,:products])
-
-        @exit_orders.each do |eo|
-          
-          eo.products.each do |p|
-
-            if total_products.include? p
-            total_products["#{p.id}".to_sym].stock -= p.stock
-            update_products_stock(total_products["#{p.id}".to_sym],-p.stock)            
-   #         else
-    #           total_products["#{p.id}".to_sym] = p unless p.nil?
-            end 
-            
-          end
-          
-        end
-
-        # - SEND_ORDERS (salvo en todas las tiendas) 
-        # + RECEIVED_ORDERS A ESTA TIENDA
-        unless get_current_store == 4
-          @send_orders = SendOrder.find(:all, :order=>"created_at DESC",:conditions=>["status LIKE 'accepted' and send_date >= ? and send_date < ? and owner_id = #{get_current_store}",@time_from,@time_to+1.day], :include=>[:send_order_details,:products])
-          @received_orders = SendOrder.find(:all, :order=>"created_at DESC",:conditions=>["status LIKE 'accepted' and send_date >= ? and send_date < ? " + store_query,@time_from,@time_to+1.day], :include=>[:send_order_details,:products])
-        else
-          @send_orders = []
-          @received_orders = []
-        end
-
-        @send_orders.each do |so|
-          
-          so.products.each do |p|
-
-            if total_products.include? p
-            total_products["#{p.id}".to_sym].stock -= p.stock
-            update_products_stock(total_products["#{p.id}".to_sym],-p.stock)            
-     #       else
-      #         total_products["#{p.id}".to_sym] = p unless p.nil?
-            end 
-            
-          end
-          
-        end
-
-        @received_orders.each do |ro|
-          
-          ro.products.each do |p|
-            
-            if total_products.include? p
-            total_products["#{p.id}".to_sym].stock += p.stock
-            update_products_stock(total_products["#{p.id}".to_sym],p.stock)            
-            else
-               total_products["#{p.id}".to_sym] = p unless p.nil?
-            end 
-            
-          end
-          
-        end
-
-        # - SENDING_GUIDES
-        @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>["status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' and sending_date >= ? and sending_date < ? " + store_query,@time_from,@time_to+1.day], :include=>[:sending_guide_details,:products])
-
-        @sending_guides.each do |sg|
-          
-          sg.products.each do |p|
-            
-            if total_products.include? p
-            total_products["#{p.id}".to_sym].stock -= p.stock
-            update_products_stock(total_products["#{p.id}".to_sym],-p.stock)            
-     #       else
-     #          total_products["#{p.id}".to_sym] = p unless p.nil?
-            end 
-            
-          end
-          
-        end
+  # 
+  #       # RETORNOS
+  #       @returns = Order.find(:all, :conditions=>["type like 'nota_de_credito' and status LIKE 'accepted' and order_date >= ? and order_date < ? " + store_query,@time_from,@time_to+1.day], :include=>[:order_details,:products])    
+  # 
+  #       @returns.each do |r|
+  #         
+  #         r.products.each do |p|
+  # 
+  #           if total_products.include? p            
+  #           total_products["#{p.id}".to_sym].stock += p.stock
+  #           update_products_stock(total_products["#{p.id}".to_sym],p.stock)
+  #  #         else
+  # #            total_products["#{p.id}".to_sym] = p unless p.nil?
+  #           end 
+  # 
+  #           
+  #         end
+  #         
+  #       end
+  # 
+  #       # - EXIT_ORDERS
+  #       @exit_orders = ExitOrder.find(:all, :conditions=>["status LIKE 'accepted' and sending_date >= ? and sending_date < ? " + store_query,@time_from,@time_to+1.day], :include=>[:exit_order_details,:products])
+  # 
+  #       @exit_orders.each do |eo|
+  #         
+  #         eo.products.each do |p|
+  # 
+  #           if total_products.include? p
+  #           total_products["#{p.id}".to_sym].stock -= p.stock
+  #           update_products_stock(total_products["#{p.id}".to_sym],-p.stock)            
+  #  #         else
+  #   #           total_products["#{p.id}".to_sym] = p unless p.nil?
+  #           end 
+  #           
+  #         end
+  #         
+  #       end
+  # 
+  #       # - SEND_ORDERS (salvo en todas las tiendas) 
+  #       # + RECEIVED_ORDERS A ESTA TIENDA
+  #       unless get_current_store == 4
+  #         @send_orders = SendOrder.find(:all, :order=>"created_at DESC",:conditions=>["status LIKE 'accepted' and send_date >= ? and send_date < ? and owner_id = #{get_current_store}",@time_from,@time_to+1.day], :include=>[:send_order_details,:products])
+  #         @received_orders = SendOrder.find(:all, :order=>"created_at DESC",:conditions=>["status LIKE 'accepted' and send_date >= ? and send_date < ? " + store_query,@time_from,@time_to+1.day], :include=>[:send_order_details,:products])
+  #       else
+  #         @send_orders = []
+  #         @received_orders = []
+  #       end
+  # 
+  #       @send_orders.each do |so|
+  #         
+  #         so.products.each do |p|
+  # 
+  #           if total_products.include? p
+  #           total_products["#{p.id}".to_sym].stock -= p.stock
+  #           update_products_stock(total_products["#{p.id}".to_sym],-p.stock)            
+  #    #       else
+  #     #         total_products["#{p.id}".to_sym] = p unless p.nil?
+  #           end 
+  #           
+  #         end
+  #         
+  #       end
+  # 
+  #       @received_orders.each do |ro|
+  #         
+  #         ro.products.each do |p|
+  #           
+  #           if total_products.include? p
+  #           total_products["#{p.id}".to_sym].stock += p.stock
+  #           update_products_stock(total_products["#{p.id}".to_sym],p.stock)            
+  #           else
+  #              total_products["#{p.id}".to_sym] = p unless p.nil?
+  #           end 
+  #           
+  #         end
+  #         
+  #       end
+  # 
+  #       # - SENDING_GUIDES
+  #       @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>["status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' and sending_date >= ? and sending_date < ? " + store_query,@time_from,@time_to+1.day], :include=>[:sending_guide_details,:products])
+  # 
+  #       @sending_guides.each do |sg|
+  #         
+  #         sg.products.each do |p|
+  #           
+  #           if total_products.include? p
+  #           total_products["#{p.id}".to_sym].stock -= p.stock
+  #           update_products_stock(total_products["#{p.id}".to_sym],-p.stock)            
+  #    #       else
+  #    #          total_products["#{p.id}".to_sym] = p unless p.nil?
+  #           end 
+  #           
+  #         end
+  #         
+  #       end
         
         #agrega todos los productos 
 

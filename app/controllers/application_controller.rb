@@ -98,8 +98,8 @@ include ExceptionNotifiable
   end
   
   def get_current_store
-    session[:current_store_id] = User.find_by_username(session[:logged_user]).store_id
-    User.find_by_username(session[:logged_user]).store_id
+    session[:current_store_id] ||= User.find_by_username(session[:logged_user]).store_id
+    #User.find_by_username(session[:logged_user]).store_id
     
   end
   

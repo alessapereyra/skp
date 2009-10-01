@@ -73,10 +73,10 @@ Inventario de <%= @total %> productos
   <% next if product.nil? %>
 
 		<tr class="<%= cycle("even", "odd") -%>">
-			<td><%= product.code  %></td>			
+			<td><%#= product.code  %></td>			
 			<td><div style="width:400px;"><%= strip_tags product.name %></div></td>
 			<td><%= product.store_stock(current_store) %></td>		
-			<td><%= product.cost_price %></td>
+			<td><%#= product.cost_price %></td>
 			<td><%= link_to "ver", product_history_path(product.id) %></td>	
 			<td><%= product.created_at %></td>	
 <%- end -%>
