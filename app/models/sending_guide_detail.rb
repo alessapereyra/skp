@@ -26,7 +26,16 @@ class SendingGuideDetail < ActiveRecord::Base
   named_scope :pending, :conditions=>"status like 'open'"
   named_scope :postponed, :conditions=>"status like 'postponed'"  
     
-  
+  named_scope :pending_guide, :joins=>:sending_guide, :conditions=>["sending_guides.status like ?","pending"]
+
+  named_scope :returned,  :joins=>:sending_guide,:conditions=>["sending_guides.status like ?","returned"]
+
+  named_scope :accepted,  :joins=>:sending_guide, :conditions=>"sending_guides.status like 'accepted' and (sending_guides.unload_stock is true or sending_guides.unload_stock is null)"
+  named_scope :unloaded,  :joins=>:sending_guide, :conditions =>"sending_guides.unload_stock is false" 
+  named_scope :of_store, lambda{|store_id| {:conditions=>["sending_guides.store_id like ?",store_id]}}
+	named_scope :period, lambda { |period| { :joins=>:sending_guide, :conditions=>["sending_guides.sending_date >= ? and sending_guides.sending_date < ? ",period[:from], period[:to]] } }
+
+
   def convert(quote_detail)
     
     self.product_id = quote_detail.product_id

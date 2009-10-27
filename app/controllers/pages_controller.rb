@@ -85,9 +85,8 @@ class PagesController < ApplicationController
   def print_quote
     @quote = Quote.find(params[:id])
         @final_quote_details = QuoteDetail.find(:all, :conditions=>["quote_id = ? and (additional is false or additional 
-          is null)",@quote.id],:order => "age_from ASC, age_to ASC, sex DESC")
-          @alternative_quote_details = QuoteDetail.find_all_by_quote_id_and_additional(@quote.id,true, :order => "age_from 
-          ASC, age_to ASC, sex DESC")
+          is null)",@quote.id],:order => "age_from ASC, age_to ASC, sex DESC, pack_number ASC")
+          @alternative_quote_details = QuoteDetail.find_all_by_quote_id_and_additional(@quote.id,true, :order => "age_from ASC, age_to ASC, sex DESC, pack_number ASC")
     render :layout =>"print_pages"
   end
 
@@ -98,10 +97,15 @@ class PagesController < ApplicationController
       
       if @quotes.size == 1
         @quote = @quotes.first
+
+				#Antiguo Ordenamiento: months DESC, age_from ASC, age_to ASC, pack_number ASC, sex DESC 
       @final_quote_details = QuoteDetail.find(:all, :conditions=>["quote_id = ? and (additional is false or additional 
-        is null)",@quote.id],:order => "months DESC, age_from ASC, age_to ASC, pack_number ASC, sex DESC ")
-        @alternative_quote_details = QuoteDetail.find_all_by_quote_id_and_additional(@quote.id,true, :order => "months DESC, age_from 
-        ASC, age_to ASC, pack_number ASC, sex DESC")
+        is null)",@quote.id],:order => "age_from ASC, age_to ASC, sex DESC, pack_number ASC ")
+				# nuevo ordenamiento 
+				
+
+
+        @alternative_quote_details = QuoteDetail.find_all_by_quote_id_and_additional(@quote.id,true, :order => "age_from ASC, age_to ASC, sex DESC, pack_number ASC")
       else
         render :action=>"lista_cotizaciones"
       end
@@ -128,9 +132,8 @@ class PagesController < ApplicationController
           end
 
           @final_quote_details = QuoteDetail.find(:all, :conditions=>["quote_id = ? and (additional is false or additional 
-            is null)",@quote.id],:order => "age_from ASC, age_to ASC, sex DESC")
-            @alternative_quote_details = QuoteDetail.find_all_by_quote_id_and_additional(@quote.id,true, :order => "age_from 
-            ASC, age_to ASC, sex DESC")
+            is null)",@quote.id],:order => "age_from ASC, age_to ASC, sex DESC, pack_number ASC")
+            @alternative_quote_details = QuoteDetail.find_all_by_quote_id_and_additional(@quote.id,true, :order => "age_from ASC, age_to ASC, sex DESC, pack_number ASC")
           
 
 
@@ -282,7 +285,7 @@ class PagesController < ApplicationController
 
 
       respond_to do |format|
-        format.html { render :layout=>'small_page' }
+        format.html { redirect_to url_for(:controller=>"pages",:action=>"catalogo")}
         format.xml  { render :xml => @product }
         format.js {
 
@@ -751,6 +754,37 @@ class PagesController < ApplicationController
       end
 
 
+      def search_import_product
+        
+        setup_values         
+        if params[:product]
+          @search = params["q"] || params[:product][:name] || ""
+        else
+          @search = params["q"] || ""
+        end
+        session[:product_search] = @search
+        session[:product_add] = ""
+        #CHANGE THIS
+        @catalogue = Product.search('"*'+@search+'*"', :page => params[:page], :per_page => 20,:conditions=>{'for_import'=>'1'},:without => {"category_id" => "11"},:order=>"updated_at DESC")        
+        @alternative = []
+        @search = get_search_message
+        respond_to do |wants|       
+          wants.html { render :action=>:catalogo } 
+          wants.js { 
+
+            render :update do |page|
+              page.replace 'detalle', :partial => 'product_list'
+              page.replace_html 'search_terms', @search
+              page.visual_effect :highlight, 'list'             
+              page << "rebind_facebox();"   
+              #page << "$.scrollTo('#inside',500);"                 
+            end
+
+          }
+
+        end
+
+      end
 
       def selectDetail
         @quote_detail = QuoteDetail.find(params[:id])

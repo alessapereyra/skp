@@ -1118,12 +1118,13 @@ class QuotesController < ApplicationController
   end   
 
 
-
   def search_product
+
+    setup_quote
+		discover_products
 
     respond_to do |wants|       
       wants.html {
-        setup_quote
         render :action=>:index
 
       }
@@ -1134,8 +1135,6 @@ class QuotesController < ApplicationController
         render :update do |page|
           #CHANGE THIS
      #     @products =  Product.find_all_by_code("*"+session[:quote_search]+"*", {:page => params[:page], :per_page => 5},{:conditions=>"(status like 'terminada' or status like 'terminado') and ((age_from >= #{session[:product_from]} and age_to < #{session[:product_to]}) or (age_from IS NULL or age_to IS NULL))",:order=>"created_at DESC"})       
-           @products = Product.search('"*'+session[:quote_search]+'*"', :page => params[:page], :per_page => 20,:conditions=>{'visible'=>'1','status'=>'terminada'},:order=>"updated_at DESC")        
-
           page.replace 'detalle', :partial => 'detail'
           page.visual_effect :highlight, 'list'                
         end
@@ -1145,5 +1144,14 @@ class QuotesController < ApplicationController
     end
 
   end
+
+	private
+	
+	
+	def discover_products
+		@products = Product.search('"*'+session[:quote_search]+'*"', :page => params[:page], :per_page => 20,:conditions=>{'status'=>'terminada'},:order=>"updated_at DESC")        
+    
+	end
+
 
 end

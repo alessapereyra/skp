@@ -1,26 +1,26 @@
 	<dl id="general_data">
-		<dt>C&oacute;digo: <strong><%= @quote.document %></strong></dt>
+		<dt>C&oacute;digo: <strong><%= @quote.document || "---" %></strong></dt>
 
-		<dt>Realizada para: <strong><%= @quote.client.name unless @quote.client.nil? %></strong></dt>
+		<dt>Realizada para: <strong><%= @quote.client.nil? ? "---" : @quote.client.name %></strong></dt>
 
-		<dt>RUC: <strong><%= @quote.client.ruc unless @quote.client.nil? %></strong></dt>
+		<dt>RUC: <strong><%= @quote.client.nil? ? "---" : @quote.client.ruc %></strong></dt>
 		<dd></dd>
 
-		<dt>Teléfono: <strong><%= @quote.client.telephone unless @quote.client.nil? %></strong></dt>
+		<dt>Teléfono: <strong><%= @quote.client.nil? ? "---" : @quote.client.telephone %></strong></dt>
 		
-		<dt>Contacto: <strong><%= @quote.contact_name %> (<%= @quote.sending_details %>) </strong></dt>
+		<dt>Contacto: <strong><%= @quote.contact_name || "---"%> (<%= @quote.sending_details %>) </strong></dt>
 	
 		<% unless @quote.status == "requested" %>
 		<dt>Duración: <strong><%= @quote.duration.blank? ? "5": @quote.duration %> d&iacute;as </strong></dt>
 		<% end %>
 		
-		<dt>Anotaciones: <strong><%= @quote.quote_comments %></strong></dt>
+		<dt>Comentarios: <strong><%= @quote.quote_comments %></strong></dt>
 		
 	</dl>
 	
 		<% unless @quote.status == 'requested' %>
-		<p style="clear:both">La presente cotizaci&oacute;n tiene una duraci&oacute;n v&aacute;lida de <%= @quote.duration.blank? ? "5" : @quote.duration.to_s %> d&iacute;as y est&aacute; sujeta a disponibilidad de stock</p>
-		<p>Los precios incluyen IGV</p>
+		<p style="clear:both">La cotizaci&oacute;n tiene una duraci&oacute;n v&aacute;lida de <%= @quote.duration.blank? ? "5" : @quote.duration.to_s %> d&iacute;as y est&aacute; sujeta a disponibilidad de stock</p>
+		<p class="notice"><em>Los precios incluyen IGV</em></p>
 		<% end %>
 
 	<table id="product_table">

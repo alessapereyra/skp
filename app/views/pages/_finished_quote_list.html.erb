@@ -5,16 +5,16 @@
 	</div>
 
 	<dl id="general_data">
-		<dt>C&oacute;digo: <strong><%= @quote.document %></strong></dt>
+    	<dt>C&oacute;digo: <strong><%= @quote.document || "---" %></strong></dt>
 
-		<dt>Realizada para: <strong><%= @quote.client.name unless @quote.client.nil? %></strong></dt>
+  		<dt>Realizada para: <strong><%= @quote.client.nil? ? "---" : @quote.client.name %></strong></dt>
 
-		<dt>RUC: <strong><%= @quote.client.ruc unless @quote.client.nil? %></strong></dt>
-		<dd></dd>
+  		<dt>RUC: <strong><%= @quote.client.nil? ? "---" : @quote.client.ruc %></strong></dt>
+  		<dd></dd>
 
-		<dt>Teléfono: <strong><%= @quote.client.telephone unless @quote.client.nil? %></strong></dt>
-		
-		<dt>Contacto: <strong><%= @quote.contact_name %> (<%= @quote.sending_details %>) </strong></dt>
+  		<dt>Teléfono: <strong><%= @quote.client.nil? ? "---" : @quote.client.telephone %></strong></dt>
+
+  		<dt>Contacto: <strong><%= @quote.contact_name || "---"%> (<%= @quote.sending_details %>) </strong></dt>
 	
 		<% unless @quote.status == "requested" %>
 		<dt>Duración: <strong><%= @quote.duration.blank? ? "5": @quote.duration %> d&iacute;as </strong></dt>
@@ -38,7 +38,7 @@
 		<thead>
 		<tr>
 			<th>item</th>
-			<th width="100">edad</th>
+			<th>edad</th>
 			<th>sexo</th>
 			<th>codigo</th>
 			<th>descripci&oacute;n</th> 
@@ -81,8 +81,9 @@
 					<tr id="row_<%= qd.id.to_s %>" class="<%= cycle("even", "odd") -%> <%= "pack" unless qd.pack_number.nil? %> <%= "unavailable" if qd.unavailable %>">
 						<td><%= i+=1 %></td>
 						<td>
+						De <br />
 						<%= fd.select :age_from, (0..18).collect {|x| [x, x] }, {},:index=>qd.id %>
-						-
+						A <br />
 						<%= fd.select :age_to, (0..18).collect {|x| [x, x] }, {},:index=>qd.id %>
 						<%= "meses" if qd.months %>
 						</td>

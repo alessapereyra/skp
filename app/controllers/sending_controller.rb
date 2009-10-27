@@ -1,6 +1,6 @@
 class SendingController < ApplicationController
 
-  def index 
+  	def index 
 
     @pending_send_orders = []
     temp = SendOrder.find(:all, :conditions=>"status like 'open' and id != #{current_send_order} and owner_id=#{get_current_store}")

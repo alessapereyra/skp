@@ -19,7 +19,7 @@ class Emailer < ActionMailer::Base
         @content_type = "text/html"
         recipients quote.sending_details + ", control@skykidsperu.com"
         @from = "ventas@skykidsperu.com"
-        @subject = "Re: Cotización de Juguetes de Skykids Peru."
+        @subject = "Re: [Skykids Perú 2009] Cotización 2009 "
         @sent_on = sent_at
         @body["contact_name"] = quote.contact_name
         @body["from_web"] = quote.from_web
@@ -31,7 +31,7 @@ class Emailer < ActionMailer::Base
         @content_type = "text/html"
         recipients client.contact_email + ", control@skykidsperu.com"
         @from = "ventas@skykidsperu.com"
-        @subject = "[Skykids Perú Import S.A.C.] CAMPAÑA NAVIDAD 2008"
+        @subject = "[Skykids Perú] - Invitación a nuestro Showroom 2009"
         @body["contact_name"] = client.contact_person
         @body["name"] = client.name
       end

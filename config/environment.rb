@@ -108,6 +108,7 @@ ActionMailer::Base.smtp_settings = {
   :user_name => "control@skykidsperu.com",
   :password => "control"
 }
+
 =begin
 ActionMailer::Base.server_settings = {
     :address        => 'mail.skykidsperu.com',
@@ -117,6 +118,7 @@ ActionMailer::Base.server_settings = {
     :password       => "smtp_password"
 }
 =end
+
 ActionMailer::Base.perform_deliveries = true
 ActionMailer::Base.raise_delivery_errors = true
 ActionMailer::Base.default_charset = "utf-8"

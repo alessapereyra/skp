@@ -25,14 +25,14 @@
 
 	<dt>Categoria:</dt>
 	<dd>
-  	<%= select_tag :category_id, "<option value='0'></option>" + options_for_select(Category.all(:conditions=>"(name not like '' or name not like ' ') and category_id is NULL ").collect {|x| [x.name, x.id] }, :categoria_id) %>
+  	<%= select_tag :category_id, "<option value='0'></option>" + options_for_select(Category.all(:conditions=>"(name not like '' or name not like ' ') and category_id is NULL ").collect {|x| [x.name, x.id] }, @category) %>
 	</dd>
 
 
 	<dt>Proveedor:</dt>
 	<dd>
   	
-  	<%= select_tag :provider_id, "<option value='0'></option>" + options_for_select(Provider.all.collect {|x| [x.name, x.id] }, :provider_id) %>
+  	<%= select_tag :provider_id, "<option value='0'></option>" + options_for_select(Provider.all.collect {|x| [x.name, x.id] }, @provider) %>
 	</dd>
 
 
@@ -62,9 +62,11 @@ Inventario de <%= @total %> productos
 	<tr>
 		<th>C&oacute;digo</th>
 		<th>Descripci&oacute;n</th>
-		<th>Stock</th>
+		<th>Stock de Tienda</th>
+		<th>Stock Total</th>
 		<th>Precio de Costo</th>		
-		<th>Historial</th>					
+		<th>Historial</th>				
+		<th></th>
 	</tr>			
 	</thead>
 	<tbody id="list">
@@ -76,6 +78,7 @@ Inventario de <%= @total %> productos
 			<td><%#= product.code  %></td>			
 			<td><div style="width:400px;"><%= strip_tags product.name %></div></td>
 			<td><%= product.store_stock(current_store) %></td>		
+			<td><%= product.stock %></td>		
 			<td><%#= product.cost_price %></td>
 			<td><%= link_to "ver", product_history_path(product.id) %></td>	
 			<td><%= product.created_at %></td>	

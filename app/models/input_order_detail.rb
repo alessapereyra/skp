@@ -15,6 +15,7 @@
 #
 
 class InputOrderDetail < ActiveRecord::Base
+
   
   belongs_to :input_order, :counter_cache => true
   belongs_to :product
@@ -25,6 +26,12 @@ class InputOrderDetail < ActiveRecord::Base
   validates_associated :product
   validates_numericality_of :quantity, :on => :create, :message => "no es un número"
   validates_presence_of :cost
+
+	named_scope :accepted, :joins=>:input_order, :conditions=>["input_orders.status like ?","terminada"]
+	named_scope :pending,  :joins=>:input_order, :conditions=>["input_orders.status like ?","pendiente"]
+	named_scope :of_store, lambda{|store_id| {:conditions=>["input_orders.store_id like ?",store_id]}}
+	named_scope :period, lambda { |period| { :joins=>:input_order, :conditions=>["input_orders.order_date >= ? and input_orders.order_date < ? ",period[:from], period[:to]] } }
+		
 
   def subtotal
     

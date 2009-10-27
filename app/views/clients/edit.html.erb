@@ -21,7 +21,6 @@
 
 	</div>
 
-	<div style="clear:both;"></div>
 
 	<div class="single_column_left">
 		
@@ -30,6 +29,8 @@
 	<dd><%= f.text_field :dni %>  </dd>
 
 	</div>
+
+	<div style="clear:both;"></div>
 	
 	<div class="single_column_left">
 		
@@ -39,7 +40,19 @@
 
 	</div>
 
-	<div style="clear:both;"></div>	
+
+	<div class="single_column_left">
+
+		<dt>
+			<%= f.label :client_type, "Tipo de Cliente:" %>
+		</dt>
+
+		<dd>
+			<%= f.select :client_type, Client::ClientTypes.collect {|x| [x.humanize, x]} -%>
+		</dd>
+
+	</div>
+
 
 	<div class="single_column_left">
 		
@@ -48,6 +61,8 @@
 	<dd><%= f.text_field :ruc %>  </dd>
 
 	</div>
+
+	<div style="clear:both;"></div>	
 
 	<div class="single_column_left">
 		

@@ -21,10 +21,15 @@ class SendOrderDetail < ActiveRecord::Base
   validates_associated :product
   validates_associated :send_order
   
-  
   validates_numericality_of :product_id
   validates_numericality_of :quantity, :on => :create, :message => "no es un número"
-  
+
+  named_scope :pending, :joins=>:send_order, :conditions=>["send_orders.status like ?", "pending"]
+  named_scope :accepted, :joins=>:send_order, :conditions=>["send_orders.status like ?	" ,"accepted"]
+	named_scope :for_store, lambda{|store_id| {:conditions=>["send_orders.store_id like ?",store_id]}}
+	named_scope :from_store, lambda{|store_id| {:conditions=>["send_orders.owner_id like ?",store_id]}}
+	named_scope :period, lambda { |period| { :joins=>:send_order, :conditions=>["send_orders.send_date >= ? and send_orders.send_date < ? ",period[:from], period[:to]] } }
+
   def corporative_subtotal
     unless self.product.corporative_price.blank?
       

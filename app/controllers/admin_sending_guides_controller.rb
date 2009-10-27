@@ -7,11 +7,11 @@ class AdminSendingGuidesController < ApplicationController
       if get_current_store == 4
     @sending_guides = SendingGuide.paginate(:all, :conditions=>"status not like 'open'",:order=>"created_at DESC", :page=>params[:page], :per_page => 10)
     else
-      @sending_guides = SendingGuide.paginate(:all, :conditions=>"status not like 'open' and (owner_id=#{get_current_store} or store_id=#{get_current_store}) ",:order=>"created_at DESC", :page=>params[:page], :per_page => 10)
+      @sending_guides = SendingGuide.paginate(:all, :conditions=>"status not like 'open' and store_id=#{get_current_store} ",:order=>"created_at DESC", :page=>params[:page], :per_page => 10)
       
     end
     else
-      @sending_guides = SendingGuide.paginate(:all, :conditions=>"status NOT LIKE 'open' and (owner_id=#{get_current_store} or store_id=#{get_current_store})",:order=>"created_at DESC", :page=>params[:page], :per_page => 10)
+      @sending_guides = SendingGuide.paginate(:all, :conditions=>"status NOT LIKE 'open' and store_id=#{get_current_store}",:order=>"created_at DESC", :page=>params[:page], :per_page => 10)
     
     end
   end

@@ -1,4 +1,39 @@
 <div id="results">
+  
+  <div class="result">
+    Total Ingresado:  <%= @input_order_details.sum(&:quantity) %>
+  </div>
+
+  <div class="result">
+    Total Salidas: <%= @exit_order_details.sum(&:quantity) %>
+  </div>
+
+  <div class="result">
+    Total Vendido: <%= @order_details.sum(&:quantity) %>
+  </div>
+
+  <div class="result">
+    Total Trasladado Enviados: <%= @send_order_details.sum(&:quantity) %>
+  </div>
+
+  <div class="result">
+    Total Traslados Aceptados: <%= @accepted_send_order_details.sum(&:quantity) %>
+  </div>
+
+  <div class="result">
+    Total Envíos a Clientes: <%= @sending_guide_details.sum(&:quantity) %>
+  </div>
+
+  <div class="result">
+    Total Retornos de Clientes: <%= @returned_sending_guide_details.sum(&:quantity) %>
+  </div>
+
+  <div class="result">
+    Total de Pedidos: <%= @requested_quote_details.sum(&:quantity) %>
+  </div>
+  
+  <hr />
+  
 	<div class="result">
 	Total Stock Ingresado: <%= @input_stock %>
 	</div>

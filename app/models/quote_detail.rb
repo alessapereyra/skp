@@ -54,7 +54,14 @@ class QuoteDetail < ActiveRecord::Base
   
   named_scope :final, :conditions=>"additional is false or additional is null"
   named_scope :additional, :conditions=>{:additional => true} 
+  named_scope :accepted, :joins=>:quote, :conditions =>["quotes.status like ?","accepted"]
+	named_scope :of_store, lambda{|store_id| {:conditions=>["quotes.store_id like ?",store_id]}}
   
+	named_scope :requested, :joins=>:quote, :conditions=>["quotes.status like ?","requested"]
+	
+
+
+
   def needed
     amount = self.quantity - self.product.stock
     if amount >= 0

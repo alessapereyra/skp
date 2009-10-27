@@ -2,17 +2,18 @@
 #
 # Table name: send_orders
 #
-#  id            :integer(4)      not null, primary key
-#  owner_id      :integer(8)
-#  store_id      :integer(8)
-#  send_date     :datetime
-#  user_id       :integer(8)
-#  created_at    :datetime
-#  updated_at    :datetime
-#  status        :string(255)
-#  received_date :datetime
-#  document      :string(255)
-#  sending_type  :string(255)
+#  id                       :integer(4)      not null, primary key
+#  owner_id                 :integer(8)
+#  store_id                 :integer(8)
+#  send_date                :datetime
+#  user_id                  :integer(8)
+#  created_at               :datetime
+#  updated_at               :datetime
+#  status                   :string(255)
+#  received_date            :datetime
+#  document                 :string(255)
+#  sending_type             :string(255)
+#  send_order_details_count :integer(4)      default(0)
 #
 
 class SendOrder < ActiveRecord::Base
@@ -25,6 +26,7 @@ class SendOrder < ActiveRecord::Base
   
   named_scope :pending, :conditions=>{:status => "pending"}
   named_scope :accepted, :conditions=>{:status => "accepted"} 
+	
 
   validates_associated :store
   validates_presence_of :owner_id, :allow_nil=>true

@@ -1,5 +1,4 @@
 # == Schema Information
-# Schema version: 20081204141634
 #
 # Table name: clients
 #
@@ -17,6 +16,7 @@
 #  budget               :decimal(10, 2)
 #  child_number         :integer(4)
 #  delta                :boolean(1)
+#  client_type          :string(255)
 #
 
 #require 'acts_as_ferret'
@@ -28,6 +28,14 @@ class Client < ActiveRecord::Base
   has_many :orders
   has_many :exit_orders
   
+	ClientTypes = [
+									"",
+									"mayorista",
+									"distribuidor",
+									"corporativo",
+									"web"
+								]
+
   define_index do
       # fields
       indexes :name, :sortable => true

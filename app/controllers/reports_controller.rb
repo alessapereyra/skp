@@ -412,12 +412,12 @@ class ReportsController < ApplicationController
 
 
       end
-
+			
       def inventary
 
         #Parámetros = FECHA
         #Tienda 
-          session[:inventory_time_to] ||= Time.zone.now
+          session[:inventory_time_to] ||= Time.zone.now.to_date
 
         unless params[:to].nil?
 
@@ -436,172 +436,61 @@ class ReportsController < ApplicationController
 
         @time_from = day_start
         
-
-        store_query = String.new
-        
-        unless get_current_store == 4 
-
-          store_query << "and store_id = #{get_current_store}"
-
-        end
-
-
+        # valor default de los productos es 0
+        # de esa manera, cada vez que agrego un valor, lo incrementa según los ingresos que ha tenido
         total_products = Hash.new
+        total_products.default = 0
 
-        # + INGRESOS    
-        # @inputs = InputOrder.find(
-        #             :all, :select => ["input_orders.id"],
-        #             :conditions=>["input_orders.status LIKE ? and order_date >= ? and order_date < ? " + store_query,'terminada',@time_from,@time_to+1.day],
-        #             :joins=>{:input_order_details=>:product}, :group => "input_orders.id")
+				#falta and input_orders.order_date < ? " + store_query,'terminada',@time_from,@time_to+1.day])
 
-        @products = Product.find(:all,:include => {:input_order_details => :input_order}, :conditions=>["input_orders.status LIKE ? and order_date >= ? and order_date < ? " + store_query,'terminada',@time_from,@time_to+1.day])
+				unless get_current_store == 4
+					
+					# Ingresos 
+				 iod = InputOrderDetail.accepted.of_store(get_current_store).with_fields("product_id,quantity").period(:to=>@time_to, :from=>@time_from)
+				 # Ventas
+	       od = OrderDetail.accepted.of_store(get_current_store).with_fields("product_id,quantity").period(:to=>@time_to, :from=>@time_from)
+					# Retornos
+					rod = OrderDetail.accepted.returned.of_store(get_current_store).with_fields("product_id,quantity").period(:to=>@time_to, :from=>@time_from)
+          # Salidas      
+          eod = ExitOrderDetail.accepted.of_store(get_current_store).with_fields("product_id,quantity").period(:to=>@time_to, :from=>@time_from)
+          sod = SendOrderDetail.accepted.from_store(get_current_store).with_fields("product_id,quantity").period(:to=>@time_to, :from=>@time_from)
+          rsod = SendOrderDetail.accepted.for_store(get_current_store).with_fields("product_id,quantity").period(:to=>@time_to, :from=>@time_from)
+          sgd = SendingGuideDetail.accepted.of_store(get_current_store).with_fields("product_id,quantity").period(:to=>@time_to, :from=>@time_from)
+      
+      	else
+					
+				 iod = InputOrderDetail.accepted.with_fields("product_id,quantity").period(:to=>@time_to, :from=>@time_from)
+				 od = OrderDetail.accepted.with_fields("product_id,quantity").period(:to=>@time_to, :from=>@time_from)
+         rod = OrderDetail.accepted.returned.with_fields("product_id,quantity").period(:to=>@time_to, :from=>@time_from)
+				 eod = ExitOrderDetail.accepted.with_fields("product_id,quantity").period(:to=>@time_to, :from=>@time_from)
+				 sod = []
+				 rsod = []
+				 sgd = SendingGuideDetail.accepted.with_fields("product_id,quantity").period(:to=>@time_to, :from=>@time_from)
+				end
+
+        # el += incrementa el valor anterior o lo inicializa si no existía
+        # gracias al valor default que usé al crear el Hash
+
+        iod.each {|id| total_products[to_hash_id(id.product_id)] += id.quantity }
+
+        od.each {|id| total_products[to_hash_id(id.product_id)] -= id.quantity  }
         
-        # @products = Product.find(:all, :limit => 1000)
+        rod.each {|id| total_products[to_hash_id(id.product_id)] += id.quantity }
 
+        eod.each {|id| total_products[to_hash_id(id.product_id)] -= id.quantity }
 
-        # @inputs = InputOrder.find(
-        #             :all, :conditions=>["input_orders.status LIKE ? and order_date >= ? and order_date < ? " + store_query,'terminada',@time_from,@time_to+1.day],
-        #             :include=>:input_order_details, :group => "input_orders.id")
-
-
-        # @inputs.each do |i| 
-
-# products.find(:all,:select=>["products.id, products.stock, products.stock_trigal, products.stock_polo, products.stock_almacen, products.stock_clarisa, products.category_id, products.created_at"])
-
-               # i.products.find(:all,:select=>["products.id, products.stock, products.stock_trigal, products.stock_polo, products.stock_almacen, products.stock_clarisa, products.category_id, products.created_at, products.code, products.name"]).each do |p|
-
-            @products.each do |p|
-               if total_products.include? p
-                 total_products["#{p.id}".to_sym].stock += p.stock
-                # update_products_stock(total_products["#{p.id}".to_sym],p.stock)
-               else
-                 total_products["#{p.id}".to_sym] = p unless p.nil?
-               end 
-
-             end
-
-         # end
-
-# 
-# 
-#         # - SALES (Boleta o Factura)
-#         @sales = Order.find(:all, :conditions=>["(type like 'factura' or type like 'boleta') and status LIKE 'accepted' and order_date >= ? and order_date < ? " + store_query,@time_from,@time_to+1.day], :include=>[:order_details,:products] )    
-# 
-#         @sales.each do |s|
-#           
-#           s.products.each do |p|
-#             
-#             if total_products.include? p
-# 
-#               total_products["#{p.id}".to_sym].stock -= p.stock
-#               update_products_stock(total_products["#{p.id}".to_sym],-p.stock)
-# #            else
-#  #              total_products["#{p.id}".to_sym] = p unless p.nil?
-#              end 
-#             
-#           end
-#           
-#           
-#         end
-# 
-
-  # 
-  #       # RETORNOS
-  #       @returns = Order.find(:all, :conditions=>["type like 'nota_de_credito' and status LIKE 'accepted' and order_date >= ? and order_date < ? " + store_query,@time_from,@time_to+1.day], :include=>[:order_details,:products])    
-  # 
-  #       @returns.each do |r|
-  #         
-  #         r.products.each do |p|
-  # 
-  #           if total_products.include? p            
-  #           total_products["#{p.id}".to_sym].stock += p.stock
-  #           update_products_stock(total_products["#{p.id}".to_sym],p.stock)
-  #  #         else
-  # #            total_products["#{p.id}".to_sym] = p unless p.nil?
-  #           end 
-  # 
-  #           
-  #         end
-  #         
-  #       end
-  # 
-  #       # - EXIT_ORDERS
-  #       @exit_orders = ExitOrder.find(:all, :conditions=>["status LIKE 'accepted' and sending_date >= ? and sending_date < ? " + store_query,@time_from,@time_to+1.day], :include=>[:exit_order_details,:products])
-  # 
-  #       @exit_orders.each do |eo|
-  #         
-  #         eo.products.each do |p|
-  # 
-  #           if total_products.include? p
-  #           total_products["#{p.id}".to_sym].stock -= p.stock
-  #           update_products_stock(total_products["#{p.id}".to_sym],-p.stock)            
-  #  #         else
-  #   #           total_products["#{p.id}".to_sym] = p unless p.nil?
-  #           end 
-  #           
-  #         end
-  #         
-  #       end
-  # 
-  #       # - SEND_ORDERS (salvo en todas las tiendas) 
-  #       # + RECEIVED_ORDERS A ESTA TIENDA
-  #       unless get_current_store == 4
-  #         @send_orders = SendOrder.find(:all, :order=>"created_at DESC",:conditions=>["status LIKE 'accepted' and send_date >= ? and send_date < ? and owner_id = #{get_current_store}",@time_from,@time_to+1.day], :include=>[:send_order_details,:products])
-  #         @received_orders = SendOrder.find(:all, :order=>"created_at DESC",:conditions=>["status LIKE 'accepted' and send_date >= ? and send_date < ? " + store_query,@time_from,@time_to+1.day], :include=>[:send_order_details,:products])
-  #       else
-  #         @send_orders = []
-  #         @received_orders = []
-  #       end
-  # 
-  #       @send_orders.each do |so|
-  #         
-  #         so.products.each do |p|
-  # 
-  #           if total_products.include? p
-  #           total_products["#{p.id}".to_sym].stock -= p.stock
-  #           update_products_stock(total_products["#{p.id}".to_sym],-p.stock)            
-  #    #       else
-  #     #         total_products["#{p.id}".to_sym] = p unless p.nil?
-  #           end 
-  #           
-  #         end
-  #         
-  #       end
-  # 
-  #       @received_orders.each do |ro|
-  #         
-  #         ro.products.each do |p|
-  #           
-  #           if total_products.include? p
-  #           total_products["#{p.id}".to_sym].stock += p.stock
-  #           update_products_stock(total_products["#{p.id}".to_sym],p.stock)            
-  #           else
-  #              total_products["#{p.id}".to_sym] = p unless p.nil?
-  #           end 
-  #           
-  #         end
-  #         
-  #       end
-  # 
-  #       # - SENDING_GUIDES
-  #       @sending_guides = SendingGuide.find(:all, :order=>"created_at DESC",:conditions=>["status LIKE 'accepted' or status LIKE 'complete' or status LIKE 'returned' and sending_date >= ? and sending_date < ? " + store_query,@time_from,@time_to+1.day], :include=>[:sending_guide_details,:products])
-  # 
-  #       @sending_guides.each do |sg|
-  #         
-  #         sg.products.each do |p|
-  #           
-  #           if total_products.include? p
-  #           total_products["#{p.id}".to_sym].stock -= p.stock
-  #           update_products_stock(total_products["#{p.id}".to_sym],-p.stock)            
-  #    #       else
-  #    #          total_products["#{p.id}".to_sym] = p unless p.nil?
-  #           end 
-  #           
-  #         end
-  #         
-  #       end
+        sod.each {|id| total_products[to_hash_id(id.product_id)] -= id.quantity  }
         
+        rsod.each {|id| total_products[to_hash_id(id.product_id)] += id.quantity }
+  
+        sgd.each {|id| total_products[to_hash_id(id.product_id)] -= id.quantity  }
+        
+        
+        iod = od = rod = eod = sod = rsod = sgd = nil
         #agrega todos los productos 
+
+				total_products = total_products.reject{|k,v| v.zero? }
+        ids = total_products.keys.map { |k| k.to_s[1..-1].to_i }
 
         session[:inventary_category_id] = params[:category_id] unless params[:category_id].blank?
         session[:inventary_provider_id] = params[:provider_id] unless params[:provider_id].blank?
@@ -610,27 +499,51 @@ class ReportsController < ApplicationController
         @provider = session[:inventary_provider_id].to_i
 
 
-        if (not @category.zero?) && (not @provider.zero?)
-          RAILS_DEFAULT_LOGGER.error("\n Ambos valores #{@category} - #{@provider}  \n")
-          @products = total_products.values.select {|p| (not p.store_stock(get_current_store).zero?) && (p.category_id == @category) && (p.providers.include? @provider) }.sort_by { |k| k['created_at'] }.reverse
-        elsif not @category.zero?
-          RAILS_DEFAULT_LOGGER.error("\n Categoria: #{@category}  \n")
-          @products = total_products.values.select {|p| (not p.store_stock(get_current_store).zero?) && (p.category_id == @category);   } # .sort_by { |k| k['created_at'] }.reverse
-        elsif not @provider.zero?
-          RAILS_DEFAULT_LOGGER.error("\n Proveedor  #{@provider} \n")
-          @products = total_products.values.select {|p| (not p.store_stock(get_current_store).zero?) && (p.providers.include? @provider) }.sort_by { |k| k['created_at'] }.reverse
-        else 
+        if @category.zero? && @provider.zero?
+
+
           RAILS_DEFAULT_LOGGER.error("\n Ninguno  \n")
-          @products = total_products.values.select {|p| (not p.store_stock(get_current_store).zero? ) }.sort_by { |k| k['created_at'] }.reverse
-        end
+          
+          @products = Product.with_fields("products.id, products.name, products.stock, #{Product.store_stock_field(get_current_store)}, products.category_id, products.created_at").with_store_stock(get_current_store).paginate_by_id(ids,:page => params[:page], :per_page => 50)
+          @total_results = Product.with_fields("distinct  products.id,#{Product.store_stock_field(get_current_store)}").with_store_stock(get_current_store).find_all_by_id(ids)
+          
+          
+        elsif @category.zero?
+                    
+                 RAILS_DEFAULT_LOGGER.error("\n Proveedor  #{@provider} \n")
+
+                  @products = Product.with_fields("products.id, products.name, products.stock, #{Product.store_stock_field(get_current_store)}, products.category_id, products.created_at").from_provider(@provider).with_store_stock(get_current_store).paginate_by_id(ids,:page => params[:page], :per_page => 50)
+                  @total_results = Product.with_fields("distinct products.id,#{Product.store_stock_field(get_current_store)}").from_provider(@provider).with_store_stock(get_current_store).find_all_by_id(ids)
+          
+        elsif @provider.zero?
    
-    # @products = @products.select {|p| not p.store_stock(get_current_store).zero?  }
+          RAILS_DEFAULT_LOGGER.error("\n Categoria: #{@category}  \n")
+          
+          @products = Product.with_fields("products.id, products.name, products.stock, #{Product.store_stock_field(get_current_store)}, products.category_id, products.created_at").from_category(@category).with_store_stock(get_current_store).paginate_by_id(ids,:page => params[:page], :per_page => 50)
+      @total_results = Product.with_fields("distinct products.id,#{Product.store_stock_field(get_current_store)}").from_category(@category).with_store_stock(get_current_store).find_all_by_id(ids)
+        else 
+          
+          RAILS_DEFAULT_LOGGER.error("\n Ambos valores #{@category} - #{@provider}  \n")
+          
+          @products = Product.with_fields("products.id, products.name, products.stock, #{Product.store_stock_field(get_current_store)}, products.category_id, products.created_at").from_provider(@provider).from_category(@category).with_store_stock(get_current_store).paginate_by_id(ids,:page => params[:page], :per_page => 50)
+                @total_results = Product.with_fields("distinct products.id,#{Product.store_stock_field(get_current_store)}").from_provider(@provider).from_category(@category).with_store_stock(get_current_store).find_all_by_id(ids)
+        end
+  
+        @products.each do |p|
+            p.store_stock= [get_current_store,total_products[to_hash_id(p.id)]]
+        end
+        
+        @total_results.each do |p|
+            p.store_stock= [get_current_store,total_products[to_hash_id(p.id)]]
+        end
+ 
+        total_products = []
 
-        @total = @products.size
+        @total = @total_results.size
+        @total_cost = @total_results.inject(0){|sum,p| sum + p.cost_price*p.store_stock(get_current_store) }        
+        @total_results = []
+        @page_results = @products
 
-        @page_results = @products.paginate(:page => params[:page], :per_page => 50)
-
-        @total_cost = @products.inject(0){|sum,p| sum + p.cost_price*p.store_stock(get_current_store) }        
 
       end
 
@@ -824,5 +737,15 @@ class ReportsController < ApplicationController
                 @quantities.map{|i| @total_quantity += i}         
 
               end
+
+							private
+							
+              def to_hash_id(id)
+                "p#{id}".to_sym
+              end
+
+								def get_id(hash)
+									hash.keys.first.to_s[1..-1].to_i
+								end
 
             end

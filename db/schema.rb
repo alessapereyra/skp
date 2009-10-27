@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090917231411) do
+ActiveRecord::Schema.define(:version => 20091021210816) do
 
   create_table "age_range_versions", :force => true do |t|
     t.integer  "age_range_id"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20090917231411) do
     t.decimal  "budget",               :precision => 10, :scale => 2
     t.integer  "child_number"
     t.boolean  "delta",                                               :default => false
+    t.string   "client_type"
   end
 
   create_table "exit_order_details", :force => true do |t|
@@ -349,7 +350,7 @@ ActiveRecord::Schema.define(:version => 20090917231411) do
   create_table "quote_details", :force => true do |t|
     t.integer  "quote_id"
     t.integer  "product_id"
-    t.integer  "quantity"
+    t.decimal  "quantity",                  :precision => 10, :scale => 2
     t.string   "product_detail"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -413,7 +414,7 @@ ActiveRecord::Schema.define(:version => 20090917231411) do
   create_table "send_order_details", :force => true do |t|
     t.integer  "product_id",       :limit => 8
     t.integer  "send_order_id",    :limit => 8
-    t.integer  "quantity",         :limit => 8
+    t.decimal  "quantity",                      :precision => 10, :scale => 2
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -440,7 +441,7 @@ ActiveRecord::Schema.define(:version => 20090917231411) do
   create_table "sending_guide_details", :force => true do |t|
     t.integer  "sending_guide_id"
     t.integer  "product_id"
-    t.integer  "quantity"
+    t.decimal  "quantity",                       :precision => 10, :scale => 2
     t.integer  "price",            :limit => 10, :precision => 10, :scale => 0
     t.datetime "created_at"
     t.datetime "updated_at"

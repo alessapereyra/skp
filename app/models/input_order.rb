@@ -1,23 +1,23 @@
 # == Schema Information
-# Schema version: 20090320214122
 #
 # Table name: input_orders
 #
-#  id           :integer(4)      not null, primary key
-#  provider_id  :integer(8)
-#  cost         :decimal(10, 2)
-#  order_date   :datetime
-#  type         :string(255)
-#  created_at   :datetime
-#  updated_at   :datetime
-#  store_id     :integer(8)
-#  owner_id     :integer(8)
-#  buying_date  :date
-#  code         :string(255)
-#  status       :string(255)
-#  document     :string(255)
-#  unload_stock :boolean(1)
-#  input_type   :string(255)
+#  id                        :integer(4)      not null, primary key
+#  provider_id               :integer(8)
+#  cost                      :decimal(10, 2)
+#  order_date                :datetime
+#  type                      :string(255)
+#  created_at                :datetime
+#  updated_at                :datetime
+#  store_id                  :integer(8)
+#  owner_id                  :integer(8)
+#  buying_date               :date
+#  code                      :string(255)
+#  status                    :string(255)
+#  document                  :string(255)
+#  unload_stock              :boolean(1)
+#  input_type                :string(255)
+#  input_order_details_count :integer(4)      default(0)
 #
 
 class InputOrder < ActiveRecord::Base
@@ -36,7 +36,7 @@ class InputOrder < ActiveRecord::Base
   
   named_scope :pending, :conditions=>{:status => "pendiente"}
   named_scope :accepted, :conditions=>{:status => "terminada"} 
-  
+
   InputTypes = [
     "",
    "compras",

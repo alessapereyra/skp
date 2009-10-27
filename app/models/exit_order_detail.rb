@@ -21,6 +21,11 @@ class ExitOrderDetail < ActiveRecord::Base
   
   validates_presence_of :price
   validates_presence_of :quantity
+	
+  named_scope :pending, :joins=>:exit_order, :conditions=>["exit_orders.status like ?","pending"]
+  named_scope :accepted, :joins=>:exit_order, :conditions=>["exit_orders.status like ?",'accepted']
+	named_scope :of_store, lambda{|store_id| {:conditions=>["exit_orders.store_id like ?",store_id]}}
+	named_scope :period, lambda { |period| { :joins=>:exit_order, :conditions=>["exit_orders.sending_date >= ? and exit_orders.sending_date < ? ",period[:from], period[:to]] } }
 
 
  def subtotal

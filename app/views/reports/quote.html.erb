@@ -101,7 +101,7 @@
 		<tr>
 			<td id="total"><%= @quote.price %></td>			
 			<td id="total"><%= @quote.total_products %></td>			
-			<td id="total"><%= (@quote.price / @quote.total_products).to_f.round(2)  %></td>		
+			<td id="total"><%= (@quote.price / @quote.total_products).to_f.round(2) unless @quote.total_products.zero? %></td>		
 		</tr>
 	</tbody>
 </table>

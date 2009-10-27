@@ -18,7 +18,7 @@
 	<tr class="<%= cycle("even","odd") %>">
 		<td><div style="width:100px;"><%= client.name %></div></td>
 		<td><div style="width:100px;"><%= client.address %></div></td>
-		<td><%= client.telephone %></td>
+		<td><div style="width:50px;"><%= client.telephone %></div></td>
 		<td><%= client.dni %></td>
 		<td><%= client.ruc %></td>								
 		<td><%= link_to 'Editar', edit_client_path(client) %></td>

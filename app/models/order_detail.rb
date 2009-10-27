@@ -33,6 +33,15 @@ class OrderDetail < ActiveRecord::Base
   validates_associated :product
   validates_associated :order
   
+	
+  named_scope :pending, :joins=>:order,:conditions=>["orders.status like ? ","pending"]
+  named_scope :accepted, :joins=>:order,:conditions=>["orders.status like ? and (orders.unload_stock is true or orders.unload_stock is ?)","accepted",nil]
+  named_scope :returned, :joins=>:order, :conditions=>["orders.type like ?","nota_de_credito"]
+  named_scope :unloaded, :joins=>:order,:conditions =>["orders.unload_stock is false"]
+	named_scope :of_store, lambda{|store_id| {:conditions=>["orders.store_id like ?",store_id]}}
+	named_scope :period, lambda { |period| { :joins=>:order, :conditions=>["orders.order_date >= ? and orders.order_date < ? ",period[:from], period[:to]] } }
+
+
   def subtotal
     discount.nil? || discount.zero? ? price*quantity  : (price*(1.00-discount/100.00))*quantity
   end

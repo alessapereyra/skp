@@ -1,24 +1,24 @@
 # == Schema Information
-# Schema version: 20081204141634
 #
 # Table name: orders
 #
-#  id               :integer(4)      not null, primary key
-#  store_id         :integer(8)
-#  order_date       :datetime
-#  client_id        :integer(8)
-#  address          :string(255)
-#  price            :decimal(10, 2)
-#  created_at       :datetime
-#  updated_at       :datetime
-#  type             :string(255)
-#  number           :integer(8)
-#  status           :string(255)
-#  credit_card      :string(255)
-#  sending_guide_id :integer(4)
-#  unload_stock     :boolean(1)
-#  quote_id         :integer(4)
-#  orders_generated :boolean(1)
+#  id                  :integer(4)      not null, primary key
+#  store_id            :integer(8)
+#  order_date          :datetime
+#  client_id           :integer(8)
+#  address             :string(255)
+#  price               :decimal(10, 2)
+#  created_at          :datetime
+#  updated_at          :datetime
+#  type                :string(255)
+#  number              :integer(8)
+#  status              :string(255)
+#  credit_card         :string(255)
+#  sending_guide_id    :integer(4)
+#  unload_stock        :boolean(1)
+#  quote_id            :integer(4)
+#  orders_generated    :boolean(1)
+#  order_details_count :integer(4)      default(0)
 #
 
 

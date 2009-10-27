@@ -28,11 +28,24 @@
 		<td><%= sending_guide_detail.sending_guide.sending_date.strftime("%d/%m/%y") %></td>
 		<td><%= sending_guide_detail.sending_guide.store.name %></td>
 		<td><%= sending_guide_detail.sending_guide.document %></td>				
-		<td>retornado</td>		
+		<td></td>		
 		<td><%= link_to "ver orden", sending_guide_report_path(sending_guide_detail.sending_guide.id) %></td>
 	</tr>
 	<% end %>
-	<% @returned_sending_guide_details.each do |returned_sending_guide_detail| %>
+	
+	<% @returned_sending_guide_details.each do |sending_guide_detail| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= sending_guide_detail.quantity %></td>		
+		<td><%= sending_guide_detail.sending_guide.sending_date.strftime("%d/%m/%y") %></td>
+		<td><%= sending_guide_detail.sending_guide.store.name %></td>
+		<td><%= sending_guide_detail.sending_guide.document %></td>				
+		<td>	retornado</td>		
+		<td><%= link_to "ver orden", sending_guide_report_path(sending_guide_detail.sending_guide.id) %></td>
+	</tr>
+	<% end %>
+	
+	
+	<% @unloaded_sending_guide_details.each do |returned_sending_guide_detail| %>
 	<tr class="<%= cycle("even", "odd") -%>">
 		<td><%= returned_sending_guide_detail.quantity %></td>		
 		<td><%= returned_sending_guide_detail.sending_guide.sending_date.strftime("%d/%m/%y") %></td>

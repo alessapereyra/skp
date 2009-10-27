@@ -20,7 +20,7 @@ class Provider < ActiveRecord::Base
   has_many :products, :through => :input_orders
   has_many :stores, :through => :input_orders
   
-  validates_presence_of :name, :on => :create, :message => "no puede estar vacío"
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create, :message => "is invalid"
+  #validates_presence_of :name, :on => :create, :message => "no puede estar vacío"
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create, :message => "is invalid", :allow_blank=>true, :allow_nil=>true
   
 end

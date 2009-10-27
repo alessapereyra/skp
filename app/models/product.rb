@@ -104,15 +104,18 @@ class Product < ActiveRecord::Base
   
   named_scope :importables, :conditions=>{ :for_import => true }
   named_scope :in_sale, :conditions=>{ :available_sale => true }  
-  
+  named_scope :from_provider, lambda { |provided_id|  {:joins=>{:input_order_details=>:input_order}, :conditions=>["input_orders.provider_id = ?",provided_id]}}
   #acts_as_ferret :fields=>[:name, :description, :code, :category_name, :subcategory_name,:brand_name,:product_provider_codes]
-  
+  named_scope :from_category, lambda { |category_id| {:conditions=>{:category_id=>category_id}}  } 
+  named_scope :with_stock, :conditions =>["stock > ? ", 0]
+  named_scope :with_store_stock, lambda { |store_id| {:conditions=>["#{Product.store_stock_field(store_id)} > ?",0]} }
   
   define_index do
       # fields
       indexes :name, :sortable => true
       indexes description
       indexes visible
+      indexes for_import
       indexes code, :sortable => true
       indexes category.name, :as => :category_name
       indexes subcategory.name, :as => :subcategory_name
@@ -128,6 +131,39 @@ class Product < ActiveRecord::Base
       set_property :enable_star => true
       set_property :min_infix_len => 3
     end
+    
+    def Product.store_stock_field(store_id)
+      case store_id
+      when 1 then "stock_trigal"
+      when 2 then "stock_polo"
+      when 3 then "stock_almacen"
+      when 4 then "stock"
+      when 5 then "stock_clarisa"
+      end
+    end
+    
+
+		def regenerate_requested
+			
+			recalculate_stocks
+			
+			quote_details.accepted.each do |qd|
+					
+					qd.return_stock
+
+			end
+			
+			recalculate_stocks_without_requests
+
+			quote_details.accepted.each do |qd|
+					
+					qd.unload_stock
+
+			end
+			
+			reload
+			
+		end
   
 
   def is_stationary? 
@@ -282,7 +318,7 @@ class Product < ActiveRecord::Base
     self.prices.map {|price| total += price.amount }
     prices.count.zero? ? 0.00 : (total /= self.prices.count).round(2)
   end
-  
+    
   def store_stock(store)
     if store == 1
       self.stock_trigal || 0.0
@@ -296,6 +332,20 @@ class Product < ActiveRecord::Base
       self.stock || 0.0
     end
   end
+   
+   def store_stock= stocks
+     if stocks[0] == 1
+       self.stock_trigal = stocks[1]
+     elsif stocks[0] == 2
+       self.stock_polo = stocks[1]   
+     elsif stocks[0] == 3
+       self.stock_almacen = stocks[1]
+     elsif stocks[0] == 5  #4 es todas las tiendas
+       self.stock_clarisa = stocks[1]
+     elsif stocks[0] == 4
+       self.stock = stocks[1]
+     end
+   end
    
   def total_and_pending_amounts
     total = 0
@@ -439,98 +489,45 @@ class Product < ActiveRecord::Base
   
   
   def recalculate_stocks_of_store(store_id)
-    
-    
+        
      #Stocks por tienda
       stock = 0
+	
+	    stock += self.input_order_details.accepted.of_store(store_id).sum(:quantity)
+			
+			stock -= self.order_details.accepted.of_store(store_id).sum(:quantity)
 
-      store = Store.find(store_id)
-      iod = [] #InputOrderDetails
-      od = [] #OrderDetails
-      sgd = [] #SendingGuideDetails
-      asod = [] #Accepted SendOrderDetails
-      psod = [] #Pending SendOrderDetails
-      sod = []
-      eod = []
-      
-      
-      #Obtenemos los ingresos, ventas, traslados de la tienda
-      store.input_orders.accepted.each {|io|  temp = io.input_order_details.find_all_by_product_id(self.id); 
-        temp.each do |t| iod << t unless t.nil? end  }
-      store.orders.accepted.each {|io|  temp = io.order_details.find_all_by_product_id(self.id); 
-        temp.each do |t| od << t unless t.nil?  end }
-      store.sending_guides.accepted.each {|io|  temp = io.sending_guide_details.find_all_by_product_id(self.id); 
-        temp.each do |t| sgd << t unless t.nil? end  }
+			stock -= self.sending_guide_details.accepted.of_store(store_id).sum(:quantity)
 
-     store.send_orders.accepted.each {|io|  temp = io.details_for_product(self.id); asod << temp unless temp.nil?   }
-    # store.send_orders.pending.each {|io|  temp = io.details_for_product(self.id); psod << temp unless temp.nil?   }   
-      #store.owned_send_orders.accepted.each {|io|  temp = io.send_order_details.find_by_product_id(self.id); asod << temp unless temp.nil? }
-      #store.owned_send_orders.pending.each {|io|  temp = io.send_order_details.find_by_product_id(self.id); psod << temp unless temp.nil? }
-      
-      store.owned_send_orders.pending.each {|io| temp = io.send_order_details.find(:all,:conditions=>{:product_id=>self.id}); sod << temp unless temp.nil? or temp.empty?}
+		 	stock += self.send_order_details.accepted.for_store(store_id).sum(:quantity)
 
-      store.owned_send_orders.accepted.each {|io| temp = io.send_order_details.find(:all,:conditions=>{:product_id=>self.id}); sod << temp unless temp.nil? or temp.empty?}
-
-      store.exit_orders.accepted.each {|io| temp = io.exit_order_details.find(:all,:conditions=>{:product_id=>self.id});  eod << temp unless temp.nil? or temp.empty? }
-   
-      iod.map {|i|  stock += i.quantity }
-      od.map {|i|  stock -= i.quantity }
-      sgd.map {|i|  stock -= i.quantity }            
-      eod.map {|i|  i.each do |io| stock -= io.quantity end }            
-      sod.map {|i|  i.each do |io| stock -= io.quantity end }
-
-      asod.map {|i| i.each do |io| stock += io.quantity end }
- #     psod.map {|i|  stock -= i.quantity }
-
-
-
+			stock -= self.send_order_details.pending.from_store(store_id).sum(:quantity)
+     
+			stock -= self.send_order_details.accepted.from_store(store_id).sum(:quantity)
+     #    
+			stock -= self.exit_order_details.accepted.of_store(store_id).sum(:quantity)
       stock
     
   end
   
   
   def process_recalculation
-    
-    
-
-        #  stock_trigal_compromised  :integer(11)     default(0)
-        #  stock_polo_compromised    :integer(11)     default(0)
-        #  stock_almacen_compromised :integer(11)     default(0)
-        #  stock_carisa_compromised  :integer(11)     default(0)
 
         stock = 0    
-
-        iod = [] #InputOrderDetails
-        od = [] #OrderDetails
-        sgd = [] #SendingGuideDetails
-        psod = [] #Pending SendOrderDetail
-        rsg = []
-        eod = []
-        #  qd = []
 
         #Stocks totales
         self.stock = 0
         self.stock_trigal = 0
         self.stock_polo = 0
         self.stock_almacen = 0
-        self.stock_clarisa = 0
-        
-        #p.input_orders.accepted.inject {|sum,io| sum + io.input_order_details.inject{|st,iod| st + iod.quantity }}
-        
-        self.input_orders.accepted.each do |io| 
-          temp = io.input_order_details.find_all_by_product_id(self.id); 
-          temp.each do |t| iod << t unless (t.nil? or iod.include? t) end
-          end
+        self.stock_clarisa = 0        
 
-          self.orders.accepted.each do |o| 
-            temp = o.order_details.find_all_by_product_id(self.id); 
-            temp.each do |t| od << t unless t.nil? or od.include? t end
-            end
+				stock += self.input_order_details.accepted.sum(:quantity)
 
-            self.sending_guides.accepted.each do |sg| 
-              temp = sg.sending_guide_details.find_all_by_product_id(self.id); 
-              temp.each do |t| sgd << t unless t.nil? or sgd.include? t end
-              end
+				stock -= self.order_details.accepted.sum(:quantity)
+
+				stock -= self.sending_guide_details.accepted.sum(:quantity)
+				
 =begin
               self.sending_guides.returned.each do |sgr|
                 temp = sgr.sending_guide_details.find_all_by_product_id(self.id);
@@ -538,70 +535,17 @@ class Product < ActiveRecord::Base
                 end
 =end
 
-                self.send_orders.pending.each do |so| 
+				stock -= self.send_order_details.pending.sum(:quantity)
+                
+				stock -= self.exit_order_details.accepted.sum(:quantity)
+				
+        self.stock += stock
 
-                  temp = so.send_order_details.find_all_by_product_id(self.id);
-                  temp.each do |t| psod << t unless t.nil? or psod.include? t end
-
-                  end
-                  
-                  self.exit_orders.accepted.each do |eo|
-                    
-                    temp = eo.exit_order_details.find_all_by_product_id(self.id);
-                    temp.each do |t| eod << t unless t.nil? or eod.include? t end
-                    
-                    
-                  end
-
-=begin
-                  self.quotes.requested.each do |q|
-
-                    temp = q.quote_details.find_all_by_product_id(self.id);
-                    temp.each do |t| qd << t unless t.nil? or qd.include? t end
-
-                    end
-=end
-
-                    iod.map {|i|  stock += i.quantity }
-                    
-                    RAILS_DEFAULT_LOGGER.error("\n Stock #{ stock }  \n")                 
-                    
-                    
-                    od.map {|i|  stock -= i.quantity }
-
-                    RAILS_DEFAULT_LOGGER.error("\n Stock Entrada #{ stock }  \n")                 
-
-                    sgd.map {|i|  stock -= i.quantity }   
-                    psod.map {|i| stock -= i.quantity }  
-                    eod.map {|i| stock -= i.quantity }                      
-                    #     qd.map {|i| stock -= i.quantity - i.pending }
-                    #rsg.map {|i| stock += i.quantity }      
-
-                    self.stock += stock
-=begin
-                    self.input_order_details.map { | iod | self.stock += iod.quantity; } #3
-                    self.order_details.map {|o| self.stock -= o.quantity;}
-                    self.sending_guide_details.map {|o| self.stock -= o.quantity;}        
-=end
-
-                    #  self.send_orders.accepted.each do |so| so.details_for_product(self.id).map {|o| self.stock += o.quantity;} end 
-
-                    #self.send_orders.pending.each do |so| so.details_for_product(self.id).map {|o| self.stock -= o.quantity;} end
-
-                    self.save
-
-                    self.stock_trigal = recalculate_stocks_of_store(1)
-                    self.stock_polo = recalculate_stocks_of_store(2)
-                    self.stock_almacen = recalculate_stocks_of_store(3)
-                    self.stock_clarisa = recalculate_stocks_of_store(5)
-                    self.save
-
-                    RAILS_DEFAULT_LOGGER.error("\n #{ self.stock }  \n")  
-                    RAILS_DEFAULT_LOGGER.error("\n #{ self.stock_trigal }  \n")  
-                    RAILS_DEFAULT_LOGGER.error("\n #{ self.stock_polo }  \n")  
-                    RAILS_DEFAULT_LOGGER.error("\n #{ self.stock_clarisa }  \n")  
-                    RAILS_DEFAULT_LOGGER.error("\n #{ self.stock_almacen }  \n")                  
-
+        self.stock_trigal = recalculate_stocks_of_store(1)
+        self.stock_polo = recalculate_stocks_of_store(2)
+        self.stock_almacen = recalculate_stocks_of_store(3)
+        self.stock_clarisa = recalculate_stocks_of_store(5)
+        self.save
     
   end
   
@@ -612,6 +556,7 @@ class Product < ActiveRecord::Base
     
     
   end
+
 
 
   def recalculate_stocks
@@ -628,6 +573,10 @@ class Product < ActiveRecord::Base
       qd = []
       stock = stock_from_trigal = stock_from_polo = stock_from_almacen = stock_from_carisa = 0
       stock_trigal_compromised = stock_polo_compromised = stock_almacen_compromised = stock_carisa_compromised = 0
+
+
+			qd = self.quote_details.requested.final
+
        self.quotes.requested.each do |q| 
           temp = q.quote_details.find_all_by_product_id(self.id, :conditions=>"additional is false or additional is null"); 
           temp.each do |t| qd << t unless t.nil? or qd.include? t end

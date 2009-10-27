@@ -27452,3 +27452,868 @@ Rendering /Users/alvaropereyrarabanal/.gem/ruby/1.8/gems/actionpack-2.1.2/lib/ac
 
 Processing ReportsController#items_per_day (for 127.0.0.1 at 2009-09-17 19:44:58) [POST]
   Parameters: {"commit"=>"Filtrar", "from"=>{"month"=>"1", "day"=>"17", "year"=>"2009"}, "authenticity_token"=>"3ZGdJDO0W0fTd/2ieWplXy2NZrgqvg9y9pl8mCZacYY=", "to"=>{"month"=>"9", "day"=>"17", "year"=>"2009"}}
+
+
+Processing PagesController#catalogo (for 127.0.0.1 at 2009-10-01 11:39:44) [GET]
+
+ThinkingSphinx::ConnectionError (Connection to Sphinx Daemon (searchd) failed.):
+  app/controllers/pages_controller.rb:13:in `load_catalogue'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#catalogo (for 127.0.0.1 at 2009-10-01 11:40:04) [GET]
+Rendering template within layouts/pages
+Rendering pages/catalogo
+DEPRECATION WARNING: WillPaginate: :prev_label view parameter is now :previous_label; the old name has been deprecated. (called from _run_erb_app47views47pages47_product_list46html46erb_locals_object_product_list at /Users/alvaropereyrarabanal/Development/SKProduction/app/views/pages/_product_list.html.erb:79)
+Completed in 3005ms (View: 275, DB: 1301) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-01 11:40:07) [GET]
+
+ActionController::RoutingError (No route matches "/images/picture/k00762-thumb.jpg" with {:method=>:get}):
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-01 11:40:07) [GET]
+
+ActionController::RoutingError (No route matches "/images/picture/k01632-thumb.jpg" with {:method=>:get}):
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-01 11:40:07) [GET]
+
+ActionController::RoutingError (No route matches "/images/picture/k00125-thumb.jpg" with {:method=>:get}):
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-01 11:40:07) [GET]
+
+ActionController::RoutingError (No route matches "/images/picture/k01384-thumb.jpg" with {:method=>:get}):
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-01 11:40:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/picture/k00124-thumb.jpg" with {:method=>:get}):
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-01 11:40:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/picture/k01208-thumb.jpg" with {:method=>:get}):
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-01 11:40:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/picture/k01209-thumb.jpg" with {:method=>:get}):
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-01 11:40:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/picture/k01219-thumb.jpg" with {:method=>:get}):
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-01 11:40:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/picture/k01665-thumb.jpg" with {:method=>:get}):
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-01 11:40:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/picture/k01670-thumb.jpg" with {:method=>:get}):
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-01 11:40:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/picture/k01671-thumb.jpg" with {:method=>:get}):
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-01 11:40:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/picture/k01672-thumb.jpg" with {:method=>:get}):
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-01 11:40:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/picture/k01667-thumb.jpg" with {:method=>:get}):
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-01 11:40:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/picture/k01668-thumb.jpg" with {:method=>:get}):
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-01 11:40:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/picture/k01669-thumb.jpg" with {:method=>:get}):
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReportsController#index (for 127.0.0.1 at 2009-10-01 11:40:15) [GET]
+Redirected to http://localhost:3000/login
+Filter chain halted as [:is_authenticated] rendered_or_redirected.
+Completed in 3ms (DB: 3) | 302 Found [http://localhost/reportes]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2009-10-01 11:40:15) [GET]
+Rendering template within layouts/application
+Rendering login/login
+Completed in 75ms (View: 20, DB: 49) | 200 OK [http://localhost/login]
+
+
+Processing LoginController#authenticate (for 127.0.0.1 at 2009-10-01 11:40:19) [POST]
+  Parameters: {"commit"=>"Iniciar sesión", "authenticity_token"=>"ZH14WmzT/gl3e60HdbHwHKjav3Ej6C80Zj+vp6c4ptA=", "user"=>{"username"=>"alvaro.pereyra", "store_id"=>"1", "password"=>"yaraher"}}
+Redirected to http://localhost:3000/reportes
+Completed in 12ms (DB: 34) | 302 Found [http://localhost/login/authenticate]
+
+
+Processing ReportsController#index (for 127.0.0.1 at 2009-10-01 11:40:19) [GET]
+Rendering template within layouts/application
+Rendering reports/index
+Completed in 534ms (View: 167, DB: 330) | 200 OK [http://localhost/reportes]
+
+
+Processing ReportsController#perdidas (for 127.0.0.1 at 2009-10-01 11:40:25) [GET]
+Rendering template within layouts/application
+Rendering reports/sending_guides
+Completed in 32ms (View: 23, DB: 5) | 200 OK [http://localhost/reportes/perdidas]
+
+
+Processing ReportsController#quote_requests (for 127.0.0.1 at 2009-10-01 11:40:30) [GET]
+Rendering template within layouts/application
+Rendering reports/quote_requests
+Completed in 1321ms (View: 1022, DB: 318) | 200 OK [http://localhost/reportes/pedidos]
+
+
+Processing ReportsController#quote_request (for 127.0.0.1 at 2009-10-01 11:40:34) [GET]
+  Parameters: {"id"=>"4902"}
+Rendering template within layouts/application
+Rendering reports/quote_request
+Completed in 168ms (View: 72, DB: 103) | 200 OK [http://localhost/reportes/pedidos/4902]
+
+
+Processing QuotesController#generate_orders (for 127.0.0.1 at 2009-10-01 11:40:39) [GET]
+  Parameters: {"id"=>"4902"}
+Rendering template within layouts/application
+Rendering quotes/generate_orders
+Completed in 620ms (View: 63, DB: 551) | 200 OK [http://localhost/quotes/generate_orders/4902]
+
+
+Processing ReportsController#index (for 127.0.0.1 at 2009-10-01 11:40:44) [GET]
+Rendering template within layouts/application
+Rendering reports/index
+Completed in 56ms (View: 28, DB: 14) | 200 OK [http://localhost/reportes]
+
+
+Processing QuotesController#generate_orders (for 127.0.0.1 at 2009-10-01 11:40:47) [GET]
+  Parameters: {"id"=>"4902"}
+Rendering template within layouts/application
+Rendering quotes/generate_orders
+Completed in 92ms (View: 59, DB: 32) | 200 OK [http://localhost/quotes/generate_orders/4902]
+
+
+Processing InventoryController#tags (for 127.0.0.1 at 2009-10-01 11:40:53) [GET]
+  Parameters: {"as"=>"inventario/etiquetas"}
+Rendering template within layouts/application
+Rendering inventory/tags
+DEPRECATION WARNING: WillPaginate: :prev_label view parameter is now :previous_label; the old name has been deprecated. (called from _run_erb_app47views47inventory47_product_list46html46erb_locals_object_product_list at /Users/alvaropereyrarabanal/Development/SKProduction/app/views/inventory/_product_list.html.erb:25)
+Completed in 242ms (View: 52, DB: 258) | 200 OK [http://localhost/inventory/tags]
+
+
+Processing ReportsController#index (for 127.0.0.1 at 2009-10-01 11:40:53) [GET]
+Rendering template within layouts/application
+Rendering reports/index
+Completed in 62ms (View: 35, DB: 13) | 200 OK [http://localhost/reportes]
+
+
+Processing ReportsController#quotes (for 127.0.0.1 at 2009-10-01 11:41:03) [GET]
+Rendering template within layouts/application
+Rendering reports/quotes
+Completed in 11620ms (View: 10973, DB: 602) | 200 OK [http://localhost/reportes/cotizaciones]
+
+
+Processing ReportsController#quote (for 127.0.0.1 at 2009-10-01 11:41:19) [GET]
+  Parameters: {"id"=>"90082"}
+Rendering template within layouts/application
+Rendering reports/quote
+Completed in 137ms (View: 125, DB: 12) | 200 OK [http://localhost/reportes/cotizaciones/90082]
+
+
+Processing QuotesController#as_request (for 127.0.0.1 at 2009-10-01 11:41:24) [GET]
+  Parameters: {"id"=>"90082"}
+
+ Actualizando Stock de Producto 3590 - K01701
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3609 - K01720
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3418 - K01529
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3586 - K01697
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3584 - K01695
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3580 - K01691
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3432 - K01543
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3581 - K01692
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3575 - K01686
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3570 - K01681
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 1235 - K00698
+Stock anterior: 2.0 Stock Cambiante: -0.0
+Stock Final: 2.0 
+ 
+
+ Actualizando Stock de Producto 3425 - K01536
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3424 - K01535
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3422 - K01533
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3579 - K01690
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3426 - K01537
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 1154 - K00617
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3660 - K01771
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3659 - K01770
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3614 - K01725
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3612 - K01723
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3605 - K01716
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 1207 - K00670
+Stock anterior: 2.0 Stock Cambiante: -0.0
+Stock Final: 2.0 
+ 
+
+ Actualizando Stock de Producto 1536 - EG136686
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3568 - K01679
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3134 - k01252
+Stock anterior: 1.0 Stock Cambiante: -0.0
+Stock Final: 1.0 
+ 
+
+ Actualizando Stock de Producto 936 - K00333
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3132 - k01250
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3617 - K01728
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 1220 - K00683
+Stock anterior: 144.0 Stock Cambiante: -1
+Stock Final: 143.0 
+ 
+
+ Actualizando Stock de Producto 1218 - K00681
+Stock anterior: 85.0 Stock Cambiante: -1
+Stock Final: 84.0 
+ 
+
+ Actualizando Stock de Producto 3435 - K01546
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3419 - K01530
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3415 - K01526
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 810 - K00206
+Stock anterior: 2.0 Stock Cambiante: -0.0
+Stock Final: 2.0 
+ 
+
+ Actualizando Stock de Producto 776 - K00169
+Stock anterior: 2.0 Stock Cambiante: -0.0
+Stock Final: 2.0 
+ 
+
+ Actualizando Stock de Producto 3598 - K01709
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3597 - K01708
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 48 - K00132
+Stock anterior: 219.0 Stock Cambiante: -1
+Stock Final: 218.0 
+ 
+
+ Actualizando Stock de Producto 42 - K00126
+Stock anterior: 1.0 Stock Cambiante: -0.0
+Stock Final: 1.0 
+ 
+
+ Actualizando Stock de Producto 1212 - K00675
+Stock anterior: 66.0 Stock Cambiante: -1
+Stock Final: 65.0 
+ 
+
+ Actualizando Stock de Producto 1192 - K00655
+Stock anterior: 53.0 Stock Cambiante: -1
+Stock Final: 52.0 
+ 
+
+ Actualizando Stock de Producto 3618 - K01729
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 994 - K00391
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3531 - K01642
+Stock anterior: 3.0 Stock Cambiante: -0.0
+Stock Final: 3.0 
+ 
+
+ Actualizando Stock de Producto 3140 - k01258
+Stock anterior: 3.0 Stock Cambiante: -0.0
+Stock Final: 3.0 
+ 
+
+ Actualizando Stock de Producto 3128 - k01246
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3126 - k01244
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3129 - k01247
+Stock anterior: 2.0 Stock Cambiante: -0.0
+Stock Final: 2.0 
+ 
+
+ Actualizando Stock de Producto 3153 - k01271
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3313 - k01432
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3315 - k01434
+Stock anterior: 2.0 Stock Cambiante: -0.0
+Stock Final: 2.0 
+ 
+
+ Actualizando Stock de Producto 3311 - k01430
+Stock anterior: 1.0 Stock Cambiante: -0.0
+Stock Final: 1.0 
+ 
+
+ Actualizando Stock de Producto 1638 - K01094
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 47 - K00131
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3534 - K01645
+Stock anterior: 1.0 Stock Cambiante: -0.0
+Stock Final: 1.0 
+ 
+
+ Actualizando Stock de Producto 3592 - K01703
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3589 - K01700
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3588 - K01699
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3587 - K01698
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3521 - K01632
+Stock anterior: 3.0 Stock Cambiante: -0.0
+Stock Final: 3.0 
+ 
+
+ Actualizando Stock de Producto 3525 - K01636
+Stock anterior: 2.0 Stock Cambiante: -0.0
+Stock Final: 2.0 
+ 
+
+ Actualizando Stock de Producto 3604 - K01715
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 991 - K00388
+Stock anterior: 2.0 Stock Cambiante: -0.0
+Stock Final: 2.0 
+ 
+
+ Actualizando Stock de Producto 3520 - K01631
+Stock anterior: 4.0 Stock Cambiante: -0.0
+Stock Final: 4.0 
+ 
+
+ Actualizando Stock de Producto 3516 - K01627
+Stock anterior: 1.0 Stock Cambiante: -0.0
+Stock Final: 1.0 
+ 
+
+ Actualizando Stock de Producto 3414 - K01525
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3569 - K01680
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3416 - K01527
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3571 - K01682
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3428 - K01539
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3417 - K01528
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+
+ Actualizando Stock de Producto 3548 - K01659
+Stock anterior: 0.0 Stock Cambiante: -0.0
+Stock Final: 0.0 
+ 
+Redirected to http://localhost:3000/reportes/pedidos/90082
+Completed in 97061ms (DB: 5306) | 302 Found [http://localhost/quotes/as_request/90082]
+
+
+Processing ReportsController#quote_request (for 127.0.0.1 at 2009-10-01 11:43:02) [GET]
+  Parameters: {"id"=>"90082"}
+Rendering template within layouts/application
+Rendering reports/quote_request
+Completed in 653ms (View: 484, DB: 154) | 200 OK [http://localhost/reportes/pedidos/90082]
+
+
+Processing QuotesController#generate_orders (for 127.0.0.1 at 2009-10-01 11:48:00) [GET]
+  Parameters: {"id"=>"90082"}
+Rendering template within layouts/application
+Rendering quotes/generate_orders
+Completed in 5355ms (View: 323, DB: 565) | 200 OK [http://localhost/quotes/generate_orders/90082]
+
+
+Processing SalesController#recover (for 127.0.0.1 at 2009-10-01 11:48:17) [GET]
+  Parameters: {"id"=>"6296"}
+Redirected to http://localhost:3000/ordenes_venta
+Completed in 17ms (DB: 4) | 302 Found [http://localhost/sales/recover/6296]
+
+
+Processing SalesController#index (for 127.0.0.1 at 2009-10-01 11:48:18) [GET]
+Rendering template within layouts/application
+Rendering sales/index
+Completed in 12690ms (View: 904, DB: 731) | 200 OK [http://localhost/ordenes_venta]
+
+
+Processing QuotesController#generate_orders (for 127.0.0.1 at 2009-10-01 11:48:41) [GET]
+  Parameters: {"id"=>"90082"}
+Rendering template within layouts/application
+Rendering quotes/generate_orders
+Completed in 218ms (View: 146, DB: 143) | 200 OK [http://localhost/quotes/generate_orders/90082]
+
+
+Processing ReportsController#quote_request (for 127.0.0.1 at 2009-10-01 11:48:42) [GET]
+  Parameters: {"id"=>"90082"}
+Rendering template within layouts/application
+Rendering reports/quote_request
+Completed in 564ms (View: 485, DB: 55) | 200 OK [http://localhost/reportes/pedidos/90082]
+
+
+Processing ReportsController#quote (for 127.0.0.1 at 2009-10-01 11:48:43) [GET]
+  Parameters: {"id"=>"90082"}
+Rendering template within layouts/application
+Rendering reports/quote
+Completed in 151ms (View: 138, DB: 11) | 200 OK [http://localhost/reportes/cotizaciones/90082]
+
+
+Processing ReportsController#quote_request (for 127.0.0.1 at 2009-10-01 11:48:46) [GET]
+  Parameters: {"id"=>"90082"}
+Rendering template within layouts/application
+Rendering reports/quote_request
+Completed in 534ms (View: 457, DB: 68) | 200 OK [http://localhost/reportes/pedidos/90082]
+
+
+Processing QuotesController#to_sending_guide (for 127.0.0.1 at 2009-10-01 11:48:48) [GET]
+  Parameters: {"id"=>"90082"}
+Redirected to http://localhost:3000/envios_clientes
+Completed in 3752ms (DB: 356) | 302 Found [http://localhost/quotes/to_sending_guide/90082]
+
+
+Processing SendingGuidesController#index (for 127.0.0.1 at 2009-10-01 11:48:51) [GET]
+Rendering template within layouts/application
+Rendering sending_guides/index
+Completed in 992ms (View: 943, DB: 42) | 200 OK [http://localhost/envios_clientes]
+
+
+Processing SendingGuidesController#update (for 127.0.0.1 at 2009-10-01 11:49:01) [PUT]
+  Parameters: {"commit"=>"Finalizar Envío", "sending_guide"=>{"delivery_address"=>"", "sending_date(2i)"=>"10", "sending_date(3i)"=>"1", "license_plate"=>"", "driver_name"=>"", "store_id"=>"1", "document"=>"De Cotización 11158", "client_id"=>"419", "delivery_phone"=>"", "hidden_client_id"=>"", "delivery_contact"=>"", "truck_description"=>"", "sending_date(1i)"=>"2009"}, "sending_guide_detail"=>{"quantity"=>"", "hidden_product_id"=>"", "product_id"=>""}, "authenticity_token"=>"ZH14WmzT/gl3e60HdbHwHKjav3Ej6C80Zj+vp6c4ptA=", "id"=>"211"}
+Redirected to http://localhost:3000/reportes/guia_envios/211
+Completed in 38ms (DB: 10) | 302 Found [http://localhost/envios_clientes/211]
+
+
+Processing ReportsController#sending_guide (for 127.0.0.1 at 2009-10-01 11:49:01) [GET]
+  Parameters: {"id"=>"211"}
+Rendering template within layouts/application
+Rendering reports/sending_guide
+Completed in 408ms (View: 362, DB: 46) | 200 OK [http://localhost/reportes/guia_envios/211]
+
+
+Processing SendingGuidesController#create_order (for 127.0.0.1 at 2009-10-01 11:49:20) [GET]
+  Parameters: {"id"=>"211"}
+Rendering template within layouts/application
+Rendering sending_guides/create_order
+Completed in 3012ms (View: 1324, DB: 734) | 200 OK [http://localhost/ordenes_ventas/guia_remision/211]
+
+
+Processing SendingGuidesController#destroyOrderDetail (for 127.0.0.1 at 2009-10-01 11:50:14) [DELETE]
+  Parameters: {"sending_guide"=>"211", "authenticity_token"=>"ZH14WmzT/gl3e60HdbHwHKjav3Ej6C80Zj+vp6c4ptA=", "counter"=>"1"}
+Completed in 2428ms (View: 1302, DB: 210) | 200 OK [http://localhost/sending_guides/destroyOrderDetail?counter=1&sending_guide=211]
+
+
+Processing SendingGuidesController#destroyOrderDetail (for 127.0.0.1 at 2009-10-01 11:50:18) [DELETE]
+  Parameters: {"sending_guide"=>"211", "authenticity_token"=>"ZH14WmzT/gl3e60HdbHwHKjav3Ej6C80Zj+vp6c4ptA=", "counter"=>"1"}
+Completed in 2479ms (View: 1363, DB: 294) | 200 OK [http://localhost/sending_guides/destroyOrderDetail?counter=1&sending_guide=211]
+
+
+Processing SendingGuidesController#destroyOrderDetail (for 127.0.0.1 at 2009-10-01 11:50:23) [DELETE]
+  Parameters: {"sending_guide"=>"211", "authenticity_token"=>"ZH14WmzT/gl3e60HdbHwHKjav3Ej6C80Zj+vp6c4ptA=", "counter"=>"1"}
+Completed in 2399ms (View: 1439, DB: 199) | 200 OK [http://localhost/sending_guides/destroyOrderDetail?counter=1&sending_guide=211]
+
+
+Processing SendingGuidesController#destroyOrderDetail (for 127.0.0.1 at 2009-10-01 11:50:27) [DELETE]
+  Parameters: {"sending_guide"=>"211", "authenticity_token"=>"ZH14WmzT/gl3e60HdbHwHKjav3Ej6C80Zj+vp6c4ptA=", "counter"=>"1"}
+Completed in 2407ms (View: 1423, DB: 397) | 200 OK [http://localhost/sending_guides/destroyOrderDetail?counter=1&sending_guide=211]
+
+
+Processing SendingGuidesController#generate_order (for 127.0.0.1 at 2009-10-01 11:50:53) [POST]
+  Parameters: {"commit"=>"Finalizar Venta", "authenticity_token"=>"ZH14WmzT/gl3e60HdbHwHKjav3Ej6C80Zj+vp6c4ptA=", "id"=>"211", "order"=>{"order_date(2i)"=>"10", "number"=>"865", "order_date(3i)"=>"1", "credit_card"=>"", "order_date(1i)"=>"2009"}, "order_details"=>[{"price"=>"26", "discount"=>"0.0", "sending_guide_detail_id"=>"2533", "quantity"=>"0", "product_id"=>"3548"}, {"price"=>"42", "discount"=>"0.0", "sending_guide_detail_id"=>"2528", "quantity"=>"1", "product_id"=>"3569"}, {"price"=>"27", "discount"=>"0.0", "sending_guide_detail_id"=>"2527", "quantity"=>"1", "product_id"=>"3414"}, {"price"=>"27", "discount"=>"0.0", "sending_guide_detail_id"=>"2526", "quantity"=>"1", "product_id"=>"3516"}, {"price"=>"22", "discount"=>"0.0", "sending_guide_detail_id"=>"2525", "quantity"=>"1", "product_id"=>"3520"}, {"price"=>"24", "discount"=>"0.0", "sending_guide_detail_id"=>"2524", "quantity"=>"1", "product_id"=>"991"}, {"price"=>"39", "discount"=>"0.0", "sending_guide_detail_id"=>"2523", "quantity"=>"1", "product_id"=>"3604"}, {"price"=>"16", "discount"=>"0.0", "sending_guide_detail_id"=>"2522", "quantity"=>"1", "product_id"=>"3525"}, {"price"=>"34", "discount"=>"0.0", "sending_guide_detail_id"=>"2521", "quantity"=>"1", "product_id"=>"3521"}, {"price"=>"29", "discount"=>"0.0", "sending_guide_detail_id"=>"2520", "quantity"=>"1", "product_id"=>"3587"}, {"price"=>"31", "discount"=>"0.0", "sending_guide_detail_id"=>"2519", "quantity"=>"1", "product_id"=>"3588"}, {"price"=>"34", "discount"=>"0.0", "sending_guide_detail_id"=>"2518", "quantity"=>"1", "product_id"=>"3589"}, {"price"=>"33", "discount"=>"0.0", "sending_guide_detail_id"=>"2517", "quantity"=>"1", "product_id"=>"3592"}, {"price"=>"43", "discount"=>"0.0", "sending_guide_detail_id"=>"2516", "quantity"=>"1", "product_id"=>"3534"}, {"price"=>"29", "discount"=>"0.0", "sending_guide_detail_id"=>"2515", "quantity"=>"1", "product_id"=>"47"}, {"price"=>"29", "discount"=>"0.0", "sending_guide_detail_id"=>"2514", "quantity"=>"1", "product_id"=>"1638"}, {"price"=>"44", "discount"=>"0.0", "sending_guide_detail_id"=>"2513", "quantity"=>"1", "product_id"=>"3311"}, {"price"=>"23", "discount"=>"0.0", "sending_guide_detail_id"=>"2512", "quantity"=>"1", "product_id"=>"3315"}, {"price"=>"26", "discount"=>"0.0", "sending_guide_detail_id"=>"2511", "quantity"=>"1", "product_id"=>"3313"}, {"price"=>"33", "discount"=>"0.0", "sending_guide_detail_id"=>"2510", "quantity"=>"1", "product_id"=>"3153"}, {"price"=>"32", "discount"=>"0.0", "sending_guide_detail_id"=>"2509", "quantity"=>"1", "product_id"=>"3129"}, {"price"=>"38", "discount"=>"0.0", "sending_guide_detail_id"=>"2508", "quantity"=>"1", "product_id"=>"3126"}, {"price"=>"32", "discount"=>"0.0", "sending_guide_detail_id"=>"2507", "quantity"=>"1", "product_id"=>"3128"}, {"price"=>"32", "discount"=>"0.0", "sending_guide_detail_id"=>"2506", "quantity"=>"1", "product_id"=>"3140"}, {"price"=>"28", "discount"=>"0.0", "sending_guide_detail_id"=>"2505", "quantity"=>"1", "product_id"=>"3531"}, {"price"=>"22", "discount"=>"0.0", "sending_guide_detail_id"=>"2504", "quantity"=>"1", "product_id"=>"994"}, {"price"=>"35", "discount"=>"0.0", "sending_guide_detail_id"=>"2503", "quantity"=>"1", "product_id"=>"3618"}, {"price"=>"49", "discount"=>"0.0", "sending_guide_detail_id"=>"2502", "quantity"=>"1", "product_id"=>"1192"}, {"price"=>"39", "discount"=>"0.0", "sending_guide_detail_id"=>"2501", "quantity"=>"1", "product_id"=>"1212"}, {"price"=>"29", "discount"=>"0.0", "sending_guide_detail_id"=>"2500", "quantity"=>"1", "product_id"=>"42"}, {"price"=>"29", "discount"=>"0.0", "sending_guide_detail_id"=>"2499", "quantity"=>"1", "product_id"=>"48"}, {"price"=>"29", "discount"=>"0.0", "sending_guide_detail_id"=>"2498", "quantity"=>"1", "product_id"=>"3597"}, {"price"=>"34", "discount"=>"0.0", "sending_guide_detail_id"=>"2497", "quantity"=>"1", "product_id"=>"3598"}, {"price"=>"24", "discount"=>"0.0", "sending_guide_detail_id"=>"2496", "quantity"=>"1", "product_id"=>"776"}, {"price"=>"43", "discount"=>"0.0", "sending_guide_detail_id"=>"2495", "quantity"=>"1", "product_id"=>"810"}, {"price"=>"27", "discount"=>"0.0", "sending_guide_detail_id"=>"2494", "quantity"=>"1", "product_id"=>"3415"}, {"price"=>"28", "discount"=>"0.0", "sending_guide_detail_id"=>"2493", "quantity"=>"1", "product_id"=>"3419"}, {"price"=>"26", "discount"=>"0.0", "sending_guide_detail_id"=>"2492", "quantity"=>"1", "product_id"=>"3435"}, {"price"=>"38", "discount"=>"0.0", "sending_guide_detail_id"=>"2491", "quantity"=>"1", "product_id"=>"1218"}, {"price"=>"29", "discount"=>"0.0", "sending_guide_detail_id"=>"2490", "quantity"=>"1", "product_id"=>"1220"}, {"price"=>"35", "discount"=>"0.0", "sending_guide_detail_id"=>"2489", "quantity"=>"1", "product_id"=>"3617"}, {"price"=>"42", "discount"=>"0.0", "sending_guide_detail_id"=>"2488", "quantity"=>"1", "product_id"=>"3132"}, {"price"=>"46", "discount"=>"0.0", "sending_guide_detail_id"=>"2487", "quantity"=>"1", "product_id"=>"936"}, {"price"=>"56", "discount"=>"0.0", "sending_guide_detail_id"=>"2486", "quantity"=>"1", "product_id"=>"3134"}, {"price"=>"45", "discount"=>"0.0", "sending_guide_detail_id"=>"2485", "quantity"=>"1", "product_id"=>"3568"}, {"price"=>"30", "discount"=>"0.0", "sending_guide_detail_id"=>"2484", "quantity"=>"1", "product_id"=>"1536"}, {"price"=>"34", "discount"=>"0.0", "sending_guide_detail_id"=>"2483", "quantity"=>"1", "product_id"=>"1207"}, {"price"=>"39", "discount"=>"0.0", "sending_guide_detail_id"=>"2482", "quantity"=>"1", "product_id"=>"3605"}, {"price"=>"39", "discount"=>"0.0", "sending_guide_detail_id"=>"2481", "quantity"=>"1", "product_id"=>"3612"}, {"price"=>"32", "discount"=>"0.0", "sending_guide_detail_id"=>"2480", "quantity"=>"1", "product_id"=>"3614"}, {"price"=>"31", "discount"=>"0.0", "sending_guide_detail_id"=>"2479", "quantity"=>"1", "product_id"=>"3659"}, {"price"=>"34", "discount"=>"0.0", "sending_guide_detail_id"=>"2478", "quantity"=>"1", "product_id"=>"3660"}, {"price"=>"36", "discount"=>"0.0", "sending_guide_detail_id"=>"2477", "quantity"=>"1", "product_id"=>"1154"}, {"price"=>"28", "discount"=>"0.0", "sending_guide_detail_id"=>"2476", "quantity"=>"1", "product_id"=>"3426"}, {"price"=>"29", "discount"=>"0.0", "sending_guide_detail_id"=>"2475", "quantity"=>"1", "product_id"=>"3579"}, {"price"=>"22", "discount"=>"0.0", "sending_guide_detail_id"=>"2474", "quantity"=>"1", "product_id"=>"3422"}, {"price"=>"19", "discount"=>"0.0", "sending_guide_detail_id"=>"2473", "quantity"=>"1", "product_id"=>"3424"}, {"price"=>"21", "discount"=>"0.0", "sending_guide_detail_id"=>"2472", "quantity"=>"1", "product_id"=>"3425"}, {"price"=>"31", "discount"=>"0.0", "sending_guide_detail_id"=>"2471", "quantity"=>"1", "product_id"=>"1235"}, {"price"=>"33", "discount"=>"0.0", "sending_guide_detail_id"=>"2470", "quantity"=>"1", "product_id"=>"3570"}, {"price"=>"19", "discount"=>"0.0", "sending_guide_detail_id"=>"2469", "quantity"=>"1", "product_id"=>"3575"}, {"price"=>"9", "discount"=>"0.0", "sending_guide_detail_id"=>"2468", "quantity"=>"1", "product_id"=>"3581"}, {"price"=>"15", "discount"=>"0.0", "sending_guide_detail_id"=>"2467", "quantity"=>"1", "product_id"=>"3432"}, {"price"=>"10", "discount"=>"0.0", "sending_guide_detail_id"=>"2466", "quantity"=>"1", "product_id"=>"3580"}, {"price"=>"16", "discount"=>"0.0", "sending_guide_detail_id"=>"2465", "quantity"=>"1", "product_id"=>"3584"}, {"price"=>"4", "discount"=>"0.0", "sending_guide_detail_id"=>"2464", "quantity"=>"1", "product_id"=>"3586"}, {"price"=>"24", "discount"=>"0.0", "sending_guide_detail_id"=>"2463", "quantity"=>"1", "product_id"=>"3418"}, {"price"=>"55", "discount"=>"0.0", "sending_guide_detail_id"=>"2462", "quantity"=>"1", "product_id"=>"3609"}, {"price"=>"19", "discount"=>"0.0", "sending_guide_detail_id"=>"2461", "quantity"=>"1", "product_id"=>"3590"}]}
+
+ActiveRecord::StatementInvalid (Mysql::Error: Unknown column 'order_details_count' in 'field list': UPDATE `orders` SET `order_details_count` = COALESCE(`order_details_count`, 0) + 1 WHERE (`id` = 6304) ):
+  app/controllers/sending_guides_controller.rb:366:in `generate_order'
+  app/controllers/sending_guides_controller.rb:364:in `generate_order'
+  app/controllers/sending_guides_controller.rb:351:in `generate_order'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SendingGuidesController#generate_order (for 127.0.0.1 at 2009-10-01 11:52:03) [POST]
+  Parameters: {"commit"=>"Finalizar Venta", "authenticity_token"=>"ZH14WmzT/gl3e60HdbHwHKjav3Ej6C80Zj+vp6c4ptA=", "id"=>"211", "order"=>{"order_date(2i)"=>"10", "number"=>"865", "order_date(3i)"=>"1", "credit_card"=>"", "order_date(1i)"=>"2009"}, "order_details"=>[{"price"=>"26", "discount"=>"0.0", "sending_guide_detail_id"=>"2533", "quantity"=>"0", "product_id"=>"3548"}, {"price"=>"42", "discount"=>"0.0", "sending_guide_detail_id"=>"2528", "quantity"=>"1", "product_id"=>"3569"}, {"price"=>"27", "discount"=>"0.0", "sending_guide_detail_id"=>"2527", "quantity"=>"1", "product_id"=>"3414"}, {"price"=>"27", "discount"=>"0.0", "sending_guide_detail_id"=>"2526", "quantity"=>"1", "product_id"=>"3516"}, {"price"=>"22", "discount"=>"0.0", "sending_guide_detail_id"=>"2525", "quantity"=>"1", "product_id"=>"3520"}, {"price"=>"24", "discount"=>"0.0", "sending_guide_detail_id"=>"2524", "quantity"=>"1", "product_id"=>"991"}, {"price"=>"39", "discount"=>"0.0", "sending_guide_detail_id"=>"2523", "quantity"=>"1", "product_id"=>"3604"}, {"price"=>"16", "discount"=>"0.0", "sending_guide_detail_id"=>"2522", "quantity"=>"1", "product_id"=>"3525"}, {"price"=>"34", "discount"=>"0.0", "sending_guide_detail_id"=>"2521", "quantity"=>"1", "product_id"=>"3521"}, {"price"=>"29", "discount"=>"0.0", "sending_guide_detail_id"=>"2520", "quantity"=>"1", "product_id"=>"3587"}, {"price"=>"31", "discount"=>"0.0", "sending_guide_detail_id"=>"2519", "quantity"=>"1", "product_id"=>"3588"}, {"price"=>"34", "discount"=>"0.0", "sending_guide_detail_id"=>"2518", "quantity"=>"1", "product_id"=>"3589"}, {"price"=>"33", "discount"=>"0.0", "sending_guide_detail_id"=>"2517", "quantity"=>"1", "product_id"=>"3592"}, {"price"=>"43", "discount"=>"0.0", "sending_guide_detail_id"=>"2516", "quantity"=>"1", "product_id"=>"3534"}, {"price"=>"29", "discount"=>"0.0", "sending_guide_detail_id"=>"2515", "quantity"=>"1", "product_id"=>"47"}, {"price"=>"29", "discount"=>"0.0", "sending_guide_detail_id"=>"2514", "quantity"=>"1", "product_id"=>"1638"}, {"price"=>"44", "discount"=>"0.0", "sending_guide_detail_id"=>"2513", "quantity"=>"1", "product_id"=>"3311"}, {"price"=>"23", "discount"=>"0.0", "sending_guide_detail_id"=>"2512", "quantity"=>"1", "product_id"=>"3315"}, {"price"=>"26", "discount"=>"0.0", "sending_guide_detail_id"=>"2511", "quantity"=>"1", "product_id"=>"3313"}, {"price"=>"33", "discount"=>"0.0", "sending_guide_detail_id"=>"2510", "quantity"=>"1", "product_id"=>"3153"}, {"price"=>"32", "discount"=>"0.0", "sending_guide_detail_id"=>"2509", "quantity"=>"1", "product_id"=>"3129"}, {"price"=>"38", "discount"=>"0.0", "sending_guide_detail_id"=>"2508", "quantity"=>"1", "product_id"=>"3126"}, {"price"=>"32", "discount"=>"0.0", "sending_guide_detail_id"=>"2507", "quantity"=>"1", "product_id"=>"3128"}, {"price"=>"32", "discount"=>"0.0", "sending_guide_detail_id"=>"2506", "quantity"=>"1", "product_id"=>"3140"}, {"price"=>"28", "discount"=>"0.0", "sending_guide_detail_id"=>"2505", "quantity"=>"1", "product_id"=>"3531"}, {"price"=>"22", "discount"=>"0.0", "sending_guide_detail_id"=>"2504", "quantity"=>"1", "product_id"=>"994"}, {"price"=>"35", "discount"=>"0.0", "sending_guide_detail_id"=>"2503", "quantity"=>"1", "product_id"=>"3618"}, {"price"=>"49", "discount"=>"0.0", "sending_guide_detail_id"=>"2502", "quantity"=>"1", "product_id"=>"1192"}, {"price"=>"39", "discount"=>"0.0", "sending_guide_detail_id"=>"2501", "quantity"=>"1", "product_id"=>"1212"}, {"price"=>"29", "discount"=>"0.0", "sending_guide_detail_id"=>"2500", "quantity"=>"1", "product_id"=>"42"}, {"price"=>"29", "discount"=>"0.0", "sending_guide_detail_id"=>"2499", "quantity"=>"1", "product_id"=>"48"}, {"price"=>"29", "discount"=>"0.0", "sending_guide_detail_id"=>"2498", "quantity"=>"1", "product_id"=>"3597"}, {"price"=>"34", "discount"=>"0.0", "sending_guide_detail_id"=>"2497", "quantity"=>"1", "product_id"=>"3598"}, {"price"=>"24", "discount"=>"0.0", "sending_guide_detail_id"=>"2496", "quantity"=>"1", "product_id"=>"776"}, {"price"=>"43", "discount"=>"0.0", "sending_guide_detail_id"=>"2495", "quantity"=>"1", "product_id"=>"810"}, {"price"=>"27", "discount"=>"0.0", "sending_guide_detail_id"=>"2494", "quantity"=>"1", "product_id"=>"3415"}, {"price"=>"28", "discount"=>"0.0", "sending_guide_detail_id"=>"2493", "quantity"=>"1", "product_id"=>"3419"}, {"price"=>"26", "discount"=>"0.0", "sending_guide_detail_id"=>"2492", "quantity"=>"1", "product_id"=>"3435"}, {"price"=>"38", "discount"=>"0.0", "sending_guide_detail_id"=>"2491", "quantity"=>"1", "product_id"=>"1218"}, {"price"=>"29", "discount"=>"0.0", "sending_guide_detail_id"=>"2490", "quantity"=>"1", "product_id"=>"1220"}, {"price"=>"35", "discount"=>"0.0", "sending_guide_detail_id"=>"2489", "quantity"=>"1", "product_id"=>"3617"}, {"price"=>"42", "discount"=>"0.0", "sending_guide_detail_id"=>"2488", "quantity"=>"1", "product_id"=>"3132"}, {"price"=>"46", "discount"=>"0.0", "sending_guide_detail_id"=>"2487", "quantity"=>"1", "product_id"=>"936"}, {"price"=>"56", "discount"=>"0.0", "sending_guide_detail_id"=>"2486", "quantity"=>"1", "product_id"=>"3134"}, {"price"=>"45", "discount"=>"0.0", "sending_guide_detail_id"=>"2485", "quantity"=>"1", "product_id"=>"3568"}, {"price"=>"30", "discount"=>"0.0", "sending_guide_detail_id"=>"2484", "quantity"=>"1", "product_id"=>"1536"}, {"price"=>"34", "discount"=>"0.0", "sending_guide_detail_id"=>"2483", "quantity"=>"1", "product_id"=>"1207"}, {"price"=>"39", "discount"=>"0.0", "sending_guide_detail_id"=>"2482", "quantity"=>"1", "product_id"=>"3605"}, {"price"=>"39", "discount"=>"0.0", "sending_guide_detail_id"=>"2481", "quantity"=>"1", "product_id"=>"3612"}, {"price"=>"32", "discount"=>"0.0", "sending_guide_detail_id"=>"2480", "quantity"=>"1", "product_id"=>"3614"}, {"price"=>"31", "discount"=>"0.0", "sending_guide_detail_id"=>"2479", "quantity"=>"1", "product_id"=>"3659"}, {"price"=>"34", "discount"=>"0.0", "sending_guide_detail_id"=>"2478", "quantity"=>"1", "product_id"=>"3660"}, {"price"=>"36", "discount"=>"0.0", "sending_guide_detail_id"=>"2477", "quantity"=>"1", "product_id"=>"1154"}, {"price"=>"28", "discount"=>"0.0", "sending_guide_detail_id"=>"2476", "quantity"=>"1", "product_id"=>"3426"}, {"price"=>"29", "discount"=>"0.0", "sending_guide_detail_id"=>"2475", "quantity"=>"1", "product_id"=>"3579"}, {"price"=>"22", "discount"=>"0.0", "sending_guide_detail_id"=>"2474", "quantity"=>"1", "product_id"=>"3422"}, {"price"=>"19", "discount"=>"0.0", "sending_guide_detail_id"=>"2473", "quantity"=>"1", "product_id"=>"3424"}, {"price"=>"21", "discount"=>"0.0", "sending_guide_detail_id"=>"2472", "quantity"=>"1", "product_id"=>"3425"}, {"price"=>"31", "discount"=>"0.0", "sending_guide_detail_id"=>"2471", "quantity"=>"1", "product_id"=>"1235"}, {"price"=>"33", "discount"=>"0.0", "sending_guide_detail_id"=>"2470", "quantity"=>"1", "product_id"=>"3570"}, {"price"=>"19", "discount"=>"0.0", "sending_guide_detail_id"=>"2469", "quantity"=>"1", "product_id"=>"3575"}, {"price"=>"9", "discount"=>"0.0", "sending_guide_detail_id"=>"2468", "quantity"=>"1", "product_id"=>"3581"}, {"price"=>"15", "discount"=>"0.0", "sending_guide_detail_id"=>"2467", "quantity"=>"1", "product_id"=>"3432"}, {"price"=>"10", "discount"=>"0.0", "sending_guide_detail_id"=>"2466", "quantity"=>"1", "product_id"=>"3580"}, {"price"=>"16", "discount"=>"0.0", "sending_guide_detail_id"=>"2465", "quantity"=>"1", "product_id"=>"3584"}, {"price"=>"4", "discount"=>"0.0", "sending_guide_detail_id"=>"2464", "quantity"=>"1", "product_id"=>"3586"}, {"price"=>"24", "discount"=>"0.0", "sending_guide_detail_id"=>"2463", "quantity"=>"1", "product_id"=>"3418"}, {"price"=>"55", "discount"=>"0.0", "sending_guide_detail_id"=>"2462", "quantity"=>"1", "product_id"=>"3609"}, {"price"=>"19", "discount"=>"0.0", "sending_guide_detail_id"=>"2461", "quantity"=>"1", "product_id"=>"3590"}]}
+Redirected to http://localhost:3000/ordenes_ventas/guia_remision/211
+Completed in 5607ms (DB: 395) | 302 Found [http://localhost/sending_guides/generate_order/211]
+
+
+Processing SendingGuidesController#create_order (for 127.0.0.1 at 2009-10-01 11:52:09) [GET]
+  Parameters: {"id"=>"211"}
+Rendering template within layouts/application
+Rendering sending_guides/create_order
+Completed in 115ms (View: 56, DB: 29) | 200 OK [http://localhost/ordenes_ventas/guia_remision/211]
+
+
+Processing SendingGuidesController#generate_order (for 127.0.0.1 at 2009-10-01 11:52:35) [POST]
+  Parameters: {"commit"=>"Finalizar Venta", "authenticity_token"=>"ZH14WmzT/gl3e60HdbHwHKjav3Ej6C80Zj+vp6c4ptA=", "id"=>"211", "order"=>{"order_date(2i)"=>"10", "number"=>"866", "order_date(3i)"=>"1", "credit_card"=>"", "order_date(1i)"=>"2009"}, "order_details"=>[{"price"=>"26", "discount"=>"0.0", "sending_guide_detail_id"=>"2533", "quantity"=>"1", "product_id"=>"3548"}, {"price"=>"39", "discount"=>"0.0", "sending_guide_detail_id"=>"2532", "quantity"=>"1", "product_id"=>"3417"}, {"price"=>"35", "discount"=>"0.0", "sending_guide_detail_id"=>"2531", "quantity"=>"1", "product_id"=>"3428"}, {"price"=>"30", "discount"=>"0.0", "sending_guide_detail_id"=>"2530", "quantity"=>"1", "product_id"=>"3571"}, {"price"=>"29", "discount"=>"0.0", "sending_guide_detail_id"=>"2529", "quantity"=>"1", "product_id"=>"3416"}]}
+Redirected to http://localhost:3000/reportes/ventas/6306
+Completed in 1078ms (DB: 587) | 302 Found [http://localhost/sending_guides/generate_order/211]
+
+
+Processing ReportsController#order (for 127.0.0.1 at 2009-10-01 11:52:37) [GET]
+  Parameters: {"id"=>"6306"}
+Rendering template within layouts/application
+Rendering reports/order
+Completed in 44ms (View: 37, DB: 6) | 200 OK [http://localhost/reportes/ventas/6306]
+
+
+Processing SalesController#reopen (for 127.0.0.1 at 2009-10-01 11:52:45) [GET]
+  Parameters: {"id"=>"6306"}
+Redirected to http://localhost:3000/ordenes_venta
+Completed in 12ms (DB: 8) | 302 Found [http://localhost/sales/reopen/6306]
+
+
+Processing SalesController#index (for 127.0.0.1 at 2009-10-01 11:52:45) [GET]
+
+TypeError (String can't be coerced into Fixnum):
+  app/models/order.rb:68:in `childless?'
+  app/controllers/sales_controller.rb:8:in `index'
+  app/controllers/sales_controller.rb:7:in `each'
+  app/controllers/sales_controller.rb:7:in `index'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReportsController#order (for 127.0.0.1 at 2009-10-01 11:52:51) [GET]
+  Parameters: {"id"=>"6306"}
+
+ActiveRecord::RecordNotFound (Couldn't find Order with ID=6306 AND (status LIKE 'accepted')):
+  app/controllers/reports_controller.rb:340:in `order'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+  /Library/Ruby/Gems/1.8/gems/flyerhzm-bullet-1.5.5/lib/bulletware.rb:10:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReportsController#inventary (for 127.0.0.1 at 2009-10-26 16:34:35) [POST]
+  Parameters: {"commit"=>"Filtrar", "provider_id"=>"0", "from"=>{"month"=>"1", "day"=>"1", "year"=>"2008"}, "authenticity_token"=>"6wnT/nySH6YPq8bx7/ApZjsMmcM8ZV/sOvkeQHighQ0=", "to"=>{"month"=>"10", "day"=>"24", "year"=>"2009"}, "category_id"=>"0"}
+
+ Ninguno  
+Rendering template within layouts/application
+Rendering reports/inventary
+DEPRECATION WARNING: WillPaginate: :prev_label view parameter is now :previous_label; the old name has been deprecated. (called from _run_erb_app47views47reports47inventary46html46erb at /Users/alvaropereyrarabanal/Development/SKProduction/app/views/reports/inventary.html.erb:92)
+Completed in 1400ms (View: 332, DB: 210) | 200 OK [http://localhost/reportes/inventario]
+
+
+Processing ReportsController#inventary (for 127.0.0.1 at 2009-10-26 16:34:42) [POST]
+  Parameters: {"commit"=>"Filtrar", "provider_id"=>"0", "from"=>{"month"=>"1", "day"=>"1", "year"=>"2008"}, "authenticity_token"=>"6wnT/nySH6YPq8bx7/ApZjsMmcM8ZV/sOvkeQHighQ0=", "to"=>{"month"=>"10", "day"=>"24", "year"=>"2009"}, "category_id"=>"11"}
+
+ Categoria: 11  
+Rendering template within layouts/application
+Rendering reports/inventary
+Completed in 366ms (View: 109, DB: 178) | 200 OK [http://localhost/reportes/inventario]
+
+
+Processing ReportsController#inventary (for 127.0.0.1 at 2009-10-26 16:34:46) [POST]
+  Parameters: {"commit"=>"Filtrar", "provider_id"=>"0", "from"=>{"month"=>"1", "day"=>"1", "year"=>"2008"}, "authenticity_token"=>"6wnT/nySH6YPq8bx7/ApZjsMmcM8ZV/sOvkeQHighQ0=", "to"=>{"month"=>"10", "day"=>"24", "year"=>"2009"}, "category_id"=>"13"}
+
+ Categoria: 13  
+Rendering template within layouts/application
+Rendering reports/inventary
+Completed in 553ms (View: 56, DB: 181) | 200 OK [http://localhost/reportes/inventario]
+
+
+Processing ReportsController#inventary (for 127.0.0.1 at 2009-10-26 16:34:50) [POST]
+  Parameters: {"commit"=>"Filtrar", "provider_id"=>"0", "from"=>{"month"=>"1", "day"=>"1", "year"=>"2008"}, "authenticity_token"=>"6wnT/nySH6YPq8bx7/ApZjsMmcM8ZV/sOvkeQHighQ0=", "to"=>{"month"=>"10", "day"=>"24", "year"=>"2009"}, "category_id"=>"21"}
+
+ Categoria: 21  
+Rendering template within layouts/application
+Rendering reports/inventary
+Completed in 237ms (View: 54, DB: 158) | 200 OK [http://localhost/reportes/inventario]
+
+
+Processing ReportsController#inventary (for 127.0.0.1 at 2009-10-26 16:34:54) [POST]
+  Parameters: {"commit"=>"Filtrar", "provider_id"=>"0", "from"=>{"month"=>"1", "day"=>"1", "year"=>"2008"}, "authenticity_token"=>"6wnT/nySH6YPq8bx7/ApZjsMmcM8ZV/sOvkeQHighQ0=", "to"=>{"month"=>"10", "day"=>"24", "year"=>"2009"}, "category_id"=>"8"}
+
+ Categoria: 8  
+Rendering template within layouts/application
+Rendering reports/inventary
+DEPRECATION WARNING: WillPaginate: :prev_label view parameter is now :previous_label; the old name has been deprecated. (called from _run_erb_app47views47reports47inventary46html46erb at /Users/alvaropereyrarabanal/Development/SKProduction/app/views/reports/inventary.html.erb:92)
+Completed in 990ms (View: 144, DB: 301) | 200 OK [http://localhost/reportes/inventario]
+
+
+Processing ReportsController#inventary (for 127.0.0.1 at 2009-10-26 16:35:25) [POST]
+  Parameters: {"commit"=>"Filtrar", "provider_id"=>"0", "from"=>{"month"=>"1", "day"=>"1", "year"=>"2008"}, "authenticity_token"=>"6wnT/nySH6YPq8bx7/ApZjsMmcM8ZV/sOvkeQHighQ0=", "to"=>{"month"=>"10", "day"=>"24", "year"=>"2009"}, "category_id"=>"0"}
+
+ Ninguno  
+Rendering template within layouts/application
+Rendering reports/inventary
+DEPRECATION WARNING: WillPaginate: :prev_label view parameter is now :previous_label; the old name has been deprecated. (called from _run_erb_app47views47reports47inventary46html46erb at /Users/alvaropereyrarabanal/Development/SKProduction/app/views/reports/inventary.html.erb:92)
+Completed in 1091ms (View: 153, DB: 312) | 200 OK [http://localhost/reportes/inventario]
+
+
+Processing ReportsController#inventary (for 127.0.0.1 at 2009-10-26 16:35:33) [POST]
+  Parameters: {"commit"=>"Filtrar", "provider_id"=>"0", "from"=>{"month"=>"1", "day"=>"1", "year"=>"2008"}, "authenticity_token"=>"6wnT/nySH6YPq8bx7/ApZjsMmcM8ZV/sOvkeQHighQ0=", "to"=>{"month"=>"10", "day"=>"24", "year"=>"2009"}, "category_id"=>"0"}
+
+ Ninguno  
+Rendering template within layouts/application
+Rendering reports/inventary
+DEPRECATION WARNING: WillPaginate: :prev_label view parameter is now :previous_label; the old name has been deprecated. (called from _run_erb_app47views47reports47inventary46html46erb at /Users/alvaropereyrarabanal/Development/SKProduction/app/views/reports/inventary.html.erb:92)
+Completed in 1237ms (View: 194, DB: 267) | 200 OK [http://localhost/reportes/inventario]
+
+
+Processing ReportsController#inventary (for 127.0.0.1 at 2009-10-26 16:35:43) [POST]
+  Parameters: {"commit"=>"Filtrar", "provider_id"=>"0", "from"=>{"month"=>"1", "day"=>"1", "year"=>"2008"}, "authenticity_token"=>"6wnT/nySH6YPq8bx7/ApZjsMmcM8ZV/sOvkeQHighQ0=", "to"=>{"month"=>"10", "day"=>"24", "year"=>"2009"}, "category_id"=>"0"}
+
+ Ninguno  
+Rendering template within layouts/application
+Rendering reports/inventary
+DEPRECATION WARNING: WillPaginate: :prev_label view parameter is now :previous_label; the old name has been deprecated. (called from _run_erb_app47views47reports47inventary46html46erb at /Users/alvaropereyrarabanal/Development/SKProduction/app/views/reports/inventary.html.erb:92)
+Completed in 1257ms (View: 436, DB: 313) | 200 OK [http://localhost/reportes/inventario]

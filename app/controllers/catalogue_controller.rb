@@ -25,12 +25,20 @@ class CatalogueController < ApplicationController
   end
   
   
-  def send_client_mails
-    @clients = Client.find(:all,:conditions=>"contact_email is not null")
+  def latest_clients
+    
+    @clients = Client.paginate(:all,:conditions=>"contact_email is not null", :page => params[:page])
     
   end
   
+  def send_client_mails
+    latest_clients
+  end
+  
   def send_mails
+
+    latest_clients
+
     if params[:client]
       params[:client].each do |client,data|
         if data[:sendable]
@@ -38,20 +46,16 @@ class CatalogueController < ApplicationController
             send_client = Client.find(client)
             Emailer::deliver_client_email(send_client)
             flash[:notice] = "<em>Mensajes enviados exitosamente</em>"    
-            @clients = Client.all
           rescue Exception => ex
-              flash[:error] = "<em>Error en algunos datos de env&iacute;o</em>"    
-              RAILS_DEFAULT_LOGGER.error("\n #{ ex}  \n")           
-              @clients = Client.all
+            flash[:error] = "<em>Error en algunos datos de env&iacute;o</em>"    
+            RAILS_DEFAULT_LOGGER.error("\n #{ ex}  \n")           
           end
         end #se ha marcado para enviar
 
       end #cada uno 
-      
-      render :action => :clients
-      
+            
     end #hay info
-    
+    render :action => :send_client_mails
 
   end
   
@@ -176,20 +180,7 @@ class CatalogueController < ApplicationController
         wants.js { 
           
           render :update do |page|
-            #CHANGE THIS
-          #  search = Client.new_search
-          #  search.conditions.or_name_contains = params["q"]
-          #  search.conditions.or_dni_contains = params["q"]
-          #  search.conditions.or_address_contains = params["q"]
-          #  search.conditions.or_telephone_contains = params["q"]
-          #  search.conditions.or_ruc_contains = params["q"]
-          #  search.conditions.or_legal_representative_contains = params["q"]            
-          #  search.conditions.or_contact_person_contains = params["q"]
-          #  search.conditions.or_contact_email_contains = params["q"]            
-            
-          #  @clients = search.all
-            #@clients = Client.find_all_by_name("*" + params["q"]+"*",:conditions=>"status NOT LIKE 'pendiente'",:limit => 15)        
-            @clients = Client.search  '*' + params["q"] + '*', :page=>params[:page], :per_page=>15 # :limit => 15 #:conditions=>"status NOT LIKE 'pendiente'", 
+            @clients = Client.search  '*' + params["q"] + '*', :page=>params[:page], :per_page=>15 
             page.replace 'detalle', :partial => 'client_list'
             page.visual_effect :highlight, 'list'                
           end
@@ -200,6 +191,36 @@ class CatalogueController < ApplicationController
       
   end
 
-  
+  def search_client_for_sending
+		
+			search = if params[:client]
+				params[:client][:name].blank? ? " " : params[:client][:name] 
+			elsif params["q"]  
+				params["q"]
+			else
+				" "
+			end
+
+      if search.blank?
+        latest_clients
+      else  
+        @clients = Client.search  '*' + search + '*', :page=>params[:page], :per_page=>15 
+      end
+
+      respond_to do |wants|        
+        wants.js { 
+          
+          render :update do |page|
+            page.replace 'detalle', :partial => 'send_client_list'
+            page.replace 'paginate_clients', :partial => 'paginate_clients'
+						page.show 'detalle'             
+          end
+          
+          }
+        
+      end
+      
+  end  
+
   
 end

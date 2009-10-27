@@ -1,0 +1,17 @@
+
+  <tbody id="detalle">
+  	<% for client in @clients %>
+
+  	<tr class="<%= cycle("even","odd") %>">
+  		<td><%= client.name %></td>
+  		<td><%= client.telephone %></td>	
+  		<td><%= client.contact_person %></td>			
+  		<td width="30" style="width:150px !important; overflow:hidden;">
+  			<div style="width:150px;">
+  				<%= client.contact_email %>
+  			</div>
+  		</td>															
+  		<td><%= check_box_tag "client[#{client.id}][sendable]" %>
+  	</tr>
+  	<% end %>
+    </tbody>  	 

@@ -7,6 +7,10 @@
 	http://skykidsperu.com/stylesheets/nextgen/web.css?1241621009
 	http://localhost:3000/stylesheets/nextgen/web.css?1249397244
 	http://localhost:3000/stylesheets/nextgen/web.css?1251127436
+	http://www.skykidsperu.com/stylesheets/nextgen/web.css?1253115721
+	http://www.skykidsperu.com/stylesheets/nextgen/print.css?1235998158
+	http://www.skykidsperu.com/stylesheets/nextgen/web.css?1255707605
+	http://www.skykidsperu.com/stylesheets/nextgen/web.css?1255709244
 */
 
 body {
@@ -67,11 +71,9 @@ table#range_table {
 
 h2#cotizacion-title {
 	display: block;
-	color: black !important;
-	font-size: 2em !important;
 	text-align: center;
-	font-weight: bold !important;
 	margin-bottom: 10px !important;
+	font: 2em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif !important;
 }
 
 div#quote_content p {
@@ -108,20 +110,23 @@ input.small_fields {
 }
 
 dl#general_data {
-	float: left;
-	width: 300px;
 	margin-top: 40px;
-	color: #a68080;
+	color: #000;
 	font: 1.43em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-	letter-spacing: -1px;
-	word-spacing: 6px;
+	letter-spacing: 0;
 }
 
 dl#general_data dt {
-	width: 450px;
-	float: left;
 	margin-bottom: 20px;
+	font-weight: bold;
+	color: #00b5ee;
+}
+
+#general_data dt strong {
 	clear: both;
+	display: block;
+	font-weight: normal;
+	color: #000;
 }
 
 body#pages dl#general_data dt 
@@ -130,7 +135,8 @@ body#pages dl#general_data dt
 }
 
 body#pages #general_data {
-	margin-left: 20px;
+
+	overflow: auto;
 }
 
 dl#general_data dd {
@@ -148,7 +154,7 @@ dl#general_data dd {
 
 div#total {
 font-size: 1.5em;
-	color: #e60000;
+	color: #b63b1d;
 text-align: right;
 padding-right: 15px;
 margin-top: 5px;
@@ -173,6 +179,7 @@ div#header h1 a{
 	height: 125px;
 	text-indent:  -400em;
 	display: block;
+	overflow: hidden;
 }
 
 div#footnotes_debug {
@@ -638,7 +645,7 @@ div#footer p a {
 div#quote_content h2,
 div#inside_content h2,
 div#sidebar label {
-	color: #fff;
+	color: #00afe4;
 	float: left;
 	margin: 0px;
 	margin-right: 10px;
@@ -656,7 +663,8 @@ div#quote_content h2{
 }
 
 div#quote_wrapper {
-	width: 700px;
+	width: 750px;
+	overflow: auto;
 	margin: 0 auto;
 }
 
@@ -695,7 +703,6 @@ h1#request {
 
 table#product_table,
 table#additional_product_table {
-	width: 96%;
 	margin: 0 auto;
 	margin-top: 20px;
 	border-collapse: 0px !important;
@@ -707,14 +714,23 @@ table#additional_product_table {
 	border-collapse: 0px;
 	border-spacing: 0px;
 	border: none;
-	color: #a68080;
-	font-size: 1.3em;
+	color: #574141;
+	font-size: 1.2em;
 	clear: both;
+	letter-spacing: 0;
+	word-spacing: 0;
+}
+
+div#total_products, div#price_per_product {
+	text-align: right;
+	font-size: 1.4em;
+	margin-top: 0.3em;
+	margin-right: 1em;
 }
 
 table#product_table a,
 table#additional_product_table a{
-	color: #80080a;
+	color: #34b6c5;
 	text-decoration: none;
 	padding: 1px;
 	clear: both;	
@@ -731,7 +747,7 @@ table#additional_product_table a:hover {
 
 table#product_table thead tr,
 table#additional_product_table thead tr {
-	background-color: #aae0ff;
+	background-color: #3bcddd;
 	color: #fff9fa;	
 	text-transform: lowercase;
 	font: normal normal 1.0em "Lucida Grande", Lucida, Verdana, sans-serif;
@@ -742,12 +758,28 @@ table#additional_product_table {
 }
 
 #end_zone a.download_pdf {
-	margin-left: 350px;
+	margin-left: 280px;
+}
+
+#end_zone a.download_pdf,
+#end_zone a.download_xls{
+	display: block;
+	float: left;
+	padding: 10px 20px;
+	background-color: #33b5c4;
+	margin-right: 1em;
+	color: white;
+	font-size: 1.2em;
+}
+
+#end_zone a.download_pdf:hover,
+#end_zone a.download_xls:hover {
+	background-color: #217f8a;
 }
 
 table#product_table thead tr th,
 table#additional_product_table thead tr th{
-	padding: 5px;
+	padding: 1px 5px;
 }
 
 table#product_table tbody tr.odd,
@@ -844,7 +876,7 @@ div#inside_content ul#list {
 
 ul#list li.product div.text {
 	overflow: hidden;
-	width: 120px;
+	width: 125px;
 	font-size: 0.8em;
 	color: #bd9192;
 	float: left;
@@ -878,7 +910,7 @@ div#full_inside ul#list li.product {
 	height: 100px;
 	padding: 10px;
 	padding-bottom: 20px;
-	margin-bottom: 30px;
+	margin-bottom: 15px;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
 	list-style: none;
@@ -997,19 +1029,21 @@ div#inside_content ul#list h4{
 	color: #7b512f;
 	overflow: hidden;
 	float: left;
+	font-size: 0.9em;
 }
 
 #list li.product h3{
 	
 	color: #00afec;
 	overflow: hidden;
-	margin-bottom: 20px;
+	margin: 0px;
+	margin-top: 5px;
 }
 
 #list li.product h3 a {
 	text-decoration: none;
 	color: #00aabd;
-
+	font: bold 1em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
 #list li.product h3 a:hover {
@@ -1493,6 +1527,25 @@ div#form_footer input,
 	border: 1px solid #afbfb7;
 	color: #787374;
 	width: 100px;
+}
+
+#list li.product div.text div.list_product_sale p {
+	font-size: 1em;
+	text-align: left;
+	margin: 20px 0px 0px 0px ;
+	color: #aa2921;
+	font-weight: bold;
+}
+
+#list li.product div.text div.list_product_sale p.precio span {
+	color: #6d6d6d;
+	font-weight: normal;
+	font-style: normal;
+}
+
+#list li.product. div.text div.list_product_sale {
+	display: block;
+	float: none;
 }
 
 #list li.product div.text div.product_sale {

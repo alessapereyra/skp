@@ -40,7 +40,7 @@ class ProvidersController < ApplicationController
     respond_to do |format|
       if @provider.update_attributes(params[:provider])
         flash[:notice] = 'Datos de proveedor actualizados'
-        format.html { redirect_to(@provider) }
+        format.html { redirect_to providers_path }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

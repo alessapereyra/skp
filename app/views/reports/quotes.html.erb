@@ -16,7 +16,7 @@
 	<% @quotes.each do |quote| %>
 	<tr class="<%= cycle("even", "odd") -%> <%= "new" if quote.updated  %>">
 		<td><%= quote.document %></td>
-		<td><%= quote.client.name unless quote.client.nil? %></td>				
+		<td><%= link_to(quote.client.name,quote.client) unless quote.client.nil? %></td>				
 		<td><%= quote.price %></td>						
 		<td><%= quote.quote_date.strftime("%d/%m/%y") unless quote.quote_date.nil? %></td>
 		<td><%= quote.sent ? "enviada" : "por enviar" unless quote.sent.nil? %>

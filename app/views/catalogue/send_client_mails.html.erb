@@ -1,35 +1,66 @@
-<%= content_tag(:h2, "Catálogo de Clientes ")%>
+<%= content_tag(:h2, "Env&iacute;o de Mail a Clientes ")%>
 
-<span id="messages"><%= flash[:error] %><%= flash[:notice] %></span>
 
-<table>
-	<thead>
-		<tr>
-			<th width="50">Nombre</th>			
-			<th width="20">Tel&eacute;fono</th>						
-			<th width="50">Persona Contacto</th>												
-			<th width="30" style="width:150px !important; overflow:hidden;">Email</th>
-			<th width="20"></th>
-		</tr>	
-	</thead>
-	<tbody>
-	<% form_for :client, :url=>{:action=>:send_mails} do |f| %>
-	<% for client in @clients %>
+<% remote_form_for :client, :url=>{:controller=>:catalogue,:action=>:search_client_for_sending } do |od| %>
 
-	<tr class="<%= cycle("even","odd") %>">
-		<td><%= client.name %></td>
-		<td><%= client.telephone %></td>	
-		<td><%= client.contact_person %></td>			
-		<td width="30" style="width:150px !important; overflow:hidden;">
-			<div style="width:150px;">
-				<%= client.contact_email %>
-			</div>
-		</td>															
-		<td><%= check_box_tag "client[#{client.id}][sendable]" %>
-	</tr>
-	<% end %>
-</tbody>
-</table>
-
-<%= f.submit "Enviar a cliente", :class=>'form_button' %>
+<dl>
+	<fieldset>
+		<legend>Búsqueda de clientes</legend>
+	<div id="single_column_left">
+		<dd><%= od.text_field :name, :class=>"ac_input" %></dd>
+	</div>			
+	</fieldset>	
+</dl>
 <% end %>
+
+
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+	if (window.location.hash != ""){ 
+	$.ajax({data:'q=' + window.location.hash.substring(1) + '&authenticity_token=' + encodeURIComponent('3b8cb750e19257f451b140a143b9146a378ac9c1'), dataType:'script', url:'/catalogue/search_client_for_sending'})
+	}
+});
+//]]>	
+
+</script>
+
+  
+  <span id="messages"><%= flash[:error] %><%= flash[:notice] %></span>
+
+	<% form_for :client, :url=>{:action=>:send_mails} do |f| %>
+  <table>
+  	<thead>
+  		<tr>
+  			<th width="50">Nombre</th>			
+  			<th width="20">Tel&eacute;fono</th>						
+  			<th width="50">Persona Contacto</th>												
+  			<th width="30" style="width:150px !important; overflow:hidden;">Email</th>
+  			<th width="20"></th>
+  		</tr>	
+  	</thead>
+
+        <%= render :partial => 'send_client_list' %>
+
+    </table>
+
+  <%= f.submit "Enviar a cliente", :class=>'form_button' %>
+  <% end %>
+
+<%= render :partial => 'paginate_clients' %>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+$('#client_name').delayedObserver(0, function(element, value) {
+	
+	window.location.hash =  value;
+	
+	$.ajax({data:'q=' + value + '&authenticity_token=' + encodeURIComponent('3b8cb750e19257f451b140a143b9146a378ac9c1'), dataType:'script', url:'/catalogue/search_client_for_sending'})
+	
+	})
+//]]>	
+</script>
+
+
