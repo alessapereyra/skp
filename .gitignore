@@ -4,3 +4,5 @@ public/xls
 /images
 public/nextgen/images
 public/stylesheets/nextgen/images/
+db/sphinx/	
+log/

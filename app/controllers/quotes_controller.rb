@@ -1123,7 +1123,7 @@ class QuotesController < ApplicationController
     setup_quote
 		discover_products
 
-    respond_to do |wants|       
+    respond_to do |wants|         
       wants.html {
         render :action=>:index
 
