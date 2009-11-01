@@ -21,7 +21,6 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :categories, :as=>'categorias'
   
-  map.resources :send_orders, :as=>'ordenes_envio'
 
 
   map.resources :orders, :controller=>"sales", :as=>"ordenes_venta"
@@ -45,6 +44,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :products, :as=>"productos", :member => {:recalculate_stocks => :get,:recalculate_this_stock=>:get}
   map.resources :input_orders, :controller=>"buying_orders", :as=>"ingresos"
+  
+  # map.resources :send_orders, :as=>'ordenes_envio'dd  
   map.resources :send_orders, :controller=>"sending", :as=>"envios"
   map.resources :providers, :as=>"proveedores"
   map.resources :stores, :as=>"admin_tiendas"

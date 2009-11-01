@@ -69,9 +69,11 @@ class ProductsController < ApplicationController
     
     def show
           @product = Product.find(params[:id])
-          @product.additional_code = @product.input_order_details.last.additional_code
+          additional_code = @product.input_order_details.last.additional_code
+          
+          @product.additional_code = additional_code unless additional_code.blank?
           respond_to do |format|
-            format.js {render :text => @product.to_json, :layout=>false}
+            format.js {render :text => @product.to_json(:only=>[:id,:name,]), :layout=>false}
         end
     end
     

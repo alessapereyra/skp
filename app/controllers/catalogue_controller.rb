@@ -47,7 +47,7 @@ class CatalogueController < ApplicationController
             Emailer::deliver_client_email(send_client)
             flash[:notice] = "<em>Mensajes enviados exitosamente</em>"    
           rescue Exception => ex
-            flash[:error] = "<em>Error en algunos datos de env&iacute;o</em>"    
+            flash[:error] = "<em>Error en algunos datos de env&iacute;o<br />#{ex} <br />#{ex.backtrace}</em> "    
             RAILS_DEFAULT_LOGGER.error("\n #{ ex}  \n")           
           end
         end #se ha marcado para enviar

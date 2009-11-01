@@ -349,7 +349,8 @@ class ExitOrdersController < ApplicationController
       @order.address = @exit_order.client.address
       @order.number = Order.last_number_of(@order.type,get_current_store)
       @order.status = "open"
-      @order.unload_stock = false       
+      @order.unload_stock = false    
+      count = 0   
       @exit_order.exit_order_details.pending.reverse.each do |sgd|   #cada detalle del orden de envio que no se haya procesado
                                                                    #se pasa a uno de factura
       price = sgd.price
@@ -364,11 +365,13 @@ class ExitOrdersController < ApplicationController
                                     :exit_order_detail_id=>sgd.id,
                                   })
         #od.save!
-        
+        count += 1
         @order_details << od
 
 
       end
+      
+      Order.update_counters @order.id, :order_details_count => count
       
       @order.price = @order_details.inject(0){| sum, od | sum + (od.price.to_f*od.quantity)  }
     end
@@ -393,7 +396,7 @@ class ExitOrdersController < ApplicationController
     @order.status = "accepted"
     @order.unload_stock = false
     @order.save!
-    
+    count = 0
     OrderDetail.create(params[:exit_order_details]) do |od| 
       od.order_id = @order.id
       od.save
@@ -403,8 +406,10 @@ class ExitOrdersController < ApplicationController
       sgd.status = "postponed"
       sgd.status = "processed" if sgd.pending.zero?
       sgd.save!
+      count +=1
     end
     
+    Order.update_counters @order.id, :order_details_count => count
     @order.price = @order.order_details.inject(0){| sum, od | sum + (od.price.to_f*od.quantity)  }
     @order.save!
     

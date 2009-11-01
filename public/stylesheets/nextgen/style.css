@@ -5,6 +5,10 @@
 	http://www.skykidsperu.com/stylesheets/nextgen/style.css
 	http://localhost:3000/stylesheets/nextgen/style.css
 	http://localhost:3000/stylesheets/nextgen/style.css?1227801156
+	http://localhost:3000/stylesheets/nextgen/style.css?1239664720
+	http://localhost:3000/stylesheets/screen.css?1255707412
+	http://localhost:3001/stylesheets/nextgen/style.css?1256760403
+	http://localhost:3001/stylesheets/nextgen/style.css?1256922154
 */
 
 div.quote_detail {
@@ -14,6 +18,12 @@ div.quote_detail {
 	margin-bottom: 20px;
 	overflow: auto;
 	font-size: 1.1em;
+}
+
+div#quote_quote_details table#product_table tr td a img,
+div#quote_quote_details table#product_table tr td a {
+	width: 25px !important;
+	display: block;
 }
 
 tbody.credit_card_sales {
@@ -521,8 +531,12 @@ body#orders input#order_submit.form_button {
 	font-size: 1em;
 }
 
-#content div.pagination a{
 
+#content div.pagination span,
+#content div.pagination a{
+text-align: center;
+margin-right: 0px;
+padding: 5px 15px;
 }
 
 div#endzone p{
@@ -771,10 +785,9 @@ a.form_button {
 	font-size: 1em;
 	width: 100px;
 	text-align: center;
-	height: 10px;
+	height: 14px;
 	background-color: #468ca9;
 	color: white;
-	border: 1px solid #7fa9fa;
 	float: right;
 	margin: 0px;
 	padding: 10px 5px;
@@ -786,10 +799,13 @@ a.form_button {
 	float: left;
 	margin-right: 5px;
 	color: white !important;
-	font-size: 1em !important;
 	clear: both !important;
 	display: block !important;
-	padding: 10px 0px;
+	padding: 8px 2px;
+	text-transform: lowercase;
+	font: 0.95em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif !important;
+	word-spacing: 0;
+	letter-spacing: 0;
 }
 
 a.form_button_inline {
@@ -1182,15 +1198,17 @@ div#content form select.active {
 }
 
 div#content input.form_button {
-	width: 120px;
-	height: 26px;
-	background-color: #57b3dc;
+	width: 125px;
+	height: 34px;
+	background-color: #468ca9;
 	margin-top: 21px;
 	padding: 5px;
 	color: white;
-	border: 1px solid #1f7da9;
 	cursor: pointer;
 	text-transform: lowercase;
+	font: 1.2em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	word-spacing: 0;
+	letter-spacing: 0;
 }
 
 fieldset input.form_button {
@@ -1374,6 +1392,36 @@ a.delete_button {
 	margin-top: 20px;
 }
 
+a.update_button {
+			text-decoration: none;
+	text-indent: -400em;
+	border: none;
+	margin: 0px auto;
+	height: 25px;
+	width: 16px;
+	background: transparent url(../../images/nextgen/ok.png) no-repeat;
+	display: block;
+	margin-top: 20px;
+}
+
+form.quote_form span#product_message {
+	display: block;
+	text-align: center;
+	padding: 10px;
+	margin: 10px 0px;
+	background-color: #f5ff87;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+}
+
+form.quote_form span#product_message a {
+	font-weight: normal;
+	font-style: normal;
+	text-transform: lowercase;
+	font-size: 1.4em;
+	color: #76463d;
+}
 
 div#content 
 table#edit_input_order tbody tr td a.delete_button {
@@ -1394,30 +1442,34 @@ div#content table#edit_input_order tbody tr td {
 }
 
 #recover div.opener {
-	padding: 20px;
-	background-color: #f7ff6a;
-	color: #f96960 !important;
+	padding: 8px 15px;
+	background-color: #f7ff6a !important;
+	display: block;
+	color: #151717;
 	overflow: auto;
 	-webkit-radius: 20px;
 	-moz-radius:20px;
+	margin-bottom: 20px;
+	text-transform: lowercase;
 }
 
-#recover div.opener p {
+div#content div#recover div.opener p.message {
 	margin: 0;
-	color: #ff6f41 !important;
+	color: #186d79;
 }
 
 #recover div.opener p.message {
 	float: left;
-	color: #f00;
+	color: #56514f !important;
 }
 
 #recover div.opener p.action {
 	float: right;
+	margin: 0px;
 }
 
 #recover div.recover_results {
-
+	display: none;
 }
 
 #recover div.recover_results table {
@@ -1442,6 +1494,13 @@ table.mceToolbar.Enabled tbody tr:hover {
 
 body#quotes #list tr td {
 	padding: 0px;
+	color: #474747;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+select#age_from.small_fields,
+select#age_to.small_fields {
+	width: 80px;
 }
 
 body#catalogue input#product_name,

@@ -12,8 +12,8 @@
 			<tr>
 				<th>Documento</th>		
 				<th>Cliente</th>
-				<th>Contacto</th>				
-				<th>Email</th>				
+				<th width="100">Contacto</th>				
+				<th width="75">Email</th>				
 				<th>Fecha</th>
 				<th></th>
 				<th></th>
@@ -25,8 +25,8 @@
 			<tr class="<%= cycle("even", "odd") -%>">
 				<td><%= quote.document %></td>		
 				<td><%= quote.client.name unless quote.client.nil? %></td>				
-				<td><%= quote.contact_name %></td>					
-				<td><%= quote.sending_details %></td>							
+				<td><div style="width:75px"><%= quote.contact_name %></div></td>					
+				<td><div style="width:75px"><%= quote.sending_details %></div></td>							
 				<td><%= quote.quote_date.strftime("%d/%m/%y") %></td>
 				<td><%= link_to "revisar", quote_report_path(quote.id) %></td>
 				<td><%= link_to "recuperar", url_for(:action=>'recover',:id=>quote.id), :method=>:post %></td>

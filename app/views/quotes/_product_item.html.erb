@@ -1,0 +1,29 @@
+<% quote_fields = "'age_from=' + $('#quote_detail_#{quote.id}_age_from').attr('value') +" %>
+<% quote_fields << "'&age_to=' + $('#quote_detail_#{quote.id}_age_to').attr('value') +" %>
+<% quote_fields << "'&months=' + $('#quote_detail_#{quote.id}_months').attr('checked') +" %>
+<% quote_fields << "'&sex=' + $('#quote_detail_#{quote.id}_sex').attr('value') +" %>
+<% quote_fields << "'&quantity=' + $('#quote_detail_#{quote.id}_quantity').attr('value') +" %>
+<% quote_fields << "'&price=' + $('#quote_detail_#{quote.id}_price').attr('value') +" %>
+<% quote_fields << "'&additional=' + $('#quote_detail_#{quote.id}_additional').attr('checked') +" %>
+<% quote_fields << "'&unavailable=' + $('#quote_detail_#{quote.id}_unavailable').attr('checked') +" %>
+<% quote_fields << "'&pack_number=' + $('#quote_detail_#{quote.id}_pack_number').attr('value')" %>
+
+<% fields_for :quote_detail, quote, :index=>quote.id do |qd| %>		
+  <tr class="<%= cycle("even", "odd") -%>" id="qd_<%= quote.id %>">
+  	<td><div style="width:50px;"><%= quote.product.code %></div></td>
+  	<td><%= qd.select :age_from, (0..18).collect {|x| [x, x] }, {},:index=>quote.id %>
+  		<%= qd.select :age_to, (0..18).collect {|x| [x, x] }, {},:index=>quote.id %>
+  	</td>
+  	<td><%= qd.check_box :months %></td>
+  	<td><%= qd.select :sex, ["h","m","hm"].collect {|x| [x.humanize, x]}, {}, :index=>quote.id, :class=>'small_fields'  %></td>
+  	<td><div style="width:70px;"><%= quote.product.name unless quote.product.nil? %></div></td>
+  	<td><%= link_to image_tag(quote.product.picture.thumb.url, :width=>35), quote.product.picture.url unless quote.product.picture.nil? %></td>		
+  	<td><%= qd.text_field :quantity, :class=>"small_fields" %></td>				
+  	<td><%= text_field_tag "quote_detail[#{quote.id}][price]", price, :class=>"small_fields" %></td>							
+  	<td><%= qd.check_box :additional %></td>
+  	<td><%= qd.check_box :unavailable %></td>		
+  	<td><%= qd.text_field :pack_number, :class=>"small_fields" %>	
+  	<td><%= link_to_remote "Actualizar", :url=>{:action=>"update_quote_details", :id=>quote.id},:with =>"#{quote_fields}", :html=>{:class=>"update_button"} %></td>			
+  		<td><%= link_to_remote 'Eliminar',:url=>{:action=>"destroyDetail", :id=>quote.id}, :method =>'delete', :html=>{:class=>"delete_button"} %></td>
+  		<% end %>
+  		

@@ -23,12 +23,7 @@ class QuotesController < ApplicationController
 
   def setup_quote
 
-    @pending_quotes = []
-    temp = Quote.find(:all, :conditions=>"status like 'open' and id != #{current_quote}",:order=>"updated_at DESC", :include => [:client])
-    temp.each do |t|
-      @pending_quotes << t unless t.childless?
-    end
-
+    @pending_quotes = Quote.find(:all, :conditions=>"status like 'open' and id != #{current_quote} and quote_details_count > 0",:order=>"updated_at DESC", :include => [:client])
 
     @quote = Quote.find(current_quote)
     @quote.document ||= Quote.last_number
@@ -39,8 +34,7 @@ class QuotesController < ApplicationController
     session[:quote_search] ||= ""
     @products = Product.paginate(:all, :page => params[:page], :per_page => 5,:conditions=>"(status like 'terminada' or status like 'terminado') and ((age_from >= #{session[:product_from]} and age_to < #{session[:product_to]}) or (age_from IS NULL or age_to IS NULL))",:order=>"created_at DESC")       
 
-    #@quote_detail = QuoteDetail.new
-    @quote_details = @quote.quote_details
+    @quote_details = @quote.quote_details.find(:all,:include=>:product)
 
   end
 
@@ -114,6 +108,7 @@ class QuotesController < ApplicationController
 
     Quote.transaction do 
       @quote = Quote.find(current_quote)
+#      @quote.attribute = @quote.attribute.merge(params[:quote])
       @quote.document = params[:quote][:document]
       year = params[:quote][:quote_date]['year'] 
       month = params[:quote][:quote_date]['month']
@@ -214,22 +209,36 @@ class QuotesController < ApplicationController
   def update_quote_details
 
 
-    if params[:quote_detail]
-      params[:quote_detail].each do |id,line|
-        quote_detail = QuoteDetail.find(id)
-        quote_detail.from_web = false
-        quote_detail.update_attributes(line)
-        @quote = quote_detail.quote
-      end
-    end
+#    if params[:quote_detail]
+ #     params[:quote_detail].each do |id,line|
+
+   #     quote_detail.from_web = false
+    #    quote_detail.update_attributes(line)
+    #    #@quote = quote_detail.quote
+#      end
+#    end
+
+       quote_detail = QuoteDetail.find(params[:id])
+       quote_detail.age_from = params[:age_from]
+       quote_detail.age_to = params[:age_to]
+       quote_detail.months = params[:months] unless params[:months].blank?
+       quote_detail.sex = params[:sex]
+       quote_detail.quantity = params[:quantity]
+       quote_detail.price = params[:price]
+       quote_detail.additional = params[:additional] unless params[:additional].blank?
+       quote_detail.unavailable = params[:unavailable] unless params[:unavailable].blank?
+       quote_detail.pack_number = params[:pack_number] unless params[:pack_number].blank?
+       quote_detail.save
 
     respond_to do |wants|
 
       wants.js { 
         render :update do |page|
-          @quote_details = @quote.quote_details
-          page.replace 'producto_detalle', :partial => 'product_list'
-          page.visual_effect :highlight, 'product_table'            
+         # @quote_details = @quote.quote_details
+#            page.insert_html :bottom, 'product_table_body',:partial => 'product_item', :locals=>{:quote=>@qd, :price=> @qd.price}
+         
+          page.replace "qd_#{quote_detail.id}",:partial => 'product_item', :locals=>{:quote=>quote_detail, :price=> quote_detail.price}
+          page.visual_effect :highlight, "qd_#{quote_detail.id}"            
           page.visual_effect :fade, 'product_error'
           page.replace_html 'product_error', ""                                    
         end
@@ -285,7 +294,7 @@ class QuotesController < ApplicationController
 
       QuoteDetail.transaction do    
 
-        error = ""
+        error = nil
         @qd = QuoteDetail.new
         @qd.quote_id = current_quote
         @qd.product_id = params[:id]
@@ -348,7 +357,7 @@ class QuotesController < ApplicationController
 =end    
         begin
           if @qd.save!
-            @quote = @qd.quote
+           # @quote = @qd.quote
             
             respond_to do |wants|
 
@@ -356,9 +365,13 @@ class QuotesController < ApplicationController
 
                 render :update do |page|
 
-                  @quote_details = @quote.reload.quote_details    
-                  page.replace 'producto_detalle', :partial => 'product_list'
-                  page.visual_effect :highlight, 'product_table'            
+                  #@quote_details = @quote.reload.quote_details    
+                  page.insert_html :top, 'product_table_body',:partial => 'product_item', :locals=>{:quote=>@qd, :price=> @qd.price}
+                  page.visual_effect :fade, 'product_message'                                    
+                  page.replace_html 'product_message', "<em id='new_message' class='message'><a href='#qd_#{@qd.id}'>Ir a producto añadido</a><em>"
+                # page.replace 'producto_detalle', :partial => 'product_list'
+                  page.visual_effect :highlight, "product_message"            
+                  page.visual_effect :highlight, "qd_#{@qd.id}"            
                   page.visual_effect :fade, 'product_error'
                   page.replace_html 'product_error', ""                                    
                   #clean_form            
@@ -382,7 +395,7 @@ class QuotesController < ApplicationController
 
               render :update do |page|                 
                 error ||= "Algunos parámetros del producto están vacíos o incorrectos."
-                RAILS_DEFAULT_LOGGER.error("\n #{ex}  \n")                
+                RAILS_DEFAULT_LOGGER.error("\n #{ex} \n")                
                 page.visual_effect :show, 'product_error'    
                 page.replace_html 'product_error', "<em id='new_product_error'>Error: #{error || ex }</em>"
 
@@ -592,17 +605,20 @@ class QuotesController < ApplicationController
 
     def destroyDetail
       @quote_detail = QuoteDetail.find(params[:id])
+      id = @quote_detail.id
       @quote_detail.destroy
 
-      @quote = Quote.find(current_quote)
-      @quote_details = @quote.quote_details           
+     # @quote = Quote.find(current_quote)
+    #  @quote_details = @quote.quote_details           
       respond_to do |format|
         format.js  { 
           render :update do |page|
-            page.replace 'producto_detalle', :partial => 'product_list'
+            page.remove "qd_#{id}"
             page.visual_effect :highlight, 'product_table'            
             page.visual_effect :fade, 'product_error'
             page.replace_html 'product_error', ""
+            page.replace_html 'product_message', "<em class='message'>Detalle eliminado<em>"
+            
 
           end
 
@@ -965,6 +981,7 @@ class QuotesController < ApplicationController
   def to_sending_guide
 
     @quote = Quote.find(params[:id])
+    count = 0
     if @quote
 
       Quote.transaction do
@@ -986,7 +1003,10 @@ class QuotesController < ApplicationController
           sending_guide_detail.pending = sending_guide_detail.quantity
           sending_guide_detail.sending_guide_id = sending_guide.id
           sending_guide_detail.save
+          count += 1
         end
+
+        #SendingGuide.update_counters sending_guide.id, :sending_guide_details => count
 
         if @quote.valid?
 
@@ -1014,11 +1034,12 @@ class QuotesController < ApplicationController
 
         total_items = @quote.quote_details.final.size   # 36
         orders = (total_items / max_items_per_order).ceil
-        @quote.orders_generated = true
-        @quote.save 
-
+  
         i = 0
         count = 0
+        
+        RAILS_DEFAULT_LOGGER.error("\n Creando #{ orders} ordenes  \n")    
+        
         orders.times do 
 
           order = Order.new
@@ -1032,11 +1053,13 @@ class QuotesController < ApplicationController
           order.address = order.client.address unless order.client.blank?
           order.order_date = Time.zone.now
           order.save
+          RAILS_DEFAULT_LOGGER.error("\n Orden #{order.id} creada  \n")    
           count += 1
+          
 
-          if total_items > max_items_per_order
+          if total_items > max_items_per_order.to_i
 
-            total_times = total_items - max_items_per_order
+            total_times = total_items - max_items_per_order.to_i
 
             max_items_per_order.to_i.times do
 
@@ -1044,10 +1067,12 @@ class QuotesController < ApplicationController
               order_detail.convert(@quote.quote_details.final[i])
               order_detail.order_id = order.id
               order_detail.save           
+              RAILS_DEFAULT_LOGGER.error("\n Detalle #{i+1} creado  \n")    
+              
               i += 1   
 
             end # times
-
+            Order.update_counters order.id, :order_details_count => max_items_per_order.to_i
           else
 
 
@@ -1055,16 +1080,26 @@ class QuotesController < ApplicationController
               order_detail = OrderDetail.new
               order_detail.convert(@quote.quote_details.final[i])
               order_detail.order_id = order.id
-              order_detail.save           
+              order_detail.save         
+              RAILS_DEFAULT_LOGGER.error("\n Detalle #{i+1} creado  \n")    
+                
               i += 1   
             end            
 
+            Order.update_counters order.id, :order_details_count => total_items.to_i
             total_items = 0              
             @quote.save
 
           end  #times
+          
+          order.save
           order.recalculate_total
+          
         end # times
+
+
+      @quote.orders_generated = true
+      @quote.save 
 
 
       end  #transaction
@@ -1091,6 +1126,7 @@ class QuotesController < ApplicationController
         order.address = order.client.address unless order.client.blank?
         order.order_date = Time.zone.now
         order.save
+        count = 0
 
         @quote.quote_details.each do |quote_detail|
 
@@ -1098,7 +1134,10 @@ class QuotesController < ApplicationController
           order_detail.convert(quote_detail)
           order_detail.order_id = order.id
           order_detail.save
+          count += 1
         end
+
+        Order.update_counters order.id, :order_details_count => count
 
         order.recalculate_total
 

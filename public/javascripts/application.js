@@ -114,6 +114,8 @@ $(document).ready(function(){
 		
 	}
 	
+
+	
 	
 	function getProductData(v){
 		
@@ -260,6 +262,9 @@ $(document).ready(function(){
 			return false;
 			
 		});
+		
+		
+		
 		
 		//Animaciòn Formulario
 		$("#quote_detail_product_id").focus(function(){ 

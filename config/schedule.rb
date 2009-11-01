@@ -5,6 +5,10 @@ every 2.hour do
   rake "thinking_sphinx:index"
 end
 
+every 1.hour do
+  command "touch #{RAILS_ROOT}/tmp/restart.txt"
+end
+
 every :reboot do 
   rake "thinking_sphinx:start"
 end

@@ -24,7 +24,7 @@
 #  stock_from_carisa         :integer(4)
 #  stock_from_trigal         :integer(4)
 #  stock_from_polo           :integer(4)
-#  unavailable               :boolean(1)
+#  unavailable   +            :boolean(1)
 #  stock_trigal_compromised  :integer(4)      default(0)
 #  stock_polo_compromised    :integer(4)      default(0)
 #  stock_almacen_compromised :integer(4)      default(0)
@@ -208,6 +208,7 @@ class QuoteDetail < ActiveRecord::Base
   def return_stock
 
     product = self.product.reload    
+    self.pending = self.quantity if self.pending.nil?
     product.update_stock(self.quantity-self.pending)
     
     case self.quote.store_id 

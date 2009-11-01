@@ -69,12 +69,12 @@
 	
 	<%= render :partial => 'add_product' %>
 
-	<span id="product_error"></span>
+	<span id="product_error"><%= flash[:error] %></span>
 	
 	<%= render :partial => 'product_list' %>	
 	
 	<div id="endzone">
-		<%= f.submit "Finalizar Env&iacute;o", :url=>{:action=>'create'}, :confirm=>'¿Finalizar envío?',:class=>'form_button' %> <p>o <%= link_to "cancelar", catalogue_path %></p>
+		<%= f.submit "Finalizar Env&iacute;o", :confirm=>'¿Finalizar envío?',:class=>'form_button' %> <p>o <%= link_to "cancelar", catalogue_path %></p>
 	</div>
 
 

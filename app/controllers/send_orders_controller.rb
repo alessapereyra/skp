@@ -97,12 +97,11 @@ class SendOrdersController < ApplicationController
             end
             
           end # each
-          
-          
-          
-          
+        
+                  
           @send_order.save
-            
+          RAILS_DEFAULT_LOGGER.error("\n Grabó  \n")                     
+          
           flash[:notice] = 'Orden de Envío actualizada'
           format.html { redirect_to send_orders_catalogue_path }
           format.xml  { head :ok }
