@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
 
-  before_filter :has_privileges?
+  before_filter [:has_privileges?,:no_cache]
+
   # GET /categories
   # GET /categories.xml
   def index

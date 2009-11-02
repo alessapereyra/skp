@@ -1,6 +1,6 @@
 class OrderDetailsController < ApplicationController
 
-  before_filter :has_privileges?
+  before_filter [:has_privileges?,:no_cache]
 
   def update 
 

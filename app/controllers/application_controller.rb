@@ -15,6 +15,15 @@ include ExceptionNotifiable
   before_filter :is_authenticated
   #before_filter :log_ram # or use after_filter
 
+
+  def no_cache
+    headers["Cache-Control"] = "no-cache,no-store,max-age=0,must-revalidate, post-check=0, pre-check=0"
+    headers["Pragma"] = "no-cache"
+    headers["Expires"] = "-1"
+        
+  end
+  
+  
   def log_ram
   #  mem_usage = `pmap #{Process.pid} | tail -1`
   #  logger.warn 'RAM USAGE: ' + (unless mem_usage.blank? then mem_usage[9,40].strip else "" end  )

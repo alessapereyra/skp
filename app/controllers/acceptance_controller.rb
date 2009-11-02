@@ -1,5 +1,8 @@
 class AcceptanceController < ApplicationController
 
+  before_filter :no_cache
+
+
   def index
     @pending_send_orders = SendOrder.find(:all, :order=>"updated_at DESC",  :conditions=>"status LIKE 'pending' and store_id = #{get_current_store}",:include => [:owner, :store])
   end

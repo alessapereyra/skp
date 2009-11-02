@@ -415,7 +415,7 @@ class Product < ActiveRecord::Base
             on_trigal += quote_detail.stock_trigal_compromised
             on_polo += quote_detail.stock_polo_compromised                                    
             total += quote_detail.quantity
-            pending += quote_detail.pending
+            pending += quote_detail.pending.nil? ? quote_detail.quantity : quote_detail.pending
             quote_details << quote_detail
           
           end

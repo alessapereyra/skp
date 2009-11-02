@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+  <%= yield :refresh %>
 	<title>Skykids :: Intranet </title>	
 	<%= stylesheet_link_tag 'jquery.ui.autocomplete', "nextgen/style.css" %>
 	<%= stylesheet_link_tag('print', :media => :print) %>
@@ -88,6 +89,17 @@
 				
 			</div> <!-- div subnavigation -->
 
+
+<!--      
+      // FORCE RELOAD
+      <input type="hidden" id="refreshed" value="no">
+      <script type="text/javascript">
+      onload=function(){
+      var e=document.getElementById("refreshed");
+      if(e.value=="no")e.value="yes";
+      else{e.value="no";location.reload();}
+      }
+      </script> -->
 
 		</div> <!-- div header -->
 

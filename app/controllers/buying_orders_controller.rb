@@ -1,6 +1,7 @@
 class BuyingOrdersController < ApplicationController
 
   protect_from_forgery :only => [:create, :update, :destroy]
+  before_filter :no_cache
 
   def index 
     

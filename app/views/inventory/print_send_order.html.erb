@@ -11,7 +11,7 @@
 	
 <% @send_order.send_order_details.each do |iod| %>
 
-<% iod.quantity.times {  %>
+<% iod.quantity.to_i.times {  %>
 <div class="ticket <%= cycle("first","second")%>">
 	
 	<div id="logo">

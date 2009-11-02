@@ -1,6 +1,14 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   
+  def refresh_this
+    content_for :refresh do
+    meta = '<meta http-equiv="pragma" content="no-cache">'
+  	meta << '<meta http-equiv="cache-control" content="no-cache,no-store,max-age=0">'
+    meta << '<meta http-equiv="expires" content="-1">'
+    end
+  end
+  
   def errors_for(object)
     
     if object.errors.count > 0

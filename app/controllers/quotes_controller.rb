@@ -1,6 +1,7 @@
 class QuotesController < ApplicationController
 
   skip_before_filter :is_authenticated, :only=>[:modify_quote,:modify_quotes]
+  before_filter [:has_privileges?,:no_cache], :except => [:modify_quote, :modify_quotes]
 
   def send_quote
     begin
@@ -1151,7 +1152,7 @@ class QuotesController < ApplicationController
       end
 
     end #quote valid
-
+    
 
 
   end   
@@ -1188,6 +1189,7 @@ class QuotesController < ApplicationController
 	
 	
 	def discover_products
+	  session[:quote_search] = " " unless session[:quote_search]
 		@products = Product.search('"*'+session[:quote_search]+'*"', :page => params[:page], :per_page => 20,:conditions=>{'status'=>'terminada'},:order=>"updated_at DESC")        
     
 	end

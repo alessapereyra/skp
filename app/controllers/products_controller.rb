@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
     
-      before_filter :has_privileges?
+  before_filter [:has_privileges?,:no_cache]
       
       uses_tiny_mce :options => {
                                     :plugins => %w{ table fullscreen }
@@ -21,6 +21,7 @@ class ProductsController < ApplicationController
          search = params[:product][:name] 
       end
 
+      session[:product_search] = " " unless session[:product_search]
       session[:product_search] = search unless search == ""
       
       #@clients = Client.search  '*' + params["q"] + '*' # :limit => 15 #:conditions=>"status NOT LIKE 'pendiente'", 

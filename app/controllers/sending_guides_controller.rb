@@ -1,6 +1,10 @@
 class SendingGuidesController < ApplicationController
   # GET /sending_guides
   # GET /sending_guides.xml
+  
+  before_filter :no_cache
+  
+  
   def index
 
     @sending_guide = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id])  : SendingGuide.new

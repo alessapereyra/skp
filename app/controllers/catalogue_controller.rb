@@ -1,5 +1,8 @@
 class CatalogueController < ApplicationController
 
+  before_filter :no_cache, :only => :index
+
+
 
   def index
     session[:catalogue_search] = "" if session[:catalogue_search].blank?
@@ -137,7 +140,8 @@ class CatalogueController < ApplicationController
         end
 
        session[:product_search] = search unless search == ""
-       RAILS_DEFAULT_LOGGER.error("\n #{ session[:product_search]}  \n")           
+       RAILS_DEFAULT_LOGGER.error("\n #{ session[:product_search]}  \n")  
+       @catalogue = [] 
        @catalogue = Product.search('"*' + session[:product_search] + '*"', :page => params[:page], :per_page => 15, :conditions=>{'status'=>'terminada'}) #,#:conditions=>"status NOT LIKE 'pendiente'",:limit => 15)        
 
 

@@ -1,6 +1,6 @@
 class AdminSendingGuidesController < ApplicationController
 
-  before_filter :has_privileges?
+  before_filter [:has_privileges?,:no_cache]
   
   def index
     unless store_admin?

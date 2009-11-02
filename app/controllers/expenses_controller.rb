@@ -1,5 +1,7 @@
 class ExpensesController < ApplicationController
 
+  before_filter [:has_privileges?,:no_cache]
+
 
   def get_orders
 

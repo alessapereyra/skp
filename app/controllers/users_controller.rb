@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-    before_filter :has_privileges?
+  before_filter [:has_privileges?,:no_cache]
     
   # GET /users
   # GET /users.xml

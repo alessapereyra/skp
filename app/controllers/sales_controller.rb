@@ -1,5 +1,7 @@
 class SalesController < ApplicationController
 
+  before_filter [:no_cache]
+
   def index
     
     @pending_orders = []
@@ -158,6 +160,8 @@ class SalesController < ApplicationController
   end
 
   def auto_complete_for_order
+    
+    params["q"] = " " unless params["q"]
     #CHANGE THIS
     @clients = Client.search  '"*' + params["q"] + '*"', :limit => 10 #:conditions=>"status NOT LIKE 'pendiente'", 
     
@@ -167,6 +171,8 @@ class SalesController < ApplicationController
   end
 
   def auto_complete_for_input_order
+    
+    params[:order_detail][:product_code] = " " unless params[:order_detail][:product_code]
     #CHANGE THIS
     @products = Product.search( '"*' + params[:order_detail][:product_code] + '*"' ).first
     #@products = Product.search('"*' + params["q"]+'*"', :limit=> 7, :conditions=>{'status'=>'terminada'}) #,#:conditions=>"status NOT LIKE 'pendiente'",:limit => 15)        

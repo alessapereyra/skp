@@ -1,5 +1,8 @@
 class SendingController < ApplicationController
 
+  before_filter :no_cache
+
+
   	def index 
 
     @pending_send_orders = []

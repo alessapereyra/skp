@@ -3,6 +3,7 @@ class ExitOrdersController < ApplicationController
   # GET /exit_orders.xml
   
   before_filter :check_pending, :only=>[:index]
+  before_filter [:has_privileges?,:no_cache]
 
   def check_pending
     

@@ -1,4 +1,8 @@
 class ClientsController < ApplicationController
+
+
+  before_filter [:has_privileges?,:no_cache]
+
   # GET /clients
   # GET /clients.xml
   def index

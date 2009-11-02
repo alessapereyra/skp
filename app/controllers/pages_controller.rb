@@ -10,6 +10,7 @@ class PagesController < ApplicationController
 
   def load_catalogue
     #CHANGE THIS
+    @catalogue = []
     @catalogue = Product.search(:page => params[:page], :per_page => 20,:conditions=>{"visible"=>'1'}, :with => {:stock => 1..1000},:order=>"updated_at DESC", :without => {"category_id" => "11"})        
     session[:product_search] = ""
     session[:product_add] = ""
@@ -277,12 +278,16 @@ class PagesController < ApplicationController
     def add_to_quote
 
       @quote_detail = QuoteDetail.new
-      @quote_detail.quote_id = current_quote
-      @quote_detail.product_id = params[:id].to_i
-      @quote_detail.quantity = 1 #params[:quote_detail][:quantity].to_i
-      @quote_detail.price = 0
-      @quote_detail.save!
-
+      if current_quote
+        @quote_detail.quote_id = current_quote
+        @quote_detail.product_id = params[:id].to_i
+        @quote_detail.quantity = 1 #params[:quote_detail][:quantity].to_i
+        @quote_detail.price = 0
+        @quote_detail.save!
+        @quote = @quote_detail.quote.reload
+      else
+        @quote = Quote.new
+      end
 
       respond_to do |format|
         format.html { redirect_to url_for(:controller=>"pages",:action=>"catalogo")}
@@ -290,7 +295,7 @@ class PagesController < ApplicationController
         format.js {
 
           render :update do |page|
-            @quote = @quote_detail.quote.reload
+
             page.replace_html 'request_result', "<span>Producto agregado a su consulta. Puede <a href='/web/consulta/'>revisarla</a> o seguir añadiendo productos</span>"
             page.visual_effect :highlight, 'request_result'
             page.replace 'consulta', :partial => 'consulta'
@@ -575,10 +580,11 @@ class PagesController < ApplicationController
     def add_to_search
 
       setup_values       
-      
-      session[:product_add] = params["q"]
+      session[:product_add] = " " unless session[:product_add]
+      session[:product_add] = params["q"] if params["q"]
       session[:product_search] = ""      
       #CHANGE THIS
+      @catalogue = []
       @catalogue =  Product.search('"*'+session[:product_add]+ '*"', :page => params[:page], :per_page => 20,:conditions=>{"visible"=>'1','status'=>'terminada','corporative_price'=>session[:price_from].to_i*0.9.to_i..session[:price_to].to_i*1.1.to_i}, :with => {:stock => 1..1000},:without => {"category_id" => "11"},:order=>"updated_at DESC")  
       @alternative = []
       #@alternative = @catalogue.first.more_like_this :field_names => [ :brand_name, :category_name ] unless @catalogue.first.nil?   
@@ -758,12 +764,14 @@ class PagesController < ApplicationController
         
         setup_values         
         if params[:product]
-          @search = params["q"] || params[:product][:name] || ""
+          @search = params["q"] || params[:product][:name] || " "
         else
-          @search = params["q"] || ""
+          @search = params["q"] || " "
         end
         session[:product_search] = @search
         session[:product_add] = ""
+        
+        @catalogue = []
         #CHANGE THIS
         @catalogue = Product.search('"*'+@search+'*"', :page => params[:page], :per_page => 20,:conditions=>{'for_import'=>'1'},:without => {"category_id" => "11"},:order=>"updated_at DESC")        
         @alternative = []
