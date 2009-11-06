@@ -23,7 +23,7 @@
 	<div id="bottom">
 	  
 		<% unless @product.is_stationary? or @product.is_book? %>
-		  <p id="codify"><%= codify(@product.current_prices(true,@store)[1].amount.round(2))  %></p>
+		  <p id="codify"><%= codify(@product.current_prices(true,@store)[1].amount.round(2)) unless @product.current_prices(true,@store)[1].nil?  %></p>
 		
 		  <p id="price"> S/. <%= @product.store_price(current_store).round(2) unless @product.store_price(current_store).blank? %></p>
       <% else %>

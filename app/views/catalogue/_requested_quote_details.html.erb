@@ -24,7 +24,7 @@
 	<% @requested_quote_details.each do |requested_quote_detail| %>
 	<tr class="<%= cycle("even", "odd") -%>">
 		<td><%= requested_quote_detail.quote.document %></td>				
-		<td><div style="width:100px;"><%= requested_quote_detail.quote.client.name %></div></td>		
+		<td><div style="width:100px;"><%= requested_quote_detail.quote.client.name unless requested_quote_detail.quote.client.nil? %></div></td>		
 		<td><%= requested_quote_detail.quantity %></td>
 		<td><%= requested_quote_detail.stock_from_store(current_store) %></td>
 		<td><%= requested_quote_detail.quote.quote_date %></td>

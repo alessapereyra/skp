@@ -3,7 +3,7 @@ class Emailer < ActionMailer::Base
       def contact_email(email_params, sent_at = Time.now)
         # You only need to customize @recipients.
         name = email_params[:name]
-        @from = name + " <" + email_params[:mail] + ">"
+        @from = email_params[:mail]
         @recipients = "ventas@skykidsperu.com"
         # @recipients = "alvaro.pereyra@srdperu.com"
         @subject = "[SKYKIDSWEB] Consulta de #{name} <#{email_params[:mail]}>"

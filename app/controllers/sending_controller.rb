@@ -171,14 +171,14 @@ class SendingController < ApplicationController
           @send_order.save!
 
 
-
-          if (not params[:send_order_detail][:hidden_product_id].empty?) && (not params[:send_order_detail][:quantity].empty?)
-            @sod = SendOrderDetail.new
-            @sod.product_id = params[:send_order_detail][:hidden_product_id].to_i
-            @sod.quantity = params[:send_order_detail][:quantity].to_i
-            @sod.send_order_id = current_send_order
-            @sod.save!
-          end   # no hay sod pendiente
+          # 
+          # if (not params[:send_order_detail][:hidden_product_id].empty?) && (not params[:send_order_detail][:quantity].empty?)
+          #   @sod = SendOrderDetail.new
+          #   @sod.product_id = params[:send_order_detail][:hidden_product_id].to_i
+          #   @sod.quantity = params[:send_order_detail][:quantity].to_i
+          #   @sod.send_order_id = current_send_order
+          #   @sod.save!
+          # end   # no hay sod pendiente
 
 
           if @send_order.send_order_details.empty?
@@ -189,7 +189,7 @@ class SendingController < ApplicationController
           else
 
             @send_order.send_order_details.each do |sod|
-
+              #  sod.product.recalculate_stocks
             #  if @send_order.unload_stock or @send_order.unload_stock.nil?
                 sod.product.update_stock(sod.quantity*-1) unless sod.product.nil?
                 sod.product.update_store_stock(sod.quantity*-1,@send_order.owner_id,self.class,this_method_name) unless sod.product.nil?

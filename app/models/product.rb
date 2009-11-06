@@ -114,7 +114,7 @@ class Product < ActiveRecord::Base
       # fields
       indexes :name, :sortable => true
       indexes description
-      indexes visible
+      indexes :visible
       indexes for_import
       indexes code, :sortable => true
       indexes category.name, :as => :category_name
@@ -124,7 +124,8 @@ class Product < ActiveRecord::Base
       indexes :status
 
       # attributes
-      has corporative_price, age_from, age_to, stock
+      has :stock
+      has corporative_price, age_from, age_to
       has :updated_at, :sortable => true
       has :category_id
       set_property :delta => true
@@ -690,8 +691,8 @@ class Product < ActiveRecord::Base
       # en caja es mayorista
   latest_prices = []
   latest_prices << self.prices.find_by_description("Precio base",:conditions=>"amount is not null and amount != 0", :limit=>1,:order=>"created_at DESC")
-   latest_prices << self.prices.find_by_description("Precio mayorista",:conditions=>"amount is not null and amount != 0",:limit=>1,:order=>"created_at DESC")
    latest_prices << self.prices.find_by_description("Precio en caja",:conditions=>"amount is not null and amount != 0",:limit=>1,:order=>"created_at DESC")
+   latest_prices << self.prices.find_by_description("Precio mayorista",:conditions=>"amount is not null and amount != 0",:limit=>1,:order=>"created_at DESC")
    latest_prices << self.prices.find_by_description("Precio Tienda 1",:conditions=>"amount is not null and amount != 0",:limit=>1,:order=>"created_at DESC")
    latest_prices << self.prices.find_by_description("Precio Tienda 2",:conditions=>"amount is not null and amount != 0",:limit=>1,:order=>"created_at DESC")    
    
@@ -722,8 +723,9 @@ class Product < ActiveRecord::Base
     RAILS_DEFAULT_LOGGER.error("\n Actualizando Stock de Producto #{self.id} - #{self.code }")  
     RAILS_DEFAULT_LOGGER.error("Stock anterior: #{self.stock} Stock Cambiante: #{quantity}")      
     return if quantity.nil?
+    #self.recalculate_stocks
     self.stock += quantity  
-    self.save! unless self.stock < 0
+    self.save! #unless self.stock < 0
     RAILS_DEFAULT_LOGGER.error("Stock Final: #{self.stock} \n ")      
     
     end #transaction
@@ -837,7 +839,11 @@ class Product < ActiveRecord::Base
    
   def validate
    if !stock.nil?
-    if stock < 0
+    if (stock < 0) or 
+      (stock_trigal < 0) or 
+      (stock_clarisa < 0) or 
+      (stock_almacen < 0) or
+      (stock_polo < 0 )
       errors.add_to_base("El stock no puede ser negativo")
     end
       

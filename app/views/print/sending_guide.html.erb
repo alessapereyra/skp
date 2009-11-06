@@ -17,11 +17,11 @@
 	</div>
 			
   <div id="domicilio_llegada">
-      <%= @sending_guide.client.address %>
+      <%= @sending_guide.delivery_address.blank? ?  (@sending_guide.client.address unless @sending_guide.client.blank?) : @sending_guide.delivery_address %>
 	</div>
 
 	<div id="destinatario">
-      <%= @sending_guide.client.name %>
+      <%= @sending_guide.client.name unless @sending_guide.client.blank? %>
 	</div>
 			
 </div>

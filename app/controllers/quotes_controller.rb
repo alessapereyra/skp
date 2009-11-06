@@ -981,6 +981,8 @@ class QuotesController < ApplicationController
 
   def to_sending_guide
 
+    max_items_per_order = 22.0
+
     @quote = Quote.find(params[:id])
     count = 0
     if @quote
