@@ -93,7 +93,7 @@ class PagesController < ApplicationController
 
   def cotizaciones
     email = Base64.decode64(params[:contact_name])    
-    @quotes = Quote.find_all_by_sending_details(email,:conditions=>"status like 'accepted' or status like 'requested'")
+    @quotes = Quote.find_all_by_sending_details(email,:conditions=>["status like 'accepted' or status like 'requested' and created_at > ?",Time.zone.now - 3.months])
     unless @quotes.empty?
       
       if @quotes.size == 1
@@ -123,7 +123,7 @@ class PagesController < ApplicationController
 
     def cotizacion_numerada
        email = Base64.decode64(params[:contact_name])    
-        @quotes = Quote.find_all_by_sending_details(email,:conditions=>"status like 'accepted' or status like 'requested'")
+        @quotes = Quote.find_all_by_sending_details(email,:conditions=>["status like 'accepted' or status like 'requested' and created_at > ?",Time.zone.now - 3.months])
         unless @quotes.empty?
 
           if @quotes.size == 1

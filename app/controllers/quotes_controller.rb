@@ -271,9 +271,11 @@ class QuotesController < ApplicationController
         price_type = "Corporativo" if price_type.blank?
 
         price_index = if price_type == "Mayorista"
-          2
-        elsif price_type == "Corporativo"
+          0
+        elsif price_type == "Distribuidor"
           1
+        elsif price_type == "Corporativo"
+          2
         else
           2 + get_current_store
         end
