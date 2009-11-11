@@ -181,38 +181,37 @@ class ReportsController < ApplicationController
 
     if admin? or store_supervisor?
       if get_current_store == 4 
-        @quote_requests = Quote.find(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'requested'",:include => [:client])
+        @quote_requests = Quote.paginate(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'requested'",:include => [:client], :page => params[:page])
       else
-        @quote_requests = Quote.find(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'requested'",:include => [:client])
+        @quote_requests = Quote.paginate(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'requested'",:include => [:client], :page => params[:page])
       end
     else
-      @quote_requests = Quote.find(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'requested'",:include => [:client])
+      @quote_requests = Quote.paginate(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'requested'",:include => [:client], :page => params[:page])
     end
 
   end
 
-
   def quotes
     if admin? or store_supervisor?
       if get_current_store == 4 
-        @quotes = Quote.find(:all, :order=>"created_at DESC",:conditions=>"(status like 'accepted' or status like 'requested') and (from_web is false or from_web is null)",:include => [:client])
+        @quotes = Quote.paginate(:all, :order=>"created_at DESC",:conditions=>"(status like 'accepted' or status like 'requested') and (from_web is false or from_web is null)",:include => [:client], :page => params[:page])
       else
-        @quotes = Quote.find(:all, :order=>"created_at DESC",:conditions=>"(status like 'accepted' or status like 'requested') and (from_web is false or from_web is null)",:include => [:client])
+        @quotes = Quote.paginate(:all, :order=>"created_at DESC",:conditions=>"(status like 'accepted' or status like 'requested') and (from_web is false or from_web is null)",:include => [:client], :page => params[:page])
       end
     else
-      @quotes = Quote.find(:all, :order=>"created_at DESC",:conditions=>"(status like 'accepted' or status like 'requested') and (from_web is false or from_web is null)",:include => [:client])
+      @quotes = Quote.paginate(:all, :order=>"created_at DESC",:conditions=>"(status like 'accepted' or status like 'requested') and (from_web is false or from_web is null)",:include => [:client], :page => params[:page])
     end
   end
 
   def web_quotes
     if admin? or store_supervisor?
       if get_current_store == 4 
-        @quotes = Quote.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status like 'requested') and from_web is true",:include => [:client])
+        @quotes = Quote.paginate(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status like 'requested') and from_web is true",:include => [:client], :page => params[:page])
       else
-        @quotes = Quote.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status like 'requested') and from_web is true",:include => [:client])
+        @quotes = Quote.paginate(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status like 'requested') and from_web is true",:include => [:client], :page => params[:page])
       end
     else
-      @quotes = Quote.find(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status like 'requested') and from_web is true",:include => [:client])
+      @quotes = Quote.paginate(:all, :order=>"created_at DESC",:conditions=>"(status LIKE 'accepted' or status like 'requested') and from_web is true",:include => [:client], :page => params[:page])
     end
   end
 

@@ -44,6 +44,7 @@ class Quote < ActiveRecord::Base
   
   has_many :products, :through => :quote_details
 
+
   def mark_as_read
     self.updated = false
     self.save

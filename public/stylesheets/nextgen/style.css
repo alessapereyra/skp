@@ -655,7 +655,7 @@ margin-bottom: 10px;
 border: 1px solid rgba(137,199,199,0.49);
 font-size: 1.1em;
 padding: 10px 10px;
-background-color: rgba(192,255,255,0.64);
+background-color: rgba(133,252,255,0.3);
 overflow: auto;
 } 
 
@@ -1463,7 +1463,7 @@ div#content table#edit_input_order tbody tr td {
 	overflow: auto;
 	-webkit-radius: 20px;
 	-moz-radius:20px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	text-transform: lowercase;
 }
 
@@ -1487,8 +1487,7 @@ div#content div#recover div.opener p.message {
 }
 
 #recover div.recover_results table {
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 div#wrapper div#content form fieldset table.mceLayout{
@@ -1526,3 +1525,4 @@ span.requested {
 	color: red;
 	
 }
+	
