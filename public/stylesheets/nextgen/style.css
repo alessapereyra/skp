@@ -9,6 +9,7 @@
 	http://localhost:3000/stylesheets/screen.css?1255707412
 	http://localhost:3001/stylesheets/nextgen/style.css?1256760403
 	http://localhost:3001/stylesheets/nextgen/style.css?1256922154
+	http://www.skykidsperu.com/stylesheets/nextgen/style.css?1256936228
 */
 
 div.quote_detail {
@@ -76,16 +77,15 @@ div.quote_detail span input{
 body {
 margin: 0px 0px;
 padding: 0px;
-background: #181a1a repeat-x;
+background: #101313 repeat-x;
 	font: normal 62.5% "Lucida Grande", Lucida, Verdana, sans-serif;
-	background-color: #181a1a;
 }
 
 div#header {
 	min-width: 720px;
-	width: 780px;
+	width: 920px;
 	margin: 20px auto;
-	background: #181a1a repeat-x;
+	/*background: #101313 repeat-x;*/
 	overflow: hidden;
 	margin-bottom: 0px;
 }
@@ -158,12 +158,18 @@ span#messages em {
 }
 
 
-div#header ul#menu li,
-div#header ul#submenu li {
+div#header ul#menu li {
 	float: left;
 	list-style: none;
 	margin-right: 1px;
 	text-align: center;
+}
+
+div#header ul#submenu li {
+	float: left;
+	text-align: center;
+	list-style: none;
+	margin: 0px;
 }
 
 div#header ul#menu li a {
@@ -186,22 +192,22 @@ div#header ul#menu li a:hover {
 }
 
 div#header div#subnavigation {
-	height: 22px;
-
 	clear:both;
-
 	font-size: 0.9em;
+	overflow: auto;
 }
 
 div#header ul#submenu {
-	width: 720px;
+	float: right;
 	margin: 0px auto;
 	overflow: hidden;
 	padding: 0px;
+	margin-bottom: 0px;
 }
 
 div#header ul#submenu div#divsubmenu {
-	margin-right: 10px;
+	overflow: auto;
+	margin-top: 10px;
 }
 
 div#header ul#options {
@@ -229,35 +235,29 @@ div#header ul#options li a:hover {
 	color: #ff9822;
 }
 
-
-div#header ul#submenu {
-	float: right;
-	margin-bottom: 10px !important;
-	-webkit-radius:10px !important;	
+div#header ul#submenu div#divsubmenu ul li {
+	margin-bottom: 5px;
+	margin-right: 4px;	
 }
 
-div#submenu ul li a {
-	-moz-radius:10px !important;
-	-webkit-radius:10px !important;	
-
+#divsubmenu ul {
+	text-align: center;
+	padding: 0px;
+	padding-left: 8px;
+	overflow: auto;
+	margin-left: 0px !important;
 }
 
-div#header ul#submenu div#divsubmenu ul li a,
-div#header ul#submenu div#divsubmenu ul li a:link{
-	padding: 8px 15px;
-	margin-top: 1px;
+div#header ul#submenu div#divsubmenu ul li a {
+	padding: 9px 17px;
 	text-transform: lowercase;
-	margin-bottom: 2px !important;
-	margin-right: 2px;
-	background: #ccec70;
+	background: rgba(0,143,226,0.81);
 	display: block;
 	text-decoration: none;
-	font-size: 1.1em;
-	color: #778905;
-	min-width: 62px;
-	-webkit-radius:10px !important;
-	-moz-radius:10px !important;
-	
+	color: #fffefb;
+	min-width: 40px;
+	font: 1.2em "Lucida Grande", Lucida, Verdana, sans-serif;
+	-moz-border-radius: 5px; -webkit-border-radius: 5px;
 }
 
 div#quote_quote_details table 
@@ -283,6 +283,10 @@ table tbody td {
 	padding: 5px 0px !important;
 }
 
+div#header ul#submenu div#divsubmenu ul li a {
+
+}
+
 div#header ul#submenu div#divsubmenu ul li a:hover{
 	background-color: #ff8013;
 	color: white;
@@ -295,9 +299,14 @@ div#header ul#options li#opciones a {
 
 div#wrapper {
 	overflow: hidden;
-	width: 780px;
+	width: 920px;
 	margin: 0 auto;
-	background: url(../../images/nextgen/top-background.png) no-repeat;
+	background-color: white;
+	-moz-border-radius-topleft: 20px;
+	-moz-border-radius-topright: 20px;
+	 -webkit-border-top-left-radius: 20px;
+	 -webkit-border-top-right-radius: 20px;
+
 }
 
 body#categories ul#menu li#mantenimiento a,
@@ -331,7 +340,7 @@ div#content {
 	height: 100%;
 	min-height: 350px;
 	margin-top: 18px;
-	padding: 20px 15px;
+	padding: 10px 25px;
 	background-color: white;
 }
 
@@ -393,7 +402,7 @@ div#content table {
 	margin-top: 0px;
 	border-spacing: 0px;
 	border-collapse: collapse;
-	width: 720px;
+	width: 100%;
 	font-size: 1.15em !important;
 }
 
@@ -643,10 +652,10 @@ div#content-sidebar select{
 fieldset,
 .section {  
 margin-bottom: 10px;
-border: 1px solid #dfebed;
+border: 1px solid rgba(137,199,199,0.49);
 font-size: 1.1em;
 padding: 10px 10px;
-background-color: #f2fafc;
+background-color: rgba(192,255,255,0.64);
 overflow: auto;
 } 
 
@@ -1222,10 +1231,15 @@ div#content input.form_button:hover {
 
 div#close_wrapper {
 	text-indent: -9000em;
-	background: url(../../images/nextgen/bottom-background.png) no-repeat;
 	height: 17px;
-	width: 780px;
+	width: 920px;
 	margin: 0px auto;
+	background-color: white;
+		-moz-border-radius-bottomleft: 20px;
+	-moz-border-radius-bottomright: 20px;
+	 -webkit-border-bottom-left-radius: 20px;
+	 -webkit-border-bottom-right-radius: 20px;
+
 }
 
 input.ac_input {
