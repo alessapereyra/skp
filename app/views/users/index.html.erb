@@ -16,8 +16,8 @@
   <tr class="<%= cycle("even","odd") %>">
     <td><%=h user.username %></td>
     <td><%=h user.email %></td>
-    <td><%=h user.role.name %></td>
-    <td><%=h user.store.name unless user.store.nil? %></td>
+    <td><%=h user.try(:role).try(:name) %></td>
+    <td><%=h user.try(:store).try(:name) %></td>
     <td><%= link_to 'editar', edit_user_path(user) %></td>
     <td><%= link_to 'eliminar', user, :confirm => '¿est&aacute; seguro?', :method => :delete %></td>
   </tr>
