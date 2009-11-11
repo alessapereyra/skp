@@ -11,13 +11,13 @@
     	<dd><%= f.text_field :email %></dd>
 
     	<dt><%= f.label :role_id %></dt>
-    	<dd><%= f.collection_select :role_id, Role.find(:all),:id,:name, :prompt=>"Elegir un rol" %></dd>
+    	<dd><%= f.collection_select :role_id, Role.find(:all),:id,:name %></dd>
 
     	<dt><%= f.label :password %></dt>
     	<dd><%= f.password_field :password %></dd>
 
     	<dt><%= f.label :store_id %></dt>
-		<dd><%= f.collection_select :store_id, Store.find(:all),:id,:name, :prompt=>"Elegir una tienda" %></d>
+		<dd><%= f.collection_select :store_id, Store.find(:all),:id,:name %></d>
 	
 	</dl>
 	</fieldset>
