@@ -10,6 +10,7 @@
 	http://localhost:3001/stylesheets/nextgen/style.css?1256760403
 	http://localhost:3001/stylesheets/nextgen/style.css?1256922154
 	http://www.skykidsperu.com/stylesheets/nextgen/style.css?1256936228
+	http://www.skykidsperu.com/stylesheets/nextgen/style.css?1257959858
 */
 
 div.quote_detail {
@@ -23,7 +24,7 @@ div.quote_detail {
 
 div#quote_quote_details table#product_table tr td a img,
 div#quote_quote_details table#product_table tr td a {
-	width: 25px !important;
+	width: 55px !important;
 	display: block;
 }
 

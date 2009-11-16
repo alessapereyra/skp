@@ -1,5 +1,5 @@
 <fieldset id="fieldset_sending">
-	<legend>3. Agregar productos <%= "#{@quote.is_requested ? 'a pedido' : 'a cotizar' }" %></legend> 
+	<legend>2. Agregar productos <%= "#{@quote.is_requested ? 'a pedido' : 'a cotizar' }" %></legend> 
 
 	<dl>	
 
@@ -35,7 +35,7 @@
 		
 		
 		
-		$('#quote_detail_product_id').delayedObserver(0.5, function(element, value) {
+		$('#quote_detail_product_id').delayedObserver(1, function(element, value) {
 
 			window.location.hash =  value;
 

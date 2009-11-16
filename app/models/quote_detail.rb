@@ -130,7 +130,7 @@ class QuoteDetail < ActiveRecord::Base
   end
   
   def check_remaining_stores(store_id)
-    product = self.product.reload
+    #product = self.product.reload
     case store_id
       
       when 1
@@ -156,7 +156,7 @@ class QuoteDetail < ActiveRecord::Base
   
   def compromise_remaining_stock(stock_from_store,store_id)
         stock_from_store = 0 if stock_from_store.nil?
-        product = self.product.reload
+        #product = self.product.reload
         
         if self.pending <= stock_from_store and not self.pending.zero?  # si con el stock de carisa se cubre..
 
@@ -182,10 +182,12 @@ class QuoteDetail < ActiveRecord::Base
   def unload_from_store(stock_from_store,store_id)
   
       stock_from_store = 0 if stock_from_store.nil?
+      self.pending = 0 if self.pending < 0
       pending = self.pending
-      product = self.product.reload
+
+      #product = self.product.reload
       
-      if self.pending <= stock_from_store and not self.pending.zero?  # si con el stock de carisa se cubre..
+      if (self.pending <= stock_from_store) and (not self.pending.zero?)  # si con el stock de almacen se cubre..
 
           product.update_stock(-self.pending)                    # se quita el stock del total
           product.update_store_stock(-self.pending,store_id,self.class,this_method_name)            #disminuye el stock de tienda
@@ -251,7 +253,6 @@ class QuoteDetail < ActiveRecord::Base
      unload_from_store(self.product.stock_polo,2)     
 =end
 
-    product = self.product.reload
      case self.quote.store_id
         when 1 # trigal
           unload_from_store(product.available_stock_trigal,1) 
@@ -265,22 +266,30 @@ class QuoteDetail < ActiveRecord::Base
 
   end
 
+
+  #Descarga el stock de almacen que se pueda 
+
   def unload_stock  
     
-    self.pending = self.quantity   # el stock que necesitamos cubrir
-    self.stock_from_trigal = 0
-    self.stock_from_polo = 0        
-    self.stock_from_almacen = 0        
-    self.stock_from_carisa = 0
-    self.stock_trigal_compromised = 0
-    self.stock_polo_compromised = 0
-    self.stock_almacen_compromised = 0
-    self.stock_carisa_compromised = 0
-    self.save
+    QuoteDetail.transaction do
     
-    unload_stock_from_stores
+        self.pending = self.quantity   # el stock que necesitamos cubrir
     
-    self.save
+        #no tiene nada todavia
+        self.stock_from_trigal = 0
+        self.stock_from_polo = 0        
+        self.stock_from_almacen = 0        
+        self.stock_from_carisa = 0
+        self.stock_trigal_compromised = 0
+        self.stock_polo_compromised = 0
+        self.stock_almacen_compromised = 0
+        self.stock_carisa_compromised = 0
+    
+        unload_stock_from_stores
+    
+        self.save
+    
+    end #transaction
     
   end
   

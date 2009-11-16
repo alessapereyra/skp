@@ -26,7 +26,7 @@
 #  age                       :string(255)
 #  height                    :decimal(10, 2)
 #  width                     :decimal(10, 2)
-#  weight                    :decimal(10, 2)
+#  oweight                    :decimal(10, 2)
 #  length                    :decimal(10, 2)
 #  sex                       :string(255)
 #  age_from                  :integer(4)
@@ -80,8 +80,8 @@ class Product < ActiveRecord::Base
   has_many :exit_order_details
   has_many :exit_orders, :through => :exit_order_details
 
-  has_one :category
-  belongs_to :unit
+ #·@has_one :category
+  #belongs_to :unit
   belongs_to :category
   belongs_to :subcategory, :class_name=>"Category"
   
@@ -185,22 +185,37 @@ class Product < ActiveRecord::Base
 
   def available_stock_trigal
     self.stock_trigal = 0 if self.stock_trigal.nil?
-    self.stock_trigal - self.stock_trigal_compromised
+    self.stock_trigal_compromised = 0 if self.stock_trigal_compromised.nil?
+    remaining = self.stock_trigal - self.stock_trigal_compromised
+    return 0 if remaining <= 0
+    remaining
+    
   end
 
   def available_stock_polo
     self.stock_polo = 0 if self.stock_polo.nil?
-    self.stock_polo - self.stock_polo_compromised
+    self.stock_polo_compromised = 0 if self.stock_polo_compromised.nil?
+    remaining = self.stock_polo - self.stock_polo_compromised
+    return 0 if remaining <= 0
+    remaining
+    
   end
 
   def available_stock_almacen
     self.stock_almacen = 0 if self.stock_almacen.nil?
-    self.stock_almacen - self.stock_almacen_compromised
+    self.stock_almacen_compromised = 0 if self.stock_almacen_compromised.nil?
+    remaining = self.stock_almacen - self.stock_almacen_compromised
+    return 0 if remaining <= 0
+    remaining
   end
 
   def available_stock_carisa
     self.stock_clarisa = 0 if self.stock_clarisa.nil?    
-    self.stock_clarisa - self.stock_carisa_compromised
+    self.stock_carisa_compromised = 0 if self.stock_carisa_compromised.nil?
+    remaining = self.stock_clarisa - self.stock_carisa_compromised
+    return 0 if remaining <= 0
+    remaining
+
   end
 
   def update_available_stock(store_id,quantity)

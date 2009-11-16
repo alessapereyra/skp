@@ -17,7 +17,7 @@
   	<td><%= qd.check_box :months %></td>
   	<td><%= qd.select :sex, ["h","m","hm"].collect {|x| [x.humanize, x]}, {}, :index=>quote.id, :class=>'small_fields'  %></td>
   	<td><div style="width:70px;"><%= quote.product.name unless quote.product.nil? %></div></td>
-  	<td><%= link_to image_tag(quote.product.picture.thumb.url, :width=>35), quote.product.picture.url unless quote.product.picture.nil? %></td>		
+  	<td><%= link_to image_tag(quote.product.picture.thumb.url, :width=>85), quote.product.picture.url unless quote.product.picture.nil? %></td>		
   	<td><%= qd.text_field :quantity, :class=>"small_fields" %></td>				
   	<td><%= text_field_tag "quote_detail[#{quote.id}][price]", price, :class=>"small_fields" %></td>							
   	<td><%= qd.check_box :additional %></td>
