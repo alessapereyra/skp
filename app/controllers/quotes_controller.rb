@@ -28,6 +28,7 @@ class QuotesController < ApplicationController
 
     @quote = Quote.find(current_quote)
     @quote.document ||= Quote.last_number
+    @quote.store_id ||= get_current_store
     @quote.price_type = "Corporativo"
     @client_id = @quote.client_id
     session[:product_from] = 0
@@ -225,6 +226,7 @@ class QuotesController < ApplicationController
        quote_detail.months = params[:months] unless params[:months].blank?
        quote_detail.sex = params[:sex]
        quote_detail.quantity = params[:quantity]
+       quote_detail.pending = quote_detail.quantity
        quote_detail.price = params[:price]
        quote_detail.additional = params[:additional] unless params[:additional].blank?
        quote_detail.unavailable = params[:unavailable] unless params[:unavailable].blank?
@@ -302,6 +304,8 @@ class QuotesController < ApplicationController
         @qd.quote_id = current_quote
         @qd.product_id = params[:id]
         @qd.quantity = 1
+        @qd.additional = false
+        @qd.pending = @qd.quantity
         @qd.age_from = @qd.product.age_from
         @qd.age_to = @qd.product.age_to
         @qd.sex = case @qd.product.sex
@@ -316,51 +320,13 @@ class QuotesController < ApplicationController
         @quote = @qd.quote      
         @quote.price_type ||= "Corporativo"
         @quote.save
-        @qd.save
         @qd.price = quote_detail_price(@qd,@quote.price_type,@qd.product)
 
-=begin
-        #      quote.price_type = params[:price_type]
-        #      quote.save!
-        #      @quote = @qd.quote
-
-        year = params[:quote]["quote_date(1i)"] 
-        month = params[:quote]["quote_date(2i)"] 
-        day = params[:quote]["quote_date(3i)"]
-        @quote.quote_date = Time.zone.parse("#{year}-#{month}-#{day}")  
-        @quote.client_id =  params[:quote][:hidden_client_id].blank? ? params[:quote][:client_id] : params[:quote][:hidden_client_id] unless (params[:quote][:hidden_client_id].blank? or params[:quote][:client_id].blank?)
-        @quote.client_address = @quote.client.address unless @quote.client.blank?
-        @quote.document = Quote.last_number
-        @quote.price_type = params[:quote][:price_type]
-        @quote.sending_details = params[:quote][:sending_details]
-        @quote.contact_name = params[:quote][:contact_name]
-        @quote.duration = params[:quote][:duration]
-        @quote.quote_comments = params[:quote][:quote_comments]
-        @quote.status ="accepted"
-        @quote.sent = false
-=end      
         @quote.updated = false
-
         @quote.save
 
-=begin
-
-
-
-        price_index = if params[:quote][:price_type] == "Mayorista"
-          2
-        elsif params[:quote][:price_type] == "Corporativo"
-          1
-        else
-          1 + get_current_store
-        end
-
-
-        @qd.price = @qd.product.all_current_prices[price_index].amount
-=end    
         begin
           if @qd.save!
-           # @quote = @qd.quote
             
             respond_to do |wants|
 
@@ -368,16 +334,13 @@ class QuotesController < ApplicationController
 
                 render :update do |page|
 
-                  #@quote_details = @quote.reload.quote_details    
                   page.insert_html :top, 'product_table_body',:partial => 'product_item', :locals=>{:quote=>@qd, :price=> @qd.price}
                   page.visual_effect :fade, 'product_message'                                    
                   page.replace_html 'product_message', "<em id='new_message' class='message'><a href='#qd_#{@qd.id}'>Ir a producto añadido</a><em>"
-                # page.replace 'producto_detalle', :partial => 'product_list'
                   page.visual_effect :highlight, "product_message"            
                   page.visual_effect :highlight, "qd_#{@qd.id}"            
                   page.visual_effect :fade, 'product_error'
                   page.replace_html 'product_error', ""                                    
-                  #clean_form            
                 end
 
               }
@@ -557,26 +520,10 @@ class QuotesController < ApplicationController
             render :action=>:index
           else
 
-            params[:quote_detail].each do |id,line|
-              quote_detail = QuoteDetail.find(id)
-              quote_detail.from_web = false
-              #quote_detail.update_attributes(line)
-
-=begin               price_index = case @quote.price_type
-              when "Mayorista"
-                2
-              when "Corporativo"
-                1
-              else
-                2 + get_current_store
-              end
-
-
-              quote_detail.price = quote_detail.product.all_current_prices[price_index].amount
-
-              quote_detail.save
-=end          
-            end
+            # params[:quote_detail].each do |id,line|
+            #   quote_detail = QuoteDetail.find(id)
+            #   quote_detail.from_web = false
+            # end
 
             session[:quote_id] = nil         
             flash[:message] = "<em>Orden de Salida registrada exitosamente. <a href='/sending'>Generar una nueva</a></em>"
@@ -961,14 +908,12 @@ class QuotesController < ApplicationController
       @quote = Quote.find(params[:id])
       status = @quote.status
       @quote.status = "requested"
-      @quote.store_id =  3 #get_current_store  # por defecto deberia ser almacen para todos?
+      @quote.request_date = Time.zone.now
+      @quote.store_id =  3    # DE ALMACEN
       @quote.is_requested = true
       @quote.save
 
       @quote.quote_details.each do |quote_detail|
-
-        quote_detail.additional = false
-        quote_detail.save 
         
         unless status == "requested"
           quote_detail.unload_stock

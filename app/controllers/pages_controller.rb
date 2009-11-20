@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   def load_catalogue
     #CHANGE THIS
     @catalogue = []
-    @catalogue = Product.search(:page => params[:page], :per_page => 20,:conditions=>{"visible"=>'1'}, :with => {:stock => 0..1000},:order=>"updated_at DESC", :without => {"category_id" => "11"})        
+    @catalogue = Product.search(:page => params[:page], :per_page => 20,:conditions=>{"visible"=>'1'},:order=>"updated_at DESC", :without => {"category_id" => "11", :stock=>0.00 })        
     session[:product_search] = ""
     session[:product_add] = ""
     @alternative = []
@@ -451,11 +451,11 @@ class PagesController < ApplicationController
 
     def query_values
         catalogue_ids = ['1']
-        ids = Product.search_for_ids(:conditions=>{"visible"=>'1','corporative_price'=>session[:price_from].to_i*0.9.to_i..session[:price_to].to_i*1.1.to_i,'status'=>'terminada','age_to'=>session[:product_from]}, :with => {:stock => 0..1000},:without => {"category_id" => "11"},:order=>"updated_at DESC")          
-        ids2 = Product.search_for_ids(:conditions=>{"visible"=>'1','status'=>'terminada','corporative_price'=>session[:price_from].to_i*0.9.to_i..session[:price_to].to_i*1.1.to_i,'age_from'=>session[:product_to]}, :with => {:stock => 0..1000},:without => {"category_id" => "11"},:order=>"updated_at DESC")          
-        ids3 = Product.search_for_ids(:conditions=>{"visible"=>'1','status'=>'terminada','corporative_price'=>session[:price_from].to_i*0.9.to_i..session[:price_to].to_i*1.1.to_i,'age_from'=>0..session[:product_to].to_i,'age_to'=>session[:product_from].to_i..20}, :with => {:stock => 0..1000},:without => {"category_id" => "11"},:order=>"updated_at DESC")          
-        ids4 = Product.search_for_ids(:conditions=>{"visible"=>'1','status'=>'terminada','corporative_price'=>session[:price_from].to_i*0.9.to_i..session[:price_to].to_i*1.1.to_i,'age_from'=>0..session[:product_from].to_i,'age_to'=>session[:product_to].to_i..20}, :with => {:stock => 0..1000},:without => {"category_id" => "11"},:order=>"updated_at DESC")          
-        ids5 = Product.search_for_ids(:conditions=>{"visible"=>'1','status'=>'terminada','corporative_price'=>session[:price_from].to_i*0.9.to_i..session[:price_to].to_i*1.1.to_i,'age_from'=>session[:product_from].to_i..20,'age_to'=>0..session[:product_to].to_i}, :with => {:stock => 0..1000},:without => {"category_id" => "11"},:order=>"updated_at DESC")          
+        ids = Product.search_for_ids(:conditions=>{"visible"=>'1','corporative_price'=>session[:price_from].to_i*0.9.to_i..session[:price_to].to_i*1.1.to_i,'status'=>'terminada','age_to'=>session[:product_from]},:without => {"category_id" => "11", :stock=>0.00 },:order=>"updated_at DESC")          
+        ids2 = Product.search_for_ids(:conditions=>{"visible"=>'1','status'=>'terminada','corporative_price'=>session[:price_from].to_i*0.9.to_i..session[:price_to].to_i*1.1.to_i,'age_from'=>session[:product_to]},:without => {"category_id" => "11", :stock=>0.00 },:order=>"updated_at DESC")          
+        ids3 = Product.search_for_ids(:conditions=>{"visible"=>'1','status'=>'terminada','corporative_price'=>session[:price_from].to_i*0.9.to_i..session[:price_to].to_i*1.1.to_i,'age_from'=>0..session[:product_to].to_i,'age_to'=>session[:product_from].to_i..20},:without => {"category_id" => "11", :stock=>0.00 },:order=>"updated_at DESC")          
+        ids4 = Product.search_for_ids(:conditions=>{"visible"=>'1','status'=>'terminada','corporative_price'=>session[:price_from].to_i*0.9.to_i..session[:price_to].to_i*1.1.to_i,'age_from'=>0..session[:product_from].to_i,'age_to'=>session[:product_to].to_i..20},:without => {"category_id" => "11", :stock=>0.00},:order=>"updated_at DESC")          
+        ids5 = Product.search_for_ids(:conditions=>{"visible"=>'1','status'=>'terminada','corporative_price'=>session[:price_from].to_i*0.9.to_i..session[:price_to].to_i*1.1.to_i,'age_from'=>session[:product_from].to_i..20,'age_to'=>0..session[:product_to].to_i},:without => {"category_id" => "11", :stock=>0.00},:order=>"updated_at DESC")          
         ids.each {|i| catalogue_ids << i unless catalogue_ids.include? i or i.blank? }
         ids2.each {|i| catalogue_ids << i unless catalogue_ids.include? i or i.blank? }
         ids3.each {|i| catalogue_ids << i unless catalogue_ids.include? i or i.blank? }
@@ -585,7 +585,7 @@ class PagesController < ApplicationController
       session[:product_search] = ""      
       #CHANGE THIS
       @catalogue = []
-      @catalogue =  Product.search('"*'+session[:product_add]+ '*"', :page => params[:page], :per_page => 20,:conditions=>{"visible"=>'1','status'=>'terminada','corporative_price'=>session[:price_from].to_i*0.9.to_i..session[:price_to].to_i*1.1.to_i}, :with => {:stock => 0..1000},:without => {"category_id" => "11"},:order=>"updated_at DESC")  
+      @catalogue =  Product.search('"*'+session[:product_add]+ '*"', :page => params[:page], :per_page => 20,:conditions=>{"visible"=>'1','status'=>'terminada','corporative_price'=>session[:price_from].to_i*0.9.to_i..session[:price_to].to_i*1.1.to_i},:without => {"category_id" => "11", :stock=>0.00},:order=>"updated_at DESC")  
       @alternative = []
       #@alternative = @catalogue.first.more_like_this :field_names => [ :brand_name, :category_name ] unless @catalogue.first.nil?   
       @search = get_search_message
@@ -691,7 +691,7 @@ class PagesController < ApplicationController
         #@catalogue = Product.find_all_by_code("*", {:page => params[:page], :per_page => 20},{:conditions=>query_conditions,:order=>"created_at DESC"})           
         if session[:product_from].to_i == 0 and session[:product_to].to_i == 20
 
-                @catalogue =  Product.search(:page=>params[:page], :per_page=>20, :conditions=>{"visible"=>'1','corporative_price'=>session[:price_from].to_i*0.9.to_i..session[:price_to].to_i*1.1.to_i,'status'=>'terminada'}, :with => {:stock => 0..1000},:without => {"category_id" => "11"},:order=>"updated_at DESC")          
+                @catalogue =  Product.search(:page=>params[:page], :per_page=>20, :conditions=>{"visible"=>'1','corporative_price'=>session[:price_from].to_i*0.9.to_i..session[:price_to].to_i*1.1.to_i,'status'=>'terminada'},:without => {"category_id" => "11", :stock=>0.00},:order=>"updated_at DESC")          
                 #@catalogue = Product.paginate(:all, :page=>params[:page], :per_page=>20,:conditions => ["id IN (#{catalogue_ids.join(', ')})"]) 
 
 
@@ -738,7 +738,7 @@ class PagesController < ApplicationController
         session[:product_search] = @search
         session[:product_add] = ""
         #CHANGE THIS
-        @catalogue = Product.search('"*'+@search+'*"', :page => params[:page], :per_page => 20,:conditions=>{'visible'=>'1'}, :with => {:stock => 0..1000},:without => {"category_id" => "11"},:order=>"updated_at DESC")        
+        @catalogue = Product.search('"*'+@search+'*"', :page => params[:page], :per_page => 20,:conditions=>{'visible'=>'1'},:without => {"category_id" => "11", :stock=>0.00},:order=>"updated_at DESC")        
         @alternative = []
         @search = get_search_message
         respond_to do |wants|       

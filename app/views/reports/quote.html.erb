@@ -73,7 +73,7 @@
 	</thead>
 	<tbody>						
 	<% i = 0 %>
-	<% @quote.quote_details.find_all_by_quote_id(@quote.id,:order=>"age_from ASC, age_to ASC, sex DESC",:include => [:product]).each do |qd| %>
+	<% @quote.quote_details.each do |qd| %>
 	<tr class="<%= cycle("even", "odd") -%>">
 		<td><%= i+=1; i %></td>
 		<td><%= qd.age_from %>-<%= qd.age_to %></td>

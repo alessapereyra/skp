@@ -15,6 +15,14 @@ module ReportsHelper
       when "devoluciones" then "Devoluciones a Proveedor"                
     end
  end  
+ 
+ def show_providers(providers)
+   result = ""
+   providers.each do |provider|
+     result << content_tag(:span,provider.name + "<br />")
+   end
+   result
+ end
   
  def total_volume(send_order)
   

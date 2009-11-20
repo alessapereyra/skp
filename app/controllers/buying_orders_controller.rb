@@ -23,6 +23,8 @@ class BuyingOrdersController < ApplicationController
     begin    
       @input_order =  session[:input_order_id] ?  InputOrder.find(session[:input_order_id])  : InputOrder.new
       @input_order.order_date ||= Time.zone.now
+      @input_order.store_id ||= get_current_store
+      @input_order.owner_id ||= get_current_store      
       @input_order.input_type = ""            
       @input_order_details = @input_order.input_order_details
     rescue Exception => ex
@@ -56,6 +58,8 @@ class BuyingOrdersController < ApplicationController
       @input_order =  session[:input_order_id] ?  InputOrder.find(session[:input_order_id])  : InputOrder.new
       @input_order.order_date ||= Time.zone.now
       @input_order.input_type = "compras"
+      @input_order.store_id ||= get_current_store   
+      @input_order.owner_id ||= get_current_store               
       @input_order_details = @input_order.input_order_details
       render :action => "index"
     rescue Exception => ex
@@ -88,7 +92,9 @@ class BuyingOrdersController < ApplicationController
       @input_order =  session[:input_order_id] ?  InputOrder.find(session[:input_order_id])  : InputOrder.new
       @input_order.order_date ||= Time.zone.now
       @input_order_details = @input_order.input_order_details
-      @input_order.input_type = "inventario"      
+      @input_order.input_type = "inventario"   
+      @input_order.store_id ||= get_current_store  
+      @input_order.owner_id ||= get_current_store            
       render :action => "index"
     rescue Exception => ex
       RAILS_DEFAULT_LOGGER.error("\n #{ ex}  \n")                 
@@ -120,7 +126,9 @@ class BuyingOrdersController < ApplicationController
       @input_order =  session[:input_order_id] ?  InputOrder.find(session[:input_order_id])  : InputOrder.new
       @input_order.order_date ||= Time.zone.now
       @input_order_details = @input_order.input_order_details
-      @input_order.input_type = "devoluciones"            
+      @input_order.input_type = "devoluciones"  
+      @input_order.store_id ||= get_current_store  
+      @input_order.owner_id ||= get_current_store                          
       render :action => "index"
     rescue Exception => ex
       RAILS_DEFAULT_LOGGER.error("\n #{ ex}  \n")                 

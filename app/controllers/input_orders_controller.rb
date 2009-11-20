@@ -73,7 +73,7 @@ class InputOrdersController < ApplicationController
       
 
       respond_to do |format|
-        if @input_order.update_attributes(params[:input_order])
+        if @input_order.update_attributes(params[:input_order][params[:id]])
           
           if store_id != @input_order.store_id                                # si ha cambiado la tienda a la que se ingresa
                                                                               # mercadería, se quita de la original y se agrega

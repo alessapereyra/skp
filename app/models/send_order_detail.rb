@@ -1,12 +1,11 @@
 # == Schema Information
-# Schema version: 20081204141634
 #
 # Table name: send_order_details
 #
 #  id               :integer(4)      not null, primary key
 #  product_id       :integer(8)
 #  send_order_id    :integer(8)
-#  quantity         :integer(8)
+#  quantity         :decimal(10, 2)
 #  description      :text
 #  created_at       :datetime
 #  updated_at       :datetime

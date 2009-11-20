@@ -25,6 +25,7 @@
 #  orders_generated    :boolean(1)
 #  quote_details_count :integer(4)      default(0)
 #  from_web            :boolean(1)
+#  request_date        :date
 #
 
 require 'test_helper'

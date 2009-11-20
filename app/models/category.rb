@@ -14,7 +14,7 @@
 class Category < ActiveRecord::Base
   
   has_many :categories, :class_name => "Category", :foreign_key => "category_id"
-  belongs_to :product
+  has_many :products
   belongs_to :parent_category, :class_name => "Category", :foreign_key => "category_id"
   
   validates_presence_of :name, :on => :create, :message => "no puede estar vacío"

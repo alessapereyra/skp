@@ -5,7 +5,7 @@
 #  id               :integer(4)      not null, primary key
 #  sending_guide_id :integer(4)
 #  product_id       :integer(4)
-#  quantity         :integer(4)
+#  quantity         :decimal(10, 2)
 #  price            :integer(10)
 #  created_at       :datetime
 #  updated_at       :datetime

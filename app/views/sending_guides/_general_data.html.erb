@@ -50,6 +50,21 @@
 		
 	</div>
 	<% end %>
+	<% if @sending_guide.sending_type == SendingGuide::SendingTypes[5] %>
+	
+			<div class="single_column_left">
+
+				<dt>
+					<%= f.label :provider_id, "Proveedor:" %>
+				</dt>
+		
+				<dd>
+					<%= f.collection_select :provider_id, Provider.find(:all),:id,:name %>
+				</dd>
+				
+			</div>
+	
+	<% end %>
 
 	<div class="single_column_left">
 		
@@ -149,6 +164,7 @@
 	<% end %>
 
 	</dl>
+	<%= f.hidden_field :sending_type, :class=>"small_fields"%>
 
 	</fieldset>
 	

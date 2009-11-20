@@ -6,7 +6,12 @@
 		<th>Documento</th>
 		<th>Origen</th>				
 		<th>Fecha de Salida</th>
-		<th>Cliente</th>		
+		<%- if report_type.gsub('es','') == SendingGuide::SendingTypes[5] %>
+		<th>Proveedores</th>				
+		<th></th>						
+		<%- else %>
+		<th>Cliente</th>				
+		<%- end -%>
 		<th>Tipo de Salida</th>						
 		<th></th>
 		
@@ -18,7 +23,12 @@
 		<td><%= order.document %></td>
 		<td><%= order.store.name unless order.store.blank? %></td>		
 		<td><%= order.sending_date.strftime("%d/%m/%y") unless order.sending_date.nil? %></td>
+		<%- if report_type.gsub('es','') == SendingGuide::SendingTypes[5] %>
+		<td><%= order.provider.name unless order.provider.blank? %></td>				
+		<td><%= order.client.name unless order.client.blank? %></td>						
+		<% else %>
 		<td><%= order.client.name unless order.client.blank? %></td>				
+		<% end %>
 		<td><%= order.sending_type %></td>						
 		<td><%= link_to "Ver orden", sending_guide_report_path(order.id) %></td>
 	</tr>

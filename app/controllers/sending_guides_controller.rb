@@ -10,6 +10,7 @@ class SendingGuidesController < ApplicationController
     @sending_guide = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id])  : SendingGuide.new
     @sending_guide.unload_stock ||= true
     @sending_guide.sending_type = ""
+    @sending_guide.store_id ||= get_current_store
     @sending_guide_detail = SendingGuideDetail.new
     @sending_guide_details = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id]).sending_guide_details  : []
 
@@ -21,6 +22,7 @@ class SendingGuidesController < ApplicationController
     @sending_guide = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id])  : SendingGuide.new
     @sending_guide.unload_stock ||= true
     @sending_guide.sending_type = "perdida"    
+    @sending_guide.store_id ||= get_current_store    
     @sending_guide_detail = SendingGuideDetail.new
     @sending_guide_details = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id]).sending_guide_details  : []
 
@@ -33,6 +35,7 @@ class SendingGuidesController < ApplicationController
     @sending_guide = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id])  : SendingGuide.new
     @sending_guide.unload_stock ||= true
     @sending_guide.sending_type = "devolucion"    
+    @sending_guide.store_id ||= get_current_store    
     @sending_guide_detail = SendingGuideDetail.new
     @sending_guide_details = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id]).sending_guide_details  : []
 
@@ -45,6 +48,7 @@ class SendingGuidesController < ApplicationController
     @sending_guide = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id])  : SendingGuide.new
     @sending_guide.unload_stock ||= true
     @sending_guide.sending_type = "mal-estado"    
+    @sending_guide.store_id ||= get_current_store    
     @sending_guide_detail = SendingGuideDetail.new
     @sending_guide_details = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id]).sending_guide_details  : []
 
@@ -55,6 +59,7 @@ class SendingGuidesController < ApplicationController
 
     @sending_guide = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id])  : SendingGuide.new
     @sending_guide.unload_stock ||= true
+    @sending_guide.store_id ||= get_current_store    
     @sending_guide.sending_type = "consumo-interno"
     @sending_guide_detail = SendingGuideDetail.new
     @sending_guide_details = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id]).sending_guide_details  : []
@@ -66,6 +71,7 @@ class SendingGuidesController < ApplicationController
 
     @sending_guide = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id])  : SendingGuide.new
     @sending_guide.unload_stock ||= true
+    @sending_guide.store_id ||= get_current_store    
     @sending_guide.sending_type = "consumo-externo"
     @sending_guide_detail = SendingGuideDetail.new
     @sending_guide_details = session[:sending_guide_id] ? SendingGuide.find(session[:sending_guide_id]).sending_guide_details  : []
@@ -127,6 +133,7 @@ class SendingGuidesController < ApplicationController
       @sending_guide.sending_date = Time.zone.now
       @sending_guide.unload_stock = true
       @sending_guide.status ="pending"
+      @sending_guide.store_id ||= get_current_store      
       @sending_guide.save!
       session[:sending_guide_id] = @sending_guide.id
 

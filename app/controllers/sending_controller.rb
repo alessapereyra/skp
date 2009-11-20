@@ -19,7 +19,7 @@ class SendingController < ApplicationController
     rescue
 
       @send_order = SendOrder.new
-
+      @send_order.store_id ||= get_current_store
       @send_order_detail = SendOrderDetail.new
       @send_order_details = @send_order.send_order_details
 

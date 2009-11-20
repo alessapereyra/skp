@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091021210816) do
+ActiveRecord::Schema.define(:version => 20091115040617) do
 
   create_table "age_range_versions", :force => true do |t|
     t.integer  "age_range_id"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(:version => 20091021210816) do
     t.integer  "version"
     t.boolean  "from_web"
   end
+
+  add_index "age_ranges", ["quote_id"], :name => "index_age_ranges_on_quote_id"
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -83,6 +85,7 @@ ActiveRecord::Schema.define(:version => 20091021210816) do
   end
 
   add_index "exit_order_details", ["exit_order_id"], :name => "index_exit_order_details_on_exit_order_id"
+  add_index "exit_order_details", ["product_id"], :name => "index_exit_order_details_on_product_id"
 
   create_table "exit_orders", :force => true do |t|
     t.integer  "store_id"
@@ -100,6 +103,10 @@ ActiveRecord::Schema.define(:version => 20091021210816) do
     t.decimal  "price",                    :precision => 10, :scale => 2
     t.integer  "exit_order_details_count",                                :default => 0
   end
+
+  add_index "exit_orders", ["client_id"], :name => "index_exit_orders_on_client_id"
+  add_index "exit_orders", ["status", "store_id"], :name => "index_exit_orders_on_status_and_store_id"
+  add_index "exit_orders", ["store_id"], :name => "index_exit_orders_on_store_id"
 
   create_table "expenses", :force => true do |t|
     t.decimal  "amount",       :precision => 10, :scale => 2
@@ -134,6 +141,8 @@ ActiveRecord::Schema.define(:version => 20091021210816) do
     t.integer  "yesterday_fund"
   end
 
+  add_index "funds", ["store_id"], :name => "index_funds_on_store_id"
+
   create_table "input_order_details", :force => true do |t|
     t.decimal  "quantity",                     :precision => 10, :scale => 2
     t.decimal  "cost",                         :precision => 10, :scale => 2
@@ -165,6 +174,10 @@ ActiveRecord::Schema.define(:version => 20091021210816) do
     t.string   "input_type"
     t.integer  "input_order_details_count",                                             :default => 0
   end
+
+  add_index "input_orders", ["owner_id"], :name => "index_input_orders_on_owner_id"
+  add_index "input_orders", ["provider_id"], :name => "index_input_orders_on_provider_id"
+  add_index "input_orders", ["store_id"], :name => "index_input_orders_on_store_id"
 
   create_table "options", :force => true do |t|
     t.integer  "current_store"
@@ -208,6 +221,11 @@ ActiveRecord::Schema.define(:version => 20091021210816) do
     t.integer  "order_details_count",                                             :default => 0
   end
 
+  add_index "orders", ["client_id"], :name => "index_orders_on_client_id"
+  add_index "orders", ["quote_id"], :name => "index_orders_on_quote_id"
+  add_index "orders", ["sending_guide_id"], :name => "index_orders_on_sending_guide_id"
+  add_index "orders", ["store_id"], :name => "index_orders_on_store_id"
+
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.text     "content"
@@ -216,6 +234,9 @@ ActiveRecord::Schema.define(:version => 20091021210816) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
+  add_index "pages", ["title"], :name => "index_pages_on_title"
 
   create_table "prices", :force => true do |t|
     t.decimal  "amount",                             :precision => 10, :scale => 2
@@ -405,6 +426,11 @@ ActiveRecord::Schema.define(:version => 20091021210816) do
     t.boolean  "from_web"
   end
 
+  add_index "quotes", ["client_id"], :name => "index_quotes_on_client_id"
+  add_index "quotes", ["status"], :name => "index_quotes_on_status"
+  add_index "quotes", ["store_id"], :name => "index_quotes_on_store_id"
+  add_index "quotes", ["user_id"], :name => "index_quotes_on_user_id"
+
   create_table "roles", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -438,6 +464,9 @@ ActiveRecord::Schema.define(:version => 20091021210816) do
     t.integer  "send_order_details_count",              :default => 0
   end
 
+  add_index "send_orders", ["owner_id"], :name => "index_send_orders_on_owner_id"
+  add_index "send_orders", ["store_id"], :name => "index_send_orders_on_store_id"
+
   create_table "sending_guide_details", :force => true do |t|
     t.integer  "sending_guide_id"
     t.integer  "product_id"
@@ -469,6 +498,9 @@ ActiveRecord::Schema.define(:version => 20091021210816) do
     t.boolean  "unload_stock"
     t.string   "sending_type"
   end
+
+  add_index "sending_guides", ["client_id"], :name => "index_sending_guides_on_client_id"
+  add_index "sending_guides", ["store_id"], :name => "index_sending_guides_on_store_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
@@ -510,6 +542,8 @@ ActiveRecord::Schema.define(:version => 20091021210816) do
     t.datetime "updated_at"
   end
 
+  add_index "users", ["role_id"], :name => "index_users_on_role_id"
+  add_index "users", ["store_id"], :name => "index_users_on_store_id"
   add_index "users", ["username"], :name => "index_users_on_username"
 
 end

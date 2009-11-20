@@ -17,7 +17,7 @@
 class Provider < ActiveRecord::Base
   
   has_many :input_orders
-  has_many :products, :through => :input_orders
+ # has_many :products, :through => :input_orders
   has_many :stores, :through => :input_orders
   
   #validates_presence_of :name, :on => :create, :message => "no puede estar vacío"

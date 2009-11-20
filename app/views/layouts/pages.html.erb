@@ -7,26 +7,29 @@
 	<meta name="Keywords" content="importador juguetes peru diversion disney barbies muñecas bebes accesorios toys importer fun toys accesories plushies peluches exclusivos ">
 	<title>Skykids :: Importador de Juguetes y Más </title>
 
-	<%= stylesheet_link_tag 'jquery.ui.autocomplete','nextgen/menu.css','../javascripts/mopTip', '../javascripts/facebox/facebox', :media=>"all" %>
 	<%= stylesheet_link_tag 'nextgen/print.css', :media=>"print" %>
 	
 	<!--[if !IE]><!-->
 	
+	       <%= stylesheet_link_tag 'jquery.ui.autocomplete','nextgen/menu.css','../javascripts/mopTip', 
+	'../javascripts/facebox/facebox', "nextgen/web.css", :media=>"all", :cache=>"screen_fine" %>
 	
-	<%= stylesheet_link_tag  "nextgen/web.css", :media=>"all" %>
-		<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js",'fancyzoom/js-global/FancyZoom','fancyzoom/js-global/FancyZoomHTML',
-									"jquery-ui","mopTip", 'jquery-ui-personalized', 
-									'facebox/facebox', 'jquery.flash', "jrails",'jquery.scrollTo','skykids' %>
-	
+		<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" %>
+<%= javascript_include_tag 'fancyzoom/js-global/FancyZoom','fancyzoom/js-global/FancyZoomHTML', 									"jquery-ui","mopTip", 'jquery-ui-personalized', 'facebox/facebox', 'jquery.flash', "jrails",'jquery.scrollTo','skykids', :cache=>true %>
+
 	<!-- <![endif]-->
 	
 
 	<!--[if IE]>      
 		
-		<%= stylesheet_link_tag "nextgen/msie.css", :media=>"all" %>
-		<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js",'fancyzoom/js-global/FancyZoom','fancyzoom/js-global/FancyZoomHTML',
+	       <%= stylesheet_link_tag 'jquery.ui.autocomplete','nextgen/menu.css','../javascripts/mopTip', 
+'../javascripts/facebox/facebox', 'nextgen/msie.css', :media=>"all", :cache=>"screenie" %>
+	
+	<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" %>
+<%= javascript_include_tag 'fancyzoom/js-global/FancyZoom','fancyzoom/js-global/FancyZoomHTML',
 									"jquery-ui","mopTip","jquery.pngfix", 'jquery-ui-personalized', 
-									'facebox/facebox', 'jquery.flash', "jrails", 'jquery.scrollTo','skykidsie' %>
+									'facebox/facebox', 'jquery.flash', 
+"jrails", 'jquery.scrollTo','skykidsie', :cache=>true %>
 		
 	<![endif]-->
 		
@@ -38,6 +41,11 @@
 	<body id="<%= params["controller"] %>" onload="setupZoom()"> 
 
 		<div id="wrapper">
+
+
+
+
+
 
 			<div id="header">
 
@@ -79,23 +87,13 @@
 
 		</div> <!-- footer -->
 
-		<script type="text/javascript">
-		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-		</script>
+		<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
 		<script type="text/javascript">
 		var pageTracker = _gat._getTracker("UA-615279-4");
 		pageTracker._trackPageview();
-		</script>
-		<script type="text/javascript">
-		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-		<script type="text/javascript">
-		try {
 		var pageTracker = _gat._getTracker("UA-6468664-1");
 		pageTracker._trackPageview();
-		} catch(err) {}</script>
+		</script>
 		
 	</body>
 	</html>

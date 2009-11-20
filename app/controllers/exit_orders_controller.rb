@@ -18,6 +18,7 @@ class ExitOrdersController < ApplicationController
     @exit_order.store_id = get_current_store
     @exit_order.unload_stock ||= true
     @exit_order.price ||= 0
+    @exit_order.store_id ||= get_current_store
     @exit_order.sending_date = Time.zone.now
     @exit_order.document ||= ExitOrder.last_number_of(get_current_store)
     @exit_order_detail = ExitOrderDetail.new

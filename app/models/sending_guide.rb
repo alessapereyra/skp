@@ -24,6 +24,7 @@ class SendingGuide < ActiveRecord::Base
 
   belongs_to :store
   belongs_to :client
+  belongs_to :provider
   
   has_many :sending_guide_details
   has_many :orders
@@ -47,6 +48,11 @@ class SendingGuide < ActiveRecord::Base
    "consumo-externo",
    "devolucion"]
   
+  
+  def providers
+    
+    @providers = Provider.all(:select=>"providers.id,providers.name",:joins=>{:input_orders=> {:input_order_details=>{:product=>:sending_guide_details}}},:conditions=>["sending_guide_id = ?",self.id], :group=>:name)
+  end
   
   def complete?
     status == "complete"

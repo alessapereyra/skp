@@ -119,7 +119,7 @@
 
 
 		<div id="price_per_product">
-			Promedio por Producto: S/. <%= (@quote.price/@quote.total_products).to_f.round(2) %>
+			Promedio por Producto: S/. <%= (@quote.price/@quote.total_products).to_f.round(2) unless @quote.total_products.zero? %>
 		</div>
 		
 		<% unless @quote.quote_details.additional.empty? %>

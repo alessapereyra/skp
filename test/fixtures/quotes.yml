@@ -1,5 +1,4 @@
 # == Schema Information
-# Schema version: 20090320214122
 #
 # Table name: quotes
 #
@@ -26,6 +25,7 @@
 #  orders_generated    :boolean(1)
 #  quote_details_count :integer(4)      default(0)
 #  from_web            :boolean(1)
+#  request_date        :date
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
