@@ -15,6 +15,18 @@ module ReportsHelper
       when "devoluciones" then "Devoluciones a Proveedor"                
     end
  end  
+
+ def print_sending_guide_singular_report_title(type)
+    case type
+      when SendingGuide::SendingTypes[0] then "&Oacute;rden de Salida a Clientes"
+      when SendingGuide::SendingTypes[1] then "Retiro por P&eacute;rdida"
+      when SendingGuide::SendingTypes[2] then "Retiro por Mal Estado"
+      when SendingGuide::SendingTypes[3] then "Consumo Interno"
+      when SendingGuide::SendingTypes[4] then "Consumo Externo"        
+      when SendingGuide::SendingTypes[5] then "Devoluci&oacute;n a Proveedor"                
+    end
+ end  
+
  
  def show_providers(providers)
    result = ""

@@ -1,0 +1,127 @@
+<%- content_for :report_title do -%>-cotizacion<%- end -%>
+
+<div class="cotizacion">
+	
+<h2>Pedido de Cotización</h2>
+
+<div id="general">
+
+	<div id="date">
+		<h3 class="date fecha_emision">Fecha:
+		<em><%= @delivered_quote.quote_date.strftime("%d") %></em> <span>/</span>
+		<em><%= @delivered_quote.quote_date.strftime("%m")%></em><span>/</span>
+		<em><%= @delivered_quote.quote_date.strftime("%y")%></em>
+		</h3>
+		
+	</div>
+
+	<div id="date">
+		<h3 class="date fecha_emision">Fecha Despacho:
+		<em><%= @delivered_quote.delivered_date.strftime("%d") %></em> <span>/</span>
+		<em><%= @delivered_quote.delivered_date.strftime("%m")%></em><span>/</span>
+		<em><%= @delivered_quote.delivered_date.strftime("%y")%></em>
+		</h3>
+		
+	</div>
+
+	
+	<dl>
+		
+		<dt class="hide">Documento: </dt>
+		<dd class="hide"><%= @delivered_quote.document %></dd>
+		
+			<div id="domicilio_partida">
+				<dt>Cliente: </dt>
+				<dd><%= @delivered_quote.client.name unless @delivered_quote.client.nil? %></dd>				
+			</div>
+		
+			<dt class="hide">Fecha de Cotizaci&oacute;n: </dt>
+			<dd class="hide"><%= @delivered_quote.quote_date.strftime("%d/%m/%y") %></dd>	
+
+			<div id="domicilio_llegada">
+				<dt>Validez:</dt>
+				<dd><%= @delivered_quote.duration.nil? ? "0" : @delivered_quote.duration %> días</dd>
+			</div>			
+
+			<dt class="hide">Contactos: </dt>
+			<dd class="hide">
+				<%= @delivered_quote.contact_name -%> (<%= @delivered_quote.sending_details -%>)
+
+			</dd>
+
+    	<dt class="hide">Fecha de Despacho: </dt>
+			<dd class="hide">
+					<%= @delivered_quote.delivered_date -%><br />
+			</dd>
+
+			<dt class="hide">Detalles: </dt>
+			<dd class="hide">
+				<% unless @delivered_quote.quote_comments.nil? %>
+					<%= @delivered_quote.quote_comments -%><br />
+				<% end %>
+
+			</dd>
+			
+
+					
+	</dl>
+</div>
+
+<h3 class="hide">Lista Completa de Productos Pedidos</h3>
+
+<table>
+	<thead>
+	<tr>
+		<th id="count" width="5">Item</th>		
+		<th id="edad">Edad</th>
+		<th id="edad">Sexo</th>
+		<th id="cantidad">Cantidad</th>		
+		<th id="codigo">Código</th>
+		<th id="descripcion">Descripci&oacute;n</th>
+		<th id="pack">Pack</th>
+		<th id="punit">Precio</th>
+		<th id="importe">Subtotal</th>		
+	</tr>
+	</thead>
+	<tbody>						
+	<% i = 0 %>
+	<% @delivered_quote.quote_details.final.find(:all,:order=>"age_from ASC, age_to ASC, sex DESC, pack_number ASC",:include => [:product]).each do |qd| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= i+=1; i %></td>
+		<td><%= qd.age_from %>-<%= qd.age_to %></td>		
+		<td><%= qd.sex %></td>		
+		<td><%= qd.quantity %></td>
+		<td><%= qd.product.code %></td>		
+		<td><%= qd.product.name %> <br /><%= strip_tags(qd.product.description) if qd.product.print_description %></td>
+		<td><%= qd.pack_number %></td>				
+		<td><%= qd.price %></td>				
+		<td><%= qd.subtotal %></td>									
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+<table id="subtotals">
+	<thead>
+		<tr>
+			<th id="total">TOTAL</th>			
+			<th id="total">Total de Juguetes</th>			
+			<th id="total">Promedio Por Juguete</th>			
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td id="total"><%= @delivered_quote.price %></td>			
+			<td id="total"><%= @delivered_quote.total_products %></td>			
+			<td id="total"><%= (@delivered_quote.price / @delivered_quote.total_products).to_f.round(2)  %></td>		
+		</tr>
+	</tbody>
+</table>
+
+<div id="endzone">
+<%= link_to "imprimir", url_for(:action=>"print_quote", :id=>@delivered_quote.id), :class=>"form_button" %>	<%= link_to("a guia de salida",url_for(:controller=>"quotes", :action=>"to_sending_guide",:id=>@delivered_quote.id), :class=>"form_button_inline") %> <%= link_to("a facturas",url_for(:controller=>"quotes", :action=>"generate_orders",:id=>@delivered_quote.id), :class=>"form_button_inline") %> <%= link_to("marcar como le&iacute;do",url_for(:controller=>"quotes", :action=>"mark_as_read",:id=>@delivered_quote.id), :class=>"form_button_inline") %>  <%= link_to("ver via web","http://www.skykidsperu.com/web/cotizaciones/#{Base64.encode64(@delivered_quote.sending_details).gsub!("\n","")}", :class=>"form_button_inline") unless @delivered_quote.sending_details.blank? %> <%= link_to("enviar a cliente",send_quote_path(@delivered_quote.id), :class=>"form_button_inline") if admin? or store_supervisor? or store_admin?  %> <%= link_to("editar",url_for(:controller=>"quotes",:action=>"recover_to_quote", :id=>@delivered_quote.id), :class=>"form_button_inline") if admin? or store_supervisor? or store_admin? %> <p>o <%= link_to "Regresar",reports_path %></p>
+</div>
+
+
+
+
+</div>

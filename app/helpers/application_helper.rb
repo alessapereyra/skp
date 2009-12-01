@@ -314,6 +314,7 @@ module ApplicationHelper
         content_tag(:li, (link_to "cotizaciones", quotes_report_path,extra_options("reports", controller))) <<  
         content_tag(:li, (link_to "cotizaciones web", quotes_from_web_report_path,extra_options("reports", controller))) <<        
         content_tag(:li, (link_to "pedidos", quote_requests_report_path,extra_options("reports", controller))) <<        
+        content_tag(:li, (link_to "pedidos despachados", delivered_quotes_report_path,extra_options("reports", controller))) <<        
         content_tag(:li, (link_to "ventas", orders_report_path,extra_options("reports", controller))) <<    
         content_tag(:li, (link_to "caja", expenses_path,extra_options("expenses", controller))) <<        
         content_tag(:li, (link_to "items por d&iacute;a", items_per_day_path,extra_options("reports", controller))) <<    

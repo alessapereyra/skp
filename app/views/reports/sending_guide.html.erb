@@ -2,7 +2,7 @@
 
 <div class="guia_remision">
 	
-<h2>Orden de Salida Fecha</h2>
+<h2><%= print_sending_guide_singular_report_title(@sending_guide.sending_type) %> Fecha</h2>
 
 <div id="general">
 
@@ -13,11 +13,7 @@
 		<em><%= @sending_guide.sending_date.strftime("%y")%></em>
 		</h2>
 
-		<h2 class="date inicio_traslado">
-		<em><% #@sending_guide.sending_date.strftime("%d") %></em> <span>/</span>
-		<em><% #@sending_guide.sending_date.strftime("%m") %></em><span>/</span>
-		<em><% #@sending_guide.sending_date.strftime("%y") %></em>
-		</h2>
+		<h2 class="date inicio_traslado"></h2>
 		
 	</div>
 
@@ -37,6 +33,7 @@
 						<br />
 		</dd>
 
+		<%- if @sending_guide.sending_type == SendingGuide::SendingTypes[0] %>
 
 			<div id="domicilio_partida">
 				<dt>Domicilio de Partida: </dt>
@@ -49,11 +46,25 @@
 				
 			</div>
 
+      <% end %>
+
+
+  		<%- if @sending_guide.sending_type == SendingGuide::SendingTypes[5] %>
+
+			<div id="destinatario">
+				<dt>Destinatario</dt>
+				<dd><%= @sending_guide.client.name unless @sending_guide.client.nil? %></dd>				
+			</div>
+			<%- elsif @sending_guide.sending_type == SendingGuide::SendingTypes[5] -%>
+
 			<div id="destinatario">
 				<dt>Destinatario</dt>
 				<dd><%= @sending_guide.client.name unless @sending_guide.client.nil? %></dd>				
 			</div>
 			
+			<%- end -%>
+			
+  <%- if @sending_guide.sending_type == SendingGuide::SendingTypes[0]			 %>
 
 		<dt class="hide">Persona de Recepci&oacute;n</dt>
 		<dd class="hide"><%= @sending_guide.delivery_contact %></d>
@@ -63,6 +74,8 @@
 
 		<dt class="hide">Volumen</dt>
 		<dd class="hide"><%= total_volume(@sending_guide) %> m3 </dd>
+		
+<% end %>
 		
 	</dl>
 </div>

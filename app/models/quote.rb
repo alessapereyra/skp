@@ -2,30 +2,32 @@
 #
 # Table name: quotes
 #
-#  id                  :integer(4)      not null, primary key
-#  client_id           :integer(4)
-#  store_id            :integer(4)
-#  user_id             :integer(4)
-#  client_address      :string(255)
-#  quote_date          :datetime
-#  duration            :integer(4)
-#  sending_details     :string(255)
-#  quote_comments      :text
-#  created_at          :datetime
-#  updated_at          :datetime
-#  document            :string(255)
-#  status              :string(255)
-#  contact_name        :string(255)
-#  price_type          :string(255)
-#  updated             :boolean(1)
-#  sent                :boolean(1)
-#  child_number        :integer(4)
-#  budget              :decimal(10, 2)
-#  is_requested        :boolean(1)
-#  orders_generated    :boolean(1)
-#  quote_details_count :integer(4)      default(0)
-#  from_web            :boolean(1)
-#  request_date        :date
+#  id                       :integer(4)      not null, primary key
+#  client_id                :integer(4)
+#  store_id                 :integer(4)
+#  user_id                  :integer(4)
+#  client_address           :string(255)
+#  quote_date               :datetime
+#  duration                 :integer(4)
+#  sending_details          :string(255)
+#  quote_comments           :text
+#  created_at               :datetime
+#  updated_at               :datetime
+#  document                 :string(255)
+#  status                   :string(255)
+#  contact_name             :string(255)
+#  price_type               :string(255)
+#  updated                  :boolean(1)
+#  sent                     :boolean(1)
+#  child_number             :integer(4)
+#  budget                   :decimal(10, 2)
+#  is_requested             :boolean(1)
+#  orders_generated         :boolean(1)
+#  quote_details_count      :integer(4)      default(0)
+#  from_web                 :boolean(1)
+#  request_date             :date
+#  delivered_date           :datetime
+#  sending_guides_generated :boolean(1)
 #
 
 class Quote < ActiveRecord::Base
@@ -33,6 +35,7 @@ class Quote < ActiveRecord::Base
   has_many :quote_details,:order=>"created_at DESC"
   has_many :age_ranges,:order=>"age_from DESC,age_to DESC"
   has_many :orders
+  has_many :sending_guides
   
   belongs_to :client
   belongs_to :user
@@ -43,7 +46,6 @@ class Quote < ActiveRecord::Base
   named_scope :requested, :conditions=>{:status => "requested"} 
   
   has_many :products, :through => :quote_details
-
 
   def mark_as_read
     self.updated = false

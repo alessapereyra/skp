@@ -1,5 +1,6 @@
 class QuotesController < ApplicationController
 
+  # protect_from_forgery :# only => [:create, :update, :destroy]
   skip_before_filter :is_authenticated, :only=>[:modify_quote,:modify_quotes]
   before_filter [:has_privileges?,:no_cache], :except => [:modify_quote, :modify_quotes]
 
@@ -121,6 +122,13 @@ class QuotesController < ApplicationController
       @quote.store_id = params[:quote][:store_id]
       @quote.duration = params[:quote][:duration]
       @quote.document = params[:quote][:document]
+      
+      delivered_year = params[:quote]["delivered_date(1i)"] 
+      delivered_month = params[:quote]["delivered_date(2i)"] 
+      delivered_day = params[:quote]["delivered_date(3i)"]
+
+      @quote.delivered_date = Time.zone.parse("#{delivered_year}-#{delivered_month}-#{delivered_day}")
+
       @quote.quote_comments = params[:quote][:comments]
       @quote.sending_details = params[:quote][:sending_details]
       @quote.contact_name = params[:quote][:contact_name]
@@ -503,6 +511,13 @@ class QuotesController < ApplicationController
         @quote.sending_details = params[:quote][:sending_details]
         @quote.contact_name = params[:quote][:contact_name]
         @quote.duration = params[:quote][:duration]
+        
+        delivered_year = params[:quote]["delivered_date(1i)"] 
+        delivered_month = params[:quote]["delivered_date(2i)"] 
+        delivered_day = params[:quote]["delivered_date(3i)"]
+
+        
+        @quote.delivered_date = Time.zone.parse("#{delivered_year}-#{delivered_month}-#{delivered_day}")
         @quote.quote_comments = params[:quote][:quote_comments]
         @quote.status ="accepted"
         @quote.sent = false
@@ -925,6 +940,16 @@ class QuotesController < ApplicationController
     @quote.save
     redirect_to quote_request_report_path(@quote.id)
   end   
+  
+  def as_delivered
+    @quote = Quote.find(params[:id])
+    @quote.status = "delivered"
+    @quote.delivered_date ||= Time.zone.now
+    @quote.save
+    
+    redirect_to delivered_quote_report_path(@quote.id)
+    
+  end
 
   def to_sending_guide
 
@@ -970,6 +995,92 @@ class QuotesController < ApplicationController
     end
 
   end
+  
+  def generate_sending_guides
+    
+    @quote = Quote.find(params[:id])      
+
+    unless @quote.sending_guides_generated
+
+      max_items_per_order = 23.00
+    
+      SendingGuide.transaction do
+      
+        total_items = @quote.quote_details.final.size
+        orders = (total_items / max_items_per_order).ceil
+
+        i = 0
+        count = 0
+        RAILS_DEFAULT_LOGGER.error("\n Para #{ total_items} detalles   \n")    
+        RAILS_DEFAULT_LOGGER.error("\n #{ total_items/max_items_per_order.to_i}  \n")    
+        RAILS_DEFAULT_LOGGER.error("\n #{ (total_items/max_items_per_order.to_i).ceil }  \n")    
+        
+        RAILS_DEFAULT_LOGGER.error("\n Creando #{ orders} ordenes  \n")    
+        RAILS_DEFAULT_LOGGER.error("\n Para #{ total_items} detalles   \n")    
+        
+        orders.times do 
+
+          RAILS_DEFAULT_LOGGER.error("\n Creando la orden #{count+1}  \n")        
+          sending_guide = SendingGuide.new
+          sending_guide.status = "open"
+          sending_guide.store_id = get_current_store
+          sending_guide.client_id = @quote.client_id
+          sending_guide.quote_id = @quote.id
+          sending_guide.unload_stock = false
+          sending_guide.sending_date = Time.zone.now
+          sending_guide.document = "De Cotización #{@quote.document}"
+          sending_guide.save        
+          count += 1
+        
+          if total_items > max_items_per_order.to_i
+
+
+            total_items = total_items - max_items_per_order.to_i
+            RAILS_DEFAULT_LOGGER.error("\n Creando #{max_items_per_order}. Faltan #{total_items}   \n")    
+            max_items_per_order.to_i.times do
+
+              RAILS_DEFAULT_LOGGER.error("\n Creando detalle # #{i+1}   \n")    
+              quote_detail = @quote.quote_details.final[i]
+              sending_guide_detail = SendingGuideDetail.new
+              sending_guide_detail.convert(quote_detail)
+              sending_guide_detail.status = "open"
+              sending_guide_detail.price = quote_detail.price
+              sending_guide_detail.pending = sending_guide_detail.quantity
+              sending_guide_detail.sending_guide_id = sending_guide.id
+              sending_guide_detail.save               
+              i += 1   
+
+            end # times
+            # Order.update_counters order.id, :order_details_count => max_items_per_order.to_i
+          else
+
+
+            total_items.times do
+              RAILS_DEFAULT_LOGGER.error("\n Creando detalle # #{i}   \n")    
+              quote_detail = @quote.quote_details.final[i]
+              sending_guide_detail = SendingGuideDetail.new
+              sending_guide_detail.convert(quote_detail)
+              sending_guide_detail.status = "open"
+              sending_guide_detail.price = quote_detail.price
+              sending_guide_detail.pending = sending_guide_detail.quantity
+              sending_guide_detail.sending_guide_id = sending_guide.id
+              sending_guide_detail.save             
+              i += 1   
+
+            end #times
+        
+          end #total_size
+        
+        end #times
+        
+        @quote.sending_guides_generated = true
+        @quote.save
+      
+      end #transaction
+    
+    end # sending_guides_generated
+    
+  end
 
 
   def generate_orders
@@ -1009,8 +1120,8 @@ class QuotesController < ApplicationController
 
           if total_items > max_items_per_order.to_i
 
-            total_times = total_items - max_items_per_order.to_i
-
+            total_items = total_items - max_items_per_order.to_i
+            
             max_items_per_order.to_i.times do
 
               order_detail = OrderDetail.new

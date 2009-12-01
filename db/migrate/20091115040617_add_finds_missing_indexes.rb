@@ -11,9 +11,9 @@ class AddFindsMissingIndexes < ActiveRecord::Migration
     # http://www.railstutor.org
     # http://guides.rubyonrails.org
   
-    add_index :quotes, :status
-    add_index :pages, :title
-    add_index :exit_orders, [:status, :store_id]
+    # add_index :quotes, :status
+    #  add_index :pages, :title
+    #  add_index :exit_orders, [:status, :store_id]
   end
 
   def self.down

@@ -512,13 +512,13 @@ $("input#exit_order_detail_product_id").keypress(function(event){
 	
 	
 		
-	$("input#order_client_id").autocomplete("sales/auto_complete_for_order", {  
+	$("input#order_client_id").autocomplete("/sales/auto_complete_for_order", {  
 		formatItem:formatItem, hidden_input:".order_hidden_client_id"});	
 
-		$("input#sending_guide_client_id").autocomplete("sales/auto_complete_for_order", {  
+		$("input#sending_guide_client_id").autocomplete("/sales/auto_complete_for_order", {  
 			formatItem:formatItem, hidden_input:".sending_guide_hidden_client_id"});	
 
-	$("input#quote_client_id").autocomplete("sales/auto_complete_for_order", {  
+	$("input#quote_client_id").autocomplete("/sales/auto_complete_for_order", {  
 		formatItem:formatItem, hidden_input:".quote_hidden_client_id", callbackFunction:getClientData});	
 
 	$("input#exit_order_client_id").autocomplete("/sales/auto_complete_for_order", {  

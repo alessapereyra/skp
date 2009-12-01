@@ -22,14 +22,15 @@
 
 	<!--[if IE]>      
 		
-	       <%= stylesheet_link_tag 'jquery.ui.autocomplete','nextgen/menu.css','../javascripts/mopTip', 
+<%= stylesheet_link_tag 'jquery.ui.autocomplete','nextgen/menu.css','../javascripts/mopTip', 
 '../javascripts/facebox/facebox', 'nextgen/msie.css', :media=>"all", :cache=>"screenie" %>
 	
-	<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" %>
+<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" %>
+
 <%= javascript_include_tag 'fancyzoom/js-global/FancyZoom','fancyzoom/js-global/FancyZoomHTML',
-									"jquery-ui","mopTip","jquery.pngfix", 'jquery-ui-personalized', 
-									'facebox/facebox', 'jquery.flash', 
-"jrails", 'jquery.scrollTo','skykidsie', :cache=>true %>
+									"jquery-ui","mopTip","jquery.pngfix", :cache=>"appfirst" %>
+									
+<%= javascript_include_tag 'jquery-ui-personalized', 'facebox/facebox', 'jquery.flash', "jrails", 'jquery.scrollTo','skykidsie', :cache=>"applast" %>
 		
 	<![endif]-->
 		

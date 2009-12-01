@@ -178,8 +178,11 @@ ActionController::Routing::Routes.draw do |map|
   map.massive_input_order_edit "/ordenes_ingreso/edicion_masiva", :controller=>"input_orders", :action=>"massive_edit"
 
   map.quote_requests_report "/reportes/pedidos/", :controller=>"reports",:action=>"quote_requests"
-  map.quote_request_report "/reportes/pedidos/:id", :controller=>"reports",:action=>"quote_request"    
-  
+  map.quote_request_report "/reportes/pedidos/:id", :controller=>"reports",:action=>"quote_request"
+
+  map.delivered_quotes_report "/reportes/pedidos_enviados/", :controller=>"reports",:action=>"delivered_quotes"
+  map.delivered_quote_report "/reportes/pedidos_envidados/:id", :controller=>"reports",:action=>"delivered_quote"
+
   map.send_orders_report "/reportes/envios", :controller=>"reports",:action=>"send_orders"   
   map.send_order_report "/reportes/envios/:id", :controller=>"reports",:action=>"send_order"  
   map.sending_guides_report "/reportes/guia_envios", :controller=>"reports",:action=>"sending_guides"   

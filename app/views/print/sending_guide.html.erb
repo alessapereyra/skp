@@ -17,11 +17,17 @@
 	</div>
 			
   <div id="domicilio_llegada">
+    <%- if @sending_guide.sending_type == SendingGuide::SendingTypes[0] -%>
       <%= @sending_guide.delivery_address.blank? ?  (@sending_guide.client.address unless @sending_guide.client.blank?) : @sending_guide.delivery_address %>
+      <% end %>
 	</div>
 
 	<div id="destinatario">
-      <%= @sending_guide.client.name unless @sending_guide.client.blank? %>
+	  <% if @sending_guide.sending_type == SendingGuide::SendingTypes[0]			 %>
+        <%= @sending_guide.client.name unless @sending_guide.client.blank? %>
+    <% elsif  @sending_guide.sending_type == SendingGuide::SendingTypes[5]			 %>
+        <%= @sending_guide.try(:client).try(:name) %>
+    <% end %>      
 	</div>
 			
 </div>

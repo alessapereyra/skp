@@ -6,3 +6,7 @@ public/nextgen/images
 public/stylesheets/nextgen/images/
 db/sphinx/	
 log/
+Rakefile.orig
+app/.DS_Store
+db/sphinx/
+tmp/

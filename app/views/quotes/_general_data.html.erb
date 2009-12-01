@@ -73,6 +73,23 @@
 		
 	</div>
 	
+	<%- if @quote.is_requested? -%>
+	
+	<div class="single_column_left">
+		
+			<dt class="odd">				
+				<%= f.label :delivered_date, "Fecha de Envío: " %>
+			</dt>
+
+			<dd class="odd">
+  			<div class="small_fields">
+  			<%= f.date_select :delivered_date, :class=>"small_fields"%>
+  			</div>
+			</dd>
+		
+	</div>
+	
+	<%- end -%>
 	
 	
 	<div class="single_column_left">

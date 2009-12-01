@@ -40,6 +40,10 @@
 
 			</dd>
 
+    	<dt class="hide">Fecha de Salida: </dt>
+			<dd class="hide">
+					<%= @quote_request.delivered_date -%><br />
+			</dd>
 
 			<dt class="hide">Detalles: </dt>
 			<dd class="hide">
@@ -110,7 +114,11 @@
 </table>
 
 <div id="endzone">
-<%= link_to "imprimir", url_for(:action=>"print_quote", :id=>@quote_request.id), :class=>"form_button" %>	<%= link_to("a guia de salida",url_for(:controller=>"quotes", :action=>"to_sending_guide",:id=>@quote_request.id), :class=>"form_button_inline") %> <%= link_to("a facturas",url_for(:controller=>"quotes", :action=>"generate_orders",:id=>@quote_request.id), :class=>"form_button_inline") %> <%= link_to("marcar como le&iacute;do",url_for(:controller=>"quotes", :action=>"mark_as_read",:id=>@quote_request.id), :class=>"form_button_inline") %>  <%= link_to("ver via web","http://www.skykidsperu.com/web/cotizaciones/#{Base64.encode64(@quote_request.sending_details).gsub!("\n","")}", :class=>"form_button_inline") unless @quote_request.sending_details.blank? %> <%= link_to("enviar a cliente",send_quote_path(@quote_request.id), :class=>"form_button_inline") if admin? or store_supervisor? or store_admin?  %> <%= link_to("editar",url_for(:controller=>"quotes",:action=>"recover_to_quote", :id=>@quote_request.id), :class=>"form_button_inline") if admin? or store_supervisor? or store_admin? %> <p>o <%= link_to "Regresar",reports_path %></p>
+<%= link_to "imprimir", url_for(:action=>"print_quote", :id=>@quote_request.id), :class=>"form_button" %>	<%= link_to("a guias de salida",url_for(:controller=>"quotes", :action=>"generate_sending_guides",:id=>@quote_request.id), :class=>"form_button_inline") %> <%= link_to("a facturas",url_for(:controller=>"quotes", :action=>"generate_orders",:id=>@quote_request.id), :class=>"form_button_inline") %> <%= link_to("marcar como le&iacute;do",url_for(:controller=>"quotes", :action=>"mark_as_read",:id=>@quote_request.id), :class=>"form_button_inline") %>  <%= link_to("ver via web","http://www.skykidsperu.com/web/cotizaciones/#{Base64.encode64(@quote_request.sending_details).gsub!("\n","")}", :class=>"form_button_inline") unless @quote_request.sending_details.blank? %> <%= link_to("enviar a cliente",send_quote_path(@quote_request.id), :class=>"form_button_inline") if admin? or store_supervisor? or store_admin?  %> <%= link_to("editar",url_for(:controller=>"quotes",:action=>"recover_to_quote", :id=>@quote_request.id), :class=>"form_button_inline") if admin? or store_supervisor? or store_admin? %> 
+
+<%= link_to("despachar",url_for(:controller=>"quotes",:action=>"as_delivered", :id=>@quote_request.id), :class=>"form_button_inline") if admin? or store_supervisor? or store_admin? %>
+
+<p>o <%= link_to "Regresar",reports_path %></p>
 </div>
 
 

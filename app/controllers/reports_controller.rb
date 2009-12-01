@@ -172,6 +172,17 @@ class ReportsController < ApplicationController
     end
 
   end
+  
+  def delivered_quote
+    @delivered_quote = Quote.find(params[:id])
+
+    @products = []
+    @delivered_quote.products.each do |p|
+      @products << p  unless @products.include? p 
+    end
+
+  end
+  
 
   def quote
     @quote = Quote.find(params[:id], :include=>{:quote_details=>:product},:order=>"quote_details.age_from ASC, quote_details.age_to ASC, quote_details.sex DESC")
@@ -192,6 +203,22 @@ class ReportsController < ApplicationController
     end
 
   end
+  
+  def delivered_quotes
+
+     if admin? or store_supervisor?
+       if get_current_store == 4 
+         # @quote_requests = Quote.paginate(:all, :order=>"created_at DESC",:conditions=>"status LIKE 'requested'",:include => [:client], :page => params[:page])
+         @delivered_quotes = Quote.find(:all, :order=>"delivered_date DESC, request_date DESC, created_at DESC",:conditions=>"status LIKE 'delivered'",:include => [:client])
+
+       else
+         @delivered_quotes = Quote.find(:all, :order=>"delivered_date DESC, request_date DESC, created_at DESC",:conditions=>"status LIKE 'delivered'",:include => [:client])
+       end
+     else
+       @delivered_quotes = Quote.find(:all, :order=>"delivered_date DESC, request_date DESC, created_at DESC",:conditions=>"status LIKE 'delivered'",:include => [:client])
+     end
+
+   end  
 
   def quotes
     if admin? or store_supervisor?

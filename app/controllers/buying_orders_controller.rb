@@ -30,7 +30,9 @@ class BuyingOrdersController < ApplicationController
     rescue Exception => ex
       RAILS_DEFAULT_LOGGER.error("\n #{ ex}  \n")                 
       @input_order = InputOrder.new
-      @input_order.input_type = ""            
+      @input_order.input_type = ""     
+      @input_order.store_id ||= get_current_store   
+      @input_order.owner_id ||= get_current_store               
       @input_order_details = @input_order.input_order_details
       
     end
@@ -66,6 +68,8 @@ class BuyingOrdersController < ApplicationController
       RAILS_DEFAULT_LOGGER.error("\n #{ ex}  \n")                 
       @input_order = InputOrder.new
       @input_order.input_type = "compras"      
+      @input_order.store_id ||= get_current_store   
+      @input_order.owner_id ||= get_current_store                     
       @input_order_details = @input_order.input_order_details
       render :action => "index"      
     end
@@ -99,7 +103,10 @@ class BuyingOrdersController < ApplicationController
     rescue Exception => ex
       RAILS_DEFAULT_LOGGER.error("\n #{ ex}  \n")                 
       @input_order = InputOrder.new
-      @input_order.input_type = "inventario"            
+      @input_order.input_type = "inventario"     
+      @input_order.store_id ||= get_current_store   
+      @input_order.owner_id ||= get_current_store               
+             
       @input_order_details = @input_order.input_order_details
       render :action => "index"      
     end
@@ -133,7 +140,10 @@ class BuyingOrdersController < ApplicationController
     rescue Exception => ex
       RAILS_DEFAULT_LOGGER.error("\n #{ ex}  \n")                 
       @input_order = InputOrder.new
-      @input_order.input_type = "devoluciones"                  
+      @input_order.input_type = "devoluciones"         
+      @input_order.store_id ||= get_current_store   
+      @input_order.owner_id ||= get_current_store               
+               
       @input_order_details = @input_order.input_order_details
       render :action => "index"
     end

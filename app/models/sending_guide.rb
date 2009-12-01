@@ -18,6 +18,8 @@
 #  delivery_phone    :string(255)
 #  unload_stock      :boolean(1)
 #  sending_type      :string(255)
+#  provider_id       :integer(4)
+#  quote_id          :integer(4)
 #
 
 class SendingGuide < ActiveRecord::Base
@@ -25,6 +27,7 @@ class SendingGuide < ActiveRecord::Base
   belongs_to :store
   belongs_to :client
   belongs_to :provider
+  belongs_to :quote
   
   has_many :sending_guide_details
   has_many :orders

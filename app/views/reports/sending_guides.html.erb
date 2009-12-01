@@ -8,8 +8,8 @@
 		<th>Fecha de Salida</th>
 		<%- if report_type.gsub('es','') == SendingGuide::SendingTypes[5] %>
 		<th>Proveedores</th>				
-		<th></th>						
-		<%- else %>
+		<%- end %>
+		<%- if report_type == SendingGuide::SendingTypes[0] %>
 		<th>Cliente</th>				
 		<%- end -%>
 		<th>Tipo de Salida</th>						
@@ -25,8 +25,8 @@
 		<td><%= order.sending_date.strftime("%d/%m/%y") unless order.sending_date.nil? %></td>
 		<%- if report_type.gsub('es','') == SendingGuide::SendingTypes[5] %>
 		<td><%= order.provider.name unless order.provider.blank? %></td>				
-		<td><%= order.client.name unless order.client.blank? %></td>						
-		<% else %>
+		<% end %>
+		<%- if report_type == SendingGuide::SendingTypes[0] %>		
 		<td><%= order.client.name unless order.client.blank? %></td>				
 		<% end %>
 		<td><%= order.sending_type %></td>						

@@ -35,8 +35,8 @@ class AddNewIndexes < ActiveRecord::Migration
 #    add_index :sending_guides, :client_id
 #    add_index :sending_guides, :store_id
 #    add_index :categories, :product_id
-    add_index :exit_orders, :client_id
-    add_index :exit_orders, :store_id
+    # add_index :exit_orders, :client_id
+    # add_index :exit_orders, :store_id
   end
   
   def self.down

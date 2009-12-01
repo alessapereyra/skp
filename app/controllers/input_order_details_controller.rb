@@ -81,25 +81,76 @@ class InputOrderDetailsController < ApplicationController
     
     @input_order_detail = InputOrderDetail.find(params[:id])
     
-    @input_order_detail.prices[0].amount = params[:price][:amount]     
-    @input_order_detail.prices[0].save
-    @input_order_detail.prices[1].amount = params[:price][:boxed_price]
-    @input_order_detail.prices[1].save
-    @input_order_detail.prices[2].amount = params[:price][:wholesale_price]
-    @input_order_detail.prices[2].save
-    p = @input_order_detail.product
-    p.corporative_price = params[:price][:wholesale_price]
-    p.save
-    @input_order_detail.prices[3].amount = params[:price][:final_price]
-    @input_order_detail.prices[3].save
+    if @input_order_detail.prices[0]
+        @input_order_detail.prices[0].amount = params[:price][:amount].to_f    
+        @input_order_detail.prices[0].save
+    else
+       new_price = Price.new
+       new_price.amount = params[:price][:amount].to_f
+       new_price.description = "Precio base"
+       new_price.discount = 0.0
+       new_price.save
+    	@input_order_detail.prices << new_price
+      @input_order_detail.save!
+    end
 
+    if @input_order_detail.prices[1]    
+      @input_order_detail.prices[1].amount = params[:price][:boxed_price].to_f
+      @input_order_detail.prices[1].save
+    else
+       new_price = Price.new
+       new_price.amount = params[:price][:boxed_price].to_f
+       new_price.description = "Precio mayorista"
+       new_price.discount = 0
+       new_price.save       
+    	@input_order_detail.prices << new_price
+      @input_order_detail.save!
+      
+    end
+  
+    if @input_order_detail.prices[2]    
+      @input_order_detail.prices[2].amount = params[:price][:wholesale_price].to_f
+      @input_order_detail.prices[2].save
+    else
+       new_price = Price.new
+       new_price.amount = params[:price][:wholesale_price].to_f
+       new_price.discount = 0
+       new_price.description= "Precio en caja"
+       new_price.save       
+    	@input_order_detail.prices << new_price
+      @input_order_detail.save!
+      
+    end
+  
+    p = @input_order_detail.product
+    p.corporative_price = params[:price][:wholesale_price].to_f
+    p.save
+    
+    if @input_order_detail.prices[3]
+      @input_order_detail.prices[3].amount = params[:price][:final_price].to_f
+      @input_order_detail.prices[3].save
+    else
+       new_price = Price.new
+       new_price.amount = params[:price][:final_price].to_f
+       new_price.discount = 0
+       new_price.description = "Precio Tienda 1"       
+       new_price.save       
+    	@input_order_detail.prices << new_price
+      @input_order_detail.save!
+      
+    end
+    
     if @input_order_detail.prices[4].nil? 
         new_price = Price.new
+        new_price.amount = 0.0
+        new_price.discount = 0.0
+        updatenew_price.description = "Precio Tienda 2"               
+        new_price.save
 	@input_order_detail.prices << new_price
         @input_order_detail.save!
     end		
 
-    @input_order_detail.prices[4].amount = params[:price][:final_price_polo] unless @input_order_detail.prices[4].nil?                        
+    @input_order_detail.prices[4].amount = params[:price][:final_price_polo].to_f unless @input_order_detail.prices[4].nil?                        
     @input_order_detail.prices[4].save unless @input_order_detail.prices[4].nil?                        
     
     

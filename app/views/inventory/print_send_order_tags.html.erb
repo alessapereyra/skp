@@ -20,7 +20,8 @@
 	</div>
 
 	<div id="bottom">
-		<p id="codify"><%= codify(iod.product.current_prices(true,@send_order.store_id)[1].amount.round(2))  %></p>
+		<p id="codify"><%= codify(iod.product.current_prices(true,@send_order.store_id)[1].amount.round(2)) unless
+		iod.product.current_prices(true,@send_order.store_id)[1].nil?  %></p>
 		
 		<p id="price"> S/. <%= iod.product.store_price(@send_order.store_id).round(2) %></p>
 	</div>

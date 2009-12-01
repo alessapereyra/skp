@@ -1,0 +1,29 @@
+<h2>Facturas de Pedido</h2>
+
+<table>
+	<thead>
+	<tr>
+		<th>Documento</th>		
+		<th>Tienda</th>		
+		<th>Fecha</th>
+		<th>Estado</th>		
+		<th></th>
+	</tr>				
+	</thead>
+	<tbody>		
+	<% @quote.sending_guides.each do |order| %>
+	<tr class="<%= cycle("even", "odd") -%>">
+		<td><%= order.document %></td>		
+		<td><%= order.store.name %></td>
+		<td><%= order.sending_date.strftime("%d/%m/%y") %></td>
+		<td><%= order.status == 'open' ? "pendiente" : "generada" %></td>		
+		<td><%= link_to "revisar", url_for(:controller=>"sending_guides",:action=>"recover", :id=>order.id) %></td>
+	</tr>
+	<% end %>
+	</tbody>
+
+</table>
+
+<div id="endzone">
+<p><%= link_to "Regresar",reports_path %></p>
+</div>

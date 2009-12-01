@@ -40,7 +40,7 @@ include ExceptionNotifiable
       
       @input_order = InputOrder.new      
       provider_id = 1
-      store_id = 1
+      store_id = get_current_store
       owner_id = get_current_store
       
       unless params[:input_order].nil?

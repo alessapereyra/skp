@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091115040617) do
+ActiveRecord::Schema.define(:version => 20091201143941) do
 
   create_table "age_range_versions", :force => true do |t|
     t.integer  "age_range_id"
@@ -71,6 +71,19 @@ ActiveRecord::Schema.define(:version => 20091115040617) do
     t.integer  "child_number"
     t.boolean  "delta",                                               :default => false
     t.string   "client_type"
+  end
+
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.string   "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "exit_order_details", :force => true do |t|
@@ -419,11 +432,14 @@ ActiveRecord::Schema.define(:version => 20091115040617) do
     t.boolean  "updated"
     t.boolean  "sent"
     t.integer  "child_number"
-    t.decimal  "budget",              :precision => 10, :scale => 2
+    t.decimal  "budget",                   :precision => 10, :scale => 2
     t.boolean  "is_requested"
     t.boolean  "orders_generated"
-    t.integer  "quote_details_count",                                :default => 0
+    t.integer  "quote_details_count",                                     :default => 0
     t.boolean  "from_web"
+    t.date     "request_date"
+    t.datetime "delivered_date"
+    t.boolean  "sending_guides_generated"
   end
 
   add_index "quotes", ["client_id"], :name => "index_quotes_on_client_id"
@@ -497,6 +513,8 @@ ActiveRecord::Schema.define(:version => 20091115040617) do
     t.string   "delivery_phone"
     t.boolean  "unload_stock"
     t.string   "sending_type"
+    t.integer  "provider_id"
+    t.integer  "quote_id"
   end
 
   add_index "sending_guides", ["client_id"], :name => "index_sending_guides_on_client_id"

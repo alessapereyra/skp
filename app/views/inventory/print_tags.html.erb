@@ -25,7 +25,7 @@
 	<div id="bottom">
 
 		<% unless iod.product.is_stationary? or iod.product.is_book? %>
-		<p id="codify"><%= codify(iod.product.current_prices(true,@input_order.store_id)[1].amount.round(2))  %></p>
+		<p id="codify"><%= codify(iod.product.current_prices(true,@input_order.store_id)[1].amount.round(2)) if iod.product.current_prices(true,@input_order.store_id)[1]  %></p>
     
 		<p id="price"> S/. <%= iod.product.store_price(@input_order.store_id).round(2) %></p>
     <% else %>
